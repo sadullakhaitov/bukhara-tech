@@ -1,0 +1,26 @@
+Rasmlar manbasi: Unsplash (https://unsplash.com/license) — bepul, tijoriy foydalanishga ruxsat bor.
+Bu rasmlar vaqtincha namuna. Haqiqiy bajarilgan ishlaringiz rasmlari bilan almashtiring.
+
+sadulla-1  https://unsplash.com/photos/photo-1547658719-da2b51169166
+sadulla-2  https://unsplash.com/photos/photo-1498050108023-c5249f4df085
+sadulla-3  https://unsplash.com/photos/photo-1618477388954-7852f32655ec
+sadulla-4  https://unsplash.com/photos/photo-1487338875411-8880f74114a2
+sadulla-5  https://unsplash.com/photos/photo-1542831371-29b0f74f9713
+sadulla-6  https://unsplash.com/photos/photo-1505373877841-8d25f7d46678
+sherali-1  https://unsplash.com/photos/photo-1558494949-ef010cbdcc31
+sherali-2  https://unsplash.com/photos/photo-1606904825846-647eb07f5be2
+sherali-3  https://unsplash.com/photos/photo-1594915440248-1e419eba6611
+sherali-4  https://unsplash.com/photos/photo-1695668548342-c0c1ad479aee
+sherali-5  https://unsplash.com/photos/photo-1516044734145-07ca8eef8731
+sherali-6  https://unsplash.com/photos/photo-1544197150-b99a580bb7a8
+doston-2   https://unsplash.com/photos/photo-1594394489098-74ac04c0fc2e
+doston-3   https://unsplash.com/photos/photo-1574717024653-61fd2cf4d44d
+doston-4   https://unsplash.com/photos/photo-1485662543942-9ab24cc0acf0
+doston-5   https://unsplash.com/photos/photo-1611784728558-6c7d9b409cdf
+doston-6   https://unsplash.com/photos/photo-1502209877429-d7c6df9eb3f9
+maruf-1    https://unsplash.com/photos/photo-1557597774-9d273605dfa9
+maruf-2    https://unsplash.com/photos/photo-1589935447067-5531094415d1
+maruf-3    https://unsplash.com/photos/photo-1643123182527-3bd30840e7ed
+maruf-4    https://unsplash.com/photos/photo-1549109926-58f039549485
+maruf-5    https://unsplash.com/photos/photo-1496368077930-c1e31b4e5b44
+maruf-6    https://unsplash.com/photos/photo-1618482914248-29272d021005

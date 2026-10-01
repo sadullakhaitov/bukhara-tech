@@ -1,0 +1,386 @@
+/* Bukhara Tech — asosiy uslublar */
+
+:root {
+  --bg: #F4F6F9;
+  --surf: #FFFFFF;
+  --ink: #101820;
+  --muted: #525D6B;
+  --line: #DCE2EA;
+  --soft: #EBEFF4;
+
+  /* Har bir yo'nalish rangi */
+  --web: #3743D1;   --web-lt: #E6E8FB;
+  --net: #0A7359;   --net-lt: #DFF1EB;
+  --media: #A8235F; --media-lt: #F7E3EC;
+  --cam: #8F530C;   --cam-lt: #F6EBDA;
+
+  --acc: var(--web);
+  --lt: var(--web-lt);
+
+  --disp: "Unbounded", "Arial Black", sans-serif;
+  --body: "Manrope", "Segoe UI", sans-serif;
+  --mono: "JetBrains Mono", Consolas, monospace;
+
+  --wrap: 1280px;
+  --gutter: 80px;
+}
+
+.p-web   { --acc: var(--web);   --lt: var(--web-lt); }
+.p-net   { --acc: var(--net);   --lt: var(--net-lt); }
+.p-media { --acc: var(--media); --lt: var(--media-lt); }
+.p-cam   { --acc: var(--cam);   --lt: var(--cam-lt); }
+
+*, *::before, *::after { box-sizing: border-box; }
+html { scroll-behavior: smooth; }
+@media (prefers-reduced-motion: reduce) { html { scroll-behavior: auto; } }
+
+body {
+  margin: 0;
+  background: var(--bg);
+  color: var(--ink);
+  font-family: var(--body);
+  font-size: 16px;
+  line-height: 1.5;
+}
+img { max-width: 100%; display: block; }
+a { color: var(--ink); }
+a:hover { color: var(--web); }
+:focus-visible { outline: 3px solid var(--web); outline-offset: 2px; border-radius: 6px; }
+[hidden] { display: none !important; }
+
+.wrap { max-width: calc(var(--wrap) + var(--gutter) * 2); margin-inline: auto; padding-inline: var(--gutter); }
+
+h1, h2, h3 { margin: 0; text-wrap: balance; }
+p { margin: 0; }
+
+.eyebrow { font-family: var(--mono); font-size: 13px; letter-spacing: .08em; color: var(--muted); text-transform: uppercase; }
+.h1 { font-family: var(--disp); font-weight: 600; font-size: 56px; line-height: 1.08; letter-spacing: -.03em; }
+.h2 { font-family: var(--disp); font-weight: 600; font-size: 38px; line-height: 1.15; letter-spacing: -.02em; }
+.lead { font-size: 19px; color: var(--muted); }
+
+.sec-head { display: flex; flex-direction: column; gap: 10px; }
+.sec-head p { font-size: 18px; color: var(--muted); max-width: 640px; }
+
+/* ---------- Tugmalar ---------- */
+.btn {
+  display: inline-flex; align-items: center; justify-content: center; gap: 10px;
+  height: 52px; padding: 0 24px; border-radius: 12px;
+  font: 700 16px/1 var(--body); text-decoration: none; cursor: pointer;
+  border: 1.5px solid transparent; transition: background-color .15s, color .15s;
+}
+.btn svg { width: 18px; height: 18px; flex-shrink: 0; }
+.btn-dark { background: var(--ink); color: #fff; }
+.btn-dark:hover { background: #26323f; color: #fff; }
+.btn-outline { border-color: var(--ink); color: var(--ink); background: transparent; }
+.btn-outline:hover { background: var(--ink); color: #fff; }
+.btn-acc { background: var(--acc); color: #fff; }
+.btn-acc:hover { filter: brightness(.9); color: #fff; }
+.btn-white { background: #fff; color: var(--acc); }
+.btn-white:hover { background: #f1f1f1; color: var(--acc); }
+.btn-ghost { border-color: #fff; color: #fff; }
+.btn-ghost:hover { background: rgba(255,255,255,.14); color: #fff; }
+.btns { display: flex; gap: 12px; flex-wrap: wrap; }
+
+/* ---------- Header ---------- */
+.header { position: sticky; top: 0; z-index: 30; background: var(--surf); border-bottom: 1px solid var(--line); }
+.header .wrap { display: flex; align-items: center; justify-content: space-between; gap: 24px; min-height: 84px; }
+.logo { display: flex; align-items: center; gap: 12px; text-decoration: none; color: var(--ink); }
+.logo:hover { color: var(--ink); }
+.logo-grid { display: grid; grid-template-columns: repeat(2, 1fr); gap: 3px; width: 28px; height: 28px; }
+.logo-grid span { border-radius: 3px; }
+.logo-grid span:nth-child(1) { background: var(--web); }
+.logo-grid span:nth-child(2) { background: var(--net); }
+.logo-grid span:nth-child(3) { background: var(--media); }
+.logo-grid span:nth-child(4) { background: var(--cam); }
+.logo-text { font-family: var(--disp); font-weight: 600; font-size: 21px; letter-spacing: -.01em; white-space: nowrap; }
+.nav { display: flex; gap: 36px; font-size: 15px; font-weight: 600; }
+.nav a { text-decoration: none; }
+.header-right { display: flex; align-items: center; gap: 20px; }
+.lang { display: flex; gap: 4px; font-family: var(--mono); font-size: 13px; }
+.lang span, .lang a { padding: 6px 10px; border-radius: 8px; text-decoration: none; }
+.lang .on { background: var(--soft); font-weight: 700; }
+.lang a { color: var(--muted); }
+.header .btn { height: 44px; padding: 0 20px; border-radius: 10px; font-size: 15px; }
+.burger { display: none; width: 44px; height: 44px; border: 1px solid var(--line); border-radius: 10px; background: var(--surf); color: var(--ink); cursor: pointer; align-items: center; justify-content: center; }
+.burger svg { width: 22px; height: 22px; }
+
+/* ---------- Rasm joyi (placeholder) ---------- */
+.photo {
+  position: relative; border-radius: 16px; background: var(--lt); overflow: hidden;
+  display: flex; align-items: center; justify-content: center;
+}
+.photo img { position: absolute; inset: 0; width: 100%; height: 100%; object-fit: cover; }
+.photo-ini { font-family: var(--disp); font-weight: 600; color: var(--acc); opacity: .55; }
+.photo-label { position: absolute; left: 14px; top: 14px; font-family: var(--mono); font-size: 11px; letter-spacing: .08em; color: var(--acc); }
+.photo-detail {
+  position: absolute; left: 16px; right: 16px; bottom: 16px; padding: 10px 14px; border-radius: 10px;
+  background: rgba(16,24,32,.82); color: #fff; font-family: var(--mono); font-size: 13px;
+}
+
+/* ---------- Bosh sahifa: hero ---------- */
+.hero .wrap { display: flex; justify-content: space-between; align-items: center; gap: 64px; padding-block: 72px 96px; }
+.hero-text { display: flex; flex-direction: column; gap: 28px; max-width: 600px; }
+.stats { display: flex; gap: 48px; padding-top: 24px; border-top: 1px solid var(--line); }
+.stat { display: flex; flex-direction: column; gap: 2px; }
+.stat b { font-family: var(--disp); font-weight: 600; font-size: 36px; letter-spacing: -.02em; }
+.stat span { font-size: 14px; color: var(--muted); }
+.collage { display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 16px; width: 616px; flex-shrink: 0; }
+.collage-item { position: relative; text-decoration: none; }
+.collage-item .photo { height: 330px; }
+.collage-item .photo-ini { font-size: 72px; }
+.collage-chip {
+  position: absolute; left: 12px; right: 12px; bottom: 12px; display: flex; align-items: center; gap: 10px;
+  padding: 10px 14px; border-radius: 12px; background: var(--surf);
+}
+.collage-chip i { width: 10px; height: 10px; border-radius: 3px; background: var(--acc); flex-shrink: 0; }
+.collage-chip span { display: flex; flex-direction: column; line-height: 1.3; }
+.collage-chip b { font-size: 15px; }
+.collage-chip small { font-size: 13px; color: var(--muted); }
+
+/* ---------- Jamoa kartalari ---------- */
+.section { padding-block: 88px; }
+.section-white { background: var(--surf); border-block: 1px solid var(--line); }
+.section .sec-head { margin-bottom: 48px; }
+
+.team { display: grid; grid-template-columns: repeat(4, minmax(0, 1fr)); gap: 20px; }
+.card { display: flex; flex-direction: column; background: var(--surf); border: 1px solid var(--line); border-radius: 20px; overflow: hidden; }
+.card .photo { height: 320px; border-radius: 0; }
+.card .photo-ini { font-size: 88px; }
+.card-body { display: flex; flex-direction: column; gap: 12px; padding: 22px 24px 24px; flex-grow: 1; }
+.card-role { font-family: var(--mono); font-size: 12px; letter-spacing: .08em; text-transform: uppercase; color: var(--acc); }
+.card h3 { font-family: var(--disp); font-weight: 600; font-size: 21px; letter-spacing: -.01em; }
+.card-years { display: flex; align-items: baseline; gap: 8px; }
+.card-years b { font-family: var(--disp); font-weight: 600; font-size: 28px; color: var(--acc); }
+.card-years span { font-size: 14px; color: var(--muted); }
+.chips { display: flex; flex-wrap: wrap; gap: 6px; list-style: none; margin: 0; padding: 0; }
+.chips li { padding: 6px 12px; border-radius: 999px; background: var(--soft); font-size: 13px; font-weight: 600; }
+.chips-acc li { background: var(--lt); color: var(--acc); font-weight: 700; }
+.more { display: inline-flex; align-items: center; gap: 8px; margin-top: auto; padding-top: 6px; color: var(--acc); font-weight: 700; text-decoration: none; }
+.more:hover { color: var(--acc); text-decoration: underline; }
+.more svg { width: 16px; height: 16px; }
+
+/* ---------- Jarayon ---------- */
+.steps { display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); gap: 20px; list-style: none; margin: 0; padding: 0; }
+.step { display: flex; flex-direction: column; gap: 12px; padding: 28px; background: var(--surf); border: 1px solid var(--line); border-radius: 16px; }
+.step-n { font-family: var(--mono); font-size: 14px; color: var(--muted); }
+.step h3 { font-size: 21px; font-weight: 700; }
+.step p { color: var(--muted); }
+
+/* ---------- Aloqa ---------- */
+.contact { padding-bottom: 88px; }
+.contact-box {
+  display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 64px;
+  padding: 48px; background: var(--surf); border: 1px solid var(--line); border-radius: 24px;
+}
+.contact-box > * { min-width: 0; }
+.contact-left { display: flex; flex-direction: column; gap: 20px; }
+.contacts { display: flex; flex-direction: column; }
+.contacts div { display: flex; flex-direction: column; gap: 2px; padding-block: 14px; border-bottom: 1px solid var(--line); }
+.contacts span { font-size: 13px; color: var(--muted); }
+.contacts b, .contacts a { font-family: var(--mono); font-size: 17px; font-weight: 600; text-decoration: none; }
+.form { display: flex; flex-direction: column; gap: 18px; }
+.field { display: flex; flex-direction: column; gap: 8px; }
+.field label { font-size: 14px; font-weight: 700; }
+.field input, .field select, .field textarea {
+  height: 48px; padding: 0 14px; border: 1px solid var(--line); border-radius: 10px;
+  font: 400 16px/1.4 var(--body); color: var(--ink); background: var(--bg);
+}
+.field textarea { height: 110px; padding: 12px 14px; resize: vertical; }
+.field input:focus, .field select:focus, .field textarea:focus { outline: none; border-color: var(--web); background: #fff; }
+.form .btn { width: 100%; }
+.form-done { padding: 14px; border-radius: 10px; background: var(--net-lt); color: var(--net); font-weight: 600; }
+
+/* ---------- Footer ---------- */
+.footer { margin-top: auto; background: var(--surf); border-top: 1px solid var(--line); font-size: 14px; color: var(--muted); }
+.footer .wrap { display: flex; align-items: center; justify-content: space-between; gap: 24px; padding-block: 36px; }
+.footer .mono { font-family: var(--mono); font-size: 13px; }
+
+/* ---------- Usta sahifasi ---------- */
+.crumbs { padding-top: 28px; font-family: var(--mono); font-size: 13px; color: var(--muted); }
+.crumbs a { color: var(--muted); }
+.profile .wrap { display: flex; gap: 64px; padding-block: 32px 88px; }
+.profile .photo { width: 480px; height: 600px; flex-shrink: 0; }
+.profile .photo-ini { font-size: 140px; }
+.profile-text { display: flex; flex-direction: column; gap: 22px; padding-top: 12px; }
+.badge { align-self: flex-start; padding: 6px 14px; border-radius: 999px; background: var(--acc); color: #fff; font-family: var(--mono); font-size: 12px; letter-spacing: .08em; text-transform: uppercase; }
+.seo { font-size: 20px; font-weight: 700; }
+.short { font-size: 16px; color: var(--muted); }
+.years { display: flex; align-items: center; gap: 20px; padding-block: 18px; border-block: 1px solid var(--line); }
+.years b { font-family: var(--disp); font-weight: 600; font-size: 104px; line-height: 1; letter-spacing: -.04em; color: var(--acc); }
+.years span { display: flex; flex-direction: column; font-size: 22px; font-weight: 700; line-height: 1.3; }
+.bio { font-size: 18px; max-width: 620px; }
+
+.services { display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); gap: 20px; }
+.service { display: flex; flex-direction: column; gap: 10px; padding: 28px; background: var(--bg); border-radius: 16px; }
+.service::before { content: ""; width: 28px; height: 4px; border-radius: 2px; background: var(--acc); }
+.service h3 { font-size: 20px; font-weight: 700; }
+.service p { color: var(--muted); }
+
+.works { display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); gap: 32px 24px; }
+.work { margin: 0; display: flex; flex-direction: column; gap: 12px; }
+.work .photo { height: 260px; border-radius: 14px; }
+.work-tag { position: absolute; left: 14px; top: 14px; padding: 4px 10px; border-radius: 999px; background: var(--surf); font-size: 12px; font-weight: 700; color: var(--acc); }
+.work-cam { position: absolute; right: 14px; top: 14px; font-family: var(--mono); font-size: 12px; color: var(--acc); }
+.work-ph { font-family: var(--mono); font-size: 13px; color: var(--acc); }
+.work figcaption { display: flex; justify-content: space-between; align-items: baseline; gap: 12px; }
+.work figcaption b { font-size: 17px; }
+.work figcaption span { font-family: var(--mono); font-size: 13px; color: var(--muted); text-align: right; }
+.split { display: flex; width: 100%; height: 100%; }
+.split span { flex: 1; display: flex; align-items: flex-end; padding: 14px; font-family: var(--mono); font-size: 12px; color: var(--ink); }
+.split span:first-child { background: #B8BDC4; border-right: 3px solid #fff; }
+.split span:last-child { background: #D98AAE; justify-content: flex-end; }
+
+.prices { display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); gap: 20px; }
+.price { display: flex; flex-direction: column; gap: 8px; padding: 28px; background: var(--surf); border: 1px solid var(--line); border-radius: 16px; }
+.price b { font-size: 17px; }
+.price strong { font-family: var(--disp); font-weight: 600; font-size: 28px; color: var(--acc); }
+.price span { font-size: 14px; color: var(--muted); }
+
+.cta { padding-bottom: 72px; }
+.cta-box { display: flex; align-items: center; justify-content: space-between; gap: 40px; padding: 56px; border-radius: 24px; background: var(--acc); color: #fff; }
+.cta-box h2 { font-family: var(--disp); font-weight: 600; font-size: 36px; letter-spacing: -.02em; }
+.cta-box p { font-size: 18px; opacity: .9; margin-top: 10px; }
+.cta-box .btns { flex-shrink: 0; }
+
+.others { padding-bottom: 72px; }
+.others h2 { font-family: var(--disp); font-weight: 600; font-size: 26px; letter-spacing: -.02em; margin-bottom: 28px; }
+.others-list { display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); gap: 20px; list-style: none; margin: 0; padding: 0; }
+.other { display: flex; align-items: center; gap: 16px; padding: 18px; background: var(--surf); border: 1px solid var(--line); border-radius: 16px; text-decoration: none; }
+.other .photo { width: 72px; height: 72px; flex-shrink: 0; }
+.other .photo-ini { font-size: 22px; }
+.other-text { display: flex; flex-direction: column; flex-grow: 1; line-height: 1.35; }
+.other-text b { font-size: 17px; }
+.other-text small { font-size: 14px; color: var(--muted); }
+.other > svg { width: 16px; height: 16px; color: var(--acc); flex-shrink: 0; }
+
+.page { min-height: 100vh; display: flex; flex-direction: column; }
+
+/* ---------- Planshet ---------- */
+@media (max-width: 1200px) {
+  :root { --gutter: 40px; }
+  .hero .wrap { flex-direction: column; align-items: stretch; }
+  .hero-text { max-width: 720px; }
+  .collage { width: 100%; }
+  .team { grid-template-columns: repeat(2, minmax(0, 1fr)); }
+  .profile .photo { width: 400px; height: 500px; }
+}
+
+@media (max-width: 900px) {
+  .nav, .header .btn, .lang a { display: none; }
+  .burger { display: flex; }
+  .header.open .nav {
+    display: flex; flex-direction: column; gap: 0; position: absolute; top: 100%; left: 0; right: 0;
+    padding: 8px var(--gutter) 16px; background: var(--surf); border-bottom: 1px solid var(--line);
+  }
+  .header.open .nav a { padding-block: 14px; font-size: 18px; border-bottom: 1px solid var(--line); }
+  .contact-box { grid-template-columns: 1fr; gap: 32px; }
+  .services, .works, .prices { grid-template-columns: repeat(2, minmax(0, 1fr)); }
+  .steps { grid-template-columns: 1fr; }
+  .profile .wrap { flex-direction: column; }
+  .profile .photo { width: 100%; height: 520px; }
+  .cta-box { flex-direction: column; align-items: flex-start; }
+  .others-list { grid-template-columns: 1fr; }
+}
+
+/* ---------- Telefon ---------- */
+@media (max-width: 600px) {
+  :root { --gutter: 16px; }
+  .header .wrap { min-height: 72px; }
+  .logo-grid { width: 24px; height: 24px; gap: 2px; }
+  .logo-text { font-size: 17px; }
+  .header-right { gap: 8px; }
+  .lang .on { font-size: 12px; }
+
+  .eyebrow { font-size: 12px; letter-spacing: .06em; }
+  .h1 { font-size: 31px; line-height: 1.12; }
+  .h2 { font-size: 26px; }
+  .lead, .sec-head p { font-size: 16px; }
+  .btns { flex-direction: column; }
+  .btns .btn { width: 100%; }
+
+  .hero .wrap { gap: 20px; padding-block: 28px 40px; }
+  .hero-text { gap: 20px; }
+  .stats { display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); gap: 12px; padding-top: 16px; }
+  .stat b { font-size: 22px; }
+  .stat span { font-size: 12px; line-height: 1.4; }
+  .collage { gap: 10px; }
+  .collage-item .photo { height: 200px; }
+  .collage-item .photo-ini { font-size: 48px; }
+  .collage-chip { left: 8px; right: 8px; bottom: 8px; padding: 8px 10px; border-radius: 10px; }
+  .collage-chip b { font-size: 13px; }
+  .collage-chip small { font-size: 11px; }
+  .collage-chip i { width: 8px; height: 8px; }
+
+  .section { padding-block: 40px; }
+  .section .sec-head { margin-bottom: 24px; }
+
+  /* Jamoa: ixcham gorizontal kartalar */
+  .team { grid-template-columns: 1fr; gap: 12px; }
+  .card { flex-direction: row; gap: 14px; padding: 14px; border-radius: 16px; }
+  .card .photo { width: 104px; height: 132px; flex-shrink: 0; border-radius: 16px; }
+  .card .photo-ini { font-size: 30px; }
+  .card .photo-label { display: none; }
+  .card-body { padding: 0; gap: 6px; min-width: 0; }
+  .card-role { font-size: 11px; letter-spacing: .06em; }
+  .card h3 { font-size: 16px; line-height: 1.25; }
+  .card-years b { font-size: 16px; }
+  .card-years span { font-size: 13px; }
+  .card .chips { display: none; }
+  .more { font-size: 14px; padding-top: 0; }
+
+  .step { padding: 20px; gap: 8px; }
+  .step h3 { font-size: 18px; }
+
+  .contact { padding-bottom: 40px; }
+  .contact-box { padding: 20px; border-radius: 20px; gap: 24px; }
+  .contacts b, .contacts a { font-size: 15px; }
+
+  .footer .wrap { flex-direction: column; align-items: flex-start; gap: 10px; padding-block: 28px; }
+
+  .crumbs { padding-top: 16px; font-size: 12px; }
+  .profile .wrap { gap: 18px; padding-block: 16px 40px; }
+  .profile .photo { height: 420px; }
+  .profile .photo-ini { font-size: 110px; }
+  .profile-text { gap: 18px; padding-top: 0; }
+  .badge { font-size: 11px; letter-spacing: .06em; }
+  .seo { font-size: 18px; }
+  .short { font-size: 14px; }
+  .years { gap: 16px; padding-block: 14px; }
+  .years b { font-size: 72px; }
+  .years span { font-size: 18px; }
+  .bio { font-size: 16px; }
+
+  .services { grid-template-columns: 1fr; gap: 0; }
+  .service { padding: 16px 0; background: none; border-radius: 0; border-bottom: 1px solid var(--line); gap: 6px; }
+  .service::before { width: 24px; }
+  .service h3 { font-size: 17px; }
+  .service p { font-size: 15px; }
+
+  .works { grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 20px 12px; }
+  .work { gap: 8px; }
+  .work .photo { height: 130px; border-radius: 12px; }
+  .work-tag { left: 8px; top: 8px; padding: 2px 8px; font-size: 11px; }
+  .work-cam { right: 8px; top: 8px; font-size: 10px; }
+  .work-ph { font-size: 11px; }
+  .work figcaption { flex-direction: column; gap: 0; line-height: 1.35; }
+  .work figcaption b { font-size: 14px; }
+  .work figcaption span { font-size: 11px; text-align: left; }
+  .split span { padding: 8px; font-size: 10px; }
+
+  .prices { grid-template-columns: 1fr; gap: 12px; }
+  .price { padding: 20px; gap: 6px; }
+  .price strong { font-size: 24px; }
+
+  .cta { padding-bottom: 40px; }
+  .cta-box { padding: 28px 20px; border-radius: 20px; gap: 16px; }
+  .cta-box h2 { font-size: 24px; line-height: 1.2; }
+  .cta-box p { font-size: 15px; }
+  .cta-box .btns { width: 100%; }
+
+  .others { padding-bottom: 40px; }
+  .others h2 { font-size: 20px; margin-bottom: 16px; }
+  .others-list { gap: 10px; }
+  .other { padding: 14px; gap: 14px; }
+  .other .photo { width: 56px; height: 56px; }
+  .other .photo-ini { font-size: 18px; }
+}
