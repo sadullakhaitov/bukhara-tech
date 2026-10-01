@@ -11,11 +11,12 @@ Buxorodagi IT va media xizmatlari jamoasining sayti: kamera o'rnatish, tarmoq va
 | `sherali.html` | Sherali Bozorov — tarmoq, internet, MikroTik |
 | `doston.html` | Doston Muxammadov — video montaj, color grading |
 | `maruf.html` | Maruf Usmonov — kuzatuv kameralari |
+| `ru/*.html` | Yuqoridagi 5 sahifaning ruscha versiyasi |
 
 ## Tuzilishi
 
 - `assets/style.css` — barcha uslublar (kompyuter, planshet va telefon uchun)
-- `assets/main.js` — telefondagi menyu va buyurtma formasi
+- `assets/main.js` — kunduzgi/tungi rejim tugmasi, telefondagi menyu va buyurtma formasi
 - `images/works/` — "Bajarilgan ishlar" rasmlari (hozircha Unsplash'dan namuna, manbalari `MANBALAR.txt` da)
 
 Sayt oddiy HTML/CSS/JS, hech qanday yig'ish (build) talab qilmaydi: `index.html` ni brauzerda ochish kifoya.

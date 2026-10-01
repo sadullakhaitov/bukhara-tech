@@ -9,7 +9,7 @@ Buxorodagi 4 kishilik jamoaning xizmatlar sayti. Har bir usta o'z yo'nalishida i
 - **Sayt:** https://sadullakhaitov.github.io/bukhara-tech/ (GitHub Pages, `main` tarmog'i, ildiz papka)
 - **Repo:** https://github.com/sadullakhaitov/bukhara-tech (public)
 - **Brend:** Bukhara Tech. Rejadagi domen `bukharatech.uz` (2026-09-30 da bo'sh edi, hali sotib olinmagan; olingach Pages'ga ulash kerak)
-- **Til:** asosiy o'zbek (lotin, `oʻ gʻ` uchun U+02BB `ʻ`). RU versiyasi keyin.
+- **Til:** asosiy o'zbek (lotin, `oʻ gʻ` uchun U+02BB `ʻ`). RU versiyasi `ru/` papkada (5 ta sahifa, 2026-10-01 da qo'shilgan; `../assets`, `../images` yo'llari). Matn o'zgarsa UZ va RU ikkalasini ham yangilang — jami 10 ta fayl.
 
 ## Jamoa
 
@@ -26,6 +26,7 @@ Jami staj: 40 yil (saytda shu raqam ishlatilgan).
 
 - **Hozirgi uslub foydalanuvchiga yoqqan, saqlansin:** och fon #F4F6F9, Unbounded (sarlavha) + Manrope (matn) + JetBrains Mono (kichik yorliqlar), har ustaga o'z rangi, logotip 4 rangli 2×2 kvadrat.
 - **Rad etilgan:** Buxoro ravoqlari va girih naqshli, Bricolage Grotesque shriftli uslub — foydalanuvchiga "umuman yoqmadi". Qaytarmang.
+- **Kunduzgi/tungi rejim:** headerdagi oy/quyosh tugmasi (`.theme-btn`). Ranglar `[data-theme="dark"]` da qayta belgilangan (`assets/style.css`), tanlov `localStorage` da saqlanadi, birinchi kirishda tizim sozlamasiga qaraladi (`<head>` dagi kichik skript). Rangli fon ustidagi matn uchun `#fff` emas, `var(--on-acc)` ishlating.
 - Sayt oddiy HTML/CSS/JS, build yo'q. `assets/style.css` da 3 ta breakpoint: 1200, 900, 600 px. Telefon versiyasi 390 px da tekshirilgan.
 - Sahifalar dastlab Python skripti bilan yig'ilgan, lekin skript repoda **yo'q** — endi HTML fayllarni to'g'ridan-to'g'ri tahrirlang. Ko'p sahifali o'zgarishda (masalan header) 5 ta faylning hammasini birdek o'zgartirishni unutmang.
 
@@ -48,7 +49,7 @@ E'lonlar soni (raqobat ko'rsatkichi): sayt/bot 57, Wi-Fi/internet 42, kamera 41,
 
 **Raqobatchilar:** areainfo.uz / elit.uz (Buxoro web studiya, 2000-yildan, landing $300 dan), mirumitech.uz (Buxoro, dasturlash), trassir-asia.uz (videokuzatuv, Buxoroda ofisi, mehmonxonalar), NEW STAR BUKHARA (kompyuter/Hikvision). Namuna ko'p xizmatli saytlar: adminz.uz (eng yaxshi namuna), alextech.uz, web-labs.kz.
 
-**Kelajakdagi g'oyalar** (foydalanuvchi hali tasdiqlamagan): "Kimlar uchun" bo'limi (mehmonxona/do'kon/ofis/uy to'plamlari), "Bepul ko'rik" tugmasi, mijozlar sharhlari, RU versiya, formani Telegram botga ulash.
+**Kelajakdagi g'oyalar** (foydalanuvchi hali tasdiqlamagan): "Kimlar uchun" bo'limi (mehmonxona/do'kon/ofis/uy to'plamlari), "Bepul ko'rik" tugmasi, mijozlar sharhlari, formani Telegram botga ulash.
 
 ## Ish tartibi
 
