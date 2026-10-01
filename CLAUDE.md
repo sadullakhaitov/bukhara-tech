@@ -38,7 +38,7 @@ Jami staj: 40 yil (saytda shu raqam ishlatilgan).
 - Har bir usta: shaxsiy rasm, shaxsiy aloqa, haqiqiy ishlar rasmi va izohi, bio tuzatishlari
 - **Narxlar (2026-10-01):** internetdagi Toshkent narxlari asosida Buxoro uchun taxminiy boshlang'ich narx qo'yildi (Toshkentdan biroz arzon). Ustalar o'zlari tasdiqlashi kerak.
 - **Mijozlar sharhlari:** foydalanuvchi o'ylab topilgan sharh so'radi — rad etildi (soxta sharh aldov). Faqat haqiqiy mijozlarning ruxsat bilan berilgan sharhlari qo'yiladi.
-- Bajarilgan ishlar soni (`[000]+`), `[N]` lar
+- `[N]` lar (bajarilgan ishlar soni 250+ deb qo'yildi — foydalanuvchi aytgan)
 - Logotip: hozirgi 4 rangli kvadrat qoladi (foydalanuvchi tasdiqladi)
 - Forma so'rovi qayerga borsin (umumiy Telegram guruh yoki usta) — hozir `assets/main.js` faqat "qabul qilindi" xabarini ko'rsatadi, hech qayerga yubormaydi
 
@@ -52,7 +52,9 @@ E'lonlar soni (raqobat ko'rsatkichi): sayt/bot 57, Wi-Fi/internet 42, kamera 41,
 
 **Raqobatchilar:** areainfo.uz / elit.uz (Buxoro web studiya, 2000-yildan, landing $300 dan), mirumitech.uz (Buxoro, dasturlash), trassir-asia.uz (videokuzatuv, Buxoroda ofisi, mehmonxonalar), NEW STAR BUKHARA (kompyuter/Hikvision). Namuna ko'p xizmatli saytlar: adminz.uz (eng yaxshi namuna), alextech.uz, web-labs.kz.
 
-**Kelajakdagi g'oyalar** (foydalanuvchi hali tasdiqlamagan): "Kimlar uchun" bo'limi (mehmonxona/do'kon/ofis/uy to'plamlari), "Bepul ko'rik" tugmasi, mijozlar sharhlari, formani Telegram botga ulash.
+**Bosh sahifa bo'limlari (2026-10-01):** hero → Jamoa → `#setlar` (3 ta set: Do'kon 890 000, Ofis 1 790 000, Mehmonxona 3 690 000 — alohida narx yig'indisidan ~15% arzon, uskunasiz) → `#kalkulyator` (narxlar `data-price` da, usta sahifalaridagi narxlar bilan bir xil bo'lishi kerak) → Jarayon → `#savollar` (15 ta FAQ + FAQPage JSON-LD `<head>` da) → Aloqa. Set/kalkulyator tugmasi formadagi "Xabar" maydonini to'ldiradi (`data-order`). Menyu 5 ta havola, 1200 px dan past burger. Narx o'zgarsa: usta sahifasi (UZ+RU), kalkulyator, setlar va FAQ JSON-LD ni tekshiring.
+
+**Kelajakdagi g'oyalar** (foydalanuvchi hali tasdiqlamagan): "Bepul ko'rik" tugmasi, haqiqiy mijozlar sharhlari, formani Telegram botga ulash, kafolat yozuvi, Google Maps / Yandex.
 
 ## Ish tartibi
 

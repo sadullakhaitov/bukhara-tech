@@ -48,3 +48,65 @@ if (form) {
     form.reset();
   });
 }
+
+// Setlar va kalkulyator: tugma bosilganda forma xabariga yoziladi
+const msgField = document.querySelector("#f-msg");
+document.querySelectorAll("[data-order]").forEach((a) =>
+  a.addEventListener("click", () => {
+    if (msgField && a.dataset.order) msgField.value = a.dataset.order;
+  })
+);
+
+// Narx kalkulyatori
+const calc = document.querySelector(".calc");
+if (calc) {
+  const money = (n) => String(n).replace(/\B(?=(\d{3})+(?!\d))/g, " ");
+  const { sum: cur, from, msg } = calc.dataset;
+  const rows = [...calc.querySelectorAll(".calc-row")];
+  const total = calc.querySelector(".calc-total");
+  const picked = calc.querySelector(".calc-picked");
+  const empty = picked.querySelector(".calc-empty").textContent;
+  const order = calc.querySelector(".calc-order");
+
+  const update = () => {
+    let s = 0;
+    const lines = [];
+    picked.replaceChildren();
+    rows.forEach((r) => {
+      const input = r.querySelector("input");
+      let n = Math.max(0, Math.min(999, parseInt(input.value, 10) || 0));
+      if (String(n) !== input.value) input.value = n;
+      r.classList.toggle("on", n > 0);
+      if (!n) return;
+      const cost = n * Number(r.dataset.price);
+      s += cost;
+      const li = document.createElement("li");
+      const a = document.createElement("span");
+      const b = document.createElement("span");
+      a.textContent = `${r.dataset.name} × ${n}`;
+      b.textContent = `${money(cost)} ${cur}`;
+      li.append(a, b);
+      picked.append(li);
+      lines.push(`— ${r.dataset.name}: ${n} ${r.dataset.unit}`);
+    });
+    if (!lines.length) {
+      const li = document.createElement("li");
+      li.className = "calc-empty";
+      li.textContent = empty;
+      picked.append(li);
+    }
+    total.textContent = s ? `${money(s)} ${cur}${from || ""}` : `0 ${cur}`;
+    order.setAttribute("aria-disabled", String(!s));
+    order.dataset.order = s ? `${msg}\n${lines.join("\n")}\n≈ ${money(s)} ${cur}` : "";
+  };
+
+  calc.addEventListener("click", (e) => {
+    const btn = e.target.closest(".step-btn");
+    if (!btn) return;
+    const input = btn.parentElement.querySelector("input");
+    input.value = Math.max(0, (parseInt(input.value, 10) || 0) + Number(btn.dataset.step));
+    update();
+  });
+  calc.addEventListener("input", update);
+  update();
+}

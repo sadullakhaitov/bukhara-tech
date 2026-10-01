@@ -6,7 +6,7 @@ Buxorodagi IT va media xizmatlari jamoasining sayti: kamera o'rnatish, tarmoq va
 
 | Fayl | Sahifa |
 |---|---|
-| `index.html` | Bosh sahifa: jamoa, ish jarayoni, buyurtma formasi |
+| `index.html` | Bosh sahifa: jamoa, tayyor setlar, narx kalkulyatori, ish jarayoni, savol-javoblar, buyurtma formasi |
 | `sadulla.html` | Sa'dulla Khaitov — sayt, Telegram bot, prezentatsiya |
 | `sherali.html` | Sherali Bozorov — tarmoq, internet, MikroTik |
 | `doston.html` | Doston Muxammadov — video montaj, color grading |
@@ -16,7 +16,7 @@ Buxorodagi IT va media xizmatlari jamoasining sayti: kamera o'rnatish, tarmoq va
 ## Tuzilishi
 
 - `assets/style.css` — barcha uslublar (kompyuter, planshet va telefon uchun)
-- `assets/main.js` — kunduzgi/tungi rejim tugmasi, telefondagi menyu va buyurtma formasi
+- `assets/main.js` — kunduzgi/tungi rejim, telefondagi menyu, narx kalkulyatori va buyurtma formasi
 - `images/works/` — "Bajarilgan ishlar" rasmlari (hozircha Unsplash'dan namuna, manbalari `MANBALAR.txt` da)
 
 Sayt oddiy HTML/CSS/JS, hech qanday yig'ish (build) talab qilmaydi: `index.html` ni brauzerda ochish kifoya.
