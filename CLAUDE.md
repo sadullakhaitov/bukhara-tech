@@ -32,7 +32,8 @@ Jami staj: 40 yil (saytda shu raqam ishlatilgan).
 
 ## Hali to'ldirilishi kerak (foydalanuvchidan so'raladi)
 
-- Telefon, Telegram, Instagram, manzil, ish vaqti — saytda `[...]` va `USERNAME` bilan belgilangan
+- **To'ldirildi (2026-10-01):** telefon +998 90 121 88 87, Telegram @sadulla_khaitov (hozircha hamma sahifadagi Telegram tugmalari shunga, ustalar sahifasidagi ham), Instagram @bukhara_tech
+- Manzil, ish vaqti — saytda `[...]` bilan belgilangan
 - Viloyat tumanlariga chiqiladimi
 - Har bir usta: shaxsiy rasm, shaxsiy aloqa, 3 tadan narx (`[NARX]`), haqiqiy ishlar rasmi va izohi, bio tuzatishlari
 - Bajarilgan ishlar soni (`[000]+`), `[N]` lar

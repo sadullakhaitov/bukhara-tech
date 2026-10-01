@@ -24,7 +24,7 @@ Sayt oddiy HTML/CSS/JS, hech qanday yig'ish (build) talab qilmaydi: `index.html`
 ## Hali to'ldirilishi kerak
 
 - Ustalarning rasmlari
-- Telefon, Telegram, Instagram, manzil, ish vaqti (`[...]` bilan belgilangan joylar)
+- Manzil, ish vaqti (`[...]` bilan belgilangan joylar)
 - Narxlar (`[NARX]`)
 - Haqiqiy bajarilgan ishlar rasmlari
 - Buyurtma formasini Telegram botga ulash
