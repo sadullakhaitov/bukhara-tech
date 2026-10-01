@@ -25,6 +25,5 @@ Sayt oddiy HTML/CSS/JS, hech qanday yig'ish (build) talab qilmaydi: `index.html`
 
 - Ustalarning rasmlari
 - Manzil, ish vaqti (`[...]` bilan belgilangan joylar)
-- Narxlar (`[NARX]`)
 - Haqiqiy bajarilgan ishlar rasmlari
 - Buyurtma formasini Telegram botga ulash

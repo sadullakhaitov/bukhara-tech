@@ -35,9 +35,11 @@ Jami staj: 40 yil (saytda shu raqam ishlatilgan).
 - **To'ldirildi (2026-10-01):** telefon +998 90 121 88 87, Telegram @sadulla_khaitov (hozircha hamma sahifadagi Telegram tugmalari shunga, ustalar sahifasidagi ham), Instagram @bukhara_tech
 - Manzil, ish vaqti — saytda `[...]` bilan belgilangan
 - Viloyat tumanlariga chiqiladimi
-- Har bir usta: shaxsiy rasm, shaxsiy aloqa, 3 tadan narx (`[NARX]`), haqiqiy ishlar rasmi va izohi, bio tuzatishlari
+- Har bir usta: shaxsiy rasm, shaxsiy aloqa, haqiqiy ishlar rasmi va izohi, bio tuzatishlari
+- **Narxlar (2026-10-01):** internetdagi Toshkent narxlari asosida Buxoro uchun taxminiy boshlang'ich narx qo'yildi (Toshkentdan biroz arzon). Ustalar o'zlari tasdiqlashi kerak.
+- **Mijozlar sharhlari:** foydalanuvchi o'ylab topilgan sharh so'radi — rad etildi (soxta sharh aldov). Faqat haqiqiy mijozlarning ruxsat bilan berilgan sharhlari qo'yiladi.
 - Bajarilgan ishlar soni (`[000]+`), `[N]` lar
-- Logotip bormi; mijozlar sharhlari bormi
+- Logotip: hozirgi 4 rangli kvadrat qoladi (foydalanuvchi tasdiqladi)
 - Forma so'rovi qayerga borsin (umumiy Telegram guruh yoki usta) — hozir `assets/main.js` faqat "qabul qilindi" xabarini ko'rsatadi, hech qayerga yubormaydi
 
 **Rasm qo'yish:** ustalar rasmini internetdan OLMANG (begona odam rasmi — aldov). `images/` ga `sadulla.jpg` va h.k. qo'yilib, `.photo` ichiga `<img src="images/maruf.jpg" alt="Maruf Usmonov">` qo'shiladi (CSS uni joyga to'ldiradi). `images/works/` dagi 23 ta rasm Unsplash'dan vaqtinchalik namuna ("Namuna" belgisi bilan), manbalari `images/works/MANBALAR.txt` da — haqiqiy ishlar bilan almashtirilishi kerak.
