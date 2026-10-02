@@ -4,12 +4,12 @@ Bu fayl Claude Code uchun: oldingi suhbatlarda qabul qilingan qarorlar va to'pla
 
 ## Loyiha nima
 
-Buxorodagi 4 kishilik jamoaning xizmatlar sayti. Har bir usta o'z yo'nalishida ishlaydi, bosh sahifada hammasi, har biriga alohida sahifa.
+Buxorodagi 5 kishilik jamoaning xizmatlar sayti. Har bir usta o'z yo'nalishida ishlaydi, bosh sahifada hammasi, har biriga alohida sahifa.
 
 - **Sayt:** https://sadullakhaitov.github.io/bukhara-tech/ (GitHub Pages, `main` tarmog'i, ildiz papka)
 - **Repo:** https://github.com/sadullakhaitov/bukhara-tech (public)
 - **Brend:** Bukhara Tech. Rejadagi domen `bukharatech.uz` (2026-09-30 da bo'sh edi, hali sotib olinmagan; olingach Pages'ga ulash kerak)
-- **Til:** asosiy o'zbek (lotin, `oʻ gʻ` uchun U+02BB `ʻ`). RU versiyasi `ru/` papkada (5 ta sahifa, 2026-10-01 da qo'shilgan; `../assets`, `../images` yo'llari). Matn o'zgarsa UZ va RU ikkalasini ham yangilang — jami 10 ta fayl.
+- **Til:** asosiy o'zbek (lotin, `oʻ gʻ` uchun U+02BB `ʻ`). RU versiyasi `ru/` papkada (6 ta sahifa, 2026-10-01 da qo'shilgan; `../assets`, `../images` yo'llari). Matn o'zgarsa UZ va RU ikkalasini ham yangilang — jami 12 ta fayl.
 
 ## Jamoa
 
@@ -19,8 +19,9 @@ Buxorodagi 4 kishilik jamoaning xizmatlar sayti. Har bir usta o'z yo'nalishida i
 | `sherali.html` | Sherali Bozorov | SysAdmin: tarmoqlar, internet, MikroTik | 15 yil | yashil `p-net` #0A7359 |
 | `doston.html` | Doston Muxammadov | DaVinci Resolve, Photoshop, Premiere Pro, After Effects (montaj, color grading) | 10 yil | pushti `p-media` #A8235F |
 | `maruf.html` | Maruf Usmonov | Kamera o'rnatish, sozlash, sbros, barcha kamera mahsulotlariga xizmat | 10 yil | jigarrang `p-cam` #8F530C |
+| `umid.html` | Umid Murodov (2026-10-02 qo'shilgan) | Full-Stack dasturchi, AI prompt muhandisi, aqlli texnologiyalar integratori | 3 yil | binafsha `p-ai` #6D28D9 |
 
-Jami staj: 40 yil (saytda shu raqam ishlatilgan).
+Jami staj: 43 yil, 5 yo'nalish (saytda shu raqamlar). Logotip 4 rangli kvadratligicha qoldi.
 
 ## Dizayn qarorlari
 
@@ -28,7 +29,7 @@ Jami staj: 40 yil (saytda shu raqam ishlatilgan).
 - **Rad etilgan:** Buxoro ravoqlari va girih naqshli, Bricolage Grotesque shriftli uslub — foydalanuvchiga "umuman yoqmadi". Qaytarmang.
 - **Kunduzgi/tungi rejim:** headerdagi oy/quyosh tugmasi (`.theme-btn`). Ranglar `[data-theme="dark"]` da qayta belgilangan (`assets/style.css`), tanlov `localStorage` da saqlanadi, birinchi kirishda tizim sozlamasiga qaraladi (`<head>` dagi kichik skript). Rangli fon ustidagi matn uchun `#fff` emas, `var(--on-acc)` ishlating.
 - Sayt oddiy HTML/CSS/JS, build yo'q. `assets/style.css` da 3 ta breakpoint: 1200, 900, 600 px. Telefon versiyasi 390 px da tekshirilgan.
-- Sahifalar dastlab Python skripti bilan yig'ilgan, lekin skript repoda **yo'q** — endi HTML fayllarni to'g'ridan-to'g'ri tahrirlang. Ko'p sahifali o'zgarishda (masalan header) 5 ta faylning hammasini birdek o'zgartirishni unutmang.
+- Sahifalar dastlab Python skripti bilan yig'ilgan, lekin skript repoda **yo'q** — endi HTML fayllarni to'g'ridan-to'g'ri tahrirlang. Ko'p sahifali o'zgarishda (masalan header) 6 ta faylning (UZ+RU — 12 ta) hammasini birdek o'zgartirishni unutmang.
 
 ## Hali to'ldirilishi kerak (foydalanuvchidan so'raladi)
 
@@ -52,7 +53,7 @@ E'lonlar soni (raqobat ko'rsatkichi): sayt/bot 57, Wi-Fi/internet 42, kamera 41,
 
 **Raqobatchilar:** areainfo.uz / elit.uz (Buxoro web studiya, 2000-yildan, landing $300 dan), mirumitech.uz (Buxoro, dasturlash), trassir-asia.uz (videokuzatuv, Buxoroda ofisi, mehmonxonalar), NEW STAR BUKHARA (kompyuter/Hikvision). Namuna ko'p xizmatli saytlar: adminz.uz (eng yaxshi namuna), alextech.uz, web-labs.kz.
 
-**Bosh sahifa tuzilishi (2026-10-02, mijoz psixologiyasi bo'yicha qayta tuzilgan):** hero (bitta asosiy tugma "Telegramga yozish" + "Narxlarni ko'rish" havolasi, ostida "15 daqiqada javob beramiz · Ko'rik bepul", o'ngda katta ish rasmi uchun placeholder `.hero-photo`) → `#xizmatlar` (4 karta mijoz muammosi tilida, "...dan" narx) → `#ishlar` (6 ish rasmi + 3 ta izoh kartasi `[Mijoz ismi]` placeholder bilan + "Biz ishlagan joylar" logotip joylari) → `#setlar` (Do'kon 890 000, **Ofis 1 790 000 — "Eng ko'p tanlanadi", ajratilgan**, Mehmonxona 3 690 000; har birida "6 oy bepul xizmat kafolati" va "+ uskunalar taxminan N mln") → `#jarayon` → `#jamoa` (texnik yozuvlarsiz, har ustaga iliq jumla) → `#kalkulyator` (4 ta ochiladigan guruh, boshida Kamera 4 dona) → `#savollar` (15 FAQ + FAQPage JSON-LD) → `#aloqa` (iliq `.final` blok + forma). Telefonda (≤600px) pastda doimiy `.mbar` (Telegram / Qo'ng'iroq) — 10 ta sahifaning hammasida. Ish vaqti: Du–Sha, 09:00–19:00. "Sbros" o'rniga "Parolni tiklash". Usta sahifalarida "RASM" va "N-bo'lim" yozuvlari olib tashlangan. Narx o'zgarsa: usta sahifasi (UZ+RU), xizmat kartalari, kalkulyator, setlar va FAQ JSON-LD ni tekshiring.
+**Bosh sahifa tuzilishi (2026-10-02, mijoz psixologiyasi bo'yicha qayta tuzilgan):** hero (bitta asosiy tugma "Telegramga yozish" + "Narxlarni ko'rish" havolasi, ostida "15 daqiqada javob beramiz · Ko'rik bepul", o'ngda katta ish rasmi uchun placeholder `.hero-photo`) → `#xizmatlar` (4 karta mijoz muammosi tilida, "...dan" narx) → `#ishlar` (6 ish rasmi + 3 ta izoh kartasi `[Mijoz ismi]` placeholder bilan + "Biz ishlagan joylar" logotip joylari) → `#setlar` (Do'kon 890 000, **Ofis 1 790 000 — "Eng ko'p tanlanadi", ajratilgan**, Mehmonxona 3 690 000; har birida "6 oy bepul xizmat kafolati" va "+ uskunalar taxminan N mln") → `#jarayon` → `#jamoa` (texnik yozuvlarsiz, har ustaga iliq jumla) → `#kalkulyator` (4 ta ochiladigan guruh, boshida Kamera 4 dona) → `#savollar` (15 FAQ + FAQPage JSON-LD) → `#aloqa` (iliq `.final` blok + forma). Telefonda (≤600px) pastda doimiy `.mbar` (Telegram / Qo'ng'iroq) — hamma sahifalarda. Xizmatlar va Jamoa — 5 tadan karta (Umid: AI). Ish vaqti: Du–Sha, 09:00–19:00. "Sbros" o'rniga "Parolni tiklash". Usta sahifalarida "RASM" va "N-bo'lim" yozuvlari olib tashlangan. Narx o'zgarsa: usta sahifasi (UZ+RU), xizmat kartalari, kalkulyator, setlar va FAQ JSON-LD ni tekshiring.
 - Izohlar namunaviy placeholder — faqat haqiqiy mijoz izohlari bilan almashtiriladi (o'ylab topilgan izoh yozilmaydi).
 
 **Kelajakdagi g'oyalar** (foydalanuvchi hali tasdiqlamagan): formani Telegram botga ulash, Google Maps / Yandex.

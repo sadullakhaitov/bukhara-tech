@@ -1,6 +1,6 @@
 # Bukhara Tech
 
-Buxorodagi IT va media xizmatlari jamoasining sayti: kamera o'rnatish, tarmoq va MikroTik, video montaj, sayt va Telegram botlar.
+Buxorodagi IT va media xizmatlari jamoasining sayti: kamera o'rnatish, tarmoq va MikroTik, video montaj, sayt va Telegram botlar, AI va avtomatlashtirish.
 
 ## Sahifalar
 
@@ -11,7 +11,8 @@ Buxorodagi IT va media xizmatlari jamoasining sayti: kamera o'rnatish, tarmoq va
 | `sherali.html` | Sherali Bozorov — tarmoq, internet, MikroTik |
 | `doston.html` | Doston Muxammadov — video montaj, color grading |
 | `maruf.html` | Maruf Usmonov — kuzatuv kameralari |
-| `ru/*.html` | Yuqoridagi 5 sahifaning ruscha versiyasi |
+| `umid.html` | Umid Murodov — AI botlar, avtomatlashtirish, aqlli texnologiyalar |
+| `ru/*.html` | Yuqoridagi 6 sahifaning ruscha versiyasi |
 
 ## Tuzilishi
 

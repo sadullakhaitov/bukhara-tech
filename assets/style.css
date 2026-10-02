@@ -13,6 +13,7 @@
   --net: #0A7359;   --net-lt: #DFF1EB;
   --media: #A8235F; --media-lt: #F7E3EC;
   --cam: #8F530C;   --cam-lt: #F6EBDA;
+  --ai: #6D28D9;    --ai-lt: #EDE7FB;
 
   --acc: var(--web);
   --lt: var(--web-lt);
@@ -41,6 +42,7 @@
   --net: #45C49C;   --net-lt: #13322B;
   --media: #EC79AA; --media-lt: #3B1A2A;
   --cam: #E0A35A;   --cam-lt: #372814;
+  --ai: #B39BF7;    --ai-lt: #2A2045;
 
   --on-acc: #0E1319;
 }
@@ -49,6 +51,7 @@
 .p-net   { --acc: var(--net);   --lt: var(--net-lt); }
 .p-media { --acc: var(--media); --lt: var(--media-lt); }
 .p-cam   { --acc: var(--cam);   --lt: var(--cam-lt); }
+.p-ai    { --acc: var(--ai);    --lt: var(--ai-lt); }
 
 *, *::before, *::after { box-sizing: border-box; }
 html { scroll-behavior: smooth; scroll-padding-top: 84px; }
@@ -168,13 +171,13 @@ p { margin: 0; }
 .section-white { background: var(--surf); border-block: 1px solid var(--line); }
 .section .sec-head { margin-bottom: 48px; }
 
-.team { display: grid; grid-template-columns: repeat(4, minmax(0, 1fr)); gap: 20px; }
+.team { display: grid; grid-template-columns: repeat(5, minmax(0, 1fr)); gap: 16px; }
 .card { display: flex; flex-direction: column; background: var(--surf); border: 1px solid var(--line); border-radius: 20px; overflow: hidden; }
-.card .photo { height: 320px; border-radius: 0; }
-.card .photo-ini { font-size: 88px; }
+.card .photo { height: 280px; border-radius: 0; }
+.card .photo-ini { font-size: 72px; }
 .card-body { display: flex; flex-direction: column; gap: 12px; padding: 22px 24px 24px; flex-grow: 1; }
 .card-role { font-family: var(--mono); font-size: 12px; letter-spacing: .08em; text-transform: uppercase; color: var(--acc); }
-.card h3 { font-family: var(--disp); font-weight: 600; font-size: 21px; letter-spacing: -.01em; }
+.card h3 { font-family: var(--disp); font-weight: 600; font-size: 19px; letter-spacing: -.01em; }
 .card-years { display: flex; align-items: baseline; gap: 8px; }
 .card-years b { font-family: var(--disp); font-weight: 600; font-size: 28px; color: var(--acc); }
 .card-years span { font-size: 14px; color: var(--muted); }
@@ -335,7 +338,7 @@ p { margin: 0; }
 
 .others { padding-bottom: 72px; }
 .others h2 { font-family: var(--disp); font-weight: 600; font-size: 26px; letter-spacing: -.02em; margin-bottom: 28px; }
-.others-list { display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); gap: 20px; list-style: none; margin: 0; padding: 0; }
+.others-list { display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 20px; list-style: none; margin: 0; padding: 0; }
 .other { display: flex; align-items: center; gap: 16px; padding: 18px; background: var(--surf); border: 1px solid var(--line); border-radius: 16px; text-decoration: none; }
 .other .photo { width: 72px; height: 72px; flex-shrink: 0; }
 .other .photo-ini { font-size: 22px; }
@@ -345,7 +348,7 @@ p { margin: 0; }
 .other > svg { width: 16px; height: 16px; color: var(--acc); flex-shrink: 0; }
 
 /* ---------- Xizmatlar (muammo tilida) ---------- */
-.svcs { display: grid; grid-template-columns: repeat(4, minmax(0, 1fr)); gap: 20px; }
+.svcs { display: grid; grid-template-columns: repeat(5, minmax(0, 1fr)); gap: 16px; }
 .svc { display: flex; flex-direction: column; gap: 12px; padding: 28px 24px 24px; background: var(--surf); border: 1px solid var(--line); border-top: 4px solid var(--acc); border-radius: 20px; }
 .svc-icon { display: flex; align-items: center; justify-content: center; width: 52px; height: 52px; border-radius: 14px; background: var(--lt); color: var(--acc); }
 .svc-icon svg { width: 28px; height: 28px; }
