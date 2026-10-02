@@ -95,6 +95,13 @@ if (calc) {
       li.textContent = empty;
       picked.append(li);
     }
+    calc.querySelectorAll(".calc-group").forEach((g) => {
+      let gs = 0;
+      g.querySelectorAll(".calc-row").forEach((r) => {
+        gs += (parseInt(r.querySelector("input").value, 10) || 0) * Number(r.dataset.price);
+      });
+      g.querySelector(".calc-gsum").textContent = gs ? `${money(gs)} ${cur}` : "";
+    });
     total.textContent = s ? `${money(s)} ${cur}${from || ""}` : `0 ${cur}`;
     order.setAttribute("aria-disabled", String(!s));
     order.dataset.order = s ? `${msg}\n${lines.join("\n")}\n≈ ${money(s)} ${cur}` : "";

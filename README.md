@@ -6,7 +6,7 @@ Buxorodagi IT va media xizmatlari jamoasining sayti: kamera o'rnatish, tarmoq va
 
 | Fayl | Sahifa |
 |---|---|
-| `index.html` | Bosh sahifa: jamoa, tayyor setlar, narx kalkulyatori, ish jarayoni, savol-javoblar, buyurtma formasi |
+| `index.html` | Bosh sahifa: xizmatlar, ishlar va izohlar, setlar, ish jarayoni, jamoa, narx kalkulyatori, savol-javoblar, aloqa |
 | `sadulla.html` | Sa'dulla Khaitov — sayt, Telegram bot, prezentatsiya |
 | `sherali.html` | Sherali Bozorov — tarmoq, internet, MikroTik |
 | `doston.html` | Doston Muxammadov — video montaj, color grading |

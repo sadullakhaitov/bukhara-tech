@@ -33,7 +33,7 @@ Jami staj: 40 yil (saytda shu raqam ishlatilgan).
 ## Hali to'ldirilishi kerak (foydalanuvchidan so'raladi)
 
 - **To'ldirildi (2026-10-01):** telefon +998 90 121 88 87, Telegram @sadulla_khaitov (hozircha hamma sahifadagi Telegram tugmalari shunga, ustalar sahifasidagi ham), Instagram @bukhara_tech
-- Manzil, ish vaqti — saytda `[...]` bilan belgilangan
+- Manzil (ish vaqti qo'yildi: Du–Sha, 09:00–19:00)
 - Viloyat tumanlariga chiqiladimi
 - Har bir usta: shaxsiy rasm, shaxsiy aloqa, haqiqiy ishlar rasmi va izohi, bio tuzatishlari
 - **Narxlar (2026-10-01):** internetdagi Toshkent narxlari asosida Buxoro uchun taxminiy boshlang'ich narx qo'yildi (Toshkentdan biroz arzon). Ustalar o'zlari tasdiqlashi kerak.
@@ -52,9 +52,10 @@ E'lonlar soni (raqobat ko'rsatkichi): sayt/bot 57, Wi-Fi/internet 42, kamera 41,
 
 **Raqobatchilar:** areainfo.uz / elit.uz (Buxoro web studiya, 2000-yildan, landing $300 dan), mirumitech.uz (Buxoro, dasturlash), trassir-asia.uz (videokuzatuv, Buxoroda ofisi, mehmonxonalar), NEW STAR BUKHARA (kompyuter/Hikvision). Namuna ko'p xizmatli saytlar: adminz.uz (eng yaxshi namuna), alextech.uz, web-labs.kz.
 
-**Bosh sahifa bo'limlari (2026-10-01):** hero → Jamoa → `#setlar` (3 ta set: Do'kon 890 000, Ofis 1 790 000, Mehmonxona 3 690 000 — alohida narx yig'indisidan ~15% arzon, uskunasiz) → `#kalkulyator` (narxlar `data-price` da, usta sahifalaridagi narxlar bilan bir xil bo'lishi kerak) → Jarayon → `#savollar` (15 ta FAQ + FAQPage JSON-LD `<head>` da) → Aloqa. Set/kalkulyator tugmasi formadagi "Xabar" maydonini to'ldiradi (`data-order`). Menyu 5 ta havola, 1200 px dan past burger. Narx o'zgarsa: usta sahifasi (UZ+RU), kalkulyator, setlar va FAQ JSON-LD ni tekshiring.
+**Bosh sahifa tuzilishi (2026-10-02, mijoz psixologiyasi bo'yicha qayta tuzilgan):** hero (bitta asosiy tugma "Telegramga yozish" + "Narxlarni ko'rish" havolasi, ostida "15 daqiqada javob beramiz · Ko'rik bepul", o'ngda katta ish rasmi uchun placeholder `.hero-photo`) → `#xizmatlar` (4 karta mijoz muammosi tilida, "...dan" narx) → `#ishlar` (6 ish rasmi + 3 ta izoh kartasi `[Mijoz ismi]` placeholder bilan + "Biz ishlagan joylar" logotip joylari) → `#setlar` (Do'kon 890 000, **Ofis 1 790 000 — "Eng ko'p tanlanadi", ajratilgan**, Mehmonxona 3 690 000; har birida "6 oy bepul xizmat kafolati" va "+ uskunalar taxminan N mln") → `#jarayon` → `#jamoa` (texnik yozuvlarsiz, har ustaga iliq jumla) → `#kalkulyator` (4 ta ochiladigan guruh, boshida Kamera 4 dona) → `#savollar` (15 FAQ + FAQPage JSON-LD) → `#aloqa` (iliq `.final` blok + forma). Telefonda (≤600px) pastda doimiy `.mbar` (Telegram / Qo'ng'iroq) — 10 ta sahifaning hammasida. Ish vaqti: Du–Sha, 09:00–19:00. "Sbros" o'rniga "Parolni tiklash". Usta sahifalarida "RASM" va "N-bo'lim" yozuvlari olib tashlangan. Narx o'zgarsa: usta sahifasi (UZ+RU), xizmat kartalari, kalkulyator, setlar va FAQ JSON-LD ni tekshiring.
+- Izohlar namunaviy placeholder — faqat haqiqiy mijoz izohlari bilan almashtiriladi (o'ylab topilgan izoh yozilmaydi).
 
-**Kelajakdagi g'oyalar** (foydalanuvchi hali tasdiqlamagan): "Bepul ko'rik" tugmasi, haqiqiy mijozlar sharhlari, formani Telegram botga ulash, kafolat yozuvi, Google Maps / Yandex.
+**Kelajakdagi g'oyalar** (foydalanuvchi hali tasdiqlamagan): formani Telegram botga ulash, Google Maps / Yandex.
 
 ## Ish tartibi
 
