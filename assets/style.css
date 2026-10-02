@@ -139,10 +139,18 @@ p { margin: 0; }
 .nav a { text-decoration: none; }
 .header-right { display: flex; align-items: center; gap: 12px; }
 .header-right .lang { margin-right: 8px; }
-.lang { display: flex; gap: 4px; font-family: var(--mono); font-size: 13px; }
-.lang span, .lang a { padding: 6px 10px; border-radius: 8px; text-decoration: none; }
-.lang .on { background: var(--soft); font-weight: 700; }
-.lang a { color: var(--muted); }
+/* Til tanlash: globus tugmasi + ochiladigan ro'yxat */
+.lang { position: relative; }
+.lang-btn { display: inline-flex; align-items: center; gap: 6px; height: 44px; padding: 0 12px; border: 1px solid var(--line); border-radius: 999px; background: var(--surf); color: var(--ink); font: 700 13px/1 var(--mono); cursor: pointer; }
+.lang-btn > svg:first-child { width: 18px; height: 18px; }
+.lang-chev { width: 14px; height: 14px; transition: transform .2s; }
+.lang-btn[aria-expanded="true"] .lang-chev { transform: rotate(180deg); }
+.lang-menu { position: absolute; right: 0; top: calc(100% + 8px); z-index: 50; min-width: 190px; margin: 0; padding: 6px; list-style: none; border: 1px solid var(--line); border-radius: 16px; background: var(--surf); box-shadow: 0 18px 44px -16px rgba(16, 24, 32, .3); }
+.lang-menu a { display: flex; align-items: center; gap: 12px; padding: 10px 12px; border-radius: 10px; text-decoration: none; color: var(--ink); font-weight: 600; font-size: 15px; }
+.lang-menu a b { font-family: var(--mono); font-size: 12px; color: var(--muted); width: 22px; }
+.lang-menu a:hover { background: var(--soft); color: var(--ink); }
+.lang-menu a[aria-current="true"] { background: var(--soft); }
+.lang-menu a[aria-current="true"]::after { content: "✓"; margin-left: auto; color: var(--web); font-weight: 700; }
 .header .btn { height: 44px; padding: 0 20px; border-radius: 10px; font-size: 15px; }
 .burger { display: none; width: 44px; height: 44px; border: 1px solid var(--line); border-radius: 10px; background: var(--surf); color: var(--ink); cursor: pointer; align-items: center; justify-content: center; }
 .burger svg { width: 22px; height: 22px; }
@@ -477,7 +485,8 @@ p { margin: 0; }
   .logo-text { font-size: 17px; }
   .header-right { gap: 8px; }
   .header-right .lang { margin-right: 0; }
-  .lang .on { display: none; }
+  .lang-btn { height: 40px; padding: 0 10px; gap: 4px; }
+  .lang-chev { display: none; }
   .theme-btn, .burger { width: 40px; height: 40px; }
 
   .eyebrow { font-size: 12px; letter-spacing: .06em; }
@@ -659,14 +668,15 @@ body::before {
 .field input, .field select, .field textarea { background: color-mix(in srgb, var(--bg) 70%, transparent); }
 
 /* Haqiqiy xiralashtirish (blur) — faqat ustma-ust turadigan joylarda */
-.header, .mbar, .hero-chip, .hero-grid .hero-tag, .theme-btn, .burger, .btn-outline, .lang .on {
+.header, .mbar, .hero-chip, .hero-grid .hero-tag, .theme-btn, .burger, .btn-outline, .lang-btn {
   -webkit-backdrop-filter: var(--blur);
   backdrop-filter: var(--blur);
 }
 .header { background: var(--glass-sheen), var(--glass-strong); border-bottom-color: var(--glass-edge); box-shadow: var(--glass-hi), 0 6px 30px -18px rgba(16, 24, 32, .25); }
 .header.open .nav { background: var(--glass-strong); -webkit-backdrop-filter: var(--blur); backdrop-filter: var(--blur); }
 .mbar { background: var(--glass-strong); border-top-color: var(--glass-edge); }
-.theme-btn, .burger { background: var(--glass); border-color: var(--glass-border); box-shadow: var(--glass-hi); }
+.theme-btn, .burger, .lang-btn { background: var(--glass); border-color: var(--glass-border); box-shadow: var(--glass-hi); }
+.lang-menu { background: var(--glass-sheen), var(--surf); border-color: var(--glass-border); box-shadow: var(--glass-hi), 0 18px 44px -16px rgba(16, 24, 32, .3); }
 .btn-outline { background: var(--glass); }
 .hero-chip { background: var(--glass-strong); box-shadow: var(--glass-hi), 0 6px 20px -10px rgba(0, 0, 0, .35); }
 .hero-grid .hero-tag { background: var(--glass-strong); }

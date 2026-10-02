@@ -1,12 +1,15 @@
-const ru = document.documentElement.lang === "ru";
+const LANG = document.documentElement.lang;
+const ru = LANG === "ru";
+// Uch tilli matn: tx("o'zbekcha", "русский", "english")
+const tx = (uz, r, en) => (LANG === "ru" ? r : LANG === "en" ? en : uz);
 
 // Kunduzgi / tungi rejim. Boshlang'ich qiymat <head> dagi skriptda o'rnatiladi.
 const root = document.documentElement;
 const themeBtn = document.querySelector(".theme-btn");
 const themeLabel = (dark) =>
   dark
-    ? (ru ? "Включить светлую тему" : "Kunduzgi rejimni yoqish")
-    : (ru ? "Включить тёмную тему" : "Tungi rejimni yoqish");
+    ? tx("Kunduzgi rejimni yoqish", "Включить светлую тему", "Switch to light mode")
+    : tx("Tungi rejimni yoqish", "Включить тёмную тему", "Switch to dark mode");
 if (themeBtn) {
   themeBtn.setAttribute("aria-label", themeLabel(root.dataset.theme === "dark"));
   themeBtn.addEventListener("click", () => {
@@ -14,6 +17,27 @@ if (themeBtn) {
     root.dataset.theme = dark ? "dark" : "light";
     themeBtn.setAttribute("aria-label", themeLabel(dark));
     try { localStorage.setItem("theme", root.dataset.theme); } catch (e) {}
+  });
+}
+
+// Til tanlash: globus tugmasi bosilganda ro'yxat ochiladi
+const langBtn = document.querySelector(".lang-btn");
+const langMenu = document.querySelector(".lang-menu");
+if (langBtn && langMenu) {
+  const setOpen = (open) => {
+    langMenu.hidden = !open;
+    langBtn.setAttribute("aria-expanded", String(open));
+  };
+  langBtn.addEventListener("click", (e) => {
+    e.stopPropagation();
+    setOpen(langMenu.hidden);
+    if (!langMenu.hidden) langMenu.querySelector("a")?.focus({ preventScroll: true });
+  });
+  document.addEventListener("click", (e) => {
+    if (!langMenu.hidden && !langMenu.contains(e.target)) setOpen(false);
+  });
+  document.addEventListener("keydown", (e) => {
+    if (e.key === "Escape" && !langMenu.hidden) { setOpen(false); langBtn.focus(); }
   });
 }
 
@@ -25,8 +49,8 @@ if (header && burger) {
     const open = header.classList.toggle("open");
     burger.setAttribute("aria-expanded", String(open));
     burger.setAttribute("aria-label", open
-      ? (ru ? "Закрыть меню" : "Menyuni yopish")
-      : (ru ? "Открыть меню" : "Menyuni ochish"));
+      ? tx("Menyuni yopish", "Закрыть меню", "Close menu")
+      : tx("Menyuni ochish", "Открыть меню", "Open menu"));
   });
   header.querySelectorAll(".nav a").forEach((a) =>
     a.addEventListener("click", () => {
@@ -54,7 +78,7 @@ if (form) {
       btn.disabled = true;
       try {
         const data = Object.fromEntries(new FormData(form));
-        data.lang = ru ? "ru" : "uz";
+        data.lang = LANG;
         data.page = location.pathname;
         const r = await fetch(FORM_ENDPOINT, {
           method: "POST",

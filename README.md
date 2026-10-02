@@ -13,6 +13,7 @@ Buxorodagi IT va media xizmatlari jamoasining sayti: kamera o'rnatish, tarmoq va
 | `maruf.html` | Maruf Usmonov — kuzatuv kameralari |
 | `umid.html` | Umid Murodov — AI botlar, avtomatlashtirish, aqlli texnologiyalar |
 | `ru/*.html` | Yuqoridagi 6 sahifaning ruscha versiyasi |
+| `en/*.html` | Yuqoridagi 6 sahifaning inglizcha versiyasi |
 
 ## Tuzilishi
 
