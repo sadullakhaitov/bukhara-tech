@@ -129,7 +129,7 @@ p { margin: 0; }
 .nav { display: flex; gap: 6px; font-size: 15px; font-weight: 600; }
 /* Kompyuterda menyu headerning ikkinchi qatorida — har yo'nalish o'z rangida */
 @media (min-width: 1201px) {
-  .header .wrap { flex-wrap: wrap; row-gap: 0; min-height: 72px; }
+  .header .wrap { flex-wrap: wrap; row-gap: 12px; min-height: 72px; padding-top: 14px; }
   .nav { order: 3; width: 100%; justify-content: space-between; padding: 8px 0 10px; border-top: 1px solid var(--line); }
 }
 .nav a { white-space: nowrap; display: inline-flex; align-items: center; gap: 8px; padding: 8px 14px; border-radius: 999px; transition: background-color .15s; }
@@ -604,4 +604,87 @@ p { margin: 0; }
   .other { padding: 14px; gap: 14px; }
   .other .photo { width: 56px; height: 56px; }
   .other .photo-ini { font-size: 18px; }
+}
+
+/* =====================================================================
+   Liquid glass — shaffof "shisha" qatlam (2026-10-02)
+   Fonda ustalar ranglaridan yumshoq dog'lar, ustida xira shisha yuzalar.
+   ===================================================================== */
+:root {
+  --glass: rgba(255, 255, 255, .58);
+  --glass-strong: rgba(255, 255, 255, .72);
+  --glass-border: rgba(255, 255, 255, .75);
+  --glass-edge: rgba(16, 24, 32, .08);
+  --glass-hi: inset 0 1px 0 rgba(255, 255, 255, .9), inset 0 -1px 0 rgba(255, 255, 255, .25);
+  --glass-shadow: 0 10px 40px -16px rgba(16, 24, 32, .18);
+  --glass-sheen: linear-gradient(135deg, rgba(255, 255, 255, .55) 0%, rgba(255, 255, 255, 0) 42%);
+  --blur: blur(22px) saturate(180%);
+}
+[data-theme="dark"] {
+  --glass: rgba(22, 29, 38, .55);
+  --glass-strong: rgba(22, 29, 38, .72);
+  --glass-border: rgba(255, 255, 255, .09);
+  --glass-edge: rgba(255, 255, 255, .06);
+  --glass-hi: inset 0 1px 0 rgba(255, 255, 255, .10), inset 0 -1px 0 rgba(255, 255, 255, .02);
+  --glass-shadow: 0 14px 44px -18px rgba(0, 0, 0, .7);
+  --glass-sheen: linear-gradient(135deg, rgba(255, 255, 255, .07) 0%, rgba(255, 255, 255, 0) 45%);
+}
+
+/* Fon: 5 yo'nalish rangidagi xira dog'lar */
+body { isolation: isolate; }
+body::before {
+  content: ""; position: fixed; inset: -10vmax; z-index: -1; pointer-events: none;
+  background:
+    radial-gradient(38vmax 30vmax at 8% 6%,  color-mix(in srgb, var(--web) 22%, transparent), transparent 70%),
+    radial-gradient(34vmax 28vmax at 92% 14%, color-mix(in srgb, var(--net) 18%, transparent), transparent 70%),
+    radial-gradient(36vmax 30vmax at 86% 88%, color-mix(in srgb, var(--media) 16%, transparent), transparent 70%),
+    radial-gradient(34vmax 28vmax at 10% 92%, color-mix(in srgb, var(--cam) 16%, transparent), transparent 70%),
+    radial-gradient(30vmax 26vmax at 50% 50%, color-mix(in srgb, var(--ai) 12%, transparent), transparent 70%);
+}
+
+/* Sahifa bo'limlari ham yarim shaffof */
+.section-white { background: color-mix(in srgb, var(--surf) 45%, transparent); border-color: var(--glass-edge); }
+.footer { background: var(--glass); border-color: var(--glass-edge); }
+
+/* Shisha yuzalar: kartalar */
+.svc, .set, .card, .step, .review, .price, .other, .calc-group, .calc-sum, .contact-box {
+  background: var(--glass-sheen), var(--glass);
+  border-color: var(--glass-border);
+  box-shadow: var(--glass-hi), var(--glass-shadow);
+}
+.svc { border-top-color: var(--acc); }
+.set.set-hot { background: var(--glass-sheen), color-mix(in srgb, var(--web-lt) 80%, transparent); border-color: var(--web); }
+.set-acc.set-hot { background: var(--glass-sheen), color-mix(in srgb, var(--lt) 80%, transparent); border-color: var(--acc); }
+.stepper { background: color-mix(in srgb, var(--bg) 70%, transparent); }
+.field input, .field select, .field textarea { background: color-mix(in srgb, var(--bg) 70%, transparent); }
+
+/* Haqiqiy xiralashtirish (blur) — faqat ustma-ust turadigan joylarda */
+.header, .mbar, .hero-chip, .hero-grid .hero-tag, .theme-btn, .burger, .btn-outline, .lang .on {
+  -webkit-backdrop-filter: var(--blur);
+  backdrop-filter: var(--blur);
+}
+.header { background: var(--glass-sheen), var(--glass-strong); border-bottom-color: var(--glass-edge); box-shadow: var(--glass-hi), 0 6px 30px -18px rgba(16, 24, 32, .25); }
+.header.open .nav { background: var(--glass-strong); -webkit-backdrop-filter: var(--blur); backdrop-filter: var(--blur); }
+.mbar { background: var(--glass-strong); border-top-color: var(--glass-edge); }
+.theme-btn, .burger { background: var(--glass); border-color: var(--glass-border); box-shadow: var(--glass-hi); }
+.btn-outline { background: var(--glass); }
+.hero-chip { background: var(--glass-strong); box-shadow: var(--glass-hi), 0 6px 20px -10px rgba(0, 0, 0, .35); }
+.hero-grid .hero-tag { background: var(--glass-strong); }
+.hero-tile { box-shadow: var(--glass-shadow); }
+
+/* Tugmalarda nozik yaltiroqlik */
+.btn-dark, .btn-acc { background-image: linear-gradient(180deg, rgba(255, 255, 255, .16), rgba(255, 255, 255, 0) 55%); box-shadow: inset 0 1px 0 rgba(255, 255, 255, .22), 0 8px 20px -10px color-mix(in srgb, var(--ink) 60%, transparent); }
+.btn-acc { box-shadow: inset 0 1px 0 rgba(255, 255, 255, .25), 0 10px 24px -12px var(--acc); }
+.svc, .set, .card, .other, .hero-tile { transition: transform .25s ease, box-shadow .25s ease; }
+@media (hover: hover) {
+  .svc:hover, .card:hover, .other:hover { transform: translateY(-4px); box-shadow: var(--glass-hi), 0 18px 44px -18px rgba(16, 24, 32, .28); }
+}
+
+/* Shaffoflikni kamaytirish sozlamasi yoki blur yo'q bo'lsa — oddiy yuzalar */
+@supports not ((backdrop-filter: blur(1px)) or (-webkit-backdrop-filter: blur(1px))) {
+  .header, .mbar, .header.open .nav { background: var(--surf); }
+}
+@media (prefers-reduced-transparency: reduce) {
+  body::before { display: none; }
+  .header, .mbar, .header.open .nav, .svc, .set, .card, .step, .review, .price, .other, .calc-group, .calc-sum, .contact-box, .footer, .section-white { background: var(--surf); -webkit-backdrop-filter: none; backdrop-filter: none; }
 }
