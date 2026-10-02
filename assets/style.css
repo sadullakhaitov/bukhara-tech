@@ -171,13 +171,15 @@ p { margin: 0; }
 .section-white { background: var(--surf); border-block: 1px solid var(--line); }
 .section .sec-head { margin-bottom: 48px; }
 
-.team { display: grid; grid-template-columns: repeat(5, minmax(0, 1fr)); gap: 16px; }
+/* 5 ta karta: yuqorida 3, pastda 2 ta — o'rtada */
+.team, .svcs { display: flex; flex-wrap: wrap; justify-content: center; gap: 20px; }
+.team > *, .svcs > * { flex: 0 1 calc((100% - 40px) / 3); min-width: 0; }
 .card { display: flex; flex-direction: column; background: var(--surf); border: 1px solid var(--line); border-radius: 20px; overflow: hidden; }
-.card .photo { height: 280px; border-radius: 0; }
-.card .photo-ini { font-size: 72px; }
+.card .photo { height: 300px; border-radius: 0; }
+.card .photo-ini { font-size: 88px; }
 .card-body { display: flex; flex-direction: column; gap: 12px; padding: 22px 24px 24px; flex-grow: 1; }
 .card-role { font-family: var(--mono); font-size: 12px; letter-spacing: .08em; text-transform: uppercase; color: var(--acc); }
-.card h3 { font-family: var(--disp); font-weight: 600; font-size: 19px; letter-spacing: -.01em; }
+.card h3 { font-family: var(--disp); font-weight: 600; font-size: 21px; letter-spacing: -.01em; }
 .card-years { display: flex; align-items: baseline; gap: 8px; }
 .card-years b { font-family: var(--disp); font-weight: 600; font-size: 28px; color: var(--acc); }
 .card-years span { font-size: 14px; color: var(--muted); }
@@ -348,7 +350,6 @@ p { margin: 0; }
 .other > svg { width: 16px; height: 16px; color: var(--acc); flex-shrink: 0; }
 
 /* ---------- Xizmatlar (muammo tilida) ---------- */
-.svcs { display: grid; grid-template-columns: repeat(5, minmax(0, 1fr)); gap: 16px; }
 .svc { display: flex; flex-direction: column; gap: 12px; padding: 28px 24px 24px; background: var(--surf); border: 1px solid var(--line); border-top: 4px solid var(--acc); border-radius: 20px; }
 .svc-icon { display: flex; align-items: center; justify-content: center; width: 52px; height: 52px; border-radius: 14px; background: var(--lt); color: var(--acc); }
 .svc-icon svg { width: 28px; height: 28px; }
@@ -395,8 +396,7 @@ p { margin: 0; }
   .hero-text { max-width: 720px; }
   .hero-photo { width: 100%; }
   .hero-photo .photo { height: 420px; }
-  .svcs { grid-template-columns: repeat(2, minmax(0, 1fr)); }
-  .team { grid-template-columns: repeat(2, minmax(0, 1fr)); }
+  .team > *, .svcs > * { flex-basis: calc((100% - 20px) / 2); }
   .places { flex-direction: column; align-items: stretch; }
   .places ul { grid-template-columns: repeat(3, minmax(0, 1fr)); }
   .profile .photo { width: 400px; height: 500px; }
@@ -460,7 +460,8 @@ p { margin: 0; }
   .link-arrow { justify-content: center; }
   .promise { justify-content: center; font-size: 13px; }
   .hero-photo .photo { height: 240px; border-radius: 16px; }
-  .svcs { grid-template-columns: 1fr; gap: 12px; }
+  .svcs { gap: 12px; }
+  .team > *, .svcs > * { flex-basis: 100%; }
   .svc { padding: 20px; gap: 10px; border-radius: 16px; }
   .svc-icon { width: 44px; height: 44px; }
   .svc h3 { font-size: 17px; }
@@ -482,7 +483,7 @@ p { margin: 0; }
   .section .sec-head { margin-bottom: 24px; }
 
   /* Jamoa: ixcham gorizontal kartalar */
-  .team { grid-template-columns: 1fr; gap: 12px; }
+  .team { gap: 12px; }
   .card { flex-direction: row; gap: 14px; padding: 14px; border-radius: 16px; }
   .card .photo { width: 104px; height: 132px; flex-shrink: 0; border-radius: 16px; }
   .card .photo-ini { font-size: 30px; }
