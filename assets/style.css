@@ -215,6 +215,10 @@ p { margin: 0; }
 .field input:focus, .field select:focus, .field textarea:focus { outline: none; border-color: var(--web); background: var(--surf); }
 .form .btn { width: 100%; }
 .form-done { padding: 14px; border-radius: 10px; background: var(--net-lt); color: var(--net); font-weight: 600; }
+.form-error { padding: 14px; border-radius: 10px; background: var(--media-lt); color: var(--media); font-weight: 600; }
+.form-error a { color: inherit; }
+.form .btn:disabled { opacity: .6; cursor: wait; }
+.hp { position: absolute; left: -9999px; width: 1px; height: 1px; overflow: hidden; }
 
 /* ---------- Setlar ---------- */
 .sets { display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); gap: 20px; align-items: stretch; padding-top: 14px; }

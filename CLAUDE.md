@@ -40,7 +40,7 @@ Jami staj: 40 yil (saytda shu raqam ishlatilgan).
 - **Mijozlar sharhlari:** foydalanuvchi o'ylab topilgan sharh so'radi — rad etildi (soxta sharh aldov). Faqat haqiqiy mijozlarning ruxsat bilan berilgan sharhlari qo'yiladi.
 - `[N]` lar (bajarilgan ishlar soni 250+ deb qo'yildi — foydalanuvchi aytgan)
 - Logotip: hozirgi 4 rangli kvadrat qoladi (foydalanuvchi tasdiqladi)
-- Forma so'rovi qayerga borsin (umumiy Telegram guruh yoki usta) — hozir `assets/main.js` faqat "qabul qilindi" xabarini ko'rsatadi, hech qayerga yubormaydi
+- **Forma → Telegram (2026-10-02):** `worker/form-worker.js` (Cloudflare Worker, token `BOT_TOKEN` va `CHAT_ID` Cloudflare secret'larida) tayyor, yo'riqnoma `worker/README.md`. Foydalanuvchi Worker'ni o'rnatib manzilini bersa, `assets/main.js` dagi `FORM_ENDPOINT` ga yoziladi. Hozircha bo'sh — forma hech qayerga yubormaydi. **Bot tokenini HECH QACHON repoga/sayt kodiga yozmang** (repo public).
 
 **Rasm qo'yish:** ustalar rasmini internetdan OLMANG (begona odam rasmi — aldov). `images/` ga `sadulla.jpg` va h.k. qo'yilib, `.photo` ichiga `<img src="images/maruf.jpg" alt="Maruf Usmonov">` qo'shiladi (CSS uni joyga to'ldiradi). `images/works/` dagi 23 ta rasm Unsplash'dan vaqtinchalik namuna ("Namuna" belgisi bilan), manbalari `images/works/MANBALAR.txt` da — haqiqiy ishlar bilan almashtirilishi kerak.
 

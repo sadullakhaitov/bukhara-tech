@@ -36,16 +36,41 @@ if (header && burger) {
   );
 }
 
-// Buyurtma formasi. Telegram bot ulangach, so'rov shu yerdan botga yuboriladi.
+// Buyurtma formasi -> Cloudflare Worker -> Telegram (worker/README.md ga qarang).
+// Worker o'rnatilgach, uning manzilini shu yerga yozing. Bo'sh bo'lsa, forma hech qayerga yubormaydi.
+const FORM_ENDPOINT = "";
 const form = document.querySelector("#order-form");
 if (form) {
-  form.addEventListener("submit", (e) => {
+  const done = form.querySelector(".form-done");
+  const fail = form.querySelector(".form-error");
+  const btn = form.querySelector('[type="submit"]');
+  form.addEventListener("submit", async (e) => {
     e.preventDefault();
     if (!form.reportValidity()) return;
-    const done = form.querySelector(".form-done");
-    done.hidden = false;
-    done.focus();
-    form.reset();
+    done.hidden = true;
+    fail.hidden = true;
+    let ok = true;
+    if (FORM_ENDPOINT) {
+      btn.disabled = true;
+      try {
+        const data = Object.fromEntries(new FormData(form));
+        data.lang = ru ? "ru" : "uz";
+        data.page = location.pathname;
+        const r = await fetch(FORM_ENDPOINT, {
+          method: "POST",
+          headers: { "Content-Type": "application/json" },
+          body: JSON.stringify(data),
+        });
+        ok = r.ok;
+      } catch (err) {
+        ok = false;
+      }
+      btn.disabled = false;
+    }
+    const msgEl = ok ? done : fail;
+    msgEl.hidden = false;
+    msgEl.focus();
+    if (ok) form.reset();
   });
 }
 

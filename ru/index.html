@@ -371,8 +371,10 @@
           <div class="field"><label for="f-phone">Номер телефона</label><input id="f-phone" name="phone" type="tel" autocomplete="tel" placeholder="+998" required></div>
           <div class="field"><label for="f-need">Что нужно?</label><select id="f-need" name="need"><option>Камеры</option><option>Интернет и Wi-Fi</option><option>Видео</option><option>Сайт или бот</option><option>Сет или другое</option></select></div>
           <div class="field"><label for="f-msg">Сообщение</label><textarea id="f-msg" name="message" placeholder="Коротко опишите задачу"></textarea></div>
+          <div class="hp" aria-hidden="true"><input name="website" tabindex="-1" autocomplete="off"></div>
           <button class="btn btn-dark" type="submit">Отправить заявку</button>
           <p class="form-done" tabindex="-1" hidden>Заявка принята. Мастер скоро свяжется с вами.</p>
+          <p class="form-error" tabindex="-1" role="alert" hidden>Заявка не отправилась. Пожалуйста, <a href="https://t.me/sadulla_khaitov">напишите в Telegram</a> или <a href="tel:+998901218887">позвоните</a>.</p>
         </form>
       </div>
     </div>
