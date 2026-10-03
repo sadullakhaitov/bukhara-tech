@@ -246,3 +246,24 @@ if (calc) {
   calc.addEventListener("input", update);
   update();
 }
+
+// Telefon: surib ko'riladigan qatorlar uchun yo'riq va "Barcha savollar" tugmasi (CSS faqat ≤600px da ko'rsatadi)
+document.querySelectorAll(".svcs, .works, .sets").forEach((row) => {
+  const hint = document.createElement("p");
+  hint.className = "swipe-hint";
+  hint.setAttribute("aria-hidden", "true");
+  hint.textContent = tx("← Surib koʻring →", "← Листайте →", "← Swipe →");
+  row.after(hint);
+});
+const faqAll = document.querySelector(".faq:not(.faq-one)");
+if (faqAll) {
+  const hidden = faqAll.querySelectorAll(".faq-group .faq-item:nth-of-type(n+3)").length;
+  if (hidden) {
+    const more = document.createElement("button");
+    more.type = "button";
+    more.className = "btn btn-outline faq-more";
+    more.textContent = tx(`Yana ${hidden} ta savol`, `Ещё ${hidden} вопросов`, `${hidden} more questions`);
+    more.addEventListener("click", () => { faqAll.classList.add("faq-all"); more.remove(); });
+    faqAll.after(more);
+  }
+}
