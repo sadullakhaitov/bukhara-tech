@@ -37,7 +37,19 @@ async function setupPage(env) {
     return page("<h2>1-qadam qolgan</h2><p><b>Settings → Variables and Secrets</b> ga <code>BOT_TOKEN</code> (turi: Secret) qo'shing va shu sahifani yangilang.</p>");
   }
   if (env.CHAT_ID) {
-    return page("<h2>✅ Ishlayapti</h2><p>Bot ulangan, saytdagi so'rovlar Telegramga keladi. Shu sahifa manzilini saytga ulash uchun yuboring.</p>");
+    // Bot va chatni Telegram'dan tekshiramiz (xabar yubormasdan)
+    try {
+      const api = (m, q = "") => fetch(`https://api.telegram.org/bot${env.BOT_TOKEN}/${m}${q}`).then((r) => r.json());
+      const me = await api("getMe");
+      if (!me.ok) return page(`<h2>❌ Token xato</h2><p>Telegram javobi: ${esc(me.description)}. <code>BOT_TOKEN</code> ni tekshiring.</p>`);
+      const ch = await api("getChat", `?chat_id=${encodeURIComponent(env.CHAT_ID)}`);
+      if (!ch.ok) return page(`<h2>❌ CHAT_ID xato</h2><p>Bot: <b>@${esc(me.result.username)}</b></p><p>Telegram javobi: ${esc(ch.description)}.</p><p>Botga <b>/start</b> yozganingizni tekshiring va <code>CHAT_ID</code> ni o'chirib, shu sahifani qayta oching — to'g'ri raqam chiqadi.</p>`);
+      const c = ch.result;
+      const who = c.title || [c.first_name, c.last_name].filter(Boolean).join(" ") || c.username || c.id;
+      return page(`<h2>✅ Ishlayapti</h2><p>Bot: <b>@${esc(me.result.username)}</b><br>So'rovlar shu chatga keladi: <b>${esc(String(who))}</b> (${esc(c.type)}, <code>${esc(String(c.id))}</code>)</p><p>Agar bu boshqa chat bo'lsa — <code>CHAT_ID</code> ni o'zgartiring.</p>`);
+    } catch (e) {
+      return page("<h2>Telegram'ga ulanib bo'lmadi</h2><p>Bir ozdan keyin sahifani yangilang.</p>");
+    }
   }
   let chats = [];
   try {
@@ -92,6 +104,11 @@ export default {
       headers: { "Content-Type": "application/json" },
       body: JSON.stringify({ chat_id: env.CHAT_ID, text, parse_mode: "HTML", disable_web_page_preview: true }),
     });
-    return json({ ok: r.ok }, r.ok ? 200 : 502, origin);
+    if (!r.ok) {
+      const err = await r.json().catch(() => ({}));
+      console.log("Telegram sendMessage xato:", r.status, err.description); // Cloudflare → Observability → Logs
+      return json({ ok: false, error: err.description || "telegram" }, 502, origin);
+    }
+    return json({ ok: true }, 200, origin);
   },
 };

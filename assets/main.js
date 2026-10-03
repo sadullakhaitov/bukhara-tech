@@ -61,7 +61,7 @@ if (header && burger) {
 }
 
 // Buyurtma formasi -> Cloudflare Worker -> Telegram (worker/README.md ga qarang).
-// Worker o'rnatilgach, uning manzilini shu yerga yozing. Bo'sh bo'lsa, forma hech qayerga yubormaydi.
+// Worker manzili. Bo'sh bo'lsa, forma xato ko'rsatadi (Telegram/qo'ng'iroq havolasi bilan).
 const FORM_ENDPOINT = "https://bukhara-tech-form.sadulla-khaitov.workers.dev";
 const form = document.querySelector("#order-form");
 if (form) {
@@ -73,7 +73,8 @@ if (form) {
     if (!form.reportValidity()) return;
     done.hidden = true;
     fail.hidden = true;
-    let ok = true;
+    // Manzil bo'lmasa — soxta "qabul qilindi" ko'rsatmaymiz, xato chiqadi
+    let ok = false;
     if (FORM_ENDPOINT) {
       btn.disabled = true;
       try {
