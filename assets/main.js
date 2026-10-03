@@ -117,9 +117,9 @@ function setNeed(dirs) {
   needSel.append(multi);
   multi.selected = true;
 }
-document.querySelectorAll("[data-order]").forEach((a) =>
-  a.addEventListener("click", (e) => {
-    if (!form || !msgField || !a.dataset.order) return; // usta sahifalarida — oddiy havola (Telegram)
+document.addEventListener("click", (e) => {
+    const a = e.target.closest("[data-order]");
+    if (!a || !form || !msgField || !a.dataset.order) return; // usta sahifalarida — oddiy havola (Telegram)
     e.preventDefault();
     let text = a.dataset.order;
     const set = a.closest(".set");
@@ -157,8 +157,7 @@ document.querySelectorAll("[data-order]").forEach((a) =>
     form.classList.remove("flash");
     void form.offsetWidth;
     form.classList.add("flash");
-  })
-);
+});
 
 // Narx kalkulyatori
 const calc = document.querySelector(".calc");
@@ -247,14 +246,7 @@ if (calc) {
   update();
 }
 
-// Telefon: surib ko'riladigan qatorlar uchun yo'riq va "Barcha savollar" tugmasi (CSS faqat ≤600px da ko'rsatadi)
-document.querySelectorAll(".svcs, .works, .sets").forEach((row) => {
-  const hint = document.createElement("p");
-  hint.className = "swipe-hint";
-  hint.setAttribute("aria-hidden", "true");
-  hint.textContent = tx("← Surib koʻring →", "← Листайте →", "← Swipe →");
-  row.after(hint);
-});
+// Telefon: "Barcha savollar" tugmasi (CSS faqat ≤600px da ko'rsatadi)
 const faqAll = document.querySelector(".faq:not(.faq-one)");
 if (faqAll) {
   const hidden = faqAll.querySelectorAll(".faq-group .faq-item:nth-of-type(n+3)").length;
@@ -266,4 +258,117 @@ if (faqAll) {
     more.addEventListener("click", () => { faqAll.classList.add("faq-all"); more.remove(); });
     faqAll.after(more);
   }
+}
+
+// Telefon: xizmatlar, ishlar va setlar — cheksiz aylanadigan qatorlar.
+// Asl kartalarning chap va o'ng tomoniga nusxa qo'yiladi; surish tugagach, nusxa ustida
+// bo'lsak, ko'rinmas tarzda asl kartaga sakraymiz — oxirgisidan keyin yana 1-si keladi.
+const mqPhone = matchMedia("(max-width: 600px)");
+function cloneOf(el) {
+  const c = el.cloneNode(true);
+  c.classList.add("is-clone");
+  c.setAttribute("aria-hidden", "true");
+  c.querySelectorAll("a, button").forEach((x) => (x.tabIndex = -1));
+  return c;
+}
+function loopRow(row) {
+  const items = [...row.children];
+  if (items.length < 2) return () => {};
+  row.prepend(...items.map(cloneOf));
+  row.append(...items.map(cloneOf));
+  const x = (el) => el.getBoundingClientRect().left;
+  const posOf = (el) => row.scrollLeft + x(el) - x(row) - parseFloat(getComputedStyle(row).paddingLeft);
+  const start = items.find((el) => el.classList.contains("set-hot")) || items[0];
+  row.scrollLeft = posOf(start);
+  const fix = () => {
+    const first = posOf(items[0]);
+    const period = x(items[0]) - x(row.firstElementChild);
+    if (row.scrollLeft < first - 5) row.scrollLeft += period;
+    else if (row.scrollLeft >= first + period - 5) row.scrollLeft -= period;
+  };
+  let t;
+  const onScroll = () => { clearTimeout(t); t = setTimeout(fix, 140); };
+  const ev = "onscrollend" in window ? "scrollend" : "scroll";
+  const handler = ev === "scrollend" ? fix : onScroll;
+  row.addEventListener(ev, handler);
+  return () => {
+    row.removeEventListener(ev, handler);
+    row.querySelectorAll(":scope > .is-clone").forEach((c) => c.remove());
+    row.scrollLeft = 0;
+  };
+}
+let rowTeardowns = [];
+const applyRows = () => {
+  rowTeardowns.forEach((f) => f());
+  rowTeardowns = mqPhone.matches ? [...document.querySelectorAll(".svcs, .works, .sets")].map(loopRow) : [];
+};
+mqPhone.addEventListener("change", applyRows);
+applyRows();
+
+// "Biz ishlagan joylar": logotiplar o'zi sekin aylanadi, qo'lda ham suriladi (cheksiz lenta)
+const clients = document.querySelector(".clients");
+if (clients) {
+  const originals = [...clients.children];
+  const reduce = matchMedia("(prefers-reduced-motion: reduce)").matches;
+  const SPEED = 32; // px / soniya
+  let period = 0, pos = 0, holdUntil = 0, hover = false, visible = true, last = 0, drag = null;
+  const build = () => {
+    clients.querySelectorAll(".is-clone").forEach((c) => c.remove());
+    const first = clients.firstElementChild;
+    clients.append(...originals.map(cloneOf));
+    period = clients.children[originals.length].getBoundingClientRect().left - first.getBoundingClientRect().left;
+    while (clients.scrollWidth < period * 2 + clients.clientWidth + 10) clients.append(...originals.map(cloneOf));
+    pos = period;
+    clients.scrollLeft = pos;
+  };
+  const wrap = () => {
+    if (pos >= period * 2) pos -= period;
+    else if (pos < period) pos += period;
+  };
+  const tick = (now) => {
+    const dt = last ? Math.min(now - last, 100) / 1000 : 0;
+    last = now;
+    if (!reduce && visible && !hover && !drag && now > holdUntil && period) {
+      pos += SPEED * dt;
+      wrap();
+      clients.scrollLeft = pos;
+    }
+    requestAnimationFrame(tick);
+  };
+  clients.addEventListener("scroll", () => {
+    if (Math.abs(clients.scrollLeft - pos) > 2) {
+      // foydalanuvchi o'zi surdi
+      pos = clients.scrollLeft;
+      holdUntil = performance.now() + 2500;
+      const before = pos;
+      wrap();
+      if (pos !== before) clients.scrollLeft = pos;
+    }
+  }, { passive: true });
+  clients.addEventListener("pointerenter", (e) => { if (e.pointerType === "mouse") hover = true; });
+  clients.addEventListener("pointerleave", (e) => { if (e.pointerType === "mouse") hover = false; });
+  clients.addEventListener("touchstart", () => { holdUntil = performance.now() + 2500; }, { passive: true });
+  // Kompyuterda sichqoncha bilan tortib surish
+  clients.addEventListener("pointerdown", (e) => {
+    if (e.pointerType !== "mouse" || e.button !== 0) return;
+    drag = { x: e.clientX, pos };
+    clients.setPointerCapture(e.pointerId);
+    clients.classList.add("dragging");
+  });
+  clients.addEventListener("pointermove", (e) => {
+    if (!drag) return;
+    pos = drag.pos - (e.clientX - drag.x);
+    wrap();
+    if (pos !== drag.pos - (e.clientX - drag.x)) drag = { x: e.clientX, pos };
+    clients.scrollLeft = pos;
+  });
+  const endDrag = () => { if (!drag) return; drag = null; holdUntil = performance.now() + 1500; clients.classList.remove("dragging"); };
+  clients.addEventListener("pointerup", endDrag);
+  clients.addEventListener("pointercancel", endDrag);
+  clients.addEventListener("dragstart", (e) => e.preventDefault());
+  if ("IntersectionObserver" in window) new IntersectionObserver(([e]) => { visible = e.isIntersecting; }).observe(clients);
+  let rt;
+  addEventListener("resize", () => { clearTimeout(rt); rt = setTimeout(build, 200); });
+  build();
+  requestAnimationFrame(tick);
 }
