@@ -103,6 +103,20 @@ if (form) {
 const msgField = document.querySelector("#f-msg");
 const nameField = document.querySelector("#f-name");
 let orderHint = null;
+const needSel = document.querySelector("#f-need");
+// dirs: ["p-cam"] — bitta yo'nalish; bir nechta bo'lsa "Bir nechta: ..." varianti yaratiladi
+function setNeed(dirs) {
+  if (!needSel) return;
+  needSel.querySelector('option[data-dir="multi"]')?.remove();
+  const opt = (d) => needSel.querySelector(`option[data-dir="${d}"]`);
+  if (dirs.length === 1 && opt(dirs[0])) { opt(dirs[0]).selected = true; return; }
+  const names = dirs.map((d) => opt(d)?.textContent).filter(Boolean);
+  const multi = document.createElement("option");
+  multi.dataset.dir = "multi";
+  multi.textContent = tx("Bir nechta", "Несколько", "Several") + ": " + names.join(", ");
+  needSel.append(multi);
+  multi.selected = true;
+}
 document.querySelectorAll("[data-order]").forEach((a) =>
   a.addEventListener("click", (e) => {
     if (!form || !msgField || !a.dataset.order) return; // usta sahifalarida — oddiy havola (Telegram)
@@ -119,6 +133,14 @@ document.querySelectorAll("[data-order]").forEach((a) =>
       if (equip) text += "\n" + equip.replace(/\s+/g, " ");
     }
     msgField.value = text;
+    // "Nima kerak?" maydonini tanlovga qarab avtomatik belgilaymiz
+    if (set) setNeed(["set"]);
+    else if (a.classList.contains("calc-order")) {
+      const dirs = [...document.querySelectorAll(".calc-group")]
+        .filter((g) => [...g.querySelectorAll(".calc-row input")].some((i) => (parseInt(i.value, 10) || 0) > 0))
+        .map((g) => [...g.classList].find((c) => c.startsWith("p-")));
+      if (dirs.length) setNeed(dirs);
+    }
     if (!orderHint) {
       orderHint = document.createElement("p");
       orderHint.className = "form-hint";
