@@ -409,15 +409,18 @@ p { margin: 0; }
 
 /* ---------- Ishlar va izohlar ---------- */
 .sub-h { font-family: var(--disp); font-weight: 600; font-size: 26px; letter-spacing: -.02em; margin: 64px 0 24px; }
-.reviews { display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); gap: 20px; }
-.review { position: relative; margin: 0; display: flex; flex-direction: column; gap: 20px; padding: 28px; background: var(--surf); border: 1px solid var(--line); border-radius: 20px; }
-.review .work-tag { left: auto; right: 16px; top: 16px; background: var(--soft); color: var(--muted); }
-.review blockquote { margin: 0; font-size: 16px; color: var(--muted); font-style: italic; }
-.review blockquote::before { content: "“"; display: block; font-family: var(--disp); font-size: 48px; line-height: .8; color: var(--line); font-style: normal; }
-.review figcaption { display: flex; align-items: center; gap: 12px; margin-top: auto; }
-.review figcaption > span:last-child { display: flex; flex-direction: column; line-height: 1.35; }
-.review figcaption small { color: var(--muted); font-size: 13px; }
-.review-ph { width: 48px; height: 48px; border-radius: 50%; background: var(--soft); border: 1.5px dashed var(--line); flex-shrink: 0; }
+.reviews { display: flex; flex-wrap: nowrap; align-items: stretch; gap: 20px; list-style: none; margin: 0; padding: 4px 0 16px; overflow-x: auto; overscroll-behavior-x: contain; scrollbar-width: none; cursor: grab; user-select: none; -webkit-mask-image: linear-gradient(90deg, transparent, #000 6%, #000 94%, transparent); mask-image: linear-gradient(90deg, transparent, #000 6%, #000 94%, transparent); }
+.reviews::-webkit-scrollbar { display: none; }
+.reviews.dragging { cursor: grabbing; }
+.review { flex: 0 0 360px; position: relative; margin: 0; display: flex; flex-direction: column; gap: 16px; padding: 24px; background: var(--surf); border: 1px solid var(--line); border-radius: 20px; }
+.review-tag { align-self: flex-start; display: inline-flex; align-items: center; gap: 8px; padding: 6px 12px; border-radius: 999px; background: var(--lt); color: var(--acc); font-size: 13px; font-weight: 700; }
+.review-tag .ico { width: 16px; height: 16px; flex-shrink: 0; }
+.review blockquote { margin: 0; font-size: 15.5px; line-height: 1.6; color: var(--ink); }
+.review blockquote::before { content: "“"; display: block; height: 22px; font-family: var(--disp); font-size: 48px; line-height: 1; color: var(--acc); opacity: .35; }
+.review-who { display: flex; align-items: center; gap: 12px; margin: auto 0 0; padding-top: 14px; border-top: 1px dashed var(--line); }
+.review-who > span:last-child { display: flex; flex-direction: column; line-height: 1.35; }
+.review-who small { color: var(--muted); font-size: 13px; }
+.review-ava { display: flex; align-items: center; justify-content: center; width: 44px; height: 44px; border-radius: 50%; background: var(--acc); color: var(--on-acc); font-family: var(--disp); font-weight: 600; font-size: 18px; flex-shrink: 0; }
 .places { display: flex; flex-direction: column; gap: 20px; margin-top: 40px; padding-top: 28px; border-top: 1px solid var(--line); }
 .places ul { display: flex; flex-wrap: nowrap; gap: 12px; list-style: none; margin: 0; padding: 4px 0 12px; overflow-x: auto; overscroll-behavior-x: contain; scrollbar-width: none; cursor: grab; user-select: none; -webkit-mask-image: linear-gradient(90deg, transparent, #000 7%, #000 93%, transparent); mask-image: linear-gradient(90deg, transparent, #000 7%, #000 93%, transparent); }
 .places ul::-webkit-scrollbar { display: none; }
@@ -490,7 +493,6 @@ p { margin: 0; }
   .faq { columns: 1; }
   .faq-group { padding-bottom: 32px; }
   .contact-box { grid-template-columns: 1fr; gap: 32px; }
-  .reviews { grid-template-columns: 1fr; }
   .final { flex-direction: column; align-items: flex-start; padding: 36px; }
   .services, .works, .prices { grid-template-columns: repeat(2, minmax(0, 1fr)); }
   .steps { grid-template-columns: 1fr; }
@@ -538,7 +540,9 @@ p { margin: 0; }
   .svc-icon { width: 44px; height: 44px; }
   .svc h3 { font-size: 17px; }
   .sub-h { font-size: 20px; margin: 40px 0 16px; }
-  .review { padding: 20px; border-radius: 16px; }
+  .reviews { gap: 12px; margin-inline: calc(-1 * var(--gutter)); }
+  .review { flex-basis: 290px; padding: 20px; border-radius: 16px; }
+  .review blockquote { font-size: 15px; }
   .places ul { gap: 10px; margin-inline: calc(-1 * var(--gutter)); padding-inline: 0; }
   .places li { flex: 0 0 138px; min-height: 0; padding: 8px 6px 10px; border-radius: 12px; }
   .client-logo { height: 60px; padding: 6px; margin-bottom: 6px; border-radius: 9px; }
@@ -572,7 +576,6 @@ p { margin: 0; }
   .work .photo { height: 220px; }
 
   /* Namunaviy izohlar telefonda yashiriladi (haqiqiylari kelguncha) */
-  #ishlar .sub-h, #ishlar .reviews { display: none; }
   #ishlar .places { margin-top: 28px; }
 
   /* Savollar: har guruhdan 2 tasi, qolgani tugma bilan */

@@ -305,12 +305,10 @@ const applyRows = () => {
 mqPhone.addEventListener("change", applyRows);
 applyRows();
 
-// "Biz ishlagan joylar": logotiplar o'zi sekin aylanadi, qo'lda ham suriladi (cheksiz lenta)
-const clients = document.querySelector(".clients");
-if (clients) {
+// "Biz ishlagan joylar" va sharhlar: o'zi sekin aylanadigan, qo'lda ham suriladigan cheksiz lenta
+function marquee(clients, SPEED) {
   const originals = [...clients.children];
   const reduce = matchMedia("(prefers-reduced-motion: reduce)").matches;
-  const SPEED = 32; // px / soniya
   let period = 0, pos = 0, holdUntil = 0, hover = false, visible = true, last = 0, drag = null;
   const build = () => {
     clients.querySelectorAll(".is-clone").forEach((c) => c.remove());
@@ -372,3 +370,5 @@ if (clients) {
   build();
   requestAnimationFrame(tick);
 }
+document.querySelectorAll(".clients").forEach((el) => marquee(el, 32)); // px / soniya
+document.querySelectorAll(".reviews").forEach((el) => marquee(el, 26));
