@@ -6,7 +6,11 @@ Bot tokeni sayt kodiga **qo'yilmaydi** (repo ochiq). U Cloudflare Worker ichida 
 Sayt formasi  →  Cloudflare Worker (token shu yerda)  →  Telegram bot  →  sizning chatingiz
 ```
 
-## Sozlash (5 daqiqa)
+## GitHub orqali avtomatik joylash (hozirgi usul)
+
+Cloudflare Worker GitHub'dagi `sadullakhaitov/bukhara-tech` repoga ulangan. Repo ildizidagi `wrangler.jsonc` qaysi fayl Worker ekanini aytadi (`worker/form-worker.js`). `main` ga har push'dan keyin Cloudflare Worker'ni o'zi qayta joylaydi. `keep_vars: true` — dashboard'da qo'shilgan `CHAT_ID` deploy paytida o'chib ketmaydi.
+
+## Qo'lda sozlash (muqobil usul, 5 daqiqa)
 
 1. **Worker yaratish:** dash.cloudflare.com → **Workers & Pages** → **Create** → **Create Worker** → nomi `bukhara-tech-form` → **Deploy**.
 2. **Kodni qo'yish:** **Edit code** → hammasini o'chirib, `form-worker.js` ichidagini qo'ying → **Deploy**.

@@ -1,0 +1,12 @@
+// Cloudflare Worker sozlamasi: saytdagi formani Telegramga yuboradi.
+// Cloudflare GitHub'ga ulangan: main'ga har push'dan keyin o'zi qayta joylaydi.
+// BOT_TOKEN va CHAT_ID Cloudflare'da (Settings → Variables and Secrets) saqlanadi, bu yerda EMAS.
+{
+  "$schema": "node_modules/wrangler/config-schema.json",
+  "name": "bukhara-tech-form",
+  "main": "worker/form-worker.js",
+  "compatibility_date": "2026-10-01",
+  "workers_dev": true,
+  // Dashboard'da qo'shilgan o'zgaruvchilar (CHAT_ID) har deploy'da o'chib ketmasin
+  "keep_vars": true
+}
