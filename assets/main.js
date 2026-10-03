@@ -208,7 +208,33 @@ if (calc) {
     total.textContent = s ? `${money(s)} ${cur}${from || ""}` : `0 ${cur}`;
     order.setAttribute("aria-disabled", String(!s));
     order.dataset.order = s ? `${msg}\n${lines.join("\n")}\n≈ ${money(s)} ${cur}` : "";
+    barTotal.textContent = total.textContent;
+    hasSum = s > 0;
+    syncBar();
   };
+
+  // Telefonda: tanlov bo'lsa, ekran pastida "Jami · Buyurtma berish" qatori
+  const bar = document.createElement("div");
+  bar.className = "calc-bar";
+  bar.setAttribute("aria-hidden", "true");
+  bar.innerHTML = '<span class="calc-bar-text"><small></small><b></b></span><button type="button" class="btn btn-dark"></button>';
+  bar.querySelector("small").textContent = tx("Jami", "Итого", "Total");
+  bar.querySelector("button").textContent = tx("Buyurtma berish →", "Оформить →", "Order →");
+  bar.querySelector("button").addEventListener("click", () => order.click());
+  const barTotal = bar.querySelector("b");
+  document.body.append(bar);
+  let hasSum = false, inCalc = false, sumVisible = false;
+  const syncBar = () => {
+    const show = hasSum && inCalc && !sumVisible;
+    bar.classList.toggle("show", show);
+    bar.setAttribute("aria-hidden", String(!show));
+    bar.inert = !show;
+  };
+  if ("IntersectionObserver" in window) {
+    new IntersectionObserver(([e]) => { inCalc = e.isIntersecting; syncBar(); }).observe(calc.closest("section") || calc);
+    // Jami summa raqamining o'zi ko'rinsa (pastki panellar ostida emas) — bar kerak emas
+    new IntersectionObserver(([e]) => { sumVisible = e.isIntersecting; syncBar(); }, { rootMargin: "0px 0px -170px 0px", threshold: 1 }).observe(total);
+  }
 
   calc.addEventListener("click", (e) => {
     const btn = e.target.closest(".step-btn");
