@@ -62,7 +62,7 @@ if (header && burger) {
 
 // Buyurtma formasi -> Cloudflare Worker -> Telegram (worker/README.md ga qarang).
 // Worker o'rnatilgach, uning manzilini shu yerga yozing. Bo'sh bo'lsa, forma hech qayerga yubormaydi.
-const FORM_ENDPOINT = "";
+const FORM_ENDPOINT = "https://bukhara-tech-form.sadulla-khaitov.workers.dev";
 const form = document.querySelector("#order-form");
 if (form) {
   const done = form.querySelector(".form-done");
