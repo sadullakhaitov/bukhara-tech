@@ -418,11 +418,13 @@ p { margin: 0; }
 .review figcaption small { color: var(--muted); font-size: 13px; }
 .review-ph { width: 48px; height: 48px; border-radius: 50%; background: var(--soft); border: 1.5px dashed var(--line); flex-shrink: 0; }
 .places { display: flex; flex-direction: column; gap: 20px; margin-top: 40px; padding-top: 28px; border-top: 1px solid var(--line); }
-.places ul { display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); gap: 12px; list-style: none; margin: 0; padding: 0; }
-.places li { display: flex; flex-direction: column; align-items: center; justify-content: center; gap: 4px; min-height: 84px; padding: 14px 16px; border: 1px solid var(--line); border-radius: 14px; background: var(--surf); text-align: center; }
+.places ul { display: flex; flex-wrap: wrap; justify-content: center; gap: 12px; list-style: none; margin: 0; padding: 0; }
+.places li { flex: 0 1 calc((100% - 24px) / 3); display: flex; flex-direction: column; align-items: center; justify-content: flex-start; gap: 4px; min-height: 84px; padding: 16px; border: 1px solid var(--line); border-radius: 14px; background: var(--surf); text-align: center; }
 .places li b { font-family: var(--disp); font-weight: 600; font-size: 15px; line-height: 1.3; color: var(--ink); text-wrap: balance; }
 .places li small { font-family: var(--mono); font-size: 11px; letter-spacing: .06em; text-transform: uppercase; color: var(--muted); }
-.places li img { max-height: 44px; max-width: 100%; object-fit: contain; }
+.client-logo { display: flex; align-items: center; justify-content: center; width: 100%; height: 88px; margin-bottom: 10px; padding: 10px; border-radius: 12px; background: #fff; }
+.client-logo img { max-height: 100%; max-width: 100%; object-fit: contain; }
+[data-theme="dark"] .client-logo { box-shadow: inset 0 0 0 1px rgba(255, 255, 255, .08); }
 
 /* ---------- Jamoa: iliq jumla ---------- */
 .card-quote { font-size: 15px; color: var(--muted); }
@@ -534,8 +536,9 @@ p { margin: 0; }
   .svc h3 { font-size: 17px; }
   .sub-h { font-size: 20px; margin: 40px 0 16px; }
   .review { padding: 20px; border-radius: 16px; }
-  .places ul { grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 10px; }
-  .places li { min-height: 76px; padding: 12px 10px; }
+  .places ul { gap: 10px; }
+  .places li { flex-basis: calc((100% - 10px) / 2); min-height: 76px; padding: 10px; }
+  .client-logo { height: 72px; padding: 8px; }
   .places li b { font-size: 13px; }
   .final { padding: 28px 20px; border-radius: 20px; gap: 20px; }
   .final h2 { font-size: 22px; }
