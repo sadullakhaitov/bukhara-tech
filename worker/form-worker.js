@@ -72,6 +72,32 @@ async function setupPage(env) {
   return page(`<h2>3-qadam: CHAT_ID ni kiriting</h2><p>So'rovlar qaysi chatga kelsin? Raqamini nusxalab, <b>Settings → Variables and Secrets</b> ga <code>CHAT_ID</code> nomi bilan qo'shing:</p><ul>${rows}</ul><p>Guruh raqami minus bilan boshlanadi.</p>`);
 }
 
+// Telefonni chiroyli ko'rinishga keltiradi: 901234567 / 998901234567 → +998 90 123 45 67
+function prettyPhone(p) {
+  const dg = p.replace(/\D/g, "");
+  const n = dg.length === 9 ? "998" + dg : dg;
+  if (n.length === 12 && n.startsWith("998")) return `+998 ${n.slice(3, 5)} ${n.slice(5, 8)} ${n.slice(8, 10)} ${n.slice(10)}`;
+  return p;
+}
+
+const LANGS = { uz: "🇺🇿 Oʻzbekcha", ru: "🇷🇺 Русский", en: "🇬🇧 English" };
+
+// Telegram xabari (HTML)
+function formatMessage({ name, phone, need, message, lang }) {
+  const time = new Date().toLocaleString("ru-RU", { timeZone: "Asia/Tashkent", day: "2-digit", month: "2-digit", year: "numeric", hour: "2-digit", minute: "2-digit" });
+  const lines = [
+    "🔔 <b>Yangi buyurtma · Bukhara Tech</b>",
+    "",
+    `👤 <b>Ism:</b> ${esc(name)}`,
+    `📞 <b>Telefon:</b> ${esc(prettyPhone(phone))}`,
+  ];
+  if (need) lines.push(`🔧 <b>Yoʻnalish:</b> ${esc(need)}`);
+  lines.push(`🌐 <b>Til:</b> ${LANGS[lang] || LANGS.uz}`);
+  if (message) lines.push("", "📝 <b>Xabar:</b>", `<blockquote>${esc(message)}</blockquote>`);
+  lines.push("", `🕒 ${time}`);
+  return lines.join("\n");
+}
+
 export default {
   async fetch(request, env) {
     const origin = request.headers.get("Origin") || "";
@@ -90,14 +116,7 @@ export default {
     const phone = clip(d.phone, 30);
     if (!name || phone.replace(/\D/g, "").length < 7) return json({ ok: false, error: "fields" }, 400, origin);
 
-    const text = [
-      "🆕 <b>Saytdan yangi so'rov</b>",
-      `👤 ${esc(name)}`,
-      `📞 ${esc(phone)}`,
-      d.need ? `🔧 ${esc(clip(d.need, 60))}` : "",
-      d.message ? `\n💬 ${esc(clip(d.message, 1500))}` : "",
-      `\n🌐 ${["uz", "ru", "en"].includes(d.lang) ? d.lang.toUpperCase() : "UZ"} · ${esc(clip(d.page, 100))}`,
-    ].filter(Boolean).join("\n");
+    const text = formatMessage({ name, phone, need: clip(d.need, 60), message: clip(d.message, 1500), lang: d.lang });
 
     const r = await fetch(`https://api.telegram.org/bot${env.BOT_TOKEN}/sendMessage`, {
       method: "POST",

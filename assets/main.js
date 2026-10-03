@@ -80,7 +80,6 @@ if (form) {
       try {
         const data = Object.fromEntries(new FormData(form));
         data.lang = LANG;
-        data.page = location.pathname;
         const r = await fetch(FORM_ENDPOINT, {
           method: "POST",
           headers: { "Content-Type": "application/json" },
@@ -108,7 +107,18 @@ document.querySelectorAll("[data-order]").forEach((a) =>
   a.addEventListener("click", (e) => {
     if (!form || !msgField || !a.dataset.order) return; // usta sahifalarida — oddiy havola (Telegram)
     e.preventDefault();
-    msgField.value = a.dataset.order;
+    let text = a.dataset.order;
+    const set = a.closest(".set");
+    if (set) {
+      // Setning tarkibi va narxi kartadan olinadi (UZ/RU/EN uchun bir xil ishlaydi)
+      const items = [...set.querySelectorAll(".set-items li")].map((li) => "• " + li.textContent.trim());
+      const price = set.querySelector(".set-price strong")?.textContent.trim();
+      const equip = set.querySelector(".set-equip")?.textContent.trim();
+      text = text.replace(/[.!]$/, ":") + "\n" + items.join("\n");
+      if (price) text += "\n" + tx("Narxi", "Цена", "Price") + ": " + price.replace(/\s+/g, " ");
+      if (equip) text += "\n" + equip.replace(/\s+/g, " ");
+    }
+    msgField.value = text;
     if (!orderHint) {
       orderHint = document.createElement("p");
       orderHint.className = "form-hint";
