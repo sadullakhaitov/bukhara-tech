@@ -252,6 +252,10 @@ p { margin: 0; }
 .field textarea { height: 110px; padding: 12px 14px; resize: vertical; }
 .field input:focus, .field select:focus, .field textarea:focus { outline: none; border-color: var(--web); background: var(--surf); }
 .form .btn { width: 100%; }
+.form-hint { margin: 0; padding: 12px 14px; border-radius: 10px; background: var(--web-lt); color: var(--web); font-weight: 600; font-size: 15px; }
+.form.flash { animation: form-flash 1.6s ease-out; border-radius: 14px; }
+@keyframes form-flash { 0%, 30% { box-shadow: 0 0 0 4px color-mix(in srgb, var(--web) 45%, transparent); } 100% { box-shadow: 0 0 0 4px transparent; } }
+#order-form { scroll-margin-top: 150px; }
 .form-done { padding: 14px; border-radius: 10px; background: var(--net-lt); color: var(--net); font-weight: 600; }
 .form-error { padding: 14px; border-radius: 10px; background: var(--media-lt); color: var(--media); font-weight: 600; }
 .form-error a { color: inherit; }

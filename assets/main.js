@@ -98,11 +98,32 @@ if (form) {
   });
 }
 
-// Setlar va kalkulyator: tugma bosilganda forma xabariga yoziladi
+// Setlar va kalkulyator: tugma bosilganda tanlov forma xabariga yoziladi,
+// sahifa formaga tushadi va "Ismingiz" maydoni faollashadi (so'rovni forma yuboradi).
 const msgField = document.querySelector("#f-msg");
+const nameField = document.querySelector("#f-name");
+let orderHint = null;
 document.querySelectorAll("[data-order]").forEach((a) =>
-  a.addEventListener("click", () => {
-    if (msgField && a.dataset.order) msgField.value = a.dataset.order;
+  a.addEventListener("click", (e) => {
+    if (!form || !msgField || !a.dataset.order) return; // usta sahifalarida — oddiy havola (Telegram)
+    e.preventDefault();
+    msgField.value = a.dataset.order;
+    if (!orderHint) {
+      orderHint = document.createElement("p");
+      orderHint.className = "form-hint";
+      orderHint.setAttribute("role", "status");
+      form.prepend(orderHint);
+    }
+    orderHint.textContent = tx(
+      "✓ Tanlovingiz xabarga qoʻshildi. Endi ism va telefonni yozib, «Soʻrov yuborish»ni bosing.",
+      "✓ Ваш выбор добавлен в сообщение. Укажите имя и телефон и нажмите «Отправить заявку».",
+      "✓ Your selection has been added to the message. Enter your name and phone, then press “Send request”."
+    );
+    form.scrollIntoView({ behavior: "smooth", block: "start" });
+    setTimeout(() => nameField && nameField.focus({ preventScroll: true }), 500);
+    form.classList.remove("flash");
+    void form.offsetWidth;
+    form.classList.add("flash");
   })
 );
 
