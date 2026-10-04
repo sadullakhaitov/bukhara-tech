@@ -424,6 +424,10 @@ p { margin: 0; }
 .places { display: flex; flex-direction: column; gap: 20px; margin-top: 40px; padding-top: 28px; border-top: 1px solid var(--line); }
 .places ul { display: flex; flex-wrap: nowrap; gap: 12px; list-style: none; margin: 0; padding: 4px 0 12px; overflow-x: auto; overscroll-behavior-x: contain; scrollbar-width: none; cursor: grab; user-select: none; -webkit-mask-image: linear-gradient(90deg, transparent, #000 7%, #000 93%, transparent); mask-image: linear-gradient(90deg, transparent, #000 7%, #000 93%, transparent); }
 .places ul::-webkit-scrollbar { display: none; }
+/* JS lenta: tashqi .marquee kesadi va chetlarini so'ndiradi, ichidagi ro'yxat transform bilan suriladi */
+.marquee { overflow: hidden; -webkit-mask-image: linear-gradient(90deg, transparent, #000 6%, #000 94%, transparent); mask-image: linear-gradient(90deg, transparent, #000 6%, #000 94%, transparent); cursor: grab; touch-action: pan-y; }
+.marquee.dragging { cursor: grabbing; }
+.marquee > ul, .places .marquee > ul { width: max-content; overflow: visible; margin-inline: 0; -webkit-mask-image: none; mask-image: none; will-change: transform; touch-action: pan-y; backface-visibility: hidden; }
 .places ul.dragging { cursor: grabbing; }
 .places li { flex: 0 0 210px; display: flex; flex-direction: column; align-items: center; justify-content: flex-start; gap: 4px; min-height: 84px; padding: 16px; border: 1px solid var(--line); border-radius: 14px; background: var(--surf); text-align: center; }
 .places li b { font-family: var(--disp); font-weight: 600; font-size: 15px; line-height: 1.3; color: var(--ink); text-wrap: balance; }
@@ -544,6 +548,7 @@ p { margin: 0; }
   .review { flex-basis: 290px; padding: 20px; border-radius: 16px; }
   .review blockquote { font-size: 15px; }
   .places ul { gap: 10px; margin-inline: calc(-1 * var(--gutter)); padding-inline: 0; }
+  .marquee { margin-inline: calc(-1 * var(--gutter)); }
   .places li { flex: 0 0 138px; min-height: 0; padding: 8px 6px 10px; border-radius: 12px; }
   .client-logo { height: 60px; padding: 6px; margin-bottom: 6px; border-radius: 9px; }
   .places li b { font-size: 11.5px; line-height: 1.25; }

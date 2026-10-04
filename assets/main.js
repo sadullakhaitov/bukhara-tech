@@ -305,69 +305,95 @@ const applyRows = () => {
 mqPhone.addEventListener("change", applyRows);
 applyRows();
 
-// "Biz ishlagan joylar" va sharhlar: o'zi sekin aylanadigan, qo'lda ham suriladigan cheksiz lenta
-function marquee(clients, SPEED) {
-  const originals = [...clients.children];
+// "Biz ishlagan joylar" va sharhlar: o'zi sekin aylanadigan, qo'lda ham suriladigan cheksiz lenta.
+// scrollLeft emas, transform bilan suriladi — iPhone'da tez surilganda ham yo'qolib qolmaydi.
+function marquee(list, SPEED) {
+  const originals = [...list.children];
+  if (!originals.length) return;
+  const box = document.createElement("div");
+  box.className = "marquee";
+  list.before(box);
+  box.append(list);
   const reduce = matchMedia("(prefers-reduced-motion: reduce)").matches;
-  let period = 0, pos = 0, holdUntil = 0, hover = false, visible = true, last = 0, drag = null;
-  const build = () => {
-    clients.querySelectorAll(".is-clone").forEach((c) => c.remove());
-    const first = clients.firstElementChild;
-    clients.append(...originals.map(cloneOf));
-    period = clients.children[originals.length].getBoundingClientRect().left - first.getBoundingClientRect().left;
-    while (clients.scrollWidth < period * 2 + clients.clientWidth + 10) clients.append(...originals.map(cloneOf));
-    pos = period;
-    clients.scrollLeft = pos;
-  };
+  let period = 0, pos = 0, vel = 0, holdUntil = 0, hover = false, visible = true, last = 0;
+  let drag = null; // { id, x, y, pos, on, t, lx }
+  const paint = () => { list.style.transform = `translate3d(${-pos}px, 0, 0)`; };
   const wrap = () => {
-    if (pos >= period * 2) pos -= period;
-    else if (pos < period) pos += period;
+    if (!period) return;
+    pos = ((pos % period) + period) % period;
+  };
+  const build = () => {
+    list.querySelectorAll(".is-clone").forEach((c) => c.remove());
+    list.append(...originals.map(cloneOf));
+    period = list.children[originals.length].offsetLeft - originals[0].offsetLeft;
+    while (list.scrollWidth < period + box.clientWidth * 2) list.append(...originals.map(cloneOf));
+    wrap();
+    paint();
   };
   const tick = (now) => {
-    const dt = last ? Math.min(now - last, 100) / 1000 : 0;
+    const dt = last ? Math.min(now - last, 64) / 1000 : 0;
     last = now;
-    if (!reduce && visible && !hover && !drag && now > holdUntil && period) {
-      pos += SPEED * dt;
-      wrap();
-      clients.scrollLeft = pos;
+    if (visible && !drag && period) {
+      if (Math.abs(vel) > 5) {
+        // qo'yib yuborilgandan keyingi inersiya
+        pos += vel * dt;
+        vel *= Math.pow(0.04, dt);
+        wrap(); paint();
+      } else if (!reduce && !hover && now > holdUntil) {
+        pos += SPEED * dt;
+        wrap(); paint();
+      }
     }
     requestAnimationFrame(tick);
   };
-  clients.addEventListener("scroll", () => {
-    if (Math.abs(clients.scrollLeft - pos) > 2) {
-      // foydalanuvchi o'zi surdi
-      pos = clients.scrollLeft;
-      holdUntil = performance.now() + 2500;
-      const before = pos;
-      wrap();
-      if (pos !== before) clients.scrollLeft = pos;
+  list.addEventListener("pointerenter", (e) => { if (e.pointerType === "mouse") hover = true; });
+  list.addEventListener("pointerleave", (e) => { if (e.pointerType === "mouse") hover = false; });
+  list.addEventListener("pointerdown", (e) => {
+    if (e.pointerType === "mouse" && e.button !== 0) return;
+    drag = { id: e.pointerId, x: e.clientX, y: e.clientY, pos, on: e.pointerType === "mouse", t: performance.now(), lx: e.clientX };
+    vel = 0;
+    if (drag.on) { list.setPointerCapture(e.pointerId); box.classList.add("dragging"); }
+  });
+  list.addEventListener("pointermove", (e) => {
+    if (!drag || e.pointerId !== drag.id) return;
+    const dx = e.clientX - drag.x, dy = e.clientY - drag.y;
+    if (!drag.on) {
+      // barmoq: gorizontal harakat bo'lsagina lentani olamiz, aks holda sahifa suriladi
+      if (Math.abs(dx) < 6 && Math.abs(dy) < 6) return;
+      if (Math.abs(dy) > Math.abs(dx)) { drag = null; return; }
+      drag.on = true;
+      list.setPointerCapture(e.pointerId);
+      box.classList.add("dragging");
     }
-  }, { passive: true });
-  clients.addEventListener("pointerenter", (e) => { if (e.pointerType === "mouse") hover = true; });
-  clients.addEventListener("pointerleave", (e) => { if (e.pointerType === "mouse") hover = false; });
-  clients.addEventListener("touchstart", () => { holdUntil = performance.now() + 2500; }, { passive: true });
-  // Kompyuterda sichqoncha bilan tortib surish
-  clients.addEventListener("pointerdown", (e) => {
-    if (e.pointerType !== "mouse" || e.button !== 0) return;
-    drag = { x: e.clientX, pos };
-    clients.setPointerCapture(e.pointerId);
-    clients.classList.add("dragging");
+    const now = performance.now();
+    const step = (now - drag.t) / 1000;
+    if (step > 0) vel = vel * 0.6 + (-(e.clientX - drag.lx) / step) * 0.4;
+    drag.t = now; drag.lx = e.clientX;
+    pos = drag.pos - dx;
+    if (period && (pos < 0 || pos >= period)) { const p0 = pos; wrap(); drag.pos += pos - p0; }
+    paint();
   });
-  clients.addEventListener("pointermove", (e) => {
-    if (!drag) return;
-    pos = drag.pos - (e.clientX - drag.x);
-    wrap();
-    if (pos !== drag.pos - (e.clientX - drag.x)) drag = { x: e.clientX, pos };
-    clients.scrollLeft = pos;
+  const end = (e) => {
+    if (!drag || e.pointerId !== drag.id) return;
+    if (!drag.on || performance.now() - drag.t > 80) vel = 0;
+    vel = Math.max(-2500, Math.min(2500, vel));
+    drag = null;
+    holdUntil = performance.now() + 2500;
+    box.classList.remove("dragging");
+  };
+  list.addEventListener("pointerup", end);
+  list.addEventListener("pointercancel", end);
+  list.addEventListener("dragstart", (e) => e.preventDefault());
+  if ("IntersectionObserver" in window) new IntersectionObserver(([e]) => { visible = e.isIntersecting; last = 0; }).observe(box);
+  let rt, lastW = innerWidth;
+  // iPhone'da manzil qatori yashiringanda ham resize bo'ladi — faqat kenglik o'zgarsa qayta quramiz
+  addEventListener("resize", () => {
+    if (innerWidth === lastW) return;
+    lastW = innerWidth;
+    clearTimeout(rt); rt = setTimeout(build, 200);
   });
-  const endDrag = () => { if (!drag) return; drag = null; holdUntil = performance.now() + 1500; clients.classList.remove("dragging"); };
-  clients.addEventListener("pointerup", endDrag);
-  clients.addEventListener("pointercancel", endDrag);
-  clients.addEventListener("dragstart", (e) => e.preventDefault());
-  if ("IntersectionObserver" in window) new IntersectionObserver(([e]) => { visible = e.isIntersecting; }).observe(clients);
-  let rt;
-  addEventListener("resize", () => { clearTimeout(rt); rt = setTimeout(build, 200); });
   build();
+  if (document.fonts) document.fonts.ready.then(build);
   requestAnimationFrame(tick);
 }
 document.querySelectorAll(".clients").forEach((el) => marquee(el, 32)); // px / soniya
