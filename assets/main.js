@@ -260,9 +260,9 @@ if (faqAll) {
   }
 }
 
-// Telefon: xizmatlar, ishlar va setlar — cheksiz aylanadigan qatorlar.
-// Asl kartalarning chap va o'ng tomoniga nusxa qo'yiladi; surish tugagach, nusxa ustida
-// bo'lsak, ko'rinmas tarzda asl kartaga sakraymiz — oxirgisidan keyin yana 1-si keladi.
+// Telefon: xizmatlar, ishlar va setlar — cheksiz aylanadigan karusel.
+// Brauzer scroll'i emas, transform bilan suriladi: oxirgi kartadan keyin 1-si to'xtamasdan keladi
+// (avvalgi scroll + "sakrash" usulida 3-kartadan keyin bir zum to'xtab qolardi).
 const mqPhone = matchMedia("(max-width: 600px)");
 function cloneOf(el) {
   const c = el.cloneNode(true);
@@ -273,28 +273,94 @@ function cloneOf(el) {
 }
 function loopRow(row) {
   const items = [...row.children];
-  if (items.length < 2) return () => {};
+  const n = items.length;
+  if (n < 2) return () => {};
+  const box = document.createElement("div");
+  box.className = "carousel";
+  row.before(box);
+  box.append(row);
   row.prepend(...items.map(cloneOf));
   row.append(...items.map(cloneOf));
-  const x = (el) => el.getBoundingClientRect().left;
-  const posOf = (el) => row.scrollLeft + x(el) - x(row) - parseFloat(getComputedStyle(row).paddingLeft);
-  const start = items.find((el) => el.classList.contains("set-hot")) || items[0];
-  row.scrollLeft = posOf(start);
-  const fix = () => {
-    const first = posOf(items[0]);
-    const period = x(items[0]) - x(row.firstElementChild);
-    if (row.scrollLeft < first - 5) row.scrollLeft += period;
-    else if (row.scrollLeft >= first + period - 5) row.scrollLeft -= period;
+  let step = 0, base = 0, pos = 0, anim = null, drag = null, moved = false;
+  const measure = () => {
+    step = row.children[n + 1].offsetLeft - row.children[n].offsetLeft;
+    base = row.children[n].offsetLeft - parseFloat(getComputedStyle(row).paddingLeft);
   };
-  let t;
-  const onScroll = () => { clearTimeout(t); t = setTimeout(fix, 140); };
-  const ev = "onscrollend" in window ? "scrollend" : "scroll";
-  const handler = ev === "scrollend" ? fix : onScroll;
-  row.addEventListener(ev, handler);
+  const period = () => step * n;
+  const wrap = () => { const p = period(); pos = ((pos % p) + p) % p; };
+  const paint = () => { row.style.transform = `translate3d(${-(base + pos)}px, 0, 0)`; };
+  const animateTo = (target) => {
+    cancelAnimationFrame(anim);
+    const from = pos, t0 = performance.now(), dur = 320;
+    const ease = (t) => 1 - Math.pow(1 - t, 3);
+    const frame = (now) => {
+      const t = Math.min(1, (now - t0) / dur);
+      pos = from + (target - from) * ease(t);
+      if (t < 1) { paint(); anim = requestAnimationFrame(frame); }
+      else { pos = target; wrap(); paint(); anim = null; }
+    };
+    anim = requestAnimationFrame(frame);
+  };
+  const onDown = (e) => {
+    if (e.pointerType === "mouse" && e.button !== 0) return;
+    cancelAnimationFrame(anim); anim = null;
+    drag = { id: e.pointerId, x: e.clientX, y: e.clientY, pos, on: false, t: performance.now(), lx: e.clientX, v: 0 };
+    moved = false;
+  };
+  const onMove = (e) => {
+    if (!drag || e.pointerId !== drag.id) return;
+    const dx = e.clientX - drag.x, dy = e.clientY - drag.y;
+    if (!drag.on) {
+      if (Math.abs(dx) < 6 && Math.abs(dy) < 6) return;
+      if (Math.abs(dy) > Math.abs(dx)) { drag = null; return; } // tik harakat — sahifa suriladi
+      drag.on = true; moved = true;
+      row.setPointerCapture(e.pointerId);
+    }
+    const now = performance.now(), dt = (now - drag.t) / 1000;
+    if (dt > 0) drag.v = drag.v * 0.5 + (-(e.clientX - drag.lx) / dt) * 0.5;
+    drag.t = now; drag.lx = e.clientX;
+    pos = drag.pos - dx;
+    paint();
+  };
+  const onUp = (e) => {
+    if (!drag || e.pointerId !== drag.id) return;
+    const d = drag; drag = null;
+    if (!d.on) return;
+    const startIdx = Math.round(d.pos / step);
+    const v = performance.now() - d.t > 100 ? 0 : d.v;
+    let idx = Math.round(pos / step);
+    if (Math.abs(v) > 350 || Math.abs(pos - d.pos) > step * 0.18) idx = startIdx + Math.sign(pos - d.pos || v);
+    if (Math.abs(v) > 2200) idx += Math.sign(v); // juda tez surilsa, 2 karta
+    animateTo(idx * step);
+  };
+  // Surish paytida tugma/havola bosilib ketmasin
+  const onClick = (e) => { if (moved) { e.preventDefault(); e.stopPropagation(); moved = false; } };
+  const onScroll = () => { box.scrollLeft = 0; }; // fokus o'tganda brauzer o'zi surib yubormasin
+  row.addEventListener("pointerdown", onDown);
+  row.addEventListener("pointermove", onMove);
+  row.addEventListener("pointerup", onUp);
+  row.addEventListener("pointercancel", onUp);
+  row.addEventListener("click", onClick, true);
+  row.addEventListener("dragstart", (e) => e.preventDefault());
+  box.addEventListener("scroll", onScroll);
+  const onResize = () => { measure(); pos = Math.round(pos / step) * step; wrap(); paint(); };
+  addEventListener("resize", onResize);
+  measure();
+  const start = items.findIndex((el) => el.classList.contains("set-hot"));
+  pos = Math.max(0, start) * step;
+  paint();
   return () => {
-    row.removeEventListener(ev, handler);
+    cancelAnimationFrame(anim);
+    removeEventListener("resize", onResize);
+    row.removeEventListener("pointerdown", onDown);
+    row.removeEventListener("pointermove", onMove);
+    row.removeEventListener("pointerup", onUp);
+    row.removeEventListener("pointercancel", onUp);
+    row.removeEventListener("click", onClick, true);
     row.querySelectorAll(":scope > .is-clone").forEach((c) => c.remove());
-    row.scrollLeft = 0;
+    row.style.transform = "";
+    box.before(row);
+    box.remove();
   };
 }
 let rowTeardowns = [];
