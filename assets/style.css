@@ -580,11 +580,7 @@ i.fa-solid, i.fa-brands { display: inline-block; min-width: 1em; line-height: 1;
   /* Surib ko'riladigan qatorlar: xizmatlar, ishlar, setlar */
   .svcs, .works, .sets { display: flex; flex-wrap: nowrap; justify-content: flex-start; gap: 12px; overflow-x: auto; overscroll-behavior-x: contain; scroll-snap-type: x mandatory; scroll-padding-inline: var(--gutter); margin-inline: calc(-1 * var(--gutter)); padding-inline: var(--gutter); padding-bottom: 8px; scrollbar-width: none; }
   .svcs::-webkit-scrollbar, .works::-webkit-scrollbar, .sets::-webkit-scrollbar { display: none; }
-  .svcs > *, .works > *, .sets > * { flex: 0 0 84%; scroll-snap-align: start; }
-  /* JS karusel: .carousel kesadi, ichidagi qator transform bilan suriladi */
-  .carousel { overflow: hidden; margin-inline: calc(-1 * var(--gutter)); touch-action: pan-y; }
-  .carousel > .svcs, .carousel > .works, .carousel > .sets { margin-inline: 0; overflow: visible; scroll-snap-type: none; will-change: transform; touch-action: pan-y; user-select: none; -webkit-user-select: none; }
-  .carousel img { -webkit-user-drag: none; pointer-events: none; }
+  .svcs > *, .works > *, .sets > * { flex: 0 0 84%; scroll-snap-align: start; scroll-snap-stop: always; }
   .sets { padding-top: 14px; align-items: stretch; }
   .work .photo { height: 220px; }
 

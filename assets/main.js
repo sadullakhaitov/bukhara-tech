@@ -261,9 +261,10 @@ if (faqAll) {
   }
 }
 
-// Telefon: xizmatlar, ishlar va setlar — cheksiz aylanadigan karusel.
-// Brauzer scroll'i emas, transform bilan suriladi: oxirgi kartadan keyin 1-si to'xtamasdan keladi
-// (avvalgi scroll + "sakrash" usulida 3-kartadan keyin bir zum to'xtab qolardi).
+// Telefon: xizmatlar, ishlar va setlar — cheksiz aylanadigan qator.
+// Yonga surishni telefonning o'zi (oddiy scroll + scroll-snap) bajaradi — iPhone yo'nalishni
+// eng to'g'ri aniqlaydi. Kartalar har ikki tomonga ko'p marta takrorlanadi, shuning uchun oxiriga
+// yetib bo'lmaydi; surish to'xtagach, ko'rinmas tarzda o'rtadagi asl nusxaga qaytariladi.
 const mqPhone = matchMedia("(max-width: 600px)");
 // Barmoq/sichqoncha bilan gorizontal surish. Telefonda touch hodisalari ishlatiladi:
 // birinchi harakatdayoq yo'nalish aniqlanadi va yon harakat bo'lsa sahifa surilishi to'xtatiladi
@@ -308,7 +309,7 @@ function swipe(el, h) {
     const dx = t.clientX - s.x, dy = t.clientY - s.y;
     if (!s.dir) {
       if (!dx && !dy) return;
-      s.dir = Math.abs(dx) > Math.abs(dy) && e.cancelable ? "x" : "y";
+      s.dir = Math.abs(dx) >= Math.abs(dy) * 0.8 && e.cancelable ? "x" : "y"; // yoy shaklidagi surish ham yonga hisoblanadi
       if (s.dir === "x") h.start(s.x);
     }
     if (s.dir !== "x") return; // tikka — sahifa o'zi suriladi
@@ -336,77 +337,35 @@ function loopRow(row) {
   const items = [...row.children];
   const n = items.length;
   if (n < 2) return () => {};
-  const box = document.createElement("div");
-  box.className = "carousel";
-  row.before(box);
-  box.append(row);
-  row.prepend(...items.map(cloneOf));
-  row.append(...items.map(cloneOf));
-  let step = 0, base = 0, pos = 0, anim = null, drag = null, moved = false;
-  const measure = () => {
-    step = row.children[n + 1].offsetLeft - row.children[n].offsetLeft;
-    base = row.children[n].offsetLeft - parseFloat(getComputedStyle(row).paddingLeft);
+  const reps = Math.max(4, Math.ceil(36 / n)); // har tomonda nechta to'liq nusxa
+  for (let r = 0; r < reps; r++) {
+    row.prepend(...items.map(cloneOf));
+    row.append(...items.map(cloneOf));
+  }
+  const x = (el) => el.getBoundingClientRect().left;
+  const posOf = (el) => row.scrollLeft + x(el) - x(row) - parseFloat(getComputedStyle(row).paddingLeft);
+  const period = () => x(items[n - 1].nextElementSibling) - x(items[0]);
+  const fix = () => {
+    const p = period(), home = posOf(items[0]);
+    if (!p) return;
+    let sl = row.scrollLeft;
+    while (sl < home - p / 2) sl += p;
+    while (sl >= home + p / 2) sl -= p;
+    if (Math.abs(sl - row.scrollLeft) > 1) row.scrollLeft = sl;
   };
-  const period = () => step * n;
-  const wrap = () => { const p = period(); pos = ((pos % p) + p) % p; };
-  const paint = () => { row.style.transform = `translate3d(${-(base + pos)}px, 0, 0)`; };
-  const animateTo = (target) => {
-    cancelAnimationFrame(anim);
-    const from = pos, t0 = performance.now(), dur = 320;
-    const ease = (t) => 1 - Math.pow(1 - t, 3);
-    const frame = (now) => {
-      const t = Math.min(1, (now - t0) / dur);
-      pos = from + (target - from) * ease(t);
-      if (t < 1) { paint(); anim = requestAnimationFrame(frame); }
-      else { pos = target; wrap(); paint(); anim = null; }
-    };
-    anim = requestAnimationFrame(frame);
-  };
-  const stopSwipe = swipe(row, {
-    down: () => { moved = false; },
-    start: (x) => {
-      cancelAnimationFrame(anim); anim = null;
-      drag = { pos, t: performance.now(), lx: x, v: 0 };
-      moved = true;
-    },
-    move: (dx, x) => {
-      const now = performance.now(), dt = (now - drag.t) / 1000;
-      if (dt > 0) drag.v = drag.v * 0.5 + (-(x - drag.lx) / dt) * 0.5;
-      drag.t = now; drag.lx = x;
-      pos = drag.pos - dx;
-      paint();
-    },
-    end: () => {
-      const d = drag; drag = null;
-      if (!d) return;
-      const startIdx = Math.round(d.pos / step);
-      const v = performance.now() - d.t > 100 ? 0 : d.v;
-      let idx = Math.round(pos / step);
-      if (Math.abs(v) > 350 || Math.abs(pos - d.pos) > step * 0.18) idx = startIdx + Math.sign(pos - d.pos || v);
-      if (Math.abs(v) > 2200) idx += Math.sign(v); // juda tez surilsa, 2 karta
-      animateTo(idx * step);
-    },
-  });
-  // Surish paytida tugma/havola bosilib ketmasin
-  const onClick = (e) => { if (moved) { e.preventDefault(); e.stopPropagation(); moved = false; } };
-  const onScroll = () => { box.scrollLeft = 0; }; // fokus o'tganda brauzer o'zi surib yubormasin
-  row.addEventListener("click", onClick, true);
-  box.addEventListener("scroll", onScroll);
-  const onResize = () => { measure(); pos = Math.round(pos / step) * step; wrap(); paint(); };
-  addEventListener("resize", onResize);
-  measure();
-  const start = items.findIndex((el) => el.classList.contains("set-hot"));
-  pos = Math.max(0, start) * step;
-  paint();
+  let t;
+  const onScroll = () => { clearTimeout(t); t = setTimeout(fix, 220); };
+  const onEnd = () => { clearTimeout(t); t = setTimeout(fix, 60); };
+  row.addEventListener("scroll", onScroll, { passive: true });
+  if ("onscrollend" in window) row.addEventListener("scrollend", onEnd);
+  const start = items.find((el) => el.classList.contains("set-hot")) || items[0];
+  row.scrollLeft = posOf(start);
   return () => {
-    cancelAnimationFrame(anim);
-    removeEventListener("resize", onResize);
-    stopSwipe();
-    row.removeEventListener("click", onClick, true);
+    clearTimeout(t);
+    row.removeEventListener("scroll", onScroll);
+    row.removeEventListener("scrollend", onEnd);
     row.querySelectorAll(":scope > .is-clone").forEach((c) => c.remove());
-    row.style.transform = "";
-    box.before(row);
-    box.remove();
+    row.scrollLeft = 0;
   };
 }
 let rowTeardowns = [];
