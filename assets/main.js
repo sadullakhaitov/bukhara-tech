@@ -218,7 +218,7 @@ if (calc) {
   bar.setAttribute("aria-hidden", "true");
   bar.innerHTML = '<span class="calc-bar-text"><small></small><b></b></span><button type="button" class="btn btn-dark"></button>';
   bar.querySelector("small").textContent = tx("Jami", "Итого", "Total");
-  bar.querySelector("button").textContent = tx("Buyurtma berish →", "Оформить →", "Order →");
+  bar.querySelector("button").textContent = tx("Buyurtma →", "Заказать →", "Order →");
   bar.querySelector("button").addEventListener("click", () => order.click());
   const barTotal = bar.querySelector("b");
   document.body.append(bar);
@@ -230,7 +230,8 @@ if (calc) {
     bar.inert = !show;
   };
   if ("IntersectionObserver" in window) {
-    new IntersectionObserver(([e]) => { inCalc = e.isIntersecting; syncBar(); }).observe(calc.closest("section") || calc);
+    // Kalkulyator bo'limi ekranning o'rta qismini egallagandagina (chetidan ko'rinib turganda emas)
+    new IntersectionObserver(([e]) => { inCalc = e.isIntersecting; syncBar(); }, { rootMargin: "-35% 0px -35% 0px" }).observe(calc.closest("section") || calc);
     // Jami summa raqamining o'zi ko'rinsa (pastki panellar ostida emas) — bar kerak emas
     new IntersectionObserver(([e]) => { sumVisible = e.isIntersecting; syncBar(); }, { rootMargin: "0px 0px -170px 0px", threshold: 1 }).observe(total);
   }
@@ -307,7 +308,7 @@ function swipe(el, h) {
     const dx = t.clientX - s.x, dy = t.clientY - s.y;
     if (!s.dir) {
       if (!dx && !dy) return;
-      s.dir = Math.abs(dx) > Math.abs(dy) ? "x" : "y";
+      s.dir = Math.abs(dx) > Math.abs(dy) && e.cancelable ? "x" : "y";
       if (s.dir === "x") h.start(s.x);
     }
     if (s.dir !== "x") return; // tikka — sahifa o'zi suriladi

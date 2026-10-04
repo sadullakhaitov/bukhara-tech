@@ -451,12 +451,12 @@ i.fa-solid, i.fa-brands { display: inline-block; min-width: 1em; line-height: 1;
 /* ---------- Kalkulyator: telefonda pastdagi "Jami" qatori ---------- */
 .calc-bar { display: none; }
 @media (max-width: 900px) {
-  .calc-bar { display: flex; align-items: center; justify-content: space-between; gap: 12px; position: fixed; left: 12px; right: 12px; bottom: calc(16px + env(safe-area-inset-bottom)); z-index: 39; padding: 10px 10px 10px 18px; border: 1px solid var(--line); border-radius: 18px; background: var(--surf); box-shadow: 0 16px 40px -14px rgba(16, 24, 32, .35); transform: translateY(160%); opacity: 0; transition: transform .25s ease, opacity .25s ease; }
+  .calc-bar { display: flex; align-items: center; justify-content: space-between; gap: 12px; position: fixed; left: 8px; right: 8px; bottom: calc(16px + env(safe-area-inset-bottom)); z-index: 39; padding: 8px 8px 8px 16px; border: 1px solid var(--line); border-radius: 18px; background: var(--surf); box-shadow: 0 16px 40px -14px rgba(16, 24, 32, .35); transform: translateY(160%); opacity: 0; transition: transform .25s ease, opacity .25s ease; }
   .calc-bar.show { transform: none; opacity: 1; }
-  .calc-bar-text { display: flex; flex-direction: column; line-height: 1.2; min-width: 0; }
+  .calc-bar-text { display: flex; flex-direction: column; flex: 1; line-height: 1.2; min-width: 0; }
   .calc-bar-text small { font-size: 12px; color: var(--muted); font-weight: 600; }
-  .calc-bar-text b { font-family: var(--disp); font-weight: 600; font-size: 19px; letter-spacing: -.01em; white-space: nowrap; }
-  .calc-bar .btn { height: 46px; padding: 0 16px; font-size: 15px; flex-shrink: 0; }
+  .calc-bar-text b { font-family: var(--disp); font-weight: 600; font-size: clamp(15px, 4.4vw, 19px); letter-spacing: -.02em; white-space: nowrap; overflow: hidden; text-overflow: ellipsis; }
+  .calc-bar .btn { height: 46px; padding: 0 16px; font-size: 15px; flex-shrink: 0; white-space: nowrap; }
 }
 @media (max-width: 600px) {
   .calc-bar { bottom: calc(80px + env(safe-area-inset-bottom)); }
