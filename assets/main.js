@@ -264,6 +264,66 @@ if (faqAll) {
 // Brauzer scroll'i emas, transform bilan suriladi: oxirgi kartadan keyin 1-si to'xtamasdan keladi
 // (avvalgi scroll + "sakrash" usulida 3-kartadan keyin bir zum to'xtab qolardi).
 const mqPhone = matchMedia("(max-width: 600px)");
+// Barmoq/sichqoncha bilan gorizontal surish. Telefonda touch hodisalari ishlatiladi:
+// birinchi harakatdayoq yo'nalish aniqlanadi va yon harakat bo'lsa sahifa surilishi to'xtatiladi
+// (pointer hodisalarida iPhone harakatni "tikka" deb o'zi hal qilib, karuselni bekor qilib qo'yardi).
+function swipe(el, h) {
+  const ac = new AbortController(), o = { signal: ac.signal };
+  let s = null;
+  // Sichqoncha
+  el.addEventListener("pointerdown", (e) => {
+    if (e.pointerType !== "mouse" || e.button !== 0) return;
+    s = { x: e.clientX, y: e.clientY, dir: null, mouse: true, id: e.pointerId };
+    h.down && h.down();
+  }, o);
+  el.addEventListener("pointermove", (e) => {
+    if (!s || !s.mouse || e.pointerId !== s.id) return;
+    const dx = e.clientX - s.x;
+    if (!s.dir) {
+      if (Math.abs(dx) < 5) return;
+      s.dir = "x";
+      el.setPointerCapture(e.pointerId);
+      h.start(s.x);
+    }
+    h.move(dx, e.clientX);
+  }, o);
+  const mouseEnd = (e) => {
+    if (!s || !s.mouse || e.pointerId !== s.id) return;
+    const was = s.dir === "x"; s = null;
+    if (was) h.end();
+  };
+  el.addEventListener("pointerup", mouseEnd, o);
+  el.addEventListener("pointercancel", mouseEnd, o);
+  // Barmoq
+  el.addEventListener("touchstart", (e) => {
+    if (e.touches.length !== 1) { if (s && s.dir === "x") h.end(); s = null; return; }
+    const t = e.touches[0];
+    s = { x: t.clientX, y: t.clientY, dir: null };
+    h.down && h.down();
+  }, { passive: true, signal: ac.signal });
+  el.addEventListener("touchmove", (e) => {
+    if (!s || s.mouse) return;
+    const t = e.touches[0];
+    const dx = t.clientX - s.x, dy = t.clientY - s.y;
+    if (!s.dir) {
+      if (!dx && !dy) return;
+      s.dir = Math.abs(dx) > Math.abs(dy) ? "x" : "y";
+      if (s.dir === "x") h.start(s.x);
+    }
+    if (s.dir !== "x") return; // tikka — sahifa o'zi suriladi
+    if (e.cancelable) e.preventDefault();
+    h.move(dx, t.clientX);
+  }, { passive: false, signal: ac.signal });
+  const touchEnd = () => {
+    if (!s || s.mouse) return;
+    const was = s.dir === "x"; s = null;
+    if (was) h.end();
+  };
+  el.addEventListener("touchend", touchEnd, o);
+  el.addEventListener("touchcancel", touchEnd, o);
+  el.addEventListener("dragstart", (e) => e.preventDefault(), o);
+  return () => ac.abort();
+}
 function cloneOf(el) {
   const c = el.cloneNode(true);
   c.classList.add("is-clone");
@@ -301,47 +361,35 @@ function loopRow(row) {
     };
     anim = requestAnimationFrame(frame);
   };
-  const onDown = (e) => {
-    if (e.pointerType === "mouse" && e.button !== 0) return;
-    cancelAnimationFrame(anim); anim = null;
-    drag = { id: e.pointerId, x: e.clientX, y: e.clientY, pos, on: false, t: performance.now(), lx: e.clientX, v: 0 };
-    moved = false;
-  };
-  const onMove = (e) => {
-    if (!drag || e.pointerId !== drag.id) return;
-    const dx = e.clientX - drag.x, dy = e.clientY - drag.y;
-    if (!drag.on) {
-      if (Math.abs(dx) < 6 && Math.abs(dy) < 6) return;
-      if (Math.abs(dy) > Math.abs(dx)) { drag = null; return; } // tik harakat — sahifa suriladi
-      drag.on = true; moved = true;
-      row.setPointerCapture(e.pointerId);
-    }
-    const now = performance.now(), dt = (now - drag.t) / 1000;
-    if (dt > 0) drag.v = drag.v * 0.5 + (-(e.clientX - drag.lx) / dt) * 0.5;
-    drag.t = now; drag.lx = e.clientX;
-    pos = drag.pos - dx;
-    paint();
-  };
-  const onUp = (e) => {
-    if (!drag || e.pointerId !== drag.id) return;
-    const d = drag; drag = null;
-    if (!d.on) return;
-    const startIdx = Math.round(d.pos / step);
-    const v = performance.now() - d.t > 100 ? 0 : d.v;
-    let idx = Math.round(pos / step);
-    if (Math.abs(v) > 350 || Math.abs(pos - d.pos) > step * 0.18) idx = startIdx + Math.sign(pos - d.pos || v);
-    if (Math.abs(v) > 2200) idx += Math.sign(v); // juda tez surilsa, 2 karta
-    animateTo(idx * step);
-  };
+  const stopSwipe = swipe(row, {
+    down: () => { moved = false; },
+    start: (x) => {
+      cancelAnimationFrame(anim); anim = null;
+      drag = { pos, t: performance.now(), lx: x, v: 0 };
+      moved = true;
+    },
+    move: (dx, x) => {
+      const now = performance.now(), dt = (now - drag.t) / 1000;
+      if (dt > 0) drag.v = drag.v * 0.5 + (-(x - drag.lx) / dt) * 0.5;
+      drag.t = now; drag.lx = x;
+      pos = drag.pos - dx;
+      paint();
+    },
+    end: () => {
+      const d = drag; drag = null;
+      if (!d) return;
+      const startIdx = Math.round(d.pos / step);
+      const v = performance.now() - d.t > 100 ? 0 : d.v;
+      let idx = Math.round(pos / step);
+      if (Math.abs(v) > 350 || Math.abs(pos - d.pos) > step * 0.18) idx = startIdx + Math.sign(pos - d.pos || v);
+      if (Math.abs(v) > 2200) idx += Math.sign(v); // juda tez surilsa, 2 karta
+      animateTo(idx * step);
+    },
+  });
   // Surish paytida tugma/havola bosilib ketmasin
   const onClick = (e) => { if (moved) { e.preventDefault(); e.stopPropagation(); moved = false; } };
   const onScroll = () => { box.scrollLeft = 0; }; // fokus o'tganda brauzer o'zi surib yubormasin
-  row.addEventListener("pointerdown", onDown);
-  row.addEventListener("pointermove", onMove);
-  row.addEventListener("pointerup", onUp);
-  row.addEventListener("pointercancel", onUp);
   row.addEventListener("click", onClick, true);
-  row.addEventListener("dragstart", (e) => e.preventDefault());
   box.addEventListener("scroll", onScroll);
   const onResize = () => { measure(); pos = Math.round(pos / step) * step; wrap(); paint(); };
   addEventListener("resize", onResize);
@@ -352,10 +400,7 @@ function loopRow(row) {
   return () => {
     cancelAnimationFrame(anim);
     removeEventListener("resize", onResize);
-    row.removeEventListener("pointerdown", onDown);
-    row.removeEventListener("pointermove", onMove);
-    row.removeEventListener("pointerup", onUp);
-    row.removeEventListener("pointercancel", onUp);
+    stopSwipe();
     row.removeEventListener("click", onClick, true);
     row.querySelectorAll(":scope > .is-clone").forEach((c) => c.remove());
     row.style.transform = "";
@@ -414,42 +459,30 @@ function marquee(list, SPEED) {
   };
   list.addEventListener("pointerenter", (e) => { if (e.pointerType === "mouse") hover = true; });
   list.addEventListener("pointerleave", (e) => { if (e.pointerType === "mouse") hover = false; });
-  list.addEventListener("pointerdown", (e) => {
-    if (e.pointerType === "mouse" && e.button !== 0) return;
-    drag = { id: e.pointerId, x: e.clientX, y: e.clientY, pos, on: e.pointerType === "mouse", t: performance.now(), lx: e.clientX };
-    vel = 0;
-    if (drag.on) { list.setPointerCapture(e.pointerId); box.classList.add("dragging"); }
-  });
-  list.addEventListener("pointermove", (e) => {
-    if (!drag || e.pointerId !== drag.id) return;
-    const dx = e.clientX - drag.x, dy = e.clientY - drag.y;
-    if (!drag.on) {
-      // barmoq: gorizontal harakat bo'lsagina lentani olamiz, aks holda sahifa suriladi
-      if (Math.abs(dx) < 6 && Math.abs(dy) < 6) return;
-      if (Math.abs(dy) > Math.abs(dx)) { drag = null; return; }
-      drag.on = true;
-      list.setPointerCapture(e.pointerId);
+  swipe(list, {
+    down: () => { holdUntil = performance.now() + 2500; vel = 0; },
+    start: (x) => {
+      drag = { pos, t: performance.now(), lx: x };
+      vel = 0;
       box.classList.add("dragging");
-    }
-    const now = performance.now();
-    const step = (now - drag.t) / 1000;
-    if (step > 0) vel = vel * 0.6 + (-(e.clientX - drag.lx) / step) * 0.4;
-    drag.t = now; drag.lx = e.clientX;
-    pos = drag.pos - dx;
-    if (period && (pos < 0 || pos >= period)) { const p0 = pos; wrap(); drag.pos += pos - p0; }
-    paint();
+    },
+    move: (dx, x) => {
+      const now = performance.now(), dt = (now - drag.t) / 1000;
+      if (dt > 0) vel = vel * 0.6 + (-(x - drag.lx) / dt) * 0.4;
+      drag.t = now; drag.lx = x;
+      pos = drag.pos - dx;
+      if (period && (pos < 0 || pos >= period)) { const p0 = pos; wrap(); drag.pos += pos - p0; }
+      paint();
+    },
+    end: () => {
+      if (!drag) return;
+      if (performance.now() - drag.t > 80) vel = 0;
+      vel = Math.max(-2500, Math.min(2500, vel));
+      drag = null;
+      holdUntil = performance.now() + 2500;
+      box.classList.remove("dragging");
+    },
   });
-  const end = (e) => {
-    if (!drag || e.pointerId !== drag.id) return;
-    if (!drag.on || performance.now() - drag.t > 80) vel = 0;
-    vel = Math.max(-2500, Math.min(2500, vel));
-    drag = null;
-    holdUntil = performance.now() + 2500;
-    box.classList.remove("dragging");
-  };
-  list.addEventListener("pointerup", end);
-  list.addEventListener("pointercancel", end);
-  list.addEventListener("dragstart", (e) => e.preventDefault());
   if ("IntersectionObserver" in window) new IntersectionObserver(([e]) => { visible = e.isIntersecting; last = 0; }).observe(box);
   let rt, lastW = innerWidth;
   // iPhone'da manzil qatori yashiringanda ham resize bo'ladi — faqat kenglik o'zgarsa qayta quramiz
