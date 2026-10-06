@@ -1,0 +1,50 @@
+# bukharatech.uz DNS'i GitHub Pages'ga qaray boshlaganda saytni o'zi domenga o'tkazadi,
+# keyin HTTPS'ni yoqadi va o'zini o'chiradi. Qo'lda ham ishga tushirsa bo'ladi (Actions → Domenni ulash → Run).
+name: Domenni ulash
+on:
+  schedule:
+    - cron: "7,37 * * * *"
+  workflow_dispatch:
+permissions:
+  contents: write
+  pages: write
+  actions: write
+concurrency: domen
+jobs:
+  ulash:
+    runs-on: ubuntu-latest
+    env:
+      DOMAIN: bukharatech.uz
+      GH_TOKEN: ${{ github.token }}
+    steps:
+      - uses: actions/checkout@v4
+      - name: DNS tekshiruvi
+        id: dns
+        run: |
+          A=$(dig +short "$DOMAIN" A @8.8.8.8; dig +short "$DOMAIN" A @1.1.1.1)
+          echo "A yozuvlari: $A"
+          if echo "$A" | grep -qE '^185\.199\.(108|109|110|111)\.153$'; then
+            echo "tayyor=1" >> "$GITHUB_OUTPUT"
+          else
+            echo "DNS hali GitHub'ga qaramayapti — keyingi tekshiruvda yana urinib ko'ramiz."
+          fi
+      - name: Saytni domenga o'tkazish
+        if: steps.dns.outputs.tayyor == '1' && hashFiles('CNAME') == ''
+        run: |
+          bash .github/domen-ulash.sh
+          git config user.name "github-actions[bot]"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          git add -A
+          git commit -m "Domen ulandi: sayt endi https://$DOMAIN da"
+          git push
+          # GITHUB_TOKEN bilan push Pages qurilishini o'zi boshlamasligi mumkin — qo'lda so'raymiz
+          gh api -X POST "repos/$GITHUB_REPOSITORY/pages/builds" || true
+      - name: HTTPS'ni yoqish
+        if: steps.dns.outputs.tayyor == '1'
+        run: |
+          gh api -X PUT "repos/$GITHUB_REPOSITORY/pages" -f cname="$DOMAIN" -F https_enforced=true \
+            || echo "Sertifikat hali tayyor emas — keyingi tekshiruvda yana urinamiz."
+          if [ "$(gh api "repos/$GITHUB_REPOSITORY/pages" --jq .https_enforced)" = "true" ]; then
+            echo "HTTPS yoqildi. Ish tugadi — bu workflow o'chiriladi."
+            gh workflow disable domen.yml
+          fi
