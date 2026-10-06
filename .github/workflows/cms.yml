@@ -1,0 +1,36 @@
+# Admin panel (bukharatech.uz/admin) content/*.json ni o'zgartirganda 18 ta sahifani qayta yig'adi.
+name: Saytni yangilash (admin panel)
+on:
+  push:
+    branches: [main]
+    paths:
+      - "content/**"
+      - "tools/build.py"
+  workflow_dispatch:
+permissions:
+  contents: write
+  pages: write
+concurrency:
+  group: cms
+  cancel-in-progress: false
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    env:
+      GH_TOKEN: ${{ github.token }}
+    steps:
+      - uses: actions/checkout@v5
+        with:
+          ref: main
+      - name: Sahifalarni yig'ish
+        run: python3 tools/build.py
+      - name: O'zgarishlarni saqlash
+        run: |
+          if git diff --quiet; then echo "Sahifalarda o'zgarish yo'q."; exit 0; fi
+          git config user.name "github-actions[bot]"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          git add -A
+          git commit -m "Sayt yangilandi (admin panel)"
+          for i in 1 2 3; do git pull --rebase -q origin main && git push && break; sleep 5; done
+          # GITHUB_TOKEN bilan push Pages qurilishini o'zi boshlamasligi mumkin — so'raymiz
+          gh api -X POST "repos/$GITHUB_REPOSITORY/pages/builds" || true

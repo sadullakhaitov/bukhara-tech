@@ -23,6 +23,14 @@ Buxorodagi 5 kishilik jamoaning xizmatlar sayti. Har bir usta o'z yo'nalishida i
 
 Jami staj: 43 yil, 5 yo'nalish (saytda shu raqamlar). Logotip 4 rangli kvadratligicha qoldi.
 
+## Admin panel (2026-10-06)
+
+- **Manzil:** https://bukharatech.uz/admin — Sveltia CMS (`admin/index.html` + `admin/config.yml`, unpkg'dan yuklanadi). Kirish: "Sign In Using Access Token" — GitHub fine-grained token (faqat shu repo, Contents: Read and write). Rasm yuklash: `images/uploads/`.
+- **Ma'lumotlar `content/*.json` da** (har matn `{uz, ru, en}`, ru/en bo'sh bo'lsa uz ko'rinadi): `sharhlar`, `ishlar` (bosh + har usta), `xizmatlar` (bosh sahifa kartalari narxi), `kalkulyator`, `setlar`, `paketlar` (har usta: paketlar + "Alohida xizmatlar"), `jamoa` (rasm, staj — jami staj hero'da o'zi hisoblanadi, kartadagi jumla, teglar, usta sahifasidagi tavsif), `mijozlar` (logotiplar), `aloqa` (telefon, Telegram, Instagram, ish vaqti, manzil).
+- **Yig'ish:** `python3 tools/build.py` — 18 sahifadagi `<!-- cms:NOM -->…<!-- /cms:NOM -->` oraliqlarini qayta yozadi. **Bu oraliqlarni HTML'da qo'lda tahrirlamang** — `content/*.json` ni o'zgartirib, build'ni ishga tushiring (keyingi build qo'lda o'zgarishni o'chirib yuboradi). Aloqa qiymatlari butun saytda eski→yangi almashtirish bilan yangilanadi (oxirgi qiymatlar `tools/.aloqa-holat.json`).
+- **GitHub Action** `.github/workflows/cms.yml`: `content/**` yoki `tools/build.py` o'zgarsa build qiladi, commit "Sayt yangilandi (admin panel)" + Pages qurilishini so'raydi.
+- Panelda yo'q (kod orqali o'zgartiriladi): FAQ, sarlavhalar va boshqa matnlar, usta sahifasidagi xizmatlar ro'yxati, badge/chips, set/paket tugma yozuvlari (build.py `T` lug'atida).
+
 ## Dizayn qarorlari
 
 - **Hozirgi uslub foydalanuvchiga yoqqan, saqlansin:** och fon #F4F6F9, Unbounded (sarlavha) + Manrope (matn) + JetBrains Mono (kichik yorliqlar), har ustaga o'z rangi, logotip 4 rangli 2×2 kvadrat.

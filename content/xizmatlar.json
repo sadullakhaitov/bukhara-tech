@@ -1,0 +1,99 @@
+{
+  "kartalar": [
+    {
+      "yonalish": "p-cam",
+      "sarlavha": {
+        "uz": "“Uyim, doʻkonim xavfsiz boʻlsin”",
+        "ru": "«Хочу, чтобы дом и магазин были под защитой»",
+        "en": "“I want my home and shop to be safe”"
+      },
+      "matn": {
+        "uz": "Kamera oʻrnatamiz va telefoningizga ulaymiz — istalgan joydan koʻrasiz.",
+        "ru": "Установим камеры и подключим к телефону — смотрите откуда угодно.",
+        "en": "We install cameras and connect them to your phone — watch from anywhere."
+      },
+      "narx": 150000,
+      "tugma": {
+        "uz": "Kamera haqida",
+        "ru": "О камерах",
+        "en": "About cameras"
+      }
+    },
+    {
+      "yonalish": "p-net",
+      "sarlavha": {
+        "uz": "“Internet sekin, Wi-Fi yetmaydi”",
+        "ru": "«Интернет медленный, Wi-Fi не добивает»",
+        "en": "“The internet is slow and Wi-Fi doesn't reach”"
+      },
+      "matn": {
+        "uz": "Wi-Fi’ni butun uy yoki ofisga yetkazamiz, internet uzilmaydigan qilamiz.",
+        "ru": "Проведём Wi-Fi по всему дому или офису, чтобы интернет не обрывался.",
+        "en": "We bring Wi-Fi to every corner of your home or office, with no dropouts."
+      },
+      "narx": 150000,
+      "tugma": {
+        "uz": "Internet haqida",
+        "ru": "Об интернете",
+        "en": "About internet"
+      }
+    },
+    {
+      "yonalish": "p-media",
+      "sarlavha": {
+        "uz": "“Instagram uchun reklama video kerak”",
+        "ru": "«Нужно рекламное видео для Instagram»",
+        "en": "“I need a promo video for Instagram”"
+      },
+      "matn": {
+        "uz": "Reels, reklama va tadbir videolarini montaj qilib, rangini chiroyli qilamiz.",
+        "ru": "Смонтируем Reels, рекламу и видео с мероприятий, сделаем красивый цвет.",
+        "en": "We edit Reels, ads and event videos and make the colours look great."
+      },
+      "narx": 100000,
+      "tugma": {
+        "uz": "Video haqida",
+        "ru": "О видео",
+        "en": "About video"
+      }
+    },
+    {
+      "yonalish": "p-web",
+      "sarlavha": {
+        "uz": "“Biznesim uchun sayt yoki bot kerak”",
+        "ru": "«Нужен сайт или бот для бизнеса»",
+        "en": "“My business needs a website or a bot”"
+      },
+      "matn": {
+        "uz": "Buyurtma qabul qiladigan sayt yoki Telegram bot qilib beramiz.",
+        "ru": "Сделаем сайт или Telegram-бота, который принимает заказы.",
+        "en": "We build a website or Telegram bot that takes orders for you."
+      },
+      "narx": 1000000,
+      "tugma": {
+        "uz": "Sayt haqida",
+        "ru": "О сайтах",
+        "en": "About websites"
+      }
+    },
+    {
+      "yonalish": "p-ai",
+      "sarlavha": {
+        "uz": "“Takroriy ishlarga vaqtim ketyapti”",
+        "ru": "«Рутина отнимает всё время»",
+        "en": "“Routine tasks eat up all my time”"
+      },
+      "matn": {
+        "uz": "AI yordamchi va avtomatlashtirish — mijozga 24/7 javob, hisobotlar oʻzi tayyor.",
+        "ru": "AI-помощник и автоматизация — ответы клиентам 24/7, отчёты готовятся сами.",
+        "en": "An AI assistant and automation — 24/7 replies to customers, reports that write themselves."
+      },
+      "narx": 500000,
+      "tugma": {
+        "uz": "AI haqida",
+        "ru": "Об AI",
+        "en": "About AI"
+      }
+    }
+  ]
+}

@@ -1,0 +1,181 @@
+{
+  "setlar": [
+    {
+      "nomi": {
+        "uz": "Doʻkon seti",
+        "ru": "Сет «Магазин»",
+        "en": "“Shop” bundle"
+      },
+      "tavsif": {
+        "uz": "Kichik doʻkon yoki dorixona uchun.",
+        "ru": "Для небольшого магазина или аптеки.",
+        "en": "For a small shop or pharmacy."
+      },
+      "mashhur": false,
+      "tarkibi": [
+        {
+          "yonalish": "p-cam",
+          "matn": {
+            "uz": "4 ta kamera + telefondan koʻrish",
+            "ru": "4 камеры + просмотр с телефона",
+            "en": "4 cameras + phone viewing"
+          }
+        },
+        {
+          "yonalish": "p-net",
+          "matn": {
+            "uz": "Wi-Fi va MikroTik sozlash",
+            "ru": "Настройка Wi-Fi и MikroTik",
+            "en": "Wi-Fi and MikroTik setup"
+          }
+        },
+        {
+          "yonalish": "p-media",
+          "matn": {
+            "uz": "Instagram uchun 3 ta Reels",
+            "ru": "3 Reels для Instagram",
+            "en": "3 Reels for Instagram"
+          }
+        }
+      ],
+      "alohida_narx": 1050000,
+      "narx": 890000,
+      "uskuna": {
+        "uz": "+ uskunalar taxminan 4–5 mln soʻm",
+        "ru": "+ оборудование примерно 4–5 млн сум",
+        "en": "+ equipment approx. 4–5 mln UZS"
+      },
+      "kafolat": {
+        "uz": "6 oy bepul xizmat kafolati",
+        "ru": "6 месяцев бесплатного обслуживания",
+        "en": "6 months of free maintenance"
+      }
+    },
+    {
+      "nomi": {
+        "uz": "Ofis seti",
+        "ru": "Сет «Офис»",
+        "en": "“Office” bundle"
+      },
+      "tavsif": {
+        "uz": "Yangi yoki taʼmirdan chiqqan ofis uchun.",
+        "ru": "Для нового или обновлённого офиса.",
+        "en": "For a new or renovated office."
+      },
+      "mashhur": true,
+      "tarkibi": [
+        {
+          "yonalish": "p-net",
+          "matn": {
+            "uz": "8 ta tarmoq nuqtasi",
+            "ru": "8 сетевых точек",
+            "en": "8 network points"
+          }
+        },
+        {
+          "yonalish": "p-net",
+          "matn": {
+            "uz": "MikroTik: internet va mehmon Wi-Fi",
+            "ru": "MikroTik: интернет и гостевой Wi-Fi",
+            "en": "MikroTik: internet and guest Wi-Fi"
+          }
+        },
+        {
+          "yonalish": "p-cam",
+          "matn": {
+            "uz": "4 ta kamera",
+            "ru": "4 камеры",
+            "en": "4 cameras"
+          }
+        },
+        {
+          "yonalish": "p-web",
+          "matn": {
+            "uz": "Soʻrovlar uchun Telegram bot",
+            "ru": "Telegram-бот для заявок",
+            "en": "Telegram bot for enquiries"
+          }
+        }
+      ],
+      "alohida_narx": 2150000,
+      "narx": 1790000,
+      "uskuna": {
+        "uz": "+ uskunalar taxminan 5–6 mln soʻm",
+        "ru": "+ оборудование примерно 5–6 млн сум",
+        "en": "+ equipment approx. 5–6 mln UZS"
+      },
+      "kafolat": {
+        "uz": "6 oy bepul xizmat kafolati",
+        "ru": "6 месяцев бесплатного обслуживания",
+        "en": "6 months of free maintenance"
+      }
+    },
+    {
+      "nomi": {
+        "uz": "Mehmonxona seti",
+        "ru": "Сет «Гостиница»",
+        "en": "“Hotel” bundle"
+      },
+      "tavsif": {
+        "uz": "Mehmonxona va mehmon uylari uchun.",
+        "ru": "Для гостиниц и гостевых домов.",
+        "en": "For hotels and guest houses."
+      },
+      "mashhur": false,
+      "tarkibi": [
+        {
+          "yonalish": "p-cam",
+          "matn": {
+            "uz": "8 ta kamera: kirish, yoʻlak, hovli",
+            "ru": "8 камер: вход, коридоры, двор",
+            "en": "8 cameras: entrance, corridors, yard"
+          }
+        },
+        {
+          "yonalish": "p-net",
+          "matn": {
+            "uz": "MikroTik va alohida mehmon Wi-Fi",
+            "ru": "MikroTik и отдельный гостевой Wi-Fi",
+            "en": "MikroTik and a separate guest Wi-Fi"
+          }
+        },
+        {
+          "yonalish": "p-net",
+          "matn": {
+            "uz": "Butun bino boʻylab Wi-Fi (6 nuqta)",
+            "ru": "Wi-Fi по всему зданию (6 точек)",
+            "en": "Wi-Fi across the whole building (6 points)"
+          }
+        },
+        {
+          "yonalish": "p-web",
+          "matn": {
+            "uz": "Sayt UZ / RU / EN + Telegram orqali bron",
+            "ru": "Сайт UZ / RU / EN + бронь через Telegram",
+            "en": "Website in UZ / RU / EN + bookings via Telegram"
+          }
+        },
+        {
+          "yonalish": "p-media",
+          "matn": {
+            "uz": "2 daqiqalik reklama video",
+            "ru": "Рекламное видео на 2 минуты",
+            "en": "A 2-minute promo video"
+          }
+        }
+      ],
+      "alohida_narx": 4350000,
+      "narx": 3690000,
+      "uskuna": {
+        "uz": "+ uskunalar taxminan 9–11 mln soʻm",
+        "ru": "+ оборудование примерно 9–11 млн сум",
+        "en": "+ equipment approx. 9–11 mln UZS"
+      },
+      "kafolat": {
+        "uz": "6 oy bepul xizmat kafolati",
+        "ru": "6 месяцев бесплатного обслуживания",
+        "en": "6 months of free maintenance"
+      }
+    }
+  ]
+}

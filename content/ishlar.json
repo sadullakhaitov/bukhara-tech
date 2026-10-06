@@ -1,0 +1,515 @@
+{
+  "bosh": [
+    {
+      "yonalish": "p-cam",
+      "rasm": "images/works/maruf-1.jpg",
+      "namuna": true,
+      "oldin_keyin": false,
+      "nomi": {
+        "uz": "Doʻkon",
+        "ru": "Магазин",
+        "en": "Shop"
+      },
+      "izoh": {
+        "uz": "[N] kamera · telefondan koʻrish",
+        "ru": "[N] камер · просмотр с телефона",
+        "en": "[N] cameras · phone viewing"
+      }
+    },
+    {
+      "yonalish": "p-net",
+      "rasm": "images/works/sherali-2.jpg",
+      "namuna": true,
+      "oldin_keyin": false,
+      "nomi": {
+        "uz": "Mehmonxona Wi-Fi",
+        "ru": "Wi-Fi в гостинице",
+        "en": "Hotel Wi-Fi"
+      },
+      "izoh": {
+        "uz": "[N] qavat · uzilmaydi",
+        "ru": "[N] этажей · без обрывов",
+        "en": "[N] floors · no dropouts"
+      }
+    },
+    {
+      "yonalish": "p-media",
+      "rasm": "",
+      "namuna": false,
+      "oldin_keyin": true,
+      "nomi": {
+        "uz": "Color grading",
+        "ru": "Цветокоррекция",
+        "en": "Colour grading"
+      },
+      "izoh": {
+        "uz": "Oldin / keyin",
+        "ru": "До / после",
+        "en": "Before / after"
+      }
+    },
+    {
+      "yonalish": "p-web",
+      "rasm": "images/works/sadulla-1.jpg",
+      "namuna": true,
+      "oldin_keyin": false,
+      "nomi": {
+        "uz": "Internet-doʻkon",
+        "ru": "Интернет-магазин",
+        "en": "Online store"
+      },
+      "izoh": {
+        "uz": "Katalog · savat · toʻlov",
+        "ru": "Каталог · корзина · оплата",
+        "en": "Catalogue · cart · payment"
+      }
+    },
+    {
+      "yonalish": "p-cam",
+      "rasm": "images/works/maruf-2.jpg",
+      "namuna": true,
+      "oldin_keyin": false,
+      "nomi": {
+        "uz": "Hovli va darvoza",
+        "ru": "Двор и ворота",
+        "en": "Yard and gate"
+      },
+      "izoh": {
+        "uz": "Tungi rejim",
+        "ru": "Ночной режим",
+        "en": "Night mode"
+      }
+    },
+    {
+      "yonalish": "p-net",
+      "rasm": "images/works/sherali-1.jpg",
+      "namuna": true,
+      "oldin_keyin": false,
+      "nomi": {
+        "uz": "Ofis tarmogʻi",
+        "ru": "Сеть офиса",
+        "en": "Office network"
+      },
+      "izoh": {
+        "uz": "[N] ish oʻrni · MikroTik",
+        "ru": "[N] рабочих мест · MikroTik",
+        "en": "[N] workstations · MikroTik"
+      }
+    }
+  ],
+  "sadulla": [
+    {
+      "rasm": "images/works/sadulla-1.jpg",
+      "namuna": true,
+      "oldin_keyin": false,
+      "nomi": {
+        "uz": "Internet-doʻkon",
+        "ru": "Интернет-магазин",
+        "en": "Online store"
+      },
+      "izoh": {
+        "uz": "Katalog · savat · toʻlov",
+        "ru": "Каталог · корзина · оплата",
+        "en": "Catalogue · cart · payment"
+      }
+    },
+    {
+      "rasm": "images/works/sadulla-2.jpg",
+      "namuna": true,
+      "oldin_keyin": false,
+      "nomi": {
+        "uz": "Korporativ sayt",
+        "ru": "Корпоративный сайт",
+        "en": "Company website"
+      },
+      "izoh": {
+        "uz": "UZ / RU",
+        "ru": "UZ / RU",
+        "en": "UZ / RU"
+      }
+    },
+    {
+      "rasm": "images/works/sadulla-3.jpg",
+      "namuna": true,
+      "oldin_keyin": false,
+      "nomi": {
+        "uz": "Buyurtma boti",
+        "ru": "Бот для заказов",
+        "en": "Order bot"
+      },
+      "izoh": {
+        "uz": "Telegram · admin panel",
+        "ru": "Telegram · админ-панель",
+        "en": "Telegram · admin panel"
+      }
+    },
+    {
+      "rasm": "images/works/sadulla-4.jpg",
+      "namuna": true,
+      "oldin_keyin": false,
+      "nomi": {
+        "uz": "Landing sahifa",
+        "ru": "Лендинг",
+        "en": "Landing page"
+      },
+      "izoh": {
+        "uz": "Reklama uchun",
+        "ru": "Для рекламы",
+        "en": "For advertising"
+      }
+    },
+    {
+      "rasm": "images/works/sadulla-5.jpg",
+      "namuna": true,
+      "oldin_keyin": false,
+      "nomi": {
+        "uz": "Admin panel",
+        "ru": "Админ-панель",
+        "en": "Admin panel"
+      },
+      "izoh": {
+        "uz": "Hisobotlar · CRM",
+        "ru": "Отчёты · CRM",
+        "en": "Reports · CRM"
+      }
+    },
+    {
+      "rasm": "images/works/sadulla-6.jpg",
+      "namuna": true,
+      "oldin_keyin": false,
+      "nomi": {
+        "uz": "Prezentatsiya",
+        "ru": "Презентация",
+        "en": "Presentation"
+      },
+      "izoh": {
+        "uz": "PowerPoint",
+        "ru": "PowerPoint",
+        "en": "PowerPoint"
+      }
+    }
+  ],
+  "sherali": [
+    {
+      "rasm": "images/works/sherali-1.jpg",
+      "namuna": true,
+      "oldin_keyin": false,
+      "nomi": {
+        "uz": "Ofis tarmogʻi",
+        "ru": "Сеть офиса",
+        "en": "Office network"
+      },
+      "izoh": {
+        "uz": "[N] ish oʻrni · MikroTik",
+        "ru": "[N] рабочих мест · MikroTik",
+        "en": "[N] workstations · MikroTik"
+      }
+    },
+    {
+      "rasm": "images/works/sherali-2.jpg",
+      "namuna": true,
+      "oldin_keyin": false,
+      "nomi": {
+        "uz": "Mehmonxona Wi-Fi",
+        "ru": "Wi-Fi в гостинице",
+        "en": "Hotel Wi-Fi"
+      },
+      "izoh": {
+        "uz": "[N] qavat · roaming",
+        "ru": "[N] этажей · роуминг",
+        "en": "[N] floors · roaming"
+      }
+    },
+    {
+      "rasm": "images/works/sherali-3.jpg",
+      "namuna": true,
+      "oldin_keyin": false,
+      "nomi": {
+        "uz": "Filiallar orasida VPN",
+        "ru": "VPN между филиалами",
+        "en": "VPN between branches"
+      },
+      "izoh": {
+        "uz": "IPsec · MikroTik",
+        "ru": "IPsec · MikroTik",
+        "en": "IPsec · MikroTik"
+      }
+    },
+    {
+      "rasm": "images/works/sherali-4.jpg",
+      "namuna": true,
+      "oldin_keyin": false,
+      "nomi": {
+        "uz": "Server xona",
+        "ru": "Серверная",
+        "en": "Server room"
+      },
+      "izoh": {
+        "uz": "Stoyka · kabel tartibi",
+        "ru": "Стойка · укладка кабеля",
+        "en": "Rack · cable management"
+      }
+    },
+    {
+      "rasm": "images/works/sherali-5.jpg",
+      "namuna": true,
+      "oldin_keyin": false,
+      "nomi": {
+        "uz": "Uy tarmogʻi",
+        "ru": "Домашняя сеть",
+        "en": "Home network"
+      },
+      "izoh": {
+        "uz": "Wi-Fi mesh",
+        "ru": "Wi-Fi mesh",
+        "en": "Wi-Fi mesh"
+      }
+    },
+    {
+      "rasm": "images/works/sherali-6.jpg",
+      "namuna": true,
+      "oldin_keyin": false,
+      "nomi": {
+        "uz": "Ikki provayder",
+        "ru": "Два провайдера",
+        "en": "Two providers"
+      },
+      "izoh": {
+        "uz": "Zaxira kanal",
+        "ru": "Резервный канал",
+        "en": "Backup line"
+      }
+    }
+  ],
+  "doston": [
+    {
+      "rasm": "",
+      "namuna": false,
+      "oldin_keyin": true,
+      "nomi": {
+        "uz": "Color grading",
+        "ru": "Цветокоррекция",
+        "en": "Colour grading"
+      },
+      "izoh": {
+        "uz": "Oldin / keyin",
+        "ru": "До / после",
+        "en": "Before / after"
+      }
+    },
+    {
+      "rasm": "images/works/doston-2.jpg",
+      "namuna": true,
+      "oldin_keyin": false,
+      "nomi": {
+        "uz": "Reklama rolik",
+        "ru": "Рекламный ролик",
+        "en": "Promo video"
+      },
+      "izoh": {
+        "uz": "Premiere Pro",
+        "ru": "Premiere Pro",
+        "en": "Premiere Pro"
+      }
+    },
+    {
+      "rasm": "images/works/doston-3.jpg",
+      "namuna": true,
+      "oldin_keyin": false,
+      "nomi": {
+        "uz": "Logotip animatsiyasi",
+        "ru": "Анимация логотипа",
+        "en": "Logo animation"
+      },
+      "izoh": {
+        "uz": "After Effects",
+        "ru": "After Effects",
+        "en": "After Effects"
+      }
+    },
+    {
+      "rasm": "images/works/doston-4.jpg",
+      "namuna": true,
+      "oldin_keyin": false,
+      "nomi": {
+        "uz": "Toʻy klipi",
+        "ru": "Свадебный клип",
+        "en": "Wedding clip"
+      },
+      "izoh": {
+        "uz": "DaVinci Resolve",
+        "ru": "DaVinci Resolve",
+        "en": "DaVinci Resolve"
+      }
+    },
+    {
+      "rasm": "images/works/doston-5.jpg",
+      "namuna": true,
+      "oldin_keyin": false,
+      "nomi": {
+        "uz": "Reels seriyasi",
+        "ru": "Серия Reels",
+        "en": "Reels series"
+      },
+      "izoh": {
+        "uz": "9:16",
+        "ru": "9:16",
+        "en": "9:16"
+      }
+    },
+    {
+      "rasm": "images/works/doston-6.jpg",
+      "namuna": true,
+      "oldin_keyin": false,
+      "nomi": {
+        "uz": "Foto retush",
+        "ru": "Ретушь фото",
+        "en": "Photo retouching"
+      },
+      "izoh": {
+        "uz": "Photoshop",
+        "ru": "Photoshop",
+        "en": "Photoshop"
+      }
+    }
+  ],
+  "maruf": [
+    {
+      "rasm": "images/works/maruf-1.jpg",
+      "namuna": true,
+      "oldin_keyin": false,
+      "nomi": {
+        "uz": "Doʻkon",
+        "ru": "Магазин",
+        "en": "Shop"
+      },
+      "izoh": {
+        "uz": "[N] kamera · NVR",
+        "ru": "[N] камер · NVR",
+        "en": "[N] cameras · NVR"
+      }
+    },
+    {
+      "rasm": "images/works/maruf-2.jpg",
+      "namuna": true,
+      "oldin_keyin": false,
+      "nomi": {
+        "uz": "Hovli va darvoza",
+        "ru": "Двор и ворота",
+        "en": "Yard and gate"
+      },
+      "izoh": {
+        "uz": "Tungi rejim",
+        "ru": "Ночной режим",
+        "en": "Night mode"
+      }
+    },
+    {
+      "rasm": "images/works/maruf-3.jpg",
+      "namuna": true,
+      "oldin_keyin": false,
+      "nomi": {
+        "uz": "Ofis",
+        "ru": "Офис",
+        "en": "Office"
+      },
+      "izoh": {
+        "uz": "Telefondan koʻrish",
+        "ru": "Просмотр с телефона",
+        "en": "Phone viewing"
+      }
+    },
+    {
+      "rasm": "images/works/maruf-4.jpg",
+      "namuna": true,
+      "oldin_keyin": false,
+      "nomi": {
+        "uz": "Ombor",
+        "ru": "Склад",
+        "en": "Warehouse"
+      },
+      "izoh": {
+        "uz": "Arxiv [N] kun",
+        "ru": "Архив [N] дней",
+        "en": "[N]-day archive"
+      }
+    },
+    {
+      "rasm": "images/works/maruf-5.jpg",
+      "namuna": true,
+      "oldin_keyin": false,
+      "nomi": {
+        "uz": "Registrator paroli",
+        "ru": "Сброс регистратора",
+        "en": "Recorder reset"
+      },
+      "izoh": {
+        "uz": "Parol tiklandi",
+        "ru": "Пароль восстановлен",
+        "en": "Password recovered"
+      }
+    },
+    {
+      "rasm": "images/works/maruf-6.jpg",
+      "namuna": true,
+      "oldin_keyin": false,
+      "nomi": {
+        "uz": "Koʻp qavatli uy",
+        "ru": "Многоэтажный дом",
+        "en": "Apartment block"
+      },
+      "izoh": {
+        "uz": "Yoʻlak va kirish",
+        "ru": "Подъезд и вход",
+        "en": "Stairwell and entrance"
+      }
+    }
+  ],
+  "umid": [
+    {
+      "rasm": "",
+      "namuna": false,
+      "oldin_keyin": false,
+      "nomi": {
+        "uz": "AI yordamchi bot",
+        "ru": "AI-помощник",
+        "en": "AI assistant"
+      },
+      "izoh": {
+        "uz": "Telegram · 24/7 javob",
+        "ru": "Telegram · ответы 24/7",
+        "en": "Telegram · 24/7 replies"
+      }
+    },
+    {
+      "rasm": "",
+      "namuna": false,
+      "oldin_keyin": false,
+      "nomi": {
+        "uz": "Hisobotlarni avtomatlashtirish",
+        "ru": "Автоматизация отчётов",
+        "en": "Report automation"
+      },
+      "izoh": {
+        "uz": "Jadval · har kuni oʻzi",
+        "ru": "Таблица · каждый день сама",
+        "en": "Spreadsheet · updates itself daily"
+      }
+    },
+    {
+      "rasm": "",
+      "namuna": false,
+      "oldin_keyin": false,
+      "nomi": {
+        "uz": "Aqlli ofis",
+        "ru": "Умный офис",
+        "en": "Smart office"
+      },
+      "izoh": {
+        "uz": "Sensorlar · telefondan boshqarish",
+        "ru": "Датчики · управление с телефона",
+        "en": "Sensors · phone control"
+      }
+    }
+  ]
+}

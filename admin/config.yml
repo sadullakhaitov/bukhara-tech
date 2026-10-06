@@ -1,0 +1,1598 @@
+# Bukhara Tech boshqaruv paneli (Sveltia CMS). Panel content/*.json ni tahrirlaydi,
+# saqlangach GitHub Action (.github/workflows/cms.yml) tools/build.py orqali 18 sahifani yangilaydi.
+# (Fayl YAML anchor/merge'larsiz — Sveltia uchun to'liq yoyilgan.)
+backend:
+  name: github
+  repo: sadullakhaitov/bukhara-tech
+  branch: main
+  commit_messages:
+    update: 'Admin panel: {{collection}} yangilandi'
+    uploadMedia: 'Admin panel: rasm yuklandi — {{path}}'
+    deleteMedia: 'Admin panel: rasm o''chirildi — {{path}}'
+media_folder: images/uploads
+public_folder: /images/uploads
+site_url: https://bukharatech.uz
+display_url: https://bukharatech.uz
+collections:
+- name: sayt
+  label: Sayt ma'lumotlari
+  editor:
+    preview: false
+  files:
+  - name: sharhlar
+    label: Mijozlar sharhlari
+    file: content/sharhlar.json
+    fields:
+    - name: sharhlar
+      label: Sharhlar
+      label_singular: Sharh
+      widget: list
+      summary: '{{fields.ism.uz}} — {{fields.mavzu.uz}}'
+      fields:
+      - name: yonalish
+        label: Yo'nalish (rangi)
+        widget: select
+        options:
+        - label: Kamera
+          value: p-cam
+        - label: Internet / IT
+          value: p-net
+        - label: Sayt va bot
+          value: p-web
+        - label: Video
+          value: p-media
+        - label: AI
+          value: p-ai
+      - name: belgi
+        label: Belgi (bo'sh qolsa — yo'nalish belgisi)
+        widget: select
+        required: false
+        options:
+        - label: Kompyuter
+          value: p-pc
+        - label: Kamera
+          value: p-cam
+        - label: Wi-Fi
+          value: p-net
+        - label: Sayt
+          value: p-web
+        - label: Video
+          value: p-media
+        - label: AI
+          value: p-ai
+      - name: mavzu
+        label: 'Mavzu (masalan: Kamera o''rnatish)'
+        widget: object
+        fields:
+        - name: uz
+          label: O'zbekcha
+          widget: string
+        - name: ru
+          label: Ruscha (bo'sh qolsa o'zbekchasi)
+          widget: string
+          required: false
+        - name: en
+          label: Inglizcha (bo'sh qolsa o'zbekchasi)
+          widget: string
+          required: false
+      - name: matn
+        label: Sharh matni
+        widget: object
+        fields:
+        - name: uz
+          label: O'zbekcha
+          widget: text
+        - name: ru
+          label: Ruscha (bo'sh qolsa o'zbekchasi)
+          widget: text
+          required: false
+        - name: en
+          label: Inglizcha (bo'sh qolsa o'zbekchasi)
+          widget: text
+          required: false
+      - name: ism
+        label: Mijoz ismi
+        widget: object
+        fields:
+        - name: uz
+          label: O'zbekcha
+          widget: string
+        - name: ru
+          label: Ruscha (bo'sh qolsa o'zbekchasi)
+          widget: string
+          required: false
+        - name: en
+          label: Inglizcha (bo'sh qolsa o'zbekchasi)
+          widget: string
+          required: false
+      - name: joy
+        label: 'Kim / qayerdan (masalan: Do''kon egasi, Peshku)'
+        widget: object
+        fields:
+        - name: uz
+          label: O'zbekcha
+          widget: string
+        - name: ru
+          label: Ruscha (bo'sh qolsa o'zbekchasi)
+          widget: string
+          required: false
+        - name: en
+          label: Inglizcha (bo'sh qolsa o'zbekchasi)
+          widget: string
+          required: false
+  - name: ishlar
+    label: Bajarilgan ishlar (rasmlar)
+    file: content/ishlar.json
+    fields:
+    - name: bosh
+      label: Bosh sahifa
+      label_singular: Ish
+      widget: list
+      summary: '{{fields.nomi.uz}}'
+      fields:
+      - name: yonalish
+        label: Yo'nalish (rangi)
+        widget: select
+        options:
+        - label: Kamera
+          value: p-cam
+        - label: Internet / IT
+          value: p-net
+        - label: Sayt va bot
+          value: p-web
+        - label: Video
+          value: p-media
+        - label: AI
+          value: p-ai
+      - name: rasm
+        label: Rasm
+        widget: image
+        required: false
+      - name: namuna
+        label: '"Namuna" yorlig''i (haqiqiy ish rasmi bo''lsa o''chiring)'
+        widget: boolean
+        default: false
+      - name: oldin_keyin
+        label: Rasm yo'q bo'lsa "Oldin / Keyin" bezagi
+        widget: boolean
+        default: false
+        required: false
+      - name: nomi
+        label: Nomi
+        widget: object
+        fields:
+        - name: uz
+          label: O'zbekcha
+          widget: string
+        - name: ru
+          label: Ruscha (bo'sh qolsa o'zbekchasi)
+          widget: string
+          required: false
+        - name: en
+          label: Inglizcha (bo'sh qolsa o'zbekchasi)
+          widget: string
+          required: false
+      - name: izoh
+        label: Qisqa izoh
+        widget: object
+        fields:
+        - name: uz
+          label: O'zbekcha
+          widget: string
+        - name: ru
+          label: Ruscha (bo'sh qolsa o'zbekchasi)
+          widget: string
+          required: false
+        - name: en
+          label: Inglizcha (bo'sh qolsa o'zbekchasi)
+          widget: string
+          required: false
+    - name: maruf
+      label: Maruf (kamera) sahifasi
+      label_singular: Ish
+      widget: list
+      summary: '{{fields.nomi.uz}}'
+      fields:
+      - name: rasm
+        label: Rasm
+        widget: image
+        required: false
+      - name: namuna
+        label: '"Namuna" yorlig''i (haqiqiy ish rasmi bo''lsa o''chiring)'
+        widget: boolean
+        default: false
+      - name: oldin_keyin
+        label: Rasm yo'q bo'lsa "Oldin / Keyin" bezagi
+        widget: boolean
+        default: false
+        required: false
+      - name: nomi
+        label: Nomi
+        widget: object
+        fields:
+        - name: uz
+          label: O'zbekcha
+          widget: string
+        - name: ru
+          label: Ruscha (bo'sh qolsa o'zbekchasi)
+          widget: string
+          required: false
+        - name: en
+          label: Inglizcha (bo'sh qolsa o'zbekchasi)
+          widget: string
+          required: false
+      - name: izoh
+        label: Qisqa izoh
+        widget: object
+        fields:
+        - name: uz
+          label: O'zbekcha
+          widget: string
+        - name: ru
+          label: Ruscha (bo'sh qolsa o'zbekchasi)
+          widget: string
+          required: false
+        - name: en
+          label: Inglizcha (bo'sh qolsa o'zbekchasi)
+          widget: string
+          required: false
+    - name: sherali
+      label: Sherali (internet) sahifasi
+      label_singular: Ish
+      widget: list
+      summary: '{{fields.nomi.uz}}'
+      fields:
+      - name: rasm
+        label: Rasm
+        widget: image
+        required: false
+      - name: namuna
+        label: '"Namuna" yorlig''i (haqiqiy ish rasmi bo''lsa o''chiring)'
+        widget: boolean
+        default: false
+      - name: oldin_keyin
+        label: Rasm yo'q bo'lsa "Oldin / Keyin" bezagi
+        widget: boolean
+        default: false
+        required: false
+      - name: nomi
+        label: Nomi
+        widget: object
+        fields:
+        - name: uz
+          label: O'zbekcha
+          widget: string
+        - name: ru
+          label: Ruscha (bo'sh qolsa o'zbekchasi)
+          widget: string
+          required: false
+        - name: en
+          label: Inglizcha (bo'sh qolsa o'zbekchasi)
+          widget: string
+          required: false
+      - name: izoh
+        label: Qisqa izoh
+        widget: object
+        fields:
+        - name: uz
+          label: O'zbekcha
+          widget: string
+        - name: ru
+          label: Ruscha (bo'sh qolsa o'zbekchasi)
+          widget: string
+          required: false
+        - name: en
+          label: Inglizcha (bo'sh qolsa o'zbekchasi)
+          widget: string
+          required: false
+    - name: sadulla
+      label: Sa'dulla (sayt) sahifasi
+      label_singular: Ish
+      widget: list
+      summary: '{{fields.nomi.uz}}'
+      fields:
+      - name: rasm
+        label: Rasm
+        widget: image
+        required: false
+      - name: namuna
+        label: '"Namuna" yorlig''i (haqiqiy ish rasmi bo''lsa o''chiring)'
+        widget: boolean
+        default: false
+      - name: oldin_keyin
+        label: Rasm yo'q bo'lsa "Oldin / Keyin" bezagi
+        widget: boolean
+        default: false
+        required: false
+      - name: nomi
+        label: Nomi
+        widget: object
+        fields:
+        - name: uz
+          label: O'zbekcha
+          widget: string
+        - name: ru
+          label: Ruscha (bo'sh qolsa o'zbekchasi)
+          widget: string
+          required: false
+        - name: en
+          label: Inglizcha (bo'sh qolsa o'zbekchasi)
+          widget: string
+          required: false
+      - name: izoh
+        label: Qisqa izoh
+        widget: object
+        fields:
+        - name: uz
+          label: O'zbekcha
+          widget: string
+        - name: ru
+          label: Ruscha (bo'sh qolsa o'zbekchasi)
+          widget: string
+          required: false
+        - name: en
+          label: Inglizcha (bo'sh qolsa o'zbekchasi)
+          widget: string
+          required: false
+    - name: doston
+      label: Doston (video) sahifasi
+      label_singular: Ish
+      widget: list
+      summary: '{{fields.nomi.uz}}'
+      fields:
+      - name: rasm
+        label: Rasm
+        widget: image
+        required: false
+      - name: namuna
+        label: '"Namuna" yorlig''i (haqiqiy ish rasmi bo''lsa o''chiring)'
+        widget: boolean
+        default: false
+      - name: oldin_keyin
+        label: Rasm yo'q bo'lsa "Oldin / Keyin" bezagi
+        widget: boolean
+        default: false
+        required: false
+      - name: nomi
+        label: Nomi
+        widget: object
+        fields:
+        - name: uz
+          label: O'zbekcha
+          widget: string
+        - name: ru
+          label: Ruscha (bo'sh qolsa o'zbekchasi)
+          widget: string
+          required: false
+        - name: en
+          label: Inglizcha (bo'sh qolsa o'zbekchasi)
+          widget: string
+          required: false
+      - name: izoh
+        label: Qisqa izoh
+        widget: object
+        fields:
+        - name: uz
+          label: O'zbekcha
+          widget: string
+        - name: ru
+          label: Ruscha (bo'sh qolsa o'zbekchasi)
+          widget: string
+          required: false
+        - name: en
+          label: Inglizcha (bo'sh qolsa o'zbekchasi)
+          widget: string
+          required: false
+    - name: umid
+      label: Umid (AI) sahifasi
+      label_singular: Ish
+      widget: list
+      summary: '{{fields.nomi.uz}}'
+      fields:
+      - name: rasm
+        label: Rasm
+        widget: image
+        required: false
+      - name: namuna
+        label: '"Namuna" yorlig''i (haqiqiy ish rasmi bo''lsa o''chiring)'
+        widget: boolean
+        default: false
+      - name: oldin_keyin
+        label: Rasm yo'q bo'lsa "Oldin / Keyin" bezagi
+        widget: boolean
+        default: false
+        required: false
+      - name: nomi
+        label: Nomi
+        widget: object
+        fields:
+        - name: uz
+          label: O'zbekcha
+          widget: string
+        - name: ru
+          label: Ruscha (bo'sh qolsa o'zbekchasi)
+          widget: string
+          required: false
+        - name: en
+          label: Inglizcha (bo'sh qolsa o'zbekchasi)
+          widget: string
+          required: false
+      - name: izoh
+        label: Qisqa izoh
+        widget: object
+        fields:
+        - name: uz
+          label: O'zbekcha
+          widget: string
+        - name: ru
+          label: Ruscha (bo'sh qolsa o'zbekchasi)
+          widget: string
+          required: false
+        - name: en
+          label: Inglizcha (bo'sh qolsa o'zbekchasi)
+          widget: string
+          required: false
+  - name: xizmatlar
+    label: 'Narxlar: xizmat kartalari'
+    file: content/xizmatlar.json
+    fields:
+    - name: kartalar
+      label: Bosh sahifadagi xizmat kartalari
+      label_singular: Karta
+      widget: list
+      summary: '{{fields.sarlavha.uz}} — {{fields.narx}}'
+      fields:
+      - name: yonalish
+        label: Yo'nalish (rangi)
+        widget: select
+        options:
+        - label: Kamera
+          value: p-cam
+        - label: Internet / IT
+          value: p-net
+        - label: Sayt va bot
+          value: p-web
+        - label: Video
+          value: p-media
+        - label: AI
+          value: p-ai
+      - name: sarlavha
+        label: Sarlavha
+        widget: object
+        fields:
+        - name: uz
+          label: O'zbekcha
+          widget: string
+        - name: ru
+          label: Ruscha (bo'sh qolsa o'zbekchasi)
+          widget: string
+          required: false
+        - name: en
+          label: Inglizcha (bo'sh qolsa o'zbekchasi)
+          widget: string
+          required: false
+      - name: matn
+        label: Matn
+        widget: object
+        fields:
+        - name: uz
+          label: O'zbekcha
+          widget: text
+        - name: ru
+          label: Ruscha (bo'sh qolsa o'zbekchasi)
+          widget: text
+          required: false
+        - name: en
+          label: Inglizcha (bo'sh qolsa o'zbekchasi)
+          widget: text
+          required: false
+      - name: narx
+        label: Narx (so'm, ...dan)
+        widget: number
+        value_type: int
+        min: 0
+      - name: tugma
+        label: Tugma yozuvi
+        widget: object
+        fields:
+        - name: uz
+          label: O'zbekcha
+          widget: string
+        - name: ru
+          label: Ruscha (bo'sh qolsa o'zbekchasi)
+          widget: string
+          required: false
+        - name: en
+          label: Inglizcha (bo'sh qolsa o'zbekchasi)
+          widget: string
+          required: false
+  - name: kalkulyator
+    label: 'Narxlar: kalkulyator'
+    file: content/kalkulyator.json
+    fields:
+    - name: guruhlar
+      label: Guruhlar
+      label_singular: Guruh
+      widget: list
+      summary: '{{fields.nomi.uz}}'
+      fields:
+      - name: yonalish
+        label: Yo'nalish (rangi)
+        widget: select
+        options:
+        - label: Kamera
+          value: p-cam
+        - label: Internet / IT
+          value: p-net
+        - label: Sayt va bot
+          value: p-web
+        - label: Video
+          value: p-media
+        - label: AI
+          value: p-ai
+      - name: nomi
+        label: Guruh nomi
+        widget: object
+        fields:
+        - name: uz
+          label: O'zbekcha
+          widget: string
+        - name: ru
+          label: Ruscha (bo'sh qolsa o'zbekchasi)
+          widget: string
+          required: false
+        - name: en
+          label: Inglizcha (bo'sh qolsa o'zbekchasi)
+          widget: string
+          required: false
+      - name: ochiq
+        label: Boshida ochiq turadi
+        widget: boolean
+        default: false
+        required: false
+      - name: qatorlar
+        label: Xizmatlar
+        label_singular: Xizmat
+        widget: list
+        summary: '{{fields.nomi.uz}} — {{fields.narx}}'
+        fields:
+        - name: nomi
+          label: Nomi
+          widget: object
+          fields:
+          - name: uz
+            label: O'zbekcha
+            widget: string
+          - name: ru
+            label: Ruscha (bo'sh qolsa o'zbekchasi)
+            widget: string
+            required: false
+          - name: en
+            label: Inglizcha (bo'sh qolsa o'zbekchasi)
+            widget: string
+            required: false
+        - name: narx
+          label: Narx (so'm, 1 birlik uchun)
+          widget: number
+          value_type: int
+          min: 0
+        - name: birlik
+          label: Birlik (dona / шт. / unit)
+          widget: object
+          fields:
+          - name: uz
+            label: O'zbekcha
+            widget: string
+          - name: ru
+            label: Ruscha (bo'sh qolsa o'zbekchasi)
+            widget: string
+            required: false
+          - name: en
+            label: Inglizcha (bo'sh qolsa o'zbekchasi)
+            widget: string
+            required: false
+        - name: boshlangich
+          label: Boshlang'ich soni
+          widget: number
+          value_type: int
+          min: 0
+          default: 0
+  - name: setlar
+    label: 'Narxlar: tayyor setlar (bosh sahifa)'
+    file: content/setlar.json
+    fields:
+    - name: setlar
+      label: Setlar
+      label_singular: Set
+      widget: list
+      summary: '{{fields.nomi.uz}} — {{fields.narx}}'
+      fields:
+      - name: nomi
+        label: Nomi
+        widget: object
+        fields:
+        - name: uz
+          label: O'zbekcha
+          widget: string
+        - name: ru
+          label: Ruscha (bo'sh qolsa o'zbekchasi)
+          widget: string
+          required: false
+        - name: en
+          label: Inglizcha (bo'sh qolsa o'zbekchasi)
+          widget: string
+          required: false
+      - name: tavsif
+        label: Kim uchun
+        widget: object
+        fields:
+        - name: uz
+          label: O'zbekcha
+          widget: string
+        - name: ru
+          label: Ruscha (bo'sh qolsa o'zbekchasi)
+          widget: string
+          required: false
+        - name: en
+          label: Inglizcha (bo'sh qolsa o'zbekchasi)
+          widget: string
+          required: false
+      - name: mashhur
+        label: '"Eng ko''p tanlanadi" (ajratilgan)'
+        widget: boolean
+        default: false
+        required: false
+      - name: tarkibi
+        label: Tarkibi
+        label_singular: Band
+        widget: list
+        summary: '{{fields.matn.uz}}'
+        fields:
+        - name: yonalish
+          label: Yo'nalish (rangi)
+          widget: select
+          options:
+          - label: Kamera
+            value: p-cam
+          - label: Internet / IT
+            value: p-net
+          - label: Sayt va bot
+            value: p-web
+          - label: Video
+            value: p-media
+          - label: AI
+            value: p-ai
+        - name: matn
+          label: Matn
+          widget: object
+          fields:
+          - name: uz
+            label: O'zbekcha
+            widget: string
+          - name: ru
+            label: Ruscha (bo'sh qolsa o'zbekchasi)
+            widget: string
+            required: false
+          - name: en
+            label: Inglizcha (bo'sh qolsa o'zbekchasi)
+            widget: string
+            required: false
+      - name: kafolat
+        label: Kafolat yozuvi
+        widget: object
+        fields:
+        - name: uz
+          label: O'zbekcha
+          widget: string
+        - name: ru
+          label: Ruscha (bo'sh qolsa o'zbekchasi)
+          widget: string
+          required: false
+        - name: en
+          label: Inglizcha (bo'sh qolsa o'zbekchasi)
+          widget: string
+          required: false
+        required: false
+      - name: alohida_narx
+        label: Alohida olinsa (so'm; tejash o'zi hisoblanadi)
+        widget: number
+        value_type: int
+        min: 0
+        required: false
+      - name: narx
+        label: Set narxi (so'm)
+        widget: number
+        value_type: int
+        min: 0
+      - name: uskuna
+        label: 'Uskunalar haqida (masalan: + uskunalar taxminan 4–5 mln so''m)'
+        widget: object
+        fields:
+        - name: uz
+          label: O'zbekcha
+          widget: string
+        - name: ru
+          label: Ruscha (bo'sh qolsa o'zbekchasi)
+          widget: string
+          required: false
+        - name: en
+          label: Inglizcha (bo'sh qolsa o'zbekchasi)
+          widget: string
+          required: false
+        required: false
+  - name: paketlar
+    label: 'Narxlar: ustalar paketlari'
+    file: content/paketlar.json
+    fields:
+    - name: maruf
+      label: Maruf (kamera)
+      widget: object
+      fields:
+      - name: paketlar
+        label: Paketlar
+        label_singular: Paket
+        widget: list
+        summary: '{{fields.nomi.uz}} — {{fields.narx}}'
+        fields:
+        - name: nomi
+          label: Nomi
+          widget: object
+          fields:
+          - name: uz
+            label: O'zbekcha
+            widget: string
+          - name: ru
+            label: Ruscha (bo'sh qolsa o'zbekchasi)
+            widget: string
+            required: false
+          - name: en
+            label: Inglizcha (bo'sh qolsa o'zbekchasi)
+            widget: string
+            required: false
+        - name: tavsif
+          label: Kim uchun
+          widget: object
+          fields:
+          - name: uz
+            label: O'zbekcha
+            widget: string
+          - name: ru
+            label: Ruscha (bo'sh qolsa o'zbekchasi)
+            widget: string
+            required: false
+          - name: en
+            label: Inglizcha (bo'sh qolsa o'zbekchasi)
+            widget: string
+            required: false
+        - name: mashhur
+          label: '"Eng ko''p tanlanadi" (ajratilgan)'
+          widget: boolean
+          default: false
+          required: false
+        - name: tarkibi
+          label: Tarkibi
+          label_singular: Band
+          widget: list
+          summary: '{{fields.matn.uz}}'
+          fields:
+          - name: matn
+            label: Matn
+            widget: object
+            fields:
+            - name: uz
+              label: O'zbekcha
+              widget: string
+            - name: ru
+              label: Ruscha (bo'sh qolsa o'zbekchasi)
+              widget: string
+              required: false
+            - name: en
+              label: Inglizcha (bo'sh qolsa o'zbekchasi)
+              widget: string
+              required: false
+        - name: alohida_narx
+          label: Alohida olinsa (so'm; tejash o'zi hisoblanadi)
+          widget: number
+          value_type: int
+          min: 0
+          required: false
+        - name: narx
+          label: Set narxi (so'm)
+          widget: number
+          value_type: int
+          min: 0
+        - name: uskuna
+          label: 'Uskunalar haqida (masalan: + uskunalar taxminan 4–5 mln so''m)'
+          widget: object
+          fields:
+          - name: uz
+            label: O'zbekcha
+            widget: string
+          - name: ru
+            label: Ruscha (bo'sh qolsa o'zbekchasi)
+            widget: string
+            required: false
+          - name: en
+            label: Inglizcha (bo'sh qolsa o'zbekchasi)
+            widget: string
+            required: false
+          required: false
+      - name: alohida
+        label: Alohida xizmatlar (paketlar ostidagi qator)
+        label_singular: Xizmat
+        widget: list
+        summary: '{{fields.nomi.uz}} — {{fields.narx}}'
+        fields:
+        - name: nomi
+          label: Nomi
+          widget: object
+          fields:
+          - name: uz
+            label: O'zbekcha
+            widget: string
+          - name: ru
+            label: Ruscha (bo'sh qolsa o'zbekchasi)
+            widget: string
+            required: false
+          - name: en
+            label: Inglizcha (bo'sh qolsa o'zbekchasi)
+            widget: string
+            required: false
+        - name: narx
+          label: Narx (so'm; 0 = bepul)
+          widget: number
+          value_type: int
+          min: 0
+        - name: izoh
+          label: 'Izoh (masalan: 1 dona uchun)'
+          widget: object
+          fields:
+          - name: uz
+            label: O'zbekcha
+            widget: string
+          - name: ru
+            label: Ruscha (bo'sh qolsa o'zbekchasi)
+            widget: string
+            required: false
+          - name: en
+            label: Inglizcha (bo'sh qolsa o'zbekchasi)
+            widget: string
+            required: false
+          required: false
+    - name: sherali
+      label: Sherali (internet)
+      widget: object
+      fields:
+      - name: paketlar
+        label: Paketlar
+        label_singular: Paket
+        widget: list
+        summary: '{{fields.nomi.uz}} — {{fields.narx}}'
+        fields:
+        - name: nomi
+          label: Nomi
+          widget: object
+          fields:
+          - name: uz
+            label: O'zbekcha
+            widget: string
+          - name: ru
+            label: Ruscha (bo'sh qolsa o'zbekchasi)
+            widget: string
+            required: false
+          - name: en
+            label: Inglizcha (bo'sh qolsa o'zbekchasi)
+            widget: string
+            required: false
+        - name: tavsif
+          label: Kim uchun
+          widget: object
+          fields:
+          - name: uz
+            label: O'zbekcha
+            widget: string
+          - name: ru
+            label: Ruscha (bo'sh qolsa o'zbekchasi)
+            widget: string
+            required: false
+          - name: en
+            label: Inglizcha (bo'sh qolsa o'zbekchasi)
+            widget: string
+            required: false
+        - name: mashhur
+          label: '"Eng ko''p tanlanadi" (ajratilgan)'
+          widget: boolean
+          default: false
+          required: false
+        - name: tarkibi
+          label: Tarkibi
+          label_singular: Band
+          widget: list
+          summary: '{{fields.matn.uz}}'
+          fields:
+          - name: matn
+            label: Matn
+            widget: object
+            fields:
+            - name: uz
+              label: O'zbekcha
+              widget: string
+            - name: ru
+              label: Ruscha (bo'sh qolsa o'zbekchasi)
+              widget: string
+              required: false
+            - name: en
+              label: Inglizcha (bo'sh qolsa o'zbekchasi)
+              widget: string
+              required: false
+        - name: alohida_narx
+          label: Alohida olinsa (so'm; tejash o'zi hisoblanadi)
+          widget: number
+          value_type: int
+          min: 0
+          required: false
+        - name: narx
+          label: Set narxi (so'm)
+          widget: number
+          value_type: int
+          min: 0
+        - name: uskuna
+          label: 'Uskunalar haqida (masalan: + uskunalar taxminan 4–5 mln so''m)'
+          widget: object
+          fields:
+          - name: uz
+            label: O'zbekcha
+            widget: string
+          - name: ru
+            label: Ruscha (bo'sh qolsa o'zbekchasi)
+            widget: string
+            required: false
+          - name: en
+            label: Inglizcha (bo'sh qolsa o'zbekchasi)
+            widget: string
+            required: false
+          required: false
+      - name: alohida
+        label: Alohida xizmatlar (paketlar ostidagi qator)
+        label_singular: Xizmat
+        widget: list
+        summary: '{{fields.nomi.uz}} — {{fields.narx}}'
+        fields:
+        - name: nomi
+          label: Nomi
+          widget: object
+          fields:
+          - name: uz
+            label: O'zbekcha
+            widget: string
+          - name: ru
+            label: Ruscha (bo'sh qolsa o'zbekchasi)
+            widget: string
+            required: false
+          - name: en
+            label: Inglizcha (bo'sh qolsa o'zbekchasi)
+            widget: string
+            required: false
+        - name: narx
+          label: Narx (so'm; 0 = bepul)
+          widget: number
+          value_type: int
+          min: 0
+        - name: izoh
+          label: 'Izoh (masalan: 1 dona uchun)'
+          widget: object
+          fields:
+          - name: uz
+            label: O'zbekcha
+            widget: string
+          - name: ru
+            label: Ruscha (bo'sh qolsa o'zbekchasi)
+            widget: string
+            required: false
+          - name: en
+            label: Inglizcha (bo'sh qolsa o'zbekchasi)
+            widget: string
+            required: false
+          required: false
+    - name: sadulla
+      label: Sa'dulla (sayt)
+      widget: object
+      fields:
+      - name: paketlar
+        label: Paketlar
+        label_singular: Paket
+        widget: list
+        summary: '{{fields.nomi.uz}} — {{fields.narx}}'
+        fields:
+        - name: nomi
+          label: Nomi
+          widget: object
+          fields:
+          - name: uz
+            label: O'zbekcha
+            widget: string
+          - name: ru
+            label: Ruscha (bo'sh qolsa o'zbekchasi)
+            widget: string
+            required: false
+          - name: en
+            label: Inglizcha (bo'sh qolsa o'zbekchasi)
+            widget: string
+            required: false
+        - name: tavsif
+          label: Kim uchun
+          widget: object
+          fields:
+          - name: uz
+            label: O'zbekcha
+            widget: string
+          - name: ru
+            label: Ruscha (bo'sh qolsa o'zbekchasi)
+            widget: string
+            required: false
+          - name: en
+            label: Inglizcha (bo'sh qolsa o'zbekchasi)
+            widget: string
+            required: false
+        - name: mashhur
+          label: '"Eng ko''p tanlanadi" (ajratilgan)'
+          widget: boolean
+          default: false
+          required: false
+        - name: tarkibi
+          label: Tarkibi
+          label_singular: Band
+          widget: list
+          summary: '{{fields.matn.uz}}'
+          fields:
+          - name: matn
+            label: Matn
+            widget: object
+            fields:
+            - name: uz
+              label: O'zbekcha
+              widget: string
+            - name: ru
+              label: Ruscha (bo'sh qolsa o'zbekchasi)
+              widget: string
+              required: false
+            - name: en
+              label: Inglizcha (bo'sh qolsa o'zbekchasi)
+              widget: string
+              required: false
+        - name: alohida_narx
+          label: Alohida olinsa (so'm; tejash o'zi hisoblanadi)
+          widget: number
+          value_type: int
+          min: 0
+          required: false
+        - name: narx
+          label: Set narxi (so'm)
+          widget: number
+          value_type: int
+          min: 0
+        - name: uskuna
+          label: 'Uskunalar haqida (masalan: + uskunalar taxminan 4–5 mln so''m)'
+          widget: object
+          fields:
+          - name: uz
+            label: O'zbekcha
+            widget: string
+          - name: ru
+            label: Ruscha (bo'sh qolsa o'zbekchasi)
+            widget: string
+            required: false
+          - name: en
+            label: Inglizcha (bo'sh qolsa o'zbekchasi)
+            widget: string
+            required: false
+          required: false
+      - name: alohida
+        label: Alohida xizmatlar (paketlar ostidagi qator)
+        label_singular: Xizmat
+        widget: list
+        summary: '{{fields.nomi.uz}} — {{fields.narx}}'
+        fields:
+        - name: nomi
+          label: Nomi
+          widget: object
+          fields:
+          - name: uz
+            label: O'zbekcha
+            widget: string
+          - name: ru
+            label: Ruscha (bo'sh qolsa o'zbekchasi)
+            widget: string
+            required: false
+          - name: en
+            label: Inglizcha (bo'sh qolsa o'zbekchasi)
+            widget: string
+            required: false
+        - name: narx
+          label: Narx (so'm; 0 = bepul)
+          widget: number
+          value_type: int
+          min: 0
+        - name: izoh
+          label: 'Izoh (masalan: 1 dona uchun)'
+          widget: object
+          fields:
+          - name: uz
+            label: O'zbekcha
+            widget: string
+          - name: ru
+            label: Ruscha (bo'sh qolsa o'zbekchasi)
+            widget: string
+            required: false
+          - name: en
+            label: Inglizcha (bo'sh qolsa o'zbekchasi)
+            widget: string
+            required: false
+          required: false
+    - name: doston
+      label: Doston (video)
+      widget: object
+      fields:
+      - name: paketlar
+        label: Paketlar
+        label_singular: Paket
+        widget: list
+        summary: '{{fields.nomi.uz}} — {{fields.narx}}'
+        fields:
+        - name: nomi
+          label: Nomi
+          widget: object
+          fields:
+          - name: uz
+            label: O'zbekcha
+            widget: string
+          - name: ru
+            label: Ruscha (bo'sh qolsa o'zbekchasi)
+            widget: string
+            required: false
+          - name: en
+            label: Inglizcha (bo'sh qolsa o'zbekchasi)
+            widget: string
+            required: false
+        - name: tavsif
+          label: Kim uchun
+          widget: object
+          fields:
+          - name: uz
+            label: O'zbekcha
+            widget: string
+          - name: ru
+            label: Ruscha (bo'sh qolsa o'zbekchasi)
+            widget: string
+            required: false
+          - name: en
+            label: Inglizcha (bo'sh qolsa o'zbekchasi)
+            widget: string
+            required: false
+        - name: mashhur
+          label: '"Eng ko''p tanlanadi" (ajratilgan)'
+          widget: boolean
+          default: false
+          required: false
+        - name: tarkibi
+          label: Tarkibi
+          label_singular: Band
+          widget: list
+          summary: '{{fields.matn.uz}}'
+          fields:
+          - name: matn
+            label: Matn
+            widget: object
+            fields:
+            - name: uz
+              label: O'zbekcha
+              widget: string
+            - name: ru
+              label: Ruscha (bo'sh qolsa o'zbekchasi)
+              widget: string
+              required: false
+            - name: en
+              label: Inglizcha (bo'sh qolsa o'zbekchasi)
+              widget: string
+              required: false
+        - name: alohida_narx
+          label: Alohida olinsa (so'm; tejash o'zi hisoblanadi)
+          widget: number
+          value_type: int
+          min: 0
+          required: false
+        - name: narx
+          label: Set narxi (so'm)
+          widget: number
+          value_type: int
+          min: 0
+        - name: uskuna
+          label: 'Uskunalar haqida (masalan: + uskunalar taxminan 4–5 mln so''m)'
+          widget: object
+          fields:
+          - name: uz
+            label: O'zbekcha
+            widget: string
+          - name: ru
+            label: Ruscha (bo'sh qolsa o'zbekchasi)
+            widget: string
+            required: false
+          - name: en
+            label: Inglizcha (bo'sh qolsa o'zbekchasi)
+            widget: string
+            required: false
+          required: false
+      - name: alohida
+        label: Alohida xizmatlar (paketlar ostidagi qator)
+        label_singular: Xizmat
+        widget: list
+        summary: '{{fields.nomi.uz}} — {{fields.narx}}'
+        fields:
+        - name: nomi
+          label: Nomi
+          widget: object
+          fields:
+          - name: uz
+            label: O'zbekcha
+            widget: string
+          - name: ru
+            label: Ruscha (bo'sh qolsa o'zbekchasi)
+            widget: string
+            required: false
+          - name: en
+            label: Inglizcha (bo'sh qolsa o'zbekchasi)
+            widget: string
+            required: false
+        - name: narx
+          label: Narx (so'm; 0 = bepul)
+          widget: number
+          value_type: int
+          min: 0
+        - name: izoh
+          label: 'Izoh (masalan: 1 dona uchun)'
+          widget: object
+          fields:
+          - name: uz
+            label: O'zbekcha
+            widget: string
+          - name: ru
+            label: Ruscha (bo'sh qolsa o'zbekchasi)
+            widget: string
+            required: false
+          - name: en
+            label: Inglizcha (bo'sh qolsa o'zbekchasi)
+            widget: string
+            required: false
+          required: false
+    - name: umid
+      label: Umid (AI)
+      widget: object
+      fields:
+      - name: paketlar
+        label: Paketlar
+        label_singular: Paket
+        widget: list
+        summary: '{{fields.nomi.uz}} — {{fields.narx}}'
+        fields:
+        - name: nomi
+          label: Nomi
+          widget: object
+          fields:
+          - name: uz
+            label: O'zbekcha
+            widget: string
+          - name: ru
+            label: Ruscha (bo'sh qolsa o'zbekchasi)
+            widget: string
+            required: false
+          - name: en
+            label: Inglizcha (bo'sh qolsa o'zbekchasi)
+            widget: string
+            required: false
+        - name: tavsif
+          label: Kim uchun
+          widget: object
+          fields:
+          - name: uz
+            label: O'zbekcha
+            widget: string
+          - name: ru
+            label: Ruscha (bo'sh qolsa o'zbekchasi)
+            widget: string
+            required: false
+          - name: en
+            label: Inglizcha (bo'sh qolsa o'zbekchasi)
+            widget: string
+            required: false
+        - name: mashhur
+          label: '"Eng ko''p tanlanadi" (ajratilgan)'
+          widget: boolean
+          default: false
+          required: false
+        - name: tarkibi
+          label: Tarkibi
+          label_singular: Band
+          widget: list
+          summary: '{{fields.matn.uz}}'
+          fields:
+          - name: matn
+            label: Matn
+            widget: object
+            fields:
+            - name: uz
+              label: O'zbekcha
+              widget: string
+            - name: ru
+              label: Ruscha (bo'sh qolsa o'zbekchasi)
+              widget: string
+              required: false
+            - name: en
+              label: Inglizcha (bo'sh qolsa o'zbekchasi)
+              widget: string
+              required: false
+        - name: alohida_narx
+          label: Alohida olinsa (so'm; tejash o'zi hisoblanadi)
+          widget: number
+          value_type: int
+          min: 0
+          required: false
+        - name: narx
+          label: Set narxi (so'm)
+          widget: number
+          value_type: int
+          min: 0
+        - name: uskuna
+          label: 'Uskunalar haqida (masalan: + uskunalar taxminan 4–5 mln so''m)'
+          widget: object
+          fields:
+          - name: uz
+            label: O'zbekcha
+            widget: string
+          - name: ru
+            label: Ruscha (bo'sh qolsa o'zbekchasi)
+            widget: string
+            required: false
+          - name: en
+            label: Inglizcha (bo'sh qolsa o'zbekchasi)
+            widget: string
+            required: false
+          required: false
+      - name: alohida
+        label: Alohida xizmatlar (paketlar ostidagi qator)
+        label_singular: Xizmat
+        widget: list
+        summary: '{{fields.nomi.uz}} — {{fields.narx}}'
+        fields:
+        - name: nomi
+          label: Nomi
+          widget: object
+          fields:
+          - name: uz
+            label: O'zbekcha
+            widget: string
+          - name: ru
+            label: Ruscha (bo'sh qolsa o'zbekchasi)
+            widget: string
+            required: false
+          - name: en
+            label: Inglizcha (bo'sh qolsa o'zbekchasi)
+            widget: string
+            required: false
+        - name: narx
+          label: Narx (so'm; 0 = bepul)
+          widget: number
+          value_type: int
+          min: 0
+        - name: izoh
+          label: 'Izoh (masalan: 1 dona uchun)'
+          widget: object
+          fields:
+          - name: uz
+            label: O'zbekcha
+            widget: string
+          - name: ru
+            label: Ruscha (bo'sh qolsa o'zbekchasi)
+            widget: string
+            required: false
+          - name: en
+            label: Inglizcha (bo'sh qolsa o'zbekchasi)
+            widget: string
+            required: false
+          required: false
+  - name: jamoa
+    label: Jamoa
+    file: content/jamoa.json
+    fields:
+    - name: ustalar
+      label: Ustalar
+      label_singular: Usta
+      widget: list
+      allow_add: false
+      summary: '{{fields.ism.uz}} — {{fields.staj}} yil'
+      fields:
+      - name: id
+        label: Sahifa (o'zgartirmang)
+        widget: hidden
+      - name: yonalish
+        label: Rang (o'zgartirmang)
+        widget: hidden
+      - name: rasm
+        label: Rasm (bo'sh bo'lsa bosh harflar ko'rinadi)
+        widget: image
+        required: false
+      - name: ism
+        label: Ismi
+        widget: object
+        fields:
+        - name: uz
+          label: O'zbekcha
+          widget: string
+        - name: ru
+          label: Ruscha (bo'sh qolsa o'zbekchasi)
+          widget: string
+          required: false
+        - name: en
+          label: Inglizcha (bo'sh qolsa o'zbekchasi)
+          widget: string
+          required: false
+      - name: bosh_harflar
+        label: Bosh harflar (rasm yo'q bo'lsa)
+        widget: string
+      - name: staj
+        label: Staj (yil) — jami tajriba o'zi hisoblanadi
+        widget: number
+        value_type: int
+        min: 0
+      - name: lavozim
+        label: Yo'nalishi (kartada)
+        widget: object
+        fields:
+        - name: uz
+          label: O'zbekcha
+          widget: string
+        - name: ru
+          label: Ruscha (bo'sh qolsa o'zbekchasi)
+          widget: string
+          required: false
+        - name: en
+          label: Inglizcha (bo'sh qolsa o'zbekchasi)
+          widget: string
+          required: false
+      - name: jumla
+        label: Kartadagi iliq jumla
+        widget: object
+        fields:
+        - name: uz
+          label: O'zbekcha
+          widget: string
+        - name: ru
+          label: Ruscha (bo'sh qolsa o'zbekchasi)
+          widget: string
+          required: false
+        - name: en
+          label: Inglizcha (bo'sh qolsa o'zbekchasi)
+          widget: string
+          required: false
+      - name: teglar
+        label: Teglar
+        label_singular: Teg
+        widget: list
+        summary: '{{fields.uz}}'
+        fields:
+        - name: uz
+          label: O'zbekcha
+          widget: string
+        - name: ru
+          label: Ruscha (bo'sh qolsa o'zbekchasi)
+          widget: string
+          required: false
+        - name: en
+          label: Inglizcha (bo'sh qolsa o'zbekchasi)
+          widget: string
+          required: false
+      - name: tavsif
+        label: Usta sahifasidagi tavsif
+        widget: object
+        fields:
+        - name: uz
+          label: O'zbekcha
+          widget: text
+        - name: ru
+          label: Ruscha (bo'sh qolsa o'zbekchasi)
+          widget: text
+          required: false
+        - name: en
+          label: Inglizcha (bo'sh qolsa o'zbekchasi)
+          widget: text
+          required: false
+  - name: mijozlar
+    label: Biz ishlagan joylar (logotiplar)
+    file: content/mijozlar.json
+    fields:
+    - name: mijozlar
+      label: Tashkilotlar
+      label_singular: Tashkilot
+      widget: list
+      summary: '{{fields.nomi.uz}}'
+      fields:
+      - name: logotip
+        label: Logotip (shaffof fonli PNG tavsiya)
+        widget: image
+        required: false
+      - name: nomi
+        label: Nomi
+        widget: object
+        fields:
+        - name: uz
+          label: O'zbekcha
+          widget: string
+        - name: ru
+          label: Ruscha (bo'sh qolsa o'zbekchasi)
+          widget: string
+          required: false
+        - name: en
+          label: Inglizcha (bo'sh qolsa o'zbekchasi)
+          widget: string
+          required: false
+      - name: turi
+        label: 'Turi (masalan: Bank)'
+        widget: object
+        fields:
+        - name: uz
+          label: O'zbekcha
+          widget: string
+        - name: ru
+          label: Ruscha (bo'sh qolsa o'zbekchasi)
+          widget: string
+          required: false
+        - name: en
+          label: Inglizcha (bo'sh qolsa o'zbekchasi)
+          widget: string
+          required: false
+  - name: aloqa
+    label: Aloqa ma'lumotlari
+    file: content/aloqa.json
+    fields:
+    - name: telefon
+      label: 'Telefon (masalan: +998 90 121 88 87)'
+      widget: string
+      pattern:
+      - ^\+998 \d{2} \d{3} \d{2} \d{2}$
+      - 'Format: +998 90 123 45 67'
+    - name: telegram
+      label: 'Telegram (@ siz, masalan: sadulla_khaitov)'
+      widget: string
+    - name: instagram
+      label: Instagram (@ siz)
+      widget: string
+    - name: ish_vaqti
+      label: Ish vaqti
+      widget: object
+      fields:
+      - name: uz
+        label: O'zbekcha
+        widget: string
+      - name: ru
+        label: Ruscha (bo'sh qolsa o'zbekchasi)
+        widget: string
+        required: false
+      - name: en
+        label: Inglizcha (bo'sh qolsa o'zbekchasi)
+        widget: string
+        required: false
+    - name: manzil
+      label: Manzil (bo'sh bo'lsa ko'rinmaydi)
+      widget: object
+      fields:
+      - name: uz
+        label: O'zbekcha
+        widget: string
+        required: false
+      - name: ru
+        label: Ruscha
+        widget: string
+        required: false
+      - name: en
+        label: Inglizcha
+        widget: string
+        required: false

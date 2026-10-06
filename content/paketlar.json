@@ -1,0 +1,964 @@
+{
+  "sadulla": {
+    "paketlar": [
+      {
+        "nomi": {
+          "uz": "Telegram bot",
+          "ru": "Telegram-бот",
+          "en": "Telegram bot"
+        },
+        "tavsif": {
+          "uz": "Buyurtma va soʻrovlarni qabul qilish",
+          "ru": "Приём заказов и заявок",
+          "en": "Taking orders and enquiries"
+        },
+        "mashhur": false,
+        "tarkibi": [
+          {
+            "matn": {
+              "uz": "Menyu, katalog, buyurtma",
+              "ru": "Меню, каталог, заказ",
+              "en": "Menu, catalogue, ordering"
+            }
+          },
+          {
+            "matn": {
+              "uz": "Buyurtma sizga Telegramda keladi",
+              "ru": "Заказы приходят вам в Telegram",
+              "en": "Orders arrive in your Telegram"
+            }
+          },
+          {
+            "matn": {
+              "uz": "Admin panel",
+              "ru": "Админ-панель",
+              "en": "Admin panel"
+            }
+          },
+          {
+            "matn": {
+              "uz": "1 oy bepul qoʻllab-quvvatlash",
+              "ru": "1 месяц бесплатной поддержки",
+              "en": "1 month of free support"
+            }
+          }
+        ],
+        "alohida_narx": 0,
+        "narx": 1000000,
+        "uskuna": {
+          "uz": "ish haqi",
+          "ru": "стоимость работы",
+          "en": "labour cost"
+        }
+      },
+      {
+        "nomi": {
+          "uz": "Landing sayt",
+          "ru": "Лендинг",
+          "en": "Landing page"
+        },
+        "tavsif": {
+          "uz": "Bitta xizmat yoki mahsulot uchun",
+          "ru": "Для одной услуги или товара",
+          "en": "For a single service or product"
+        },
+        "mashhur": true,
+        "tarkibi": [
+          {
+            "matn": {
+              "uz": "1 sahifa, telefonga moslashgan",
+              "ru": "1 страница, адаптирован под телефон",
+              "en": "1 page, mobile-friendly"
+            }
+          },
+          {
+            "matn": {
+              "uz": "UZ / RU tillari",
+              "ru": "Языки UZ / RU",
+              "en": "UZ / RU languages"
+            }
+          },
+          {
+            "matn": {
+              "uz": "Soʻrov formasi → Telegram",
+              "ru": "Форма заявки → Telegram",
+              "en": "Request form → Telegram"
+            }
+          },
+          {
+            "matn": {
+              "uz": "Domen va hostingni ulash",
+              "ru": "Подключение домена и хостинга",
+              "en": "Domain and hosting setup"
+            }
+          }
+        ],
+        "alohida_narx": 0,
+        "narx": 2500000,
+        "uskuna": {
+          "uz": "ish haqi",
+          "ru": "стоимость работы",
+          "en": "labour cost"
+        }
+      },
+      {
+        "nomi": {
+          "uz": "Korporativ sayt",
+          "ru": "Корпоративный сайт",
+          "en": "Company website"
+        },
+        "tavsif": {
+          "uz": "Kompaniya uchun toʻliq sayt",
+          "ru": "Полноценный сайт компании",
+          "en": "A complete company website"
+        },
+        "mashhur": false,
+        "tarkibi": [
+          {
+            "matn": {
+              "uz": "5 tagacha boʻlim",
+              "ru": "До 5 разделов",
+              "en": "Up to 5 sections"
+            }
+          },
+          {
+            "matn": {
+              "uz": "UZ / RU tillari, Google uchun sozlangan",
+              "ru": "UZ / RU, настроен для Google",
+              "en": "UZ / RU, optimised for Google"
+            }
+          },
+          {
+            "matn": {
+              "uz": "Xizmatlar, ishlar, aloqa sahifalari",
+              "ru": "Услуги, работы, контакты",
+              "en": "Services, portfolio, contacts"
+            }
+          },
+          {
+            "matn": {
+              "uz": "Oʻzingiz tahrirlay olasiz",
+              "ru": "Сможете редактировать сами",
+              "en": "You can edit it yourself"
+            }
+          }
+        ],
+        "alohida_narx": 0,
+        "narx": 5000000,
+        "uskuna": {
+          "uz": "ish haqi",
+          "ru": "стоимость работы",
+          "en": "labour cost"
+        }
+      }
+    ],
+    "alohida": [
+      {
+        "nomi": {
+          "uz": "Landing sahifa",
+          "ru": "Лендинг",
+          "en": "Landing page"
+        },
+        "narx": 2500000,
+        "izoh": {
+          "uz": "1 sahifa uchun",
+          "ru": "за 1 страницу",
+          "en": "per page"
+        }
+      },
+      {
+        "nomi": {
+          "uz": "Telegram bot",
+          "ru": "Telegram-бот",
+          "en": "Telegram bot"
+        },
+        "narx": 1000000,
+        "izoh": {
+          "uz": "1 bot uchun",
+          "ru": "за 1 бота",
+          "en": "per bot"
+        }
+      },
+      {
+        "nomi": {
+          "uz": "Prezentatsiya",
+          "ru": "Презентация",
+          "en": "Presentation"
+        },
+        "narx": 25000,
+        "izoh": {
+          "uz": "1 slayd uchun",
+          "ru": "за 1 слайд",
+          "en": "per slide"
+        }
+      }
+    ]
+  },
+  "sherali": {
+    "paketlar": [
+      {
+        "nomi": {
+          "uz": "Uy Wi-Fi",
+          "ru": "Wi-Fi для дома",
+          "en": "Home Wi-Fi"
+        },
+        "tavsif": {
+          "uz": "Internet butun uyga yetmasa",
+          "ru": "Если интернет не добивает по дому",
+          "en": "If the internet doesn't reach every room"
+        },
+        "mashhur": false,
+        "tarkibi": [
+          {
+            "matn": {
+              "uz": "MikroTik hAP ax² router (Wi-Fi 6)",
+              "ru": "Роутер MikroTik hAP ax² (Wi-Fi 6)",
+              "en": "MikroTik hAP ax² router (Wi-Fi 6)"
+            }
+          },
+          {
+            "matn": {
+              "uz": "Oʻrnatish va sozlash",
+              "ru": "Установка и настройка",
+              "en": "Installation and setup"
+            }
+          },
+          {
+            "matn": {
+              "uz": "Mehmonlar uchun alohida Wi-Fi",
+              "ru": "Отдельный гостевой Wi-Fi",
+              "en": "Separate guest Wi-Fi"
+            }
+          },
+          {
+            "matn": {
+              "uz": "Parol va xavfsizlik",
+              "ru": "Пароль и безопасность",
+              "en": "Password and security"
+            }
+          }
+        ],
+        "alohida_narx": 0,
+        "narx": 1650000,
+        "uskuna": {
+          "uz": "uskunasi bilan, taxminan",
+          "ru": "с оборудованием, примерно",
+          "en": "with equipment, approx."
+        }
+      },
+      {
+        "nomi": {
+          "uz": "Ofis tarmogʻi",
+          "ru": "Сеть офиса",
+          "en": "Office network"
+        },
+        "tavsif": {
+          "uz": "10 ish oʻrnigacha ofis uchun",
+          "ru": "Для офиса до 10 рабочих мест",
+          "en": "For offices up to 10 workstations"
+        },
+        "mashhur": true,
+        "tarkibi": [
+          {
+            "matn": {
+              "uz": "MikroTik router + Wi-Fi nuqtasi",
+              "ru": "Роутер MikroTik + точка Wi-Fi",
+              "en": "MikroTik router + Wi-Fi access point"
+            }
+          },
+          {
+            "matn": {
+              "uz": "8 ta tarmoq nuqtasi (rozetka)",
+              "ru": "8 сетевых точек (розеток)",
+              "en": "8 network points (sockets)"
+            }
+          },
+          {
+            "matn": {
+              "uz": "Switch va kabel",
+              "ru": "Коммутатор и кабель",
+              "en": "Switch and cable"
+            }
+          },
+          {
+            "matn": {
+              "uz": "Sozlash, mehmon Wi-Fi",
+              "ru": "Настройка, гостевой Wi-Fi",
+              "en": "Setup, guest Wi-Fi"
+            }
+          }
+        ],
+        "alohida_narx": 0,
+        "narx": 4200000,
+        "uskuna": {
+          "uz": "uskunasi bilan, taxminan",
+          "ru": "с оборудованием, примерно",
+          "en": "with equipment, approx."
+        }
+      },
+      {
+        "nomi": {
+          "uz": "Oylik IT xizmat",
+          "ru": "IT-обслуживание",
+          "en": "IT support"
+        },
+        "tavsif": {
+          "uz": "Doimiy texnik yordam kerak boʻlsa",
+          "ru": "Если нужна постоянная поддержка",
+          "en": "If you need ongoing support"
+        },
+        "mashhur": false,
+        "tarkibi": [
+          {
+            "matn": {
+              "uz": "10 tagacha kompyuter va tarmoq",
+              "ru": "До 10 компьютеров и сеть",
+              "en": "Up to 10 computers and the network"
+            }
+          },
+          {
+            "matn": {
+              "uz": "Masofadan va joyida yordam",
+              "ru": "Помощь удалённо и на месте",
+              "en": "Remote and on-site help"
+            }
+          },
+          {
+            "matn": {
+              "uz": "Nosozlikni oldindan kuzatish",
+              "ru": "Мониторинг неисправностей",
+              "en": "Fault monitoring"
+            }
+          },
+          {
+            "matn": {
+              "uz": "Oyiga 1 marta profilaktika",
+              "ru": "Профилактика раз в месяц",
+              "en": "Monthly preventive check"
+            }
+          }
+        ],
+        "alohida_narx": 0,
+        "narx": 1200000,
+        "uskuna": {
+          "uz": "oyiga",
+          "ru": "в месяц",
+          "en": "per month"
+        }
+      }
+    ],
+    "alohida": [
+      {
+        "nomi": {
+          "uz": "MikroTik sozlash",
+          "ru": "Настройка MikroTik",
+          "en": "MikroTik setup"
+        },
+        "narx": 150000,
+        "izoh": {
+          "uz": "1 qurilma uchun",
+          "ru": "за 1 устройство",
+          "en": "per device"
+        }
+      },
+      {
+        "nomi": {
+          "uz": "Tarmoq nuqtasi",
+          "ru": "Сетевая точка",
+          "en": "Network point"
+        },
+        "narx": 50000,
+        "izoh": {
+          "uz": "1 rozetka uchun",
+          "ru": "за 1 розетку",
+          "en": "per socket"
+        }
+      }
+    ]
+  },
+  "doston": {
+    "paketlar": [
+      {
+        "nomi": {
+          "uz": "Reels toʻplami",
+          "ru": "Пакет Reels",
+          "en": "Reels pack"
+        },
+        "tavsif": {
+          "uz": "Instagram va TikTok uchun",
+          "ru": "Для Instagram и TikTok",
+          "en": "For Instagram and TikTok"
+        },
+        "mashhur": false,
+        "tarkibi": [
+          {
+            "matn": {
+              "uz": "4 ta qisqa video (Reels)",
+              "ru": "4 коротких видео (Reels)",
+              "en": "4 short videos (Reels)"
+            }
+          },
+          {
+            "matn": {
+              "uz": "Montaj, musiqa, titrlar",
+              "ru": "Монтаж, музыка, титры",
+              "en": "Editing, music, titles"
+            }
+          },
+          {
+            "matn": {
+              "uz": "Rangni tuzatish",
+              "ru": "Цветокоррекция",
+              "en": "Colour grading"
+            }
+          },
+          {
+            "matn": {
+              "uz": "9:16 format",
+              "ru": "Формат 9:16",
+              "en": "9:16 format"
+            }
+          }
+        ],
+        "alohida_narx": 0,
+        "narx": 400000,
+        "uskuna": {
+          "uz": "ish haqi",
+          "ru": "стоимость работы",
+          "en": "labour cost"
+        }
+      },
+      {
+        "nomi": {
+          "uz": "Reklama rolik",
+          "ru": "Рекламный ролик",
+          "en": "Promo video"
+        },
+        "tavsif": {
+          "uz": "Mahsulot yoki xizmat reklamasi",
+          "ru": "Реклама товара или услуги",
+          "en": "An ad for a product or service"
+        },
+        "mashhur": true,
+        "tarkibi": [
+          {
+            "matn": {
+              "uz": "1 daqiqagacha rolik",
+              "ru": "Ролик до 1 минуты",
+              "en": "Video up to 1 minute"
+            }
+          },
+          {
+            "matn": {
+              "uz": "Montaj va color grading",
+              "ru": "Монтаж и цветокоррекция",
+              "en": "Editing and colour grading"
+            }
+          },
+          {
+            "matn": {
+              "uz": "Logotip va titr animatsiyasi",
+              "ru": "Анимация логотипа и титров",
+              "en": "Logo and title animation"
+            }
+          },
+          {
+            "matn": {
+              "uz": "2 marta tuzatish",
+              "ru": "2 раунда правок",
+              "en": "2 rounds of revisions"
+            }
+          }
+        ],
+        "alohida_narx": 0,
+        "narx": 600000,
+        "uskuna": {
+          "uz": "ish haqi",
+          "ru": "стоимость работы",
+          "en": "labour cost"
+        }
+      },
+      {
+        "nomi": {
+          "uz": "Oylik kontent",
+          "ru": "Контент на месяц",
+          "en": "Content for a month"
+        },
+        "tavsif": {
+          "uz": "Sahifani doimiy yuritish uchun",
+          "ru": "Для постоянного ведения страницы",
+          "en": "For keeping your page active"
+        },
+        "mashhur": false,
+        "tarkibi": [
+          {
+            "matn": {
+              "uz": "Oyiga 12 ta Reels",
+              "ru": "12 Reels в месяц",
+              "en": "12 Reels a month"
+            }
+          },
+          {
+            "matn": {
+              "uz": "Yagona uslub va rang",
+              "ru": "Единый стиль и цвет",
+              "en": "Consistent style and colour"
+            }
+          },
+          {
+            "matn": {
+              "uz": "Muqova (cover) rasmlari",
+              "ru": "Обложки (cover)",
+              "en": "Covers"
+            }
+          },
+          {
+            "matn": {
+              "uz": "Kelishilgan jadval boʻyicha",
+              "ru": "По согласованному графику",
+              "en": "On an agreed schedule"
+            }
+          }
+        ],
+        "alohida_narx": 0,
+        "narx": 1100000,
+        "uskuna": {
+          "uz": "ish haqi",
+          "ru": "стоимость работы",
+          "en": "labour cost"
+        }
+      }
+    ],
+    "alohida": [
+      {
+        "nomi": {
+          "uz": "Video montaj",
+          "ru": "Видеомонтаж",
+          "en": "Video editing"
+        },
+        "narx": 100000,
+        "izoh": {
+          "uz": "1 daqiqa uchun",
+          "ru": "за 1 минуту",
+          "en": "per minute"
+        }
+      },
+      {
+        "nomi": {
+          "uz": "Color grading",
+          "ru": "Цветокоррекция",
+          "en": "Colour grading"
+        },
+        "narx": 200000,
+        "izoh": {
+          "uz": "1 video uchun",
+          "ru": "за 1 видео",
+          "en": "per video"
+        }
+      },
+      {
+        "nomi": {
+          "uz": "Logotip animatsiyasi",
+          "ru": "Анимация логотипа",
+          "en": "Logo animation"
+        },
+        "narx": 500000,
+        "izoh": {
+          "uz": "1 animatsiya uchun",
+          "ru": "за 1 анимацию",
+          "en": "per animation"
+        }
+      }
+    ]
+  },
+  "maruf": {
+    "paketlar": [
+      {
+        "nomi": {
+          "uz": "Uy uchun",
+          "ru": "Для дома",
+          "en": "For the home"
+        },
+        "tavsif": {
+          "uz": "Darvoza, hovli va kirish eshigi",
+          "ru": "Ворота, двор и вход",
+          "en": "Gate, yard and entrance"
+        },
+        "mashhur": false,
+        "tarkibi": [
+          {
+            "matn": {
+              "uz": "2 ta kamerani oʻrnatish",
+              "ru": "Монтаж 2 камер",
+              "en": "Installing 2 cameras"
+            }
+          },
+          {
+            "matn": {
+              "uz": "Registratorni sozlash",
+              "ru": "Настройка регистратора",
+              "en": "Recorder setup"
+            }
+          },
+          {
+            "matn": {
+              "uz": "Telefonga ulab berish",
+              "ru": "Подключение к телефону",
+              "en": "Phone connection"
+            }
+          },
+          {
+            "matn": {
+              "uz": "Kabelni chiroyli tortish",
+              "ru": "Аккуратная прокладка кабеля",
+              "en": "Neat cable routing"
+            }
+          }
+        ],
+        "alohida_narx": 400000,
+        "narx": 340000,
+        "uskuna": {
+          "uz": "+ uskunalar taxminan 2–2,5 mln soʻm",
+          "ru": "+ оборудование примерно 2–2,5 млн сум",
+          "en": "+ equipment approx. 2–2.5 mln UZS"
+        }
+      },
+      {
+        "nomi": {
+          "uz": "Standart",
+          "ru": "Стандарт",
+          "en": "Standard"
+        },
+        "tavsif": {
+          "uz": "Uy yoki kichik doʻkon uchun",
+          "ru": "Для дома или небольшого магазина",
+          "en": "For a home or small shop"
+        },
+        "mashhur": true,
+        "tarkibi": [
+          {
+            "matn": {
+              "uz": "4 ta kamerani oʻrnatish",
+              "ru": "Монтаж 4 камер",
+              "en": "Installing 4 cameras"
+            }
+          },
+          {
+            "matn": {
+              "uz": "Registratorni sozlash",
+              "ru": "Настройка регистратора",
+              "en": "Recorder setup"
+            }
+          },
+          {
+            "matn": {
+              "uz": "Telefonga ulab berish",
+              "ru": "Подключение к телефону",
+              "en": "Phone connection"
+            }
+          },
+          {
+            "matn": {
+              "uz": "Kabelni chiroyli tortish",
+              "ru": "Аккуратная прокладка кабеля",
+              "en": "Neat cable routing"
+            }
+          }
+        ],
+        "alohida_narx": 700000,
+        "narx": 590000,
+        "uskuna": {
+          "uz": "+ uskunalar taxminan 3–3,5 mln soʻm",
+          "ru": "+ оборудование примерно 3–3,5 млн сум",
+          "en": "+ equipment approx. 3–3.5 mln UZS"
+        }
+      },
+      {
+        "nomi": {
+          "uz": "Biznes",
+          "ru": "Бизнес",
+          "en": "Business"
+        },
+        "tavsif": {
+          "uz": "Doʻkon, ombor va ofis uchun",
+          "ru": "Для магазина, склада и офиса",
+          "en": "For shops, warehouses and offices"
+        },
+        "mashhur": false,
+        "tarkibi": [
+          {
+            "matn": {
+              "uz": "8 ta kamerani oʻrnatish",
+              "ru": "Монтаж 8 камер",
+              "en": "Installing 8 cameras"
+            }
+          },
+          {
+            "matn": {
+              "uz": "Registrator va PoE switchni sozlash",
+              "ru": "Настройка регистратора и PoE-коммутатора",
+              "en": "Recorder and PoE switch setup"
+            }
+          },
+          {
+            "matn": {
+              "uz": "Bir nechta telefonga ulab berish",
+              "ru": "Подключение к нескольким телефонам",
+              "en": "Connection to several phones"
+            }
+          },
+          {
+            "matn": {
+              "uz": "Kabelni chiroyli tortish",
+              "ru": "Аккуратная прокладка кабеля",
+              "en": "Neat cable routing"
+            }
+          }
+        ],
+        "alohida_narx": 1300000,
+        "narx": 1090000,
+        "uskuna": {
+          "uz": "+ uskunalar taxminan 5–5,5 mln soʻm",
+          "ru": "+ оборудование примерно 5–5,5 млн сум",
+          "en": "+ equipment approx. 5–5.5 mln UZS"
+        }
+      }
+    ],
+    "alohida": [
+      {
+        "nomi": {
+          "uz": "Kamera oʻrnatish",
+          "ru": "Установка камеры",
+          "en": "Camera installation"
+        },
+        "narx": 150000,
+        "izoh": {
+          "uz": "1 dona uchun",
+          "ru": "за 1 шт.",
+          "en": "per unit"
+        }
+      },
+      {
+        "nomi": {
+          "uz": "Parolni tiklash",
+          "ru": "Сброс / восстановление пароля",
+          "en": "Reset / password recovery"
+        },
+        "narx": 100000,
+        "izoh": {
+          "uz": "1 qurilma uchun",
+          "ru": "за 1 устройство",
+          "en": "per device"
+        }
+      },
+      {
+        "nomi": {
+          "uz": "Koʻrik va maslahat",
+          "ru": "Осмотр и консультация",
+          "en": "Assessment and advice"
+        },
+        "narx": 0,
+        "izoh": {
+          "uz": "",
+          "ru": "",
+          "en": ""
+        }
+      }
+    ]
+  },
+  "umid": {
+    "paketlar": [
+      {
+        "nomi": {
+          "uz": "Avtomatlashtirish",
+          "ru": "Автоматизация",
+          "en": "Automation"
+        },
+        "tavsif": {
+          "uz": "Bitta takroriy ishni dasturga topshirish",
+          "ru": "Передать программе одну рутинную задачу",
+          "en": "Hand one routine task to software"
+        },
+        "mashhur": false,
+        "tarkibi": [
+          {
+            "matn": {
+              "uz": "1 jarayon: hisobot, jadval yoki eslatma",
+              "ru": "1 процесс: отчёт, таблица или напоминание",
+              "en": "1 process: report, spreadsheet or reminder"
+            }
+          },
+          {
+            "matn": {
+              "uz": "Telegram yoki Google Sheets bilan",
+              "ru": "Через Telegram или Google Sheets",
+              "en": "Via Telegram or Google Sheets"
+            }
+          },
+          {
+            "matn": {
+              "uz": "Ishga tushirish va sinov",
+              "ru": "Запуск и тестирование",
+              "en": "Launch and testing"
+            }
+          },
+          {
+            "matn": {
+              "uz": "Qanday ishlashini oʻrgatish",
+              "ru": "Обучение работе",
+              "en": "Training on how to use it"
+            }
+          }
+        ],
+        "alohida_narx": 0,
+        "narx": 500000,
+        "uskuna": {
+          "uz": "ish haqi",
+          "ru": "стоимость работы",
+          "en": "labour cost"
+        }
+      },
+      {
+        "nomi": {
+          "uz": "AI yordamchi bot",
+          "ru": "AI-помощник",
+          "en": "AI assistant"
+        },
+        "tavsif": {
+          "uz": "Mijozlarga 24/7 javob",
+          "ru": "Ответы клиентам 24/7",
+          "en": "24/7 replies to customers"
+        },
+        "mashhur": true,
+        "tarkibi": [
+          {
+            "matn": {
+              "uz": "Telegram yoki saytda",
+              "ru": "В Telegram или на сайте",
+              "en": "On Telegram or your website"
+            }
+          },
+          {
+            "matn": {
+              "uz": "Narx va xizmatlaringizni biladi",
+              "ru": "Знает ваши цены и услуги",
+              "en": "Knows your prices and services"
+            }
+          },
+          {
+            "matn": {
+              "uz": "Bilmaganini xodimga oʻtkazadi",
+              "ru": "Передаёт сотруднику, если не знает",
+              "en": "Passes to a staff member when unsure"
+            }
+          },
+          {
+            "matn": {
+              "uz": "UZ / RU tillari",
+              "ru": "Языки UZ / RU",
+              "en": "UZ / RU languages"
+            }
+          }
+        ],
+        "alohida_narx": 0,
+        "narx": 3000000,
+        "uskuna": {
+          "uz": "ish haqi",
+          "ru": "стоимость работы",
+          "en": "labour cost"
+        }
+      },
+      {
+        "nomi": {
+          "uz": "AI paket",
+          "ru": "AI-пакет",
+          "en": "AI package"
+        },
+        "tavsif": {
+          "uz": "Bot + avtomatlashtirish + oʻqitish",
+          "ru": "Бот + автоматизация + обучение",
+          "en": "Bot + automation + training"
+        },
+        "mashhur": false,
+        "tarkibi": [
+          {
+            "matn": {
+              "uz": "AI yordamchi bot",
+              "ru": "AI-помощник",
+              "en": "AI assistant"
+            }
+          },
+          {
+            "matn": {
+              "uz": "2 ta jarayonni avtomatlashtirish",
+              "ru": "Автоматизация 2 процессов",
+              "en": "Automation of 2 processes"
+            }
+          },
+          {
+            "matn": {
+              "uz": "Jamoaga 2 soatlik AI trening",
+              "ru": "2-часовое обучение команды AI",
+              "en": "2-hour AI training for your team"
+            }
+          },
+          {
+            "matn": {
+              "uz": "1 oy qoʻllab-quvvatlash",
+              "ru": "1 месяц поддержки",
+              "en": "1 month of support"
+            }
+          }
+        ],
+        "alohida_narx": 0,
+        "narx": 4000000,
+        "uskuna": {
+          "uz": "ish haqi",
+          "ru": "стоимость работы",
+          "en": "labour cost"
+        }
+      }
+    ],
+    "alohida": [
+      {
+        "nomi": {
+          "uz": "AI yordamchi bot",
+          "ru": "AI-помощник",
+          "en": "AI assistant"
+        },
+        "narx": 3000000,
+        "izoh": {
+          "uz": "1 bot uchun",
+          "ru": "за 1 бота",
+          "en": "per bot"
+        }
+      },
+      {
+        "nomi": {
+          "uz": "Avtomatlashtirish",
+          "ru": "Автоматизация",
+          "en": "Automation"
+        },
+        "narx": 500000,
+        "izoh": {
+          "uz": "1 jarayon uchun",
+          "ru": "за 1 процесс",
+          "en": "per process"
+        }
+      },
+      {
+        "nomi": {
+          "uz": "AI boʻyicha trening",
+          "ru": "Обучение AI",
+          "en": "AI training"
+        },
+        "narx": 300000,
+        "izoh": {
+          "uz": "1 mashgʻulot (2 soat) uchun",
+          "ru": "за 1 занятие (2 часа)",
+          "en": "per 2-hour session"
+        }
+      }
+    ]
+  }
+}

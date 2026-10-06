@@ -1,5 +1,6 @@
 User-agent: *
 Allow: /
 Disallow: /worker/
+Disallow: /admin/
 
 Sitemap: https://bukharatech.uz/sitemap.xml

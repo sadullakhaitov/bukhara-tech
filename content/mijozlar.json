@@ -1,0 +1,69 @@
+{
+  "mijozlar": [
+    {
+      "nomi": {
+        "uz": "Orzu Tech",
+        "ru": "Orzu Tech",
+        "en": "Orzu Tech"
+      },
+      "turi": {
+        "uz": "IT kompaniya",
+        "ru": "IT-компания",
+        "en": "IT company"
+      },
+      "logotip": "images/clients/orzu-tech.png"
+    },
+    {
+      "nomi": {
+        "uz": "Oʻzbekiston temir yoʻllari",
+        "ru": "Узбекистон темир йуллари",
+        "en": "Uzbekistan Railways"
+      },
+      "turi": {
+        "uz": "Transport",
+        "ru": "Транспорт",
+        "en": "Transport"
+      },
+      "logotip": "images/clients/temir-yollari.png"
+    },
+    {
+      "nomi": {
+        "uz": "Osiyo xalqaro universiteti",
+        "ru": "Азиатский международный университет",
+        "en": "Asia International University"
+      },
+      "turi": {
+        "uz": "Universitet",
+        "ru": "Университет",
+        "en": "University"
+      },
+      "logotip": "images/clients/oxu.png"
+    },
+    {
+      "nomi": {
+        "uz": "Buxoro viloyati soliq boshqarmasi",
+        "ru": "Налоговое управление Бухарской области",
+        "en": "Bukhara Regional Tax Department"
+      },
+      "turi": {
+        "uz": "Davlat idorasi",
+        "ru": "Госучреждение",
+        "en": "Government"
+      },
+      "logotip": "images/clients/soliq.png"
+    },
+    {
+      "nomi": {
+        "uz": "Asia Alliance Bank",
+        "ru": "Asia Alliance Bank",
+        "en": "Asia Alliance Bank"
+      },
+      "turi": {
+        "uz": "Bank",
+        "ru": "Банк",
+        "en": "Bank"
+      },
+      "logotip": "images/clients/asia-alliance-bank.png"
+    }
+  ]
+}

@@ -1,0 +1,227 @@
+{
+  "guruhlar": [
+    {
+      "yonalish": "p-cam",
+      "ochiq": true,
+      "nomi": {
+        "uz": "Kamera",
+        "ru": "Видеонаблюдение",
+        "en": "Security cameras"
+      },
+      "qatorlar": [
+        {
+          "nomi": {
+            "uz": "Kamera oʻrnatish",
+            "ru": "Установка камеры",
+            "en": "Camera installation"
+          },
+          "narx": 150000,
+          "birlik": {
+            "uz": "dona",
+            "ru": "шт.",
+            "en": "unit"
+          },
+          "boshlangich": 4
+        },
+        {
+          "nomi": {
+            "uz": "Parolni tiklash",
+            "ru": "Восстановление пароля",
+            "en": "Password recovery"
+          },
+          "narx": 100000,
+          "birlik": {
+            "uz": "qurilma",
+            "ru": "устр.",
+            "en": "device"
+          },
+          "boshlangich": 0
+        }
+      ]
+    },
+    {
+      "yonalish": "p-net",
+      "ochiq": false,
+      "nomi": {
+        "uz": "Internet va Wi-Fi",
+        "ru": "Интернет и Wi-Fi",
+        "en": "Internet & Wi-Fi"
+      },
+      "qatorlar": [
+        {
+          "nomi": {
+            "uz": "MikroTik / Wi-Fi sozlash",
+            "ru": "Настройка MikroTik / Wi-Fi",
+            "en": "MikroTik / Wi-Fi setup"
+          },
+          "narx": 150000,
+          "birlik": {
+            "uz": "qurilma",
+            "ru": "устр.",
+            "en": "device"
+          },
+          "boshlangich": 0
+        },
+        {
+          "nomi": {
+            "uz": "Tarmoq nuqtasi (rozetka)",
+            "ru": "Сетевая точка (розетка)",
+            "en": "Network point (socket)"
+          },
+          "narx": 50000,
+          "birlik": {
+            "uz": "nuqta",
+            "ru": "точка",
+            "en": "point"
+          },
+          "boshlangich": 0
+        }
+      ]
+    },
+    {
+      "yonalish": "p-media",
+      "ochiq": false,
+      "nomi": {
+        "uz": "Video",
+        "ru": "Видео",
+        "en": "Video"
+      },
+      "qatorlar": [
+        {
+          "nomi": {
+            "uz": "Video montaj",
+            "ru": "Видеомонтаж",
+            "en": "Video editing"
+          },
+          "narx": 100000,
+          "birlik": {
+            "uz": "daqiqa",
+            "ru": "мин.",
+            "en": "min"
+          },
+          "boshlangich": 0
+        },
+        {
+          "nomi": {
+            "uz": "Logotip animatsiyasi",
+            "ru": "Анимация логотипа",
+            "en": "Logo animation"
+          },
+          "narx": 500000,
+          "birlik": {
+            "uz": "dona",
+            "ru": "шт.",
+            "en": "unit"
+          },
+          "boshlangich": 0
+        }
+      ]
+    },
+    {
+      "yonalish": "p-web",
+      "ochiq": false,
+      "nomi": {
+        "uz": "Sayt va bot",
+        "ru": "Сайты и боты",
+        "en": "Websites & bots"
+      },
+      "qatorlar": [
+        {
+          "nomi": {
+            "uz": "Landing sahifa (sayt)",
+            "ru": "Лендинг (сайт)",
+            "en": "Landing page (website)"
+          },
+          "narx": 2500000,
+          "birlik": {
+            "uz": "dona",
+            "ru": "шт.",
+            "en": "unit"
+          },
+          "boshlangich": 0
+        },
+        {
+          "nomi": {
+            "uz": "Telegram bot",
+            "ru": "Telegram-бот",
+            "en": "Telegram bot"
+          },
+          "narx": 1000000,
+          "birlik": {
+            "uz": "dona",
+            "ru": "шт.",
+            "en": "unit"
+          },
+          "boshlangich": 0
+        },
+        {
+          "nomi": {
+            "uz": "Prezentatsiya",
+            "ru": "Презентация",
+            "en": "Presentation"
+          },
+          "narx": 25000,
+          "birlik": {
+            "uz": "slayd",
+            "ru": "слайд",
+            "en": "slide"
+          },
+          "boshlangich": 0
+        }
+      ]
+    },
+    {
+      "yonalish": "p-ai",
+      "ochiq": false,
+      "nomi": {
+        "uz": "AI va avtomatlashtirish",
+        "ru": "AI и автоматизация",
+        "en": "AI and automation"
+      },
+      "qatorlar": [
+        {
+          "nomi": {
+            "uz": "AI yordamchi bot",
+            "ru": "AI-помощник",
+            "en": "AI assistant"
+          },
+          "narx": 3000000,
+          "birlik": {
+            "uz": "dona",
+            "ru": "шт.",
+            "en": "unit"
+          },
+          "boshlangich": 0
+        },
+        {
+          "nomi": {
+            "uz": "Avtomatlashtirish",
+            "ru": "Автоматизация",
+            "en": "Automation"
+          },
+          "narx": 500000,
+          "birlik": {
+            "uz": "jarayon",
+            "ru": "процесс",
+            "en": "process"
+          },
+          "boshlangich": 0
+        },
+        {
+          "nomi": {
+            "uz": "AI boʻyicha trening",
+            "ru": "Обучение AI",
+            "en": "AI training"
+          },
+          "narx": 300000,
+          "birlik": {
+            "uz": "mashgʻulot",
+            "ru": "занятие",
+            "en": "session"
+          },
+          "boshlangich": 0
+        }
+      ]
+    }
+  ]
+}

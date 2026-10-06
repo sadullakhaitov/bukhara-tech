@@ -1,0 +1,236 @@
+{
+  "sharhlar": [
+    {
+      "yonalish": "p-cam",
+      "mavzu": {
+        "uz": "Kamera oʻrnatish",
+        "ru": "Установка камер",
+        "en": "Camera installation"
+      },
+      "matn": {
+        "uz": "Doʻkonimizga kamera oʻrnatish kerak edi. Qaysi kamera va qayerga oʻrnatish boʻyicha maslahat berishdi. Oʻrnatib, telefonimga ham ulab berishdi. Hozir istalgan joydan doʻkonni koʻrib turaman. Ishlari menga yoqdi.",
+        "ru": "Нужно было установить камеры в наш магазин. Подсказали, какие камеры выбрать и где их поставить. Установили и подключили к моему телефону. Теперь смотрю магазин откуда угодно. Работа мне понравилась.",
+        "en": "We needed cameras in our shop. They advised which cameras to choose and where to put them, installed them and connected them to my phone. Now I can watch the shop from anywhere. I liked their work."
+      },
+      "ism": {
+        "uz": "Javlon aka",
+        "ru": "Жавлон ака",
+        "en": "Javlon aka"
+      },
+      "joy": {
+        "uz": "Doʻkon egasi, Peshku",
+        "ru": "Владелец магазина, Пешку",
+        "en": "Shop owner, Peshku"
+      }
+    },
+    {
+      "yonalish": "p-net",
+      "mavzu": {
+        "uz": "Wi-Fi muammosi",
+        "ru": "Проблема с Wi-Fi",
+        "en": "Wi-Fi problem"
+      },
+      "matn": {
+        "uz": "Ofisimizda Wi-Fi baʼzi xonalarda yaxshi ishlamasdi. Kelib, tarmoqni tekshirib, muammo nimadaligini tushuntirishdi. Keyin kerakli joyga qoʻshimcha qurilma oʻrnatishdi. Hozir internet ancha yaxshi ishlayapti.",
+        "ru": "В нашем офисе Wi-Fi плохо работал в некоторых комнатах. Приехали, проверили сеть и объяснили, в чём проблема. Потом установили дополнительное устройство в нужном месте. Сейчас интернет работает намного лучше.",
+        "en": "In our office the Wi-Fi was weak in some rooms. They came, checked the network and explained what the problem was, then installed an extra device in the right spot. The internet works much better now."
+      },
+      "ism": {
+        "uz": "Dilshod R.",
+        "ru": "Дилшод Р.",
+        "en": "Dilshod R."
+      },
+      "joy": {
+        "uz": "Xususiy ofis, Buxoro",
+        "ru": "Частный офис, Бухара",
+        "en": "Private office, Bukhara"
+      }
+    },
+    {
+      "yonalish": "p-web",
+      "mavzu": {
+        "uz": "Telegram bot",
+        "ru": "Telegram-бот",
+        "en": "Telegram bot"
+      },
+      "matn": {
+        "uz": "Mijozlardan buyurtmalarni Telegram orqali qabul qilish uchun bot kerak edi. Kerakli funksiyalarni aytdik, shunga mos qilib tayyorlab berishdi. Hozir buyurtma kelishi bilan xodimlarga xabar tushadi. Ishimiz ancha yengillashdi.",
+        "ru": "Нужен был бот, чтобы принимать заказы от клиентов через Telegram. Мы описали нужные функции — сделали именно так. Теперь, как только приходит заказ, сотрудники получают уведомление. Работать стало намного легче.",
+        "en": "We needed a bot to take customer orders via Telegram. We described the features we wanted and they built exactly that. Now staff get a notification as soon as an order comes in. Our work has become much easier."
+      },
+      "ism": {
+        "uz": "Azizbek",
+        "ru": "Азизбек",
+        "en": "Azizbek"
+      },
+      "joy": {
+        "uz": "Savdo biznesi, Buxoro",
+        "ru": "Торговый бизнес, Бухара",
+        "en": "Retail business, Bukhara"
+      }
+    },
+    {
+      "yonalish": "p-net",
+      "belgi": "p-pc",
+      "mavzu": {
+        "uz": "Kompyuter sozlash",
+        "ru": "Настройка компьютера",
+        "en": "Computer setup"
+      },
+      "matn": {
+        "uz": "Kompyuterim juda sekin ishlayotgan edi. Windowsni qayta oʻrnatib berishdan tashqari, kerakli dasturlarni ham sozlab berishdi. Hozir oldingidan ancha tez ishlayapti. Eng muhimi, nima qilganlarini tushuntirib berishdi.",
+        "ru": "Компьютер работал очень медленно. Мне не только переустановили Windows, но и настроили нужные программы. Сейчас работает гораздо быстрее. А главное — объяснили, что именно сделали.",
+        "en": "My computer was very slow. Besides reinstalling Windows, they set up the programs I need. It runs much faster now. Most importantly, they explained what they had done."
+      },
+      "ism": {
+        "uz": "Sardor",
+        "ru": "Сардор",
+        "en": "Sardor"
+      },
+      "joy": {
+        "uz": "Peshku tumani",
+        "ru": "Пешкунский район",
+        "en": "Peshku district"
+      }
+    },
+    {
+      "yonalish": "p-cam",
+      "mavzu": {
+        "uz": "Kuzatuv kamerasi",
+        "ru": "Видеонаблюдение",
+        "en": "CCTV"
+      },
+      "matn": {
+        "uz": "Uyimizga kamera oʻrnatish boʻyicha murojaat qilgandik. Kameralarni joylashtirish boʻyicha oʻzlari maslahat berishdi. Oʻrnatish ishlari ham tartibli boʻldi. Telefon orqali kuzatish imkoniyati ayniqsa qulay ekan.",
+        "ru": "Обращались по установке камер дома. Сами подсказали, как лучше расположить камеры. Монтаж сделали аккуратно. Особенно удобно, что можно смотреть через телефон.",
+        "en": "We asked them to install cameras at home. They advised us on where to place them, and the installation was neat. Being able to watch from the phone is especially handy."
+      },
+      "ism": {
+        "uz": "Bekzod A.",
+        "ru": "Бекзод А.",
+        "en": "Bekzod A."
+      },
+      "joy": {
+        "uz": "Buxoro viloyati",
+        "ru": "Бухарская область",
+        "en": "Bukhara region"
+      }
+    },
+    {
+      "yonalish": "p-net",
+      "mavzu": {
+        "uz": "Tarmoq sozlash",
+        "ru": "Настройка сети",
+        "en": "Network setup"
+      },
+      "matn": {
+        "uz": "Ishxonada bir nechta kompyuterni bitta tarmoqqa ulashda muammo bor edi. Kelib, tarmoqni sozlab berishdi. Hozir kompyuterlar oʻrtasida ishlash ancha qulay boʻldi. Muammoni ortiqcha vaqt choʻzmasdan hal qilishdi.",
+        "ru": "На работе не получалось объединить несколько компьютеров в одну сеть. Приехали и настроили сеть. Теперь работать между компьютерами намного удобнее. Решили проблему быстро, без лишней волокиты.",
+        "en": "At work we couldn't get several computers onto one network. They came and set it up. Working between the computers is much easier now. They solved it quickly, without dragging it out."
+      },
+      "ism": {
+        "uz": "Farrux",
+        "ru": "Фаррух",
+        "en": "Farrukh"
+      },
+      "joy": {
+        "uz": "Buxoro",
+        "ru": "Бухара",
+        "en": "Bukhara"
+      }
+    },
+    {
+      "yonalish": "p-web",
+      "mavzu": {
+        "uz": "Sayt yaratish",
+        "ru": "Создание сайта",
+        "en": "Website"
+      },
+      "matn": {
+        "uz": "Biznesimiz uchun oddiy va tushunarli sayt kerak edi. Dizayn boʻyicha fikrlarimizni aytdik, shunga moslab tayyorlashdi. Telefon orqali ham yaxshi ochiladi. Natijadan mamnun boʻldik.",
+        "ru": "Для бизнеса нужен был простой и понятный сайт. Мы рассказали свои идеи по дизайну — сделали с их учётом. На телефоне тоже открывается хорошо. Результатом довольны.",
+        "en": "We needed a simple, clear website for our business. We shared our ideas on the design and they built it accordingly. It works well on phones too. We're happy with the result."
+      },
+      "ism": {
+        "uz": "Umid S.",
+        "ru": "Умид С.",
+        "en": "Umid S."
+      },
+      "joy": {
+        "uz": "Tadbirkor, Buxoro",
+        "ru": "Предприниматель, Бухара",
+        "en": "Entrepreneur, Bukhara"
+      }
+    },
+    {
+      "yonalish": "p-net",
+      "belgi": "p-pc",
+      "mavzu": {
+        "uz": "Printer va ofis texnikasi",
+        "ru": "Принтер и оргтехника",
+        "en": "Printer & office equipment"
+      },
+      "matn": {
+        "uz": "Ofisdagi printer bilan muammo chiqib, bir necha marta oʻzimiz tuzatishga harakat qildik, boʻlmadi. Koʻrib, muammoni aniqlab berishdi va sozlab ketishdi. Hozir normal ishlayapti.",
+        "ru": "С офисным принтером возникла проблема, несколько раз пытались починить сами — не получилось. Посмотрели, нашли причину и настроили. Сейчас работает нормально.",
+        "en": "Our office printer had a problem; we tried to fix it ourselves several times without success. They looked at it, found the cause and set it up. It works fine now."
+      },
+      "ism": {
+        "uz": "Akmal aka",
+        "ru": "Акмал ака",
+        "en": "Akmal aka"
+      },
+      "joy": {
+        "uz": "Xususiy tashkilot, Peshku",
+        "ru": "Частная организация, Пешку",
+        "en": "Private company, Peshku"
+      }
+    },
+    {
+      "yonalish": "p-cam",
+      "mavzu": {
+        "uz": "Kamera + internet",
+        "ru": "Камеры + интернет",
+        "en": "Cameras + internet"
+      },
+      "matn": {
+        "uz": "Bizga kamera oʻrnatish bilan birga internet tarmogʻini ham tartibga keltirish kerak edi. Ikkalasini birgalikda qilib berishgani qulay boʻldi. Qanday ishlatishni ham koʻrsatib berishdi. Hozircha hammasi yaxshi ishlayapti.",
+        "ru": "Нам нужно было установить камеры и заодно навести порядок в интернет-сети. Удобно, что сделали всё вместе. Показали, как всем пользоваться. Пока всё работает хорошо.",
+        "en": "We needed cameras installed and our internet network sorted out as well. It was convenient that they did both together. They also showed us how to use everything. So far it all works well."
+      },
+      "ism": {
+        "uz": "Rustam B.",
+        "ru": "Рустам Б.",
+        "en": "Rustam B."
+      },
+      "joy": {
+        "uz": "Biznes egasi, Buxoro",
+        "ru": "Владелец бизнеса, Бухара",
+        "en": "Business owner, Bukhara"
+      }
+    },
+    {
+      "yonalish": "p-net",
+      "mavzu": {
+        "uz": "Umumiy IT xizmati",
+        "ru": "Комплексное IT-обслуживание",
+        "en": "General IT support"
+      },
+      "matn": {
+        "uz": "Kompyuter va internet bilan bogʻliq bir nechta muammolarimiz bor edi. Hammasini bir joyda koʻrib, bosqichma-bosqich hal qilib berishdi. Menga yoqqani — tushunmagan joylarimni ham oddiy qilib tushuntirishdi. Kerak boʻlsa yana murojaat qilaman.",
+        "ru": "Было несколько проблем с компьютерами и интернетом. Посмотрели всё сразу и решили шаг за шагом. Понравилось, что непонятные моменты объяснили простыми словами. Если понадобится — обращусь снова.",
+        "en": "We had several computer and internet problems. They looked at everything in one go and fixed it step by step. What I liked is that they explained the things I didn't understand in plain words. I'll come back if I need to."
+      },
+      "ism": {
+        "uz": "Sherzod",
+        "ru": "Шерзод",
+        "en": "Sherzod"
+      },
+      "joy": {
+        "uz": "Peshku tumani",
+        "ru": "Пешкунский район",
+        "en": "Peshku district"
+      }
+    }
+  ]
+}

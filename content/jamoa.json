@@ -1,0 +1,224 @@
+{
+  "ustalar": [
+    {
+      "id": "sadulla",
+      "yonalish": "p-web",
+      "ism": {
+        "uz": "Sa'dulla Khaitov",
+        "ru": "Саъдулла Хаитов",
+        "en": "Sa'dulla Khaitov"
+      },
+      "bosh_harflar": "SK",
+      "rasm": "",
+      "staj": 5,
+      "lavozim": {
+        "uz": "Sayt va Telegram botlar",
+        "ru": "Сайты и Telegram-боты",
+        "en": "Websites and Telegram bots"
+      },
+      "jumla": {
+        "uz": "Saytingiz telefonda ham tez va tushunarli ishlashi — mening ishim.",
+        "ru": "Чтобы ваш сайт быстро и понятно работал даже на телефоне — это моя работа.",
+        "en": "Making your website fast and clear, even on a phone — that's my job."
+      },
+      "teglar": [
+        {
+          "uz": "Web saytlar",
+          "ru": "Веб-сайты",
+          "en": "Websites"
+        },
+        {
+          "uz": "Telegram botlar",
+          "ru": "Telegram-боты",
+          "en": "Telegram bots"
+        },
+        {
+          "uz": "Prezentatsiya",
+          "ru": "Презентации",
+          "en": "Presentations"
+        }
+      ],
+      "tavsif": {
+        "uz": "Web saytlar va Telegram botlar yarataman, PowerPoint’da prezentatsiyalar tayyorlayman. Dizayndan serverga qadar — sayt toʻliq bir qoʻlda.",
+        "ru": "Создаю веб-сайты и Telegram-ботов, готовлю презентации в PowerPoint. От дизайна до сервера — сайт полностью в одних руках.",
+        "en": "I build websites and Telegram bots and design PowerPoint presentations. From design to server — your whole site in one pair of hands."
+      }
+    },
+    {
+      "id": "sherali",
+      "yonalish": "p-net",
+      "ism": {
+        "uz": "Sherali Bozorov",
+        "ru": "Шерали Бозоров",
+        "en": "Sherali Bozorov"
+      },
+      "bosh_harflar": "SB",
+      "rasm": "",
+      "staj": 15,
+      "lavozim": {
+        "uz": "Internet va tarmoqlar",
+        "ru": "Интернет и сети",
+        "en": "Internet and networks"
+      },
+      "jumla": {
+        "uz": "Internet uzilsa — ish toʻxtaydi. Men buning oldini olaman.",
+        "ru": "Пропал интернет — встала работа. Я делаю так, чтобы этого не было.",
+        "en": "No internet means no work. I make sure that never happens."
+      },
+      "teglar": [
+        {
+          "uz": "MikroTik",
+          "ru": "MikroTik",
+          "en": "MikroTik"
+        },
+        {
+          "uz": "Wi-Fi",
+          "ru": "Wi-Fi",
+          "en": "Wi-Fi"
+        },
+        {
+          "uz": "Tarmoqlar",
+          "ru": "Сети",
+          "en": "Networks"
+        }
+      ],
+      "tavsif": {
+        "uz": "15 yildan beri ofis va uylarda tarmoq quraman: MikroTik sozlash, internetni ulash va tarmoqning uzluksiz ishlashini taʼminlash.",
+        "ru": "Уже 15 лет строю сети в офисах и домах: настраиваю MikroTik, подключаю интернет и обеспечиваю бесперебойную работу сети.",
+        "en": "For 15 years I've been building networks in offices and homes: setting up MikroTik, connecting the internet and keeping networks running without interruption."
+      }
+    },
+    {
+      "id": "doston",
+      "yonalish": "p-media",
+      "ism": {
+        "uz": "Doston Muxammadov",
+        "ru": "Достон Мухаммадов",
+        "en": "Doston Mukhammadov"
+      },
+      "bosh_harflar": "DM",
+      "rasm": "",
+      "staj": 10,
+      "lavozim": {
+        "uz": "Video montaj va rang",
+        "ru": "Видеомонтаж и цвет",
+        "en": "Video editing and colour"
+      },
+      "jumla": {
+        "uz": "Oddiy videoni ham koʻrishga arziydigan qilib beraman.",
+        "ru": "Даже обычное видео сделаю таким, что его захочется досмотреть.",
+        "en": "I'll make even an ordinary video worth watching to the end."
+      },
+      "teglar": [
+        {
+          "uz": "DaVinci Resolve",
+          "ru": "DaVinci Resolve",
+          "en": "DaVinci Resolve"
+        },
+        {
+          "uz": "Premiere Pro",
+          "ru": "Premiere Pro",
+          "en": "Premiere Pro"
+        },
+        {
+          "uz": "After Effects",
+          "ru": "After Effects",
+          "en": "After Effects"
+        }
+      ],
+      "tavsif": {
+        "uz": "Video montaj, rang bilan ishlash va motion grafika. DaVinci Resolve, Premiere Pro, After Effects va Photoshop’da 10 yillik tajriba.",
+        "ru": "Видеомонтаж, работа с цветом и моушн-графика. 10 лет опыта в DaVinci Resolve, Premiere Pro, After Effects и Photoshop.",
+        "en": "Video editing, colour work and motion graphics. 10 years of experience in DaVinci Resolve, Premiere Pro, After Effects and Photoshop."
+      }
+    },
+    {
+      "id": "maruf",
+      "yonalish": "p-cam",
+      "ism": {
+        "uz": "Maruf Usmonov",
+        "ru": "Маъруф Усмонов",
+        "en": "Maruf Usmonov"
+      },
+      "bosh_harflar": "MU",
+      "rasm": "",
+      "staj": 10,
+      "lavozim": {
+        "uz": "Kuzatuv kameralari",
+        "ru": "Видеонаблюдение",
+        "en": "Security cameras"
+      },
+      "jumla": {
+        "uz": "Uyingiz va doʻkoningiz kechasi ham nazoratda boʻladi.",
+        "ru": "Ваш дом и магазин будут под присмотром даже ночью.",
+        "en": "Your home and shop will be watched over, even at night."
+      },
+      "teglar": [
+        {
+          "uz": "Oʻrnatish",
+          "ru": "Установка",
+          "en": "Installation"
+        },
+        {
+          "uz": "Sozlash",
+          "ru": "Настройка",
+          "en": "Setup"
+        },
+        {
+          "uz": "Parolni tiklash",
+          "ru": "Восстановление пароля",
+          "en": "Password recovery"
+        }
+      ],
+      "tavsif": {
+        "uz": "Kuzatuv kameralarini oʻrnataman, sozlayman va parolini tiklayman. Kameralarning barcha turdagi mahsulotlariga xizmat koʻrsataman.",
+        "ru": "Устанавливаю, настраиваю и сбрасываю камеры видеонаблюдения. Обслуживаю любое оборудование для видеонаблюдения.",
+        "en": "I install, set up and reset security cameras, and service any make of surveillance equipment."
+      }
+    },
+    {
+      "id": "umid",
+      "yonalish": "p-ai",
+      "ism": {
+        "uz": "Umid Murodov",
+        "ru": "Умид Муродов",
+        "en": "Umid Murodov"
+      },
+      "bosh_harflar": "UM",
+      "rasm": "",
+      "staj": 3,
+      "lavozim": {
+        "uz": "AI va aqlli texnologiyalar",
+        "ru": "AI и умные технологии",
+        "en": "AI and smart technology"
+      },
+      "jumla": {
+        "uz": "Takroriy ishni dasturga topshiring — vaqtingiz asosiy ishga qolsin.",
+        "ru": "Отдайте рутину программе — время останется на главное.",
+        "en": "Hand routine tasks to software — and keep your time for what matters."
+      },
+      "teglar": [
+        {
+          "uz": "AI botlar",
+          "ru": "AI-боты",
+          "en": "AI bots"
+        },
+        {
+          "uz": "Avtomatlashtirish",
+          "ru": "Автоматизация",
+          "en": "Automation"
+        },
+        {
+          "uz": "Prompt",
+          "ru": "Промпты",
+          "en": "Prompts"
+        }
+      ],
+      "tavsif": {
+        "uz": "Sunʼiy intellektni biznesingizga ulayman: mijozlarga javob beradigan AI yordamchilar, takroriy ishlarni avtomatlashtirish va aqlli qurilmalarni bitta tizimga birlashtirish.",
+        "ru": "Подключаю искусственный интеллект к вашему бизнесу: AI-помощники, которые отвечают клиентам, автоматизация рутинной работы и объединение умных устройств в одну систему.",
+        "en": "I bring artificial intelligence into your business: AI assistants that answer customers, automation of routine work and smart devices joined into one system."
+      }
+    }
+  ]
+}
