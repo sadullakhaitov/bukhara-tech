@@ -13,7 +13,7 @@ Bu fayl Claude Code uchun: oldingi suhbatlarda qabul qilingan qarorlar va to'pla
 
 ## Sayt egasi (2026-10-11)
 
-Sa'dulla Khaitov — `content/men.json` (rasm, ism, kasb, tavsif, staj 5 yil, teglar) → bosh sahifadagi `#men` "Men haqimda" bo'limi va hero'dagi "N yil ish tajribasi". Barcha matnlar 1-shaxs birlikda ("qilaman", "оʻzim javob beraman", ru "сделаю", en "I"). FAQ'dagi "birga sinab koʻramiz", "kelishamiz" — mijoz bilan birga, qoladi. Xizmat sahifalarida rasm/staj yo'q: badge + h1 + lead + chips + "Ishni oʻzim bajaraman — Sa'dulla Khaitov" havolasi; pastda "Boshqa xizmatlarim" (3 ta). Logotip 4 rangli kvadratligicha.
+Sa'dulla Khaitov — `content/men.json` (rasm `images/sadulla.jpg`, ism, kasb, tavsif, staj 4 yil, teglar) → bosh sahifadagi `#men` "Men haqimda" bo'limi va hero'dagi "N yil ish tajribasi". Barcha matnlar 1-shaxs birlikda ("qilaman", "оʻzim javob beraman", ru "сделаю", en "I"). FAQ'dagi "birga sinab koʻramiz", "kelishamiz" — mijoz bilan birga, qoladi. Xizmat sahifalarida rasm/staj yo'q: badge + h1 + lead + chips + "Ishni oʻzim bajaraman — Sa'dulla Khaitov" havolasi; pastda "Boshqa xizmatlarim" (3 ta). Logotip 4 rangli kvadratligicha.
 
 **Eski jamoa (tarix uchun):** Sherali Bozorov (tarmoq), Doston Muxammadov (video), Maruf Usmonov (kamera), Umid Murodov (AI) — 2026-10-11 da saytdan olib tashlangan. Ularni qaytarmang, foydalanuvchi aytmaguncha.
 
@@ -87,4 +87,4 @@ E'lonlar soni (raqobat ko'rsatkichi): sayt/bot 57, Wi-Fi/internet 42, kamera 41,
 - "AI yasaganga o'xshaydi" degan audit bo'yicha A qismi bajarildi: `[N]` lar olib tashlandi, matnlar tabiiy "men" tiliga o'tdi, "Qanday ishlaymiz" (3 qadam) va "Tayyor setlar" bo'limlari olib tashlandi, sun'iy sharhlar yashirildi, ishlar bo'limida rasmlar namuna ekani ochiq yozilgan.
 - **Dizayn:** fondagi rangli dog'lar (`body::before`) olib tashlandi; sarlavha va raqamlar Manrope 800 (`--disp`), Unbounded faqat logotipda (`--logo`); xizmat kartalari tekis (ochiq rangli belgi plitasi, outline tugma, rangli yuqori chiziqsiz), kompyuterda 4 tadan, planshetda 2 tadan. Liquid glass header/kartalar qoldi.
 - Bosh sahifa tartibi: hero → `#xizmatlar` → `#kalkulyator` → `#ishlar` (ishlar + sharhlar (bo'sh bo'lsa yo'q) + logotiplar) → `#men` → `#savollar` → `#aloqa`. Menyu 4 band, "Tayyor setlar" yo'q. Forma: Sayt/AI/Internet/Video/Boshqa.
-- `250+ bajarilgan ish` va `5 yil` foydalanuvchi tasdiqlashi kerak (so'ralgan).
+- **2026-10-11 foydalanuvchi berdi:** tajriba **4 yil** (`men.json` staj), bajarilgan ishlar **≈70** ("70 ga yaqin" — hero statistikasi, 3 ta index'da qo'lda), manzil "Buxoro boʻylab chiqib ishlayman" (`aloqa.manzil`), yuridik nom/STIR yo'q (bo'sh qoladi). Shaxsiy rasm `images/sadulla.jpg` (Drive'dagi HEIC'dan, 750×900, EXIF/GPS olib tashlangan).

@@ -1,12 +1,12 @@
 {
-  "rasm": "",
+  "rasm": "images/sadulla.jpg",
   "ism": {
     "uz": "Sa'dulla Khaitov",
     "ru": "Саъдулла Хаитов",
     "en": "Sa'dulla Khaitov"
   },
   "bosh_harflar": "SK",
-  "staj": 5,
+  "staj": 4,
   "lavozim": {
     "uz": "Dasturchi va IT mutaxassis",
     "ru": "Разработчик и IT-специалист",

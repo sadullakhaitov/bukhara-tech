@@ -786,3 +786,4 @@ i.fa-solid, i.fa-brands { display: inline-block; min-width: 1em; line-height: 1;
   .about-text p { font-size: 16px; }
   .profile-svc .wrap { padding-block: 12px 40px; }
 }
+.about .photo img { object-position: 50% 18%; }
