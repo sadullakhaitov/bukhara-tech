@@ -17,19 +17,19 @@
       }
     },
     {
-      "yonalish": "p-media",
-      "rasm": "",
-      "namuna": false,
-      "oldin_keyin": true,
+      "yonalish": "p-net",
+      "rasm": "images/works/sherali-5.jpg",
+      "namuna": true,
+      "oldin_keyin": false,
       "nomi": {
-        "uz": "Color grading",
-        "ru": "Цветокоррекция",
-        "en": "Colour grading"
+        "uz": "Uy tarmogʻi",
+        "ru": "Домашняя сеть",
+        "en": "Home network"
       },
       "izoh": {
-        "uz": "Oldin / keyin",
-        "ru": "До / после",
-        "en": "Before / after"
+        "uz": "Butun uyga Wi-Fi",
+        "ru": "Wi-Fi по всему дому",
+        "en": "Wi-Fi throughout the house"
       }
     },
     {
@@ -172,21 +172,6 @@
         "ru": "Отчёты · CRM",
         "en": "Reports · CRM"
       }
-    },
-    {
-      "rasm": "images/works/sadulla-6.jpg",
-      "namuna": true,
-      "oldin_keyin": false,
-      "nomi": {
-        "uz": "Prezentatsiya",
-        "ru": "Презентация",
-        "en": "Presentation"
-      },
-      "izoh": {
-        "uz": "PowerPoint",
-        "ru": "PowerPoint",
-        "en": "PowerPoint"
-      }
     }
   ],
   "ai": [
@@ -325,98 +310,6 @@
         "uz": "Zaxira kanal",
         "ru": "Резервный канал",
         "en": "Backup line"
-      }
-    }
-  ],
-  "video": [
-    {
-      "rasm": "",
-      "namuna": false,
-      "oldin_keyin": true,
-      "nomi": {
-        "uz": "Color grading",
-        "ru": "Цветокоррекция",
-        "en": "Colour grading"
-      },
-      "izoh": {
-        "uz": "Oldin / keyin",
-        "ru": "До / после",
-        "en": "Before / after"
-      }
-    },
-    {
-      "rasm": "images/works/doston-2.jpg",
-      "namuna": true,
-      "oldin_keyin": false,
-      "nomi": {
-        "uz": "Reklama rolik",
-        "ru": "Рекламный ролик",
-        "en": "Promo video"
-      },
-      "izoh": {
-        "uz": "Premiere Pro",
-        "ru": "Premiere Pro",
-        "en": "Premiere Pro"
-      }
-    },
-    {
-      "rasm": "images/works/doston-3.jpg",
-      "namuna": true,
-      "oldin_keyin": false,
-      "nomi": {
-        "uz": "Logotip animatsiyasi",
-        "ru": "Анимация логотипа",
-        "en": "Logo animation"
-      },
-      "izoh": {
-        "uz": "After Effects",
-        "ru": "After Effects",
-        "en": "After Effects"
-      }
-    },
-    {
-      "rasm": "images/works/doston-4.jpg",
-      "namuna": true,
-      "oldin_keyin": false,
-      "nomi": {
-        "uz": "Toʻy klipi",
-        "ru": "Свадебный клип",
-        "en": "Wedding clip"
-      },
-      "izoh": {
-        "uz": "DaVinci Resolve",
-        "ru": "DaVinci Resolve",
-        "en": "DaVinci Resolve"
-      }
-    },
-    {
-      "rasm": "images/works/doston-5.jpg",
-      "namuna": true,
-      "oldin_keyin": false,
-      "nomi": {
-        "uz": "Reels seriyasi",
-        "ru": "Серия Reels",
-        "en": "Reels series"
-      },
-      "izoh": {
-        "uz": "9:16",
-        "ru": "9:16",
-        "en": "9:16"
-      }
-    },
-    {
-      "rasm": "images/works/doston-6.jpg",
-      "namuna": true,
-      "oldin_keyin": false,
-      "nomi": {
-        "uz": "Foto retush",
-        "ru": "Ретушь фото",
-        "en": "Photo retouching"
-      },
-      "izoh": {
-        "uz": "Photoshop",
-        "ru": "Photoshop",
-        "en": "Photoshop"
       }
     }
   ]

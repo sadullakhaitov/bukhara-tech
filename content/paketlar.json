@@ -44,7 +44,7 @@
           }
         ],
         "alohida_narx": 0,
-        "narx": 1000000,
+        "narx": 1500000,
         "uskuna": {
           "uz": "ish haqi",
           "ru": "стоимость работы",
@@ -155,24 +155,24 @@
     "alohida": [
       {
         "nomi": {
-          "uz": "Landing sahifa",
-          "ru": "Лендинг",
-          "en": "Landing page"
+          "uz": "Internet-doʻkon",
+          "ru": "Интернет-магазин",
+          "en": "Online store"
         },
-        "narx": 2500000,
+        "narx": 8000000,
         "izoh": {
-          "uz": "1 sahifa uchun",
-          "ru": "за 1 страницу",
-          "en": "per page"
+          "uz": "katalog, savat, toʻlov",
+          "ru": "каталог, корзина, оплата",
+          "en": "catalogue, cart, payments"
         }
       },
       {
         "nomi": {
-          "uz": "Telegram bot",
-          "ru": "Telegram-бот",
-          "en": "Telegram bot"
+          "uz": "Telegram bot (toʻlov, admin panel)",
+          "ru": "Telegram-бот (оплата, админка)",
+          "en": "Telegram bot (payments, admin panel)"
         },
-        "narx": 1000000,
+        "narx": 4000000,
         "izoh": {
           "uz": "1 bot uchun",
           "ru": "за 1 бота",
@@ -181,15 +181,15 @@
       },
       {
         "nomi": {
-          "uz": "Prezentatsiya",
-          "ru": "Презентация",
-          "en": "Presentation"
+          "uz": "Qoʻllab-quvvatlash",
+          "ru": "Поддержка",
+          "en": "Support"
         },
-        "narx": 25000,
+        "narx": 300000,
         "izoh": {
-          "uz": "1 slayd uchun",
-          "ru": "за 1 слайд",
-          "en": "per slide"
+          "uz": "oyiga",
+          "ru": "в месяц",
+          "en": "per month"
         }
       }
     ]
@@ -239,7 +239,7 @@
           }
         ],
         "alohida_narx": 0,
-        "narx": 500000,
+        "narx": 700000,
         "uskuna": {
           "uz": "ish haqi",
           "ru": "стоимость работы",
@@ -289,7 +289,7 @@
           }
         ],
         "alohida_narx": 0,
-        "narx": 3000000,
+        "narx": 4000000,
         "uskuna": {
           "uz": "ish haqi",
           "ru": "стоимость работы",
@@ -339,7 +339,7 @@
           }
         ],
         "alohida_narx": 0,
-        "narx": 4000000,
+        "narx": 6000000,
         "uskuna": {
           "uz": "ish haqi",
           "ru": "стоимость работы",
@@ -354,7 +354,7 @@
           "ru": "AI-помощник",
           "en": "AI assistant"
         },
-        "narx": 3000000,
+        "narx": 4000000,
         "izoh": {
           "uz": "1 bot uchun",
           "ru": "за 1 бота",
@@ -367,7 +367,7 @@
           "ru": "Автоматизация",
           "en": "Automation"
         },
-        "narx": 500000,
+        "narx": 700000,
         "izoh": {
           "uz": "1 jarayon uchun",
           "ru": "за 1 процесс",
@@ -380,11 +380,11 @@
           "ru": "Обучение AI",
           "en": "AI training"
         },
-        "narx": 300000,
+        "narx": 400000,
         "izoh": {
           "uz": "1 mashgʻulot (2 soat) uchun",
           "ru": "за 1 занятие (2 часа)",
-          "en": "per 2-hour session"
+          "en": "per session (2 hours)"
         }
       }
     ]
@@ -534,7 +534,7 @@
           }
         ],
         "alohida_narx": 0,
-        "narx": 1200000,
+        "narx": 1500000,
         "uskuna": {
           "uz": "oyiga",
           "ru": "в месяц",
@@ -545,9 +545,9 @@
     "alohida": [
       {
         "nomi": {
-          "uz": "MikroTik sozlash",
-          "ru": "Настройка MikroTik",
-          "en": "MikroTik setup"
+          "uz": "Router / Wi-Fi sozlash",
+          "ru": "Настройка роутера / Wi-Fi",
+          "en": "Router / Wi-Fi setup"
         },
         "narx": 150000,
         "izoh": {
@@ -558,210 +558,41 @@
       },
       {
         "nomi": {
+          "uz": "MikroTik sozlash",
+          "ru": "Настройка MikroTik",
+          "en": "MikroTik setup"
+        },
+        "narx": 400000,
+        "izoh": {
+          "uz": "VPN, 2 provayder",
+          "ru": "VPN, 2 провайдера",
+          "en": "VPN, 2 providers"
+        }
+      },
+      {
+        "nomi": {
           "uz": "Tarmoq nuqtasi",
           "ru": "Сетевая точка",
           "en": "Network point"
         },
-        "narx": 50000,
+        "narx": 60000,
         "izoh": {
           "uz": "1 rozetka uchun",
           "ru": "за 1 розетку",
           "en": "per socket"
         }
-      }
-    ]
-  },
-  "video": {
-    "paketlar": [
-      {
-        "nomi": {
-          "uz": "Reels toʻplami",
-          "ru": "Пакет Reels",
-          "en": "Reels pack"
-        },
-        "tavsif": {
-          "uz": "Instagram va TikTok uchun",
-          "ru": "Для Instagram и TikTok",
-          "en": "For Instagram and TikTok"
-        },
-        "mashhur": false,
-        "tarkibi": [
-          {
-            "matn": {
-              "uz": "4 ta qisqa video (Reels)",
-              "ru": "4 коротких видео (Reels)",
-              "en": "4 short videos (Reels)"
-            }
-          },
-          {
-            "matn": {
-              "uz": "Montaj, musiqa, titrlar",
-              "ru": "Монтаж, музыка, титры",
-              "en": "Editing, music, titles"
-            }
-          },
-          {
-            "matn": {
-              "uz": "Rangni tuzatish",
-              "ru": "Цветокоррекция",
-              "en": "Colour grading"
-            }
-          },
-          {
-            "matn": {
-              "uz": "9:16 format",
-              "ru": "Формат 9:16",
-              "en": "9:16 format"
-            }
-          }
-        ],
-        "alohida_narx": 0,
-        "narx": 400000,
-        "uskuna": {
-          "uz": "ish haqi",
-          "ru": "стоимость работы",
-          "en": "labour cost"
-        }
       },
       {
         "nomi": {
-          "uz": "Reklama rolik",
-          "ru": "Рекламный ролик",
-          "en": "Promo video"
+          "uz": "Kompyuter sozlash",
+          "ru": "Настройка ПК",
+          "en": "PC setup"
         },
-        "tavsif": {
-          "uz": "Mahsulot yoki xizmat reklamasi",
-          "ru": "Реклама товара или услуги",
-          "en": "An ad for a product or service"
-        },
-        "mashhur": true,
-        "tarkibi": [
-          {
-            "matn": {
-              "uz": "1 daqiqagacha rolik",
-              "ru": "Ролик до 1 минуты",
-              "en": "Video up to 1 minute"
-            }
-          },
-          {
-            "matn": {
-              "uz": "Montaj va color grading",
-              "ru": "Монтаж и цветокоррекция",
-              "en": "Editing and colour grading"
-            }
-          },
-          {
-            "matn": {
-              "uz": "Logotip va titr animatsiyasi",
-              "ru": "Анимация логотипа и титров",
-              "en": "Logo and title animation"
-            }
-          },
-          {
-            "matn": {
-              "uz": "2 marta tuzatish",
-              "ru": "2 раунда правок",
-              "en": "2 rounds of revisions"
-            }
-          }
-        ],
-        "alohida_narx": 0,
-        "narx": 600000,
-        "uskuna": {
-          "uz": "ish haqi",
-          "ru": "стоимость работы",
-          "en": "labour cost"
-        }
-      },
-      {
-        "nomi": {
-          "uz": "Oylik kontent",
-          "ru": "Контент на месяц",
-          "en": "Content for a month"
-        },
-        "tavsif": {
-          "uz": "Sahifani doimiy yuritish uchun",
-          "ru": "Для постоянного ведения страницы",
-          "en": "For keeping your page active"
-        },
-        "mashhur": false,
-        "tarkibi": [
-          {
-            "matn": {
-              "uz": "Oyiga 12 ta Reels",
-              "ru": "12 Reels в месяц",
-              "en": "12 Reels a month"
-            }
-          },
-          {
-            "matn": {
-              "uz": "Yagona uslub va rang",
-              "ru": "Единый стиль и цвет",
-              "en": "Consistent style and colour"
-            }
-          },
-          {
-            "matn": {
-              "uz": "Muqova (cover) rasmlari",
-              "ru": "Обложки (cover)",
-              "en": "Covers"
-            }
-          },
-          {
-            "matn": {
-              "uz": "Kelishilgan jadval boʻyicha",
-              "ru": "По согласованному графику",
-              "en": "On an agreed schedule"
-            }
-          }
-        ],
-        "alohida_narx": 0,
-        "narx": 1100000,
-        "uskuna": {
-          "uz": "ish haqi",
-          "ru": "стоимость работы",
-          "en": "labour cost"
-        }
-      }
-    ],
-    "alohida": [
-      {
-        "nomi": {
-          "uz": "Video montaj",
-          "ru": "Видеомонтаж",
-          "en": "Video editing"
-        },
-        "narx": 100000,
+        "narx": 150000,
         "izoh": {
-          "uz": "1 daqiqa uchun",
-          "ru": "за 1 минуту",
-          "en": "per minute"
-        }
-      },
-      {
-        "nomi": {
-          "uz": "Color grading",
-          "ru": "Цветокоррекция",
-          "en": "Colour grading"
-        },
-        "narx": 200000,
-        "izoh": {
-          "uz": "1 video uchun",
-          "ru": "за 1 видео",
-          "en": "per video"
-        }
-      },
-      {
-        "nomi": {
-          "uz": "Logotip animatsiyasi",
-          "ru": "Анимация логотипа",
-          "en": "Logo animation"
-        },
-        "narx": 500000,
-        "izoh": {
-          "uz": "1 animatsiya uchun",
-          "ru": "за 1 анимацию",
-          "en": "per animation"
+          "uz": "1 kompyuter uchun",
+          "ru": "за 1 ПК",
+          "en": "per PC"
         }
       }
     ]

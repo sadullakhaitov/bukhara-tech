@@ -1,6 +1,6 @@
 #!/usr/bin/env python3
-"""Admin panel (content/*.json) ma'lumotlaridan saytning 15 ta HTML sahifasini yangilaydi
-(bosh sahifa + 4 xizmat sahifasi: sayt, ai, internet, video — uchala tilda).
+"""Admin panel (content/*.json) ma'lumotlaridan saytning 12 ta HTML sahifasini yangilaydi
+(bosh sahifa + 3 xizmat sahifasi: sayt, ai, internet — uchala tilda).
 
 HTML ichida `<!-- cms:NOM -->` ... `<!-- /cms:NOM -->` belgilari orasidagi qism shu yerda
 qayta yoziladi — u joylarni qo'lda tahrirlamang, content/ dagi JSON'ni o'zgartiring.
@@ -18,8 +18,8 @@ from pathlib import Path
 ROOT = Path(__file__).resolve().parent.parent
 C = ROOT / "content"
 LANGS = {"": "uz", "ru/": "ru", "en/": "en"}
-PAGES = ["sayt", "ai", "internet", "video"]
-DIR_PAGE = {"p-net": "internet", "p-web": "sayt", "p-media": "video", "p-ai": "ai"}
+PAGES = ["sayt", "ai", "internet"]
+DIR_PAGE = {"p-net": "internet", "p-web": "sayt", "p-ai": "ai"}
 DIR_ICON = {"p-cam": "fa-video", "p-net": "fa-wifi", "p-web": "fa-laptop-code", "p-media": "fa-clapperboard",
             "p-ai": "fa-wand-magic-sparkles", "p-pc": "fa-desktop"}
 FA = '<i class="fa-solid {}" aria-hidden="true"></i>'
@@ -252,6 +252,10 @@ def r_men(lang, prefix):
         photo = f'<div class="photo"><span class="photo-ini" aria-hidden="true">{e(m.get("bosh_harflar") or name[:2].upper())}</span></div>'
     chips = "".join(f"<li>{e(tr(c, lang))}</li>" for c in m.get("teglar") or [])
     n = int(m["staj"])
+    links = "".join(f' <a href="{e(k["havola"])}" target="_blank" rel="noopener">{e(k["nomi"])} <span>{e(k["havola"].split("//")[-1])}</span></a>'
+                    for k in m.get("kompaniyalar") or [] if k.get("havola"))
+    if links:
+        links = f'\n          <p class="about-links">{links.strip()}</p>'
     return f'''<div class="about p-web">
         {photo}
         <div class="about-text">
@@ -259,7 +263,7 @@ def r_men(lang, prefix):
           <h3>{e(name)}</h3>
           <p>{e(tr(m["tavsif"], lang))}</p>
           <div class="card-years"><b>{n}</b><span>{card_years(n, lang)}</span></div>
-          <ul class="chips">{chips}</ul>
+          <ul class="chips">{chips}</ul>{links}
         </div>
       </div>'''
 

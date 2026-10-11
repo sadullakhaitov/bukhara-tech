@@ -212,7 +212,7 @@ i.fa-solid, i.fa-brands { display: inline-block; min-width: 1em; line-height: 1;
 /* 5 ta karta: yuqorida 3, pastda 2 ta — o'rtada */
 .team, .svcs { display: flex; flex-wrap: wrap; justify-content: center; gap: 20px; }
 .team > *, .svcs > * { flex: 0 1 calc((100% - 40px) / 3); min-width: 0; }
-.svcs > * { flex-basis: calc((100% - 60px) / 4); }
+.svcs > * { flex-basis: calc((100% - 40px) / 3); }
 .card { display: flex; flex-direction: column; background: var(--surf); border: 1px solid var(--line); border-radius: 20px; overflow: hidden; }
 .card .photo { height: 300px; border-radius: 0; }
 .card .photo-ini { font-size: 88px; }
@@ -787,3 +787,7 @@ i.fa-solid, i.fa-brands { display: inline-block; min-width: 1em; line-height: 1;
   .profile-svc .wrap { padding-block: 12px 40px; }
 }
 .about .photo img { object-position: 50% 18%; }
+.about-links { display: flex; flex-wrap: wrap; gap: 10px; }
+.about-links a { display: inline-flex; align-items: baseline; gap: 8px; padding: 8px 14px; border: 1px solid var(--line); border-radius: 10px; font-weight: 700; color: var(--ink); text-decoration: none; }
+.about-links a span { font-family: var(--mono); font-size: 12px; font-weight: 400; color: var(--muted); }
+.about-links a:hover { border-color: var(--acc); color: var(--acc); }

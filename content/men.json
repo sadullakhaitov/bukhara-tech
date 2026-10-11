@@ -8,14 +8,14 @@
   "bosh_harflar": "SK",
   "staj": 4,
   "lavozim": {
-    "uz": "Dasturchi va IT mutaxassis",
-    "ru": "Разработчик и IT-специалист",
-    "en": "Developer and IT specialist"
+    "uz": "UyService va Bukhara Tech asoschisi",
+    "ru": "Основатель UyService и Bukhara Tech",
+    "en": "Founder of UyService and Bukhara Tech"
   },
   "tavsif": {
-    "uz": "Salom! Men Sa'dulla Khaitov, Buxorodanman. Saytlar va Telegram botlar yarataman, internet, Wi-Fi va kompyuterlarni sozlayman, video montaj qilaman va bizneslarga AI yordamchilarni ulab beraman. Har bir ishni oʻzim qilaman va oʻzim javob beraman: kim bilan gaplashsangiz, ishni ham oʻsha odam bajaradi.",
-    "ru": "Здравствуйте! Меня зовут Саъдулла Хаитов, я из Бухары. Делаю сайты и Telegram-ботов, настраиваю интернет, Wi-Fi и компьютеры, монтирую видео и подключаю бизнесу AI-помощников. Всю работу делаю сам и сам за неё отвечаю: с кем вы договариваетесь, тот и выполняет работу.",
-    "en": "Hi! I'm Sa'dulla Khaitov from Bukhara. I build websites and Telegram bots, set up internet, Wi-Fi and computers, edit videos and connect AI assistants for businesses. I do every job myself and take responsibility for it: the person you talk to is the person who does the work."
+    "uz": "Salom! Men Sa'dulla Khaitov, Buxorodanman. UyService va Bukhara Tech kompaniyalarini asos solganman. Saytlar va Telegram botlar yarataman, bizneslarga AI yordamchilarni ulab beraman, internet, Wi-Fi va kompyuterlarni sozlayman. Har bir ishni oʻzim qilaman va oʻzim javob beraman: kim bilan gaplashsangiz, ishni ham oʻsha odam bajaradi.",
+    "ru": "Здравствуйте! Меня зовут Саъдулла Хаитов, я из Бухары, основатель компаний UyService и Bukhara Tech. Делаю сайты и Telegram-ботов, подключаю бизнесу AI-помощников, настраиваю интернет, Wi-Fi и компьютеры. Всю работу делаю сам и сам за неё отвечаю: с кем вы договариваетесь, тот и выполняет работу.",
+    "en": "Hi! I'm Sa'dulla Khaitov from Bukhara, founder of UyService and Bukhara Tech. I build websites and Telegram bots, connect AI assistants for businesses, and set up internet, Wi-Fi and computers. I do every job myself and take responsibility for it: the person you talk to is the person who does the work."
   },
   "teglar": [
     {
@@ -39,14 +39,19 @@
       "en": "Wi-Fi & MikroTik"
     },
     {
-      "uz": "Video montaj",
-      "ru": "Видеомонтаж",
-      "en": "Video editing"
+      "uz": "Kompyuter sozlash",
+      "ru": "Настройка компьютеров",
+      "en": "Computer setup"
+    }
+  ],
+  "kompaniyalar": [
+    {
+      "nomi": "UyService",
+      "havola": "https://uyservice.uz"
     },
     {
-      "uz": "Prezentatsiyalar",
-      "ru": "Презентации",
-      "en": "Presentations"
+      "nomi": "Bukhara Tech",
+      "havola": "https://bukharatech.uz"
     }
   ]
 }

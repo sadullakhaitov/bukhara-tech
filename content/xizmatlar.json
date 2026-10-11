@@ -12,7 +12,7 @@
         "ru": "Сделаю сайт или Telegram-бота, который принимает заказы.",
         "en": "I'll build a website or Telegram bot that takes orders."
       },
-      "narx": 1000000,
+      "narx": 1500000,
       "tugma": {
         "uz": "Sayt va botlar",
         "ru": "Сайты и боты",
@@ -31,7 +31,7 @@
         "ru": "AI-помощник сам отвечает клиентам, отчёты готовятся сами.",
         "en": "An AI assistant answers customers and reports build themselves."
       },
-      "narx": 500000,
+      "narx": 700000,
       "tugma": {
         "uz": "Sunʼiy intellekt",
         "ru": "Искусственный интеллект",
@@ -55,25 +55,6 @@
         "uz": "Internet va IT",
         "ru": "Интернет и IT",
         "en": "Internet & IT"
-      }
-    },
-    {
-      "yonalish": "p-media",
-      "sarlavha": {
-        "uz": "Instagram uchun video kerak",
-        "ru": "Нужно видео для Instagram",
-        "en": "Need a video for Instagram"
-      },
-      "matn": {
-        "uz": "Reels, reklama va tadbir videolarini montaj qilaman, rangini toʻgʻrilayman.",
-        "ru": "Смонтирую Reels, рекламу и видео с мероприятий, поправлю цвет.",
-        "en": "I edit Reels, ads and event videos and fix the colour."
-      },
-      "narx": 100000,
-      "tugma": {
-        "uz": "Video montaj",
-        "ru": "Видеомонтаж",
-        "en": "Video editing"
       }
     }
   ]

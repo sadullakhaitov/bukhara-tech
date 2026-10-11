@@ -18,36 +18,78 @@
           "narx": 2500000,
           "birlik": {
             "uz": "dona",
-            "ru": "шт.",
-            "en": "unit"
+            "ru": "шт",
+            "en": "pc"
           },
           "boshlangich": 0
         },
         {
           "nomi": {
-            "uz": "Telegram bot",
-            "ru": "Telegram-бот",
-            "en": "Telegram bot"
+            "uz": "Korporativ sayt",
+            "ru": "Корпоративный сайт",
+            "en": "Company website"
           },
-          "narx": 1000000,
+          "narx": 5000000,
           "birlik": {
             "uz": "dona",
-            "ru": "шт.",
-            "en": "unit"
+            "ru": "шт",
+            "en": "pc"
           },
           "boshlangich": 0
         },
         {
           "nomi": {
-            "uz": "Prezentatsiya",
-            "ru": "Презентация",
-            "en": "Presentation"
+            "uz": "Internet-doʻkon",
+            "ru": "Интернет-магазин",
+            "en": "Online store"
           },
-          "narx": 25000,
+          "narx": 8000000,
           "birlik": {
-            "uz": "slayd",
-            "ru": "слайд",
-            "en": "slide"
+            "uz": "dona",
+            "ru": "шт",
+            "en": "pc"
+          },
+          "boshlangich": 0
+        },
+        {
+          "nomi": {
+            "uz": "Telegram bot (oddiy)",
+            "ru": "Telegram-бот (простой)",
+            "en": "Telegram bot (basic)"
+          },
+          "narx": 1500000,
+          "birlik": {
+            "uz": "dona",
+            "ru": "шт",
+            "en": "pc"
+          },
+          "boshlangich": 0
+        },
+        {
+          "nomi": {
+            "uz": "Telegram bot (toʻlov, admin panel)",
+            "ru": "Telegram-бот (оплата, админка)",
+            "en": "Telegram bot (payments, admin panel)"
+          },
+          "narx": 4000000,
+          "birlik": {
+            "uz": "dona",
+            "ru": "шт",
+            "en": "pc"
+          },
+          "boshlangich": 0
+        },
+        {
+          "nomi": {
+            "uz": "Sayt yoki botni qoʻllab-quvvatlash",
+            "ru": "Поддержка сайта или бота",
+            "en": "Website or bot support"
+          },
+          "narx": 300000,
+          "birlik": {
+            "uz": "oy",
+            "ru": "мес",
+            "en": "month"
           },
           "boshlangich": 0
         }
@@ -68,11 +110,11 @@
             "ru": "AI-помощник",
             "en": "AI assistant"
           },
-          "narx": 3000000,
+          "narx": 4000000,
           "birlik": {
             "uz": "dona",
-            "ru": "шт.",
-            "en": "unit"
+            "ru": "шт",
+            "en": "pc"
           },
           "boshlangich": 0
         },
@@ -82,7 +124,7 @@
             "ru": "Автоматизация",
             "en": "Automation"
           },
-          "narx": 500000,
+          "narx": 700000,
           "birlik": {
             "uz": "jarayon",
             "ru": "процесс",
@@ -96,7 +138,7 @@
             "ru": "Обучение AI",
             "en": "AI training"
           },
-          "narx": 300000,
+          "narx": 400000,
           "birlik": {
             "uz": "mashgʻulot",
             "ru": "занятие",
@@ -117,15 +159,43 @@
       "qatorlar": [
         {
           "nomi": {
-            "uz": "MikroTik / Wi-Fi sozlash",
-            "ru": "Настройка MikroTik / Wi-Fi",
-            "en": "MikroTik / Wi-Fi setup"
+            "uz": "Router / Wi-Fi sozlash",
+            "ru": "Настройка роутера / Wi-Fi",
+            "en": "Router / Wi-Fi setup"
           },
           "narx": 150000,
           "birlik": {
             "uz": "qurilma",
-            "ru": "устр.",
+            "ru": "устройство",
             "en": "device"
+          },
+          "boshlangich": 0
+        },
+        {
+          "nomi": {
+            "uz": "MikroTik sozlash (VPN, 2 provayder)",
+            "ru": "Настройка MikroTik (VPN, 2 провайдера)",
+            "en": "MikroTik setup (VPN, 2 providers)"
+          },
+          "narx": 400000,
+          "birlik": {
+            "uz": "qurilma",
+            "ru": "устройство",
+            "en": "device"
+          },
+          "boshlangich": 0
+        },
+        {
+          "nomi": {
+            "uz": "Wi-Fi nuqtasi oʻrnatish",
+            "ru": "Установка точки Wi-Fi",
+            "en": "Wi-Fi access point install"
+          },
+          "narx": 200000,
+          "birlik": {
+            "uz": "nuqta",
+            "ru": "точка",
+            "en": "point"
           },
           "boshlangich": 0
         },
@@ -135,50 +205,25 @@
             "ru": "Сетевая точка (розетка)",
             "en": "Network point (socket)"
           },
-          "narx": 50000,
+          "narx": 60000,
           "birlik": {
             "uz": "nuqta",
             "ru": "точка",
             "en": "point"
           },
           "boshlangich": 0
-        }
-      ]
-    },
-    {
-      "yonalish": "p-media",
-      "ochiq": false,
-      "nomi": {
-        "uz": "Video",
-        "ru": "Видео",
-        "en": "Video"
-      },
-      "qatorlar": [
-        {
-          "nomi": {
-            "uz": "Video montaj",
-            "ru": "Видеомонтаж",
-            "en": "Video editing"
-          },
-          "narx": 100000,
-          "birlik": {
-            "uz": "daqiqa",
-            "ru": "мин.",
-            "en": "min"
-          },
-          "boshlangich": 0
         },
         {
           "nomi": {
-            "uz": "Logotip animatsiyasi",
-            "ru": "Анимация логотипа",
-            "en": "Logo animation"
+            "uz": "Kompyuter sozlash / Windows oʻrnatish",
+            "ru": "Настройка ПК / установка Windows",
+            "en": "PC setup / Windows install"
           },
-          "narx": 500000,
+          "narx": 150000,
           "birlik": {
-            "uz": "dona",
-            "ru": "шт.",
-            "en": "unit"
+            "uz": "kompyuter",
+            "ru": "ПК",
+            "en": "PC"
           },
           "boshlangich": 0
         }
