@@ -1,125 +1,8 @@
 {
   "guruhlar": [
     {
-      "yonalish": "p-cam",
-      "ochiq": true,
-      "nomi": {
-        "uz": "Kamera",
-        "ru": "Видеонаблюдение",
-        "en": "Security cameras"
-      },
-      "qatorlar": [
-        {
-          "nomi": {
-            "uz": "Kamera oʻrnatish",
-            "ru": "Установка камеры",
-            "en": "Camera installation"
-          },
-          "narx": 150000,
-          "birlik": {
-            "uz": "dona",
-            "ru": "шт.",
-            "en": "unit"
-          },
-          "boshlangich": 4
-        },
-        {
-          "nomi": {
-            "uz": "Parolni tiklash",
-            "ru": "Восстановление пароля",
-            "en": "Password recovery"
-          },
-          "narx": 100000,
-          "birlik": {
-            "uz": "qurilma",
-            "ru": "устр.",
-            "en": "device"
-          },
-          "boshlangich": 0
-        }
-      ]
-    },
-    {
-      "yonalish": "p-net",
-      "ochiq": false,
-      "nomi": {
-        "uz": "Internet va Wi-Fi",
-        "ru": "Интернет и Wi-Fi",
-        "en": "Internet & Wi-Fi"
-      },
-      "qatorlar": [
-        {
-          "nomi": {
-            "uz": "MikroTik / Wi-Fi sozlash",
-            "ru": "Настройка MikroTik / Wi-Fi",
-            "en": "MikroTik / Wi-Fi setup"
-          },
-          "narx": 150000,
-          "birlik": {
-            "uz": "qurilma",
-            "ru": "устр.",
-            "en": "device"
-          },
-          "boshlangich": 0
-        },
-        {
-          "nomi": {
-            "uz": "Tarmoq nuqtasi (rozetka)",
-            "ru": "Сетевая точка (розетка)",
-            "en": "Network point (socket)"
-          },
-          "narx": 50000,
-          "birlik": {
-            "uz": "nuqta",
-            "ru": "точка",
-            "en": "point"
-          },
-          "boshlangich": 0
-        }
-      ]
-    },
-    {
-      "yonalish": "p-media",
-      "ochiq": false,
-      "nomi": {
-        "uz": "Video",
-        "ru": "Видео",
-        "en": "Video"
-      },
-      "qatorlar": [
-        {
-          "nomi": {
-            "uz": "Video montaj",
-            "ru": "Видеомонтаж",
-            "en": "Video editing"
-          },
-          "narx": 100000,
-          "birlik": {
-            "uz": "daqiqa",
-            "ru": "мин.",
-            "en": "min"
-          },
-          "boshlangich": 0
-        },
-        {
-          "nomi": {
-            "uz": "Logotip animatsiyasi",
-            "ru": "Анимация логотипа",
-            "en": "Logo animation"
-          },
-          "narx": 500000,
-          "birlik": {
-            "uz": "dona",
-            "ru": "шт.",
-            "en": "unit"
-          },
-          "boshlangich": 0
-        }
-      ]
-    },
-    {
       "yonalish": "p-web",
-      "ochiq": false,
+      "ochiq": true,
       "nomi": {
         "uz": "Sayt va bot",
         "ru": "Сайты и боты",
@@ -218,6 +101,84 @@
             "uz": "mashgʻulot",
             "ru": "занятие",
             "en": "session"
+          },
+          "boshlangich": 0
+        }
+      ]
+    },
+    {
+      "yonalish": "p-net",
+      "ochiq": false,
+      "nomi": {
+        "uz": "Internet va Wi-Fi",
+        "ru": "Интернет и Wi-Fi",
+        "en": "Internet & Wi-Fi"
+      },
+      "qatorlar": [
+        {
+          "nomi": {
+            "uz": "MikroTik / Wi-Fi sozlash",
+            "ru": "Настройка MikroTik / Wi-Fi",
+            "en": "MikroTik / Wi-Fi setup"
+          },
+          "narx": 150000,
+          "birlik": {
+            "uz": "qurilma",
+            "ru": "устр.",
+            "en": "device"
+          },
+          "boshlangich": 0
+        },
+        {
+          "nomi": {
+            "uz": "Tarmoq nuqtasi (rozetka)",
+            "ru": "Сетевая точка (розетка)",
+            "en": "Network point (socket)"
+          },
+          "narx": 50000,
+          "birlik": {
+            "uz": "nuqta",
+            "ru": "точка",
+            "en": "point"
+          },
+          "boshlangich": 0
+        }
+      ]
+    },
+    {
+      "yonalish": "p-media",
+      "ochiq": false,
+      "nomi": {
+        "uz": "Video",
+        "ru": "Видео",
+        "en": "Video"
+      },
+      "qatorlar": [
+        {
+          "nomi": {
+            "uz": "Video montaj",
+            "ru": "Видеомонтаж",
+            "en": "Video editing"
+          },
+          "narx": 100000,
+          "birlik": {
+            "uz": "daqiqa",
+            "ru": "мин.",
+            "en": "min"
+          },
+          "boshlangich": 0
+        },
+        {
+          "nomi": {
+            "uz": "Logotip animatsiyasi",
+            "ru": "Анимация логотипа",
+            "en": "Logo animation"
+          },
+          "narx": 500000,
+          "birlik": {
+            "uz": "dona",
+            "ru": "шт.",
+            "en": "unit"
           },
           "boshlangich": 0
         }

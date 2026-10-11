@@ -1,22 +1,6 @@
 {
   "bosh": [
     {
-      "yonalish": "p-cam",
-      "rasm": "images/works/maruf-1.jpg",
-      "namuna": true,
-      "oldin_keyin": false,
-      "nomi": {
-        "uz": "Doʻkon",
-        "ru": "Магазин",
-        "en": "Shop"
-      },
-      "izoh": {
-        "uz": "[N] kamera · telefondan koʻrish",
-        "ru": "[N] камер · просмотр с телефона",
-        "en": "[N] cameras · phone viewing"
-      }
-    },
-    {
       "yonalish": "p-net",
       "rasm": "images/works/sherali-2.jpg",
       "namuna": true,
@@ -27,9 +11,9 @@
         "en": "Hotel Wi-Fi"
       },
       "izoh": {
-        "uz": "[N] qavat · uzilmaydi",
-        "ru": "[N] этажей · без обрывов",
-        "en": "[N] floors · no dropouts"
+        "uz": "Barcha qavatlar · uzilmaydi",
+        "ru": "Все этажи · без обрывов",
+        "en": "Every floor · no dropouts"
       }
     },
     {
@@ -65,22 +49,6 @@
       }
     },
     {
-      "yonalish": "p-cam",
-      "rasm": "images/works/maruf-2.jpg",
-      "namuna": true,
-      "oldin_keyin": false,
-      "nomi": {
-        "uz": "Hovli va darvoza",
-        "ru": "Двор и ворота",
-        "en": "Yard and gate"
-      },
-      "izoh": {
-        "uz": "Tungi rejim",
-        "ru": "Ночной режим",
-        "en": "Night mode"
-      }
-    },
-    {
       "yonalish": "p-net",
       "rasm": "images/works/sherali-1.jpg",
       "namuna": true,
@@ -91,13 +59,45 @@
         "en": "Office network"
       },
       "izoh": {
-        "uz": "[N] ish oʻrni · MikroTik",
-        "ru": "[N] рабочих мест · MikroTik",
-        "en": "[N] workstations · MikroTik"
+        "uz": "Ish oʻrinlari · MikroTik",
+        "ru": "Рабочие места · MikroTik",
+        "en": "Workstations · MikroTik"
+      }
+    },
+    {
+      "yonalish": "p-web",
+      "rasm": "images/works/sadulla-3.jpg",
+      "namuna": true,
+      "oldin_keyin": false,
+      "nomi": {
+        "uz": "Buyurtma boti",
+        "ru": "Бот для заказов",
+        "en": "Order bot"
+      },
+      "izoh": {
+        "uz": "Telegram · admin panel",
+        "ru": "Telegram · админ-панель",
+        "en": "Telegram · admin panel"
+      }
+    },
+    {
+      "yonalish": "p-net",
+      "rasm": "images/works/sherali-3.jpg",
+      "namuna": true,
+      "oldin_keyin": false,
+      "nomi": {
+        "uz": "Filiallar orasida VPN",
+        "ru": "VPN между филиалами",
+        "en": "VPN between branches"
+      },
+      "izoh": {
+        "uz": "IPsec · MikroTik",
+        "ru": "IPsec · MikroTik",
+        "en": "IPsec · MikroTik"
       }
     }
   ],
-  "sadulla": [
+  "sayt": [
     {
       "rasm": "images/works/sadulla-1.jpg",
       "namuna": true,
@@ -189,7 +189,54 @@
       }
     }
   ],
-  "sherali": [
+  "ai": [
+    {
+      "rasm": "",
+      "namuna": false,
+      "oldin_keyin": false,
+      "nomi": {
+        "uz": "AI yordamchi bot",
+        "ru": "AI-помощник",
+        "en": "AI assistant"
+      },
+      "izoh": {
+        "uz": "Telegram · 24/7 javob",
+        "ru": "Telegram · ответы 24/7",
+        "en": "Telegram · 24/7 replies"
+      }
+    },
+    {
+      "rasm": "",
+      "namuna": false,
+      "oldin_keyin": false,
+      "nomi": {
+        "uz": "Hisobotlarni avtomatlashtirish",
+        "ru": "Автоматизация отчётов",
+        "en": "Report automation"
+      },
+      "izoh": {
+        "uz": "Jadval · har kuni oʻzi",
+        "ru": "Таблица · каждый день сама",
+        "en": "Spreadsheet · updates itself daily"
+      }
+    },
+    {
+      "rasm": "",
+      "namuna": false,
+      "oldin_keyin": false,
+      "nomi": {
+        "uz": "Aqlli ofis",
+        "ru": "Умный офис",
+        "en": "Smart office"
+      },
+      "izoh": {
+        "uz": "Sensorlar · telefondan boshqarish",
+        "ru": "Датчики · управление с телефона",
+        "en": "Sensors · phone control"
+      }
+    }
+  ],
+  "internet": [
     {
       "rasm": "images/works/sherali-1.jpg",
       "namuna": true,
@@ -200,9 +247,9 @@
         "en": "Office network"
       },
       "izoh": {
-        "uz": "[N] ish oʻrni · MikroTik",
-        "ru": "[N] рабочих мест · MikroTik",
-        "en": "[N] workstations · MikroTik"
+        "uz": "Ish oʻrinlari · MikroTik",
+        "ru": "Рабочие места · MikroTik",
+        "en": "Workstations · MikroTik"
       }
     },
     {
@@ -215,9 +262,9 @@
         "en": "Hotel Wi-Fi"
       },
       "izoh": {
-        "uz": "[N] qavat · roaming",
-        "ru": "[N] этажей · роуминг",
-        "en": "[N] floors · roaming"
+        "uz": "Barcha qavatlar · roaming",
+        "ru": "Все этажи · роуминг",
+        "en": "Every floor · roaming"
       }
     },
     {
@@ -281,7 +328,7 @@
       }
     }
   ],
-  "doston": [
+  "video": [
     {
       "rasm": "",
       "namuna": false,
@@ -370,145 +417,6 @@
         "uz": "Photoshop",
         "ru": "Photoshop",
         "en": "Photoshop"
-      }
-    }
-  ],
-  "maruf": [
-    {
-      "rasm": "images/works/maruf-1.jpg",
-      "namuna": true,
-      "oldin_keyin": false,
-      "nomi": {
-        "uz": "Doʻkon",
-        "ru": "Магазин",
-        "en": "Shop"
-      },
-      "izoh": {
-        "uz": "[N] kamera · NVR",
-        "ru": "[N] камер · NVR",
-        "en": "[N] cameras · NVR"
-      }
-    },
-    {
-      "rasm": "images/works/maruf-2.jpg",
-      "namuna": true,
-      "oldin_keyin": false,
-      "nomi": {
-        "uz": "Hovli va darvoza",
-        "ru": "Двор и ворота",
-        "en": "Yard and gate"
-      },
-      "izoh": {
-        "uz": "Tungi rejim",
-        "ru": "Ночной режим",
-        "en": "Night mode"
-      }
-    },
-    {
-      "rasm": "images/works/maruf-3.jpg",
-      "namuna": true,
-      "oldin_keyin": false,
-      "nomi": {
-        "uz": "Ofis",
-        "ru": "Офис",
-        "en": "Office"
-      },
-      "izoh": {
-        "uz": "Telefondan koʻrish",
-        "ru": "Просмотр с телефона",
-        "en": "Phone viewing"
-      }
-    },
-    {
-      "rasm": "images/works/maruf-4.jpg",
-      "namuna": true,
-      "oldin_keyin": false,
-      "nomi": {
-        "uz": "Ombor",
-        "ru": "Склад",
-        "en": "Warehouse"
-      },
-      "izoh": {
-        "uz": "Arxiv [N] kun",
-        "ru": "Архив [N] дней",
-        "en": "[N]-day archive"
-      }
-    },
-    {
-      "rasm": "images/works/maruf-5.jpg",
-      "namuna": true,
-      "oldin_keyin": false,
-      "nomi": {
-        "uz": "Registrator paroli",
-        "ru": "Сброс регистратора",
-        "en": "Recorder reset"
-      },
-      "izoh": {
-        "uz": "Parol tiklandi",
-        "ru": "Пароль восстановлен",
-        "en": "Password recovered"
-      }
-    },
-    {
-      "rasm": "images/works/maruf-6.jpg",
-      "namuna": true,
-      "oldin_keyin": false,
-      "nomi": {
-        "uz": "Koʻp qavatli uy",
-        "ru": "Многоэтажный дом",
-        "en": "Apartment block"
-      },
-      "izoh": {
-        "uz": "Yoʻlak va kirish",
-        "ru": "Подъезд и вход",
-        "en": "Stairwell and entrance"
-      }
-    }
-  ],
-  "umid": [
-    {
-      "rasm": "",
-      "namuna": false,
-      "oldin_keyin": false,
-      "nomi": {
-        "uz": "AI yordamchi bot",
-        "ru": "AI-помощник",
-        "en": "AI assistant"
-      },
-      "izoh": {
-        "uz": "Telegram · 24/7 javob",
-        "ru": "Telegram · ответы 24/7",
-        "en": "Telegram · 24/7 replies"
-      }
-    },
-    {
-      "rasm": "",
-      "namuna": false,
-      "oldin_keyin": false,
-      "nomi": {
-        "uz": "Hisobotlarni avtomatlashtirish",
-        "ru": "Автоматизация отчётов",
-        "en": "Report automation"
-      },
-      "izoh": {
-        "uz": "Jadval · har kuni oʻzi",
-        "ru": "Таблица · каждый день сама",
-        "en": "Spreadsheet · updates itself daily"
-      }
-    },
-    {
-      "rasm": "",
-      "namuna": false,
-      "oldin_keyin": false,
-      "nomi": {
-        "uz": "Aqlli ofis",
-        "ru": "Умный офис",
-        "en": "Smart office"
-      },
-      "izoh": {
-        "uz": "Sensorlar · telefondan boshqarish",
-        "ru": "Датчики · управление с телефона",
-        "en": "Sensors · phone control"
       }
     }
   ]

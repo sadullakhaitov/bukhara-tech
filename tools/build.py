@@ -1,5 +1,6 @@
 #!/usr/bin/env python3
-"""Admin panel (content/*.json) ma'lumotlaridan saytning 18 ta HTML sahifasini yangilaydi.
+"""Admin panel (content/*.json) ma'lumotlaridan saytning 15 ta HTML sahifasini yangilaydi
+(bosh sahifa + 4 xizmat sahifasi: sayt, ai, internet, video — uchala tilda).
 
 HTML ichida `<!-- cms:NOM -->` ... `<!-- /cms:NOM -->` belgilari orasidagi qism shu yerda
 qayta yoziladi — u joylarni qo'lda tahrirlamang, content/ dagi JSON'ni o'zgartiring.
@@ -17,8 +18,8 @@ from pathlib import Path
 ROOT = Path(__file__).resolve().parent.parent
 C = ROOT / "content"
 LANGS = {"": "uz", "ru/": "ru", "en/": "en"}
-MASTERS = ["sadulla", "sherali", "doston", "maruf", "umid"]
-DIR_PAGE = {"p-cam": "maruf", "p-net": "sherali", "p-web": "sadulla", "p-media": "doston", "p-ai": "umid"}
+PAGES = ["sayt", "ai", "internet", "video"]
+DIR_PAGE = {"p-net": "internet", "p-web": "sayt", "p-media": "video", "p-ai": "ai"}
 DIR_ICON = {"p-cam": "fa-video", "p-net": "fa-wifi", "p-web": "fa-laptop-code", "p-media": "fa-clapperboard",
             "p-ai": "fa-wand-magic-sparkles", "p-pc": "fa-desktop"}
 FA = '<i class="fa-solid {}" aria-hidden="true"></i>'
@@ -48,20 +49,16 @@ T = {  # sahifadagi doimiy yozuvlar
     "more_link": {"uz": "Batafsil", "ru": "Подробнее", "en": "Learn more"},
     "years_a": {"uz": "yillik", "ru": "лет", "en": "years"},
     "years_b": {"uz": "ish staji", "ru": "опыта", "en": "of experience"},
-    "total": {"uz": "umumiy tajriba", "ru": "общий опыт", "en": "combined experience"},
+    "total": {"uz": "ish tajribasi", "ru": "опыта работы", "en": "of experience"},
+    "reviews": {"uz": "Mijozlar fikri", "ru": "Отзывы клиентов", "en": "What clients say"},
+    "c_map": {"uz": "Xaritada ochish", "ru": "Открыть на карте", "en": "Open in maps"},
+    "stir": {"uz": "STIR", "ru": "ИНН", "en": "TIN"},
     "c_tg": {"uz": "Telegram", "ru": "Telegram", "en": "Telegram"},
     "c_phone": {"uz": "Telefon", "ru": "Телефон", "en": "Phone"},
     "c_ig": {"uz": "Instagram", "ru": "Instagram", "en": "Instagram"},
     "c_hours": {"uz": "Ish vaqti", "ru": "Время работы", "en": "Working hours"},
     "c_addr": {"uz": "Manzil", "ru": "Адрес", "en": "Address"},
 }
-# Usta sahifasidagi rasm o'rnidagi bezak yozuvi (rasm qo'yilmaguncha ko'rinadi)
-PHOTO_DETAIL = {
-    "sadulla": "$ git push origin main  ✓ deployed", "sherali": "[admin@MikroTik] > /ip address print",
-    "doston": "TC 00:01:24:12  ·  Rec.709", "maruf": "● REC   CAM 04   1080p", "umid": "> run automation  ✓ done",
-}
-
-
 def load(name):
     return json.loads((C / f"{name}.json").read_text(encoding="utf-8"))
 
@@ -125,7 +122,7 @@ def r_svcs(lang, prefix):
           <h3>{e(tr(s["sarlavha"], lang))}</h3>
           <p>{e(tr(s["matn"], lang))}</p>
           <div class="svc-price">{T["from"][lang].format(p=money(s["narx"]))}</div>
-          <a class="btn btn-acc" href="{DIR_PAGE[d]}.html">{e(tr(s["tugma"], lang))} {FA.format("fa-arrow-right")}</a>
+          <a class="btn btn-outline" href="{DIR_PAGE[d]}.html">{e(tr(s["tugma"], lang))} {FA.format("fa-arrow-right")}</a>
         </article>''')
     out.append("      </div>")
     return "\n".join(out)
@@ -168,8 +165,7 @@ def r_set(s, lang, home, master=None):
                      f'<em>{T["save"][lang]} {money(old - price)}</em></span>')
     lines.append(f'            <strong>{money(price)} {T["cur"][lang]}</strong>')
     if tr(s.get("uskuna"), lang):
-        strong = " set-equip-strong" if master == "maruf" else ""
-        lines.append(f'            <span class="set-equip{strong}">{e(tr(s["uskuna"], lang))}</span>')
+        lines.append(f'            <span class="set-equip">{e(tr(s["uskuna"], lang))}</span>')
     lines.append("          </div>")
     if home:
         btn = "btn btn-acc p-web" if hot else "btn btn-outline"
@@ -182,10 +178,6 @@ def r_set(s, lang, home, master=None):
         lines.append(f'          <a class="{btn}" href="https://t.me/{e(tg)}" data-order="{e(order)}">{T["pick_master"][lang]}</a>')
     lines.append("        </article>")
     return "\n".join(lines)
-
-
-def r_sets(lang, prefix):
-    return '<div class="sets">\n' + "\n".join(r_set(s, lang, True) for s in load("setlar")["setlar"]) + "\n      </div>"
 
 
 def r_packages(lang, prefix, master):
@@ -232,7 +224,9 @@ def r_reviews(lang, prefix):
             f'<li class="review {d}"><span class="review-tag">{FA.format(icon + " ico")}{e(tr(r["mavzu"], lang))}</span>'
             f'<blockquote>{e(tr(r["matn"], lang))}</blockquote><p class="review-who"><span class="review-ava" '
             f'aria-hidden="true">{e(name[:1])}</span><span><b>{e(name)}</b><small>{e(tr(r["joy"], lang))}</small></span></p></li>')
-    return '<ul class="reviews">' + "".join(out) + "</ul>"
+    if not out:
+        return ""
+    return f'<h3 class="sub-h">{T["reviews"][lang]}</h3><ul class="reviews">' + "".join(out) + "</ul>"
 
 
 def r_clients(lang, prefix):
@@ -244,56 +238,39 @@ def r_clients(lang, prefix):
     return '<ul class="clients">' + "".join(out) + "</ul>"
 
 
-def team():
-    return {m["id"]: m for m in load("jamoa")["ustalar"]}
-
-
-def photo_div(m, lang, prefix, detail):
-    name = tr(m["ism"], lang)
-    if (m.get("rasm") or "").strip():
-        return f'<div class="photo"><img src="{e(img_src(m["rasm"], prefix))}" alt="{e(name)}"></div>'
-    ini = f'<span class="photo-ini" aria-hidden="true">{e(m.get("bosh_harflar") or name[:2].upper())}</span>'
-    det = f'<span class="photo-detail">{e(PHOTO_DETAIL.get(m["id"], ""))}</span>' if detail and PHOTO_DETAIL.get(m["id"]) else ""
-    return f'<div class="photo">{ini}{det}</div>'
-
-
-def r_team(lang, prefix):
-    out = ['<div class="team">']
-    for m in load("jamoa")["ustalar"]:
-        chips = "".join(f"<li>{e(tr(c, lang))}</li>" for c in m.get("teglar") or [])
-        out.append(f'''        <article class="card {m["yonalish"]}">
-          {photo_div(m, lang, prefix, False)}
-          <div class="card-body">
-            <div class="card-role">{e(tr(m["lavozim"], lang))}</div>
-            <h3>{e(tr(m["ism"], lang))}</h3>
-            <p class="card-quote">{e(tr(m["jumla"], lang))}</p>
-            <div class="card-years"><b>{int(m["staj"])}</b><span>{card_years(m["staj"], lang)}</span></div>
-            <ul class="chips">{chips}</ul>
-            <a class="more" href="{m["id"]}.html">{T["more_link"][lang]} {FA.format("fa-arrow-right")}</a>
-          </div>
-        </article>''')
-    out.append("      </div>")
-    return "\n".join(out)
-
-
 def r_total(lang, prefix):
-    n = sum(int(m["staj"]) for m in load("jamoa")["ustalar"])
+    n = int(load("men")["staj"])
     return f'<div class="stat"><b>{years_total(n, lang)}</b><span>{T["total"][lang]}</span></div>'
 
 
-def r_mphoto(lang, prefix, master):
-    return photo_div(team()[master], lang, prefix, True)
+def r_men(lang, prefix):
+    m = load("men")
+    name = tr(m["ism"], lang)
+    if (m.get("rasm") or "").strip():
+        photo = f'<div class="photo"><img src="{e(img_src(m["rasm"], prefix))}" alt="{e(name)}" loading="lazy"></div>'
+    else:
+        photo = f'<div class="photo"><span class="photo-ini" aria-hidden="true">{e(m.get("bosh_harflar") or name[:2].upper())}</span></div>'
+    chips = "".join(f"<li>{e(tr(c, lang))}</li>" for c in m.get("teglar") or [])
+    n = int(m["staj"])
+    return f'''<div class="about p-web">
+        {photo}
+        <div class="about-text">
+          <div class="card-role">{e(tr(m["lavozim"], lang))}</div>
+          <h3>{e(name)}</h3>
+          <p>{e(tr(m["tavsif"], lang))}</p>
+          <div class="card-years"><b>{n}</b><span>{card_years(n, lang)}</span></div>
+          <ul class="chips">{chips}</ul>
+        </div>
+      </div>'''
 
 
-def r_myears(lang, prefix, master):
-    n = int(team()[master]["staj"])
-    a = ru_word(n, "год", "года", "лет") if lang == "ru" else T["years_a"][lang]
-    return (f'<div class="years"><b>{n}</b><span><span>{a}</span>'
-            f'<span>{T["years_b"][lang]}</span></span></div>')
-
-
-def r_mbio(lang, prefix, master):
-    return f'<p class="bio">{e(tr(team()[master]["tavsif"], lang))}</p>'
+def r_rekvizit(lang, prefix):
+    a = load("aloqa")
+    parts = [tr(a.get("yuridik_nomi"), lang)]
+    if (a.get("stir") or "").strip():
+        parts.append(f'{T["stir"][lang]} {a["stir"].strip()}')
+    parts = [p for p in parts if p]
+    return f'<span class="legal">{e(" · ".join(parts))}</span>' if parts else ""
 
 
 def r_contacts(lang, prefix):
@@ -305,8 +282,10 @@ def r_contacts(lang, prefix):
         f'<div><span>{T["c_ig"][lang]}</span><a href="https://instagram.com/{e(ig)}">@{e(ig)}</a></div>',
         f'<div><span>{T["c_hours"][lang]}</span><b>{e(tr(a["ish_vaqti"], lang))}</b></div>',
     ]
-    if tr(a.get("manzil"), lang):
-        rows.append(f'<div><span>{T["c_addr"][lang]}</span><b>{e(tr(a["manzil"], lang))}</b></div>')
+    addr, maps = tr(a.get("manzil"), lang), (a.get("xarita") or "").strip()
+    if addr or maps:
+        link = f' <a href="{e(maps)}" target="_blank" rel="noopener">{T["c_map"][lang]}</a>' if maps else ""
+        rows.append(f'<div><span>{T["c_addr"][lang]}</span><b>{e(addr)}{link}</b></div>')
     return '<div class="contacts">\n' + "\n".join("            " + r for r in rows) + "\n          </div>"
 
 
@@ -316,9 +295,9 @@ def phone_digits(p):
 
 
 HOME = {"stat-tajriba": r_total, "xizmatlar": r_svcs, "kalkulyator": r_calc, "ishlar": lambda l, p: r_works(l, p, "bosh"),
-        "sharhlar": r_reviews, "mijozlar": r_clients, "setlar": r_sets, "jamoa": r_team, "aloqa": r_contacts}
-MASTER = {"rasm": r_mphoto, "staj": r_myears, "tavsif": r_mbio, "ishlar": lambda l, p, m: r_works(l, p, m),
-          "paketlar": r_packages, "alohida": r_note}
+        "sharhlar": r_reviews, "mijozlar": r_clients, "men": r_men, "aloqa": r_contacts, "rekvizit": r_rekvizit}
+MASTER = {"ishlar": lambda l, p, m: r_works(l, p, m), "paketlar": r_packages, "alohida": r_note,
+          "rekvizit": lambda l, p, m: r_rekvizit(l, p)}
 
 MARK = re.compile(r"(<!-- cms:([a-z-]+) -->)(.*?)(<!-- /cms:\2 -->)", re.S)
 
@@ -352,7 +331,7 @@ def contact_pairs(old, new):
     pairs = []
     if old["telefon"] != new["telefon"]:
         pairs += [(phone_digits(old["telefon"]), phone_digits(new["telefon"])), (old["telefon"], new["telefon"])]
-    for k, url in (("telegram", "t.me/"), ("instagram", "instagram.com/")):
+    for k, url in (("telegram", "t.me/"), ("instagram", "instagram.com/")):  # noqa
         o, n = old[k].lstrip("@"), new[k].lstrip("@")
         if o != n:
             pairs += [(url + o, url + n), ("@" + o, "@" + n)]
@@ -369,7 +348,7 @@ def main():
     pairs = contact_pairs(old_contacts, new_contacts)
     changed = []
     for prefix in LANGS:
-        for page in ["index"] + MASTERS:
+        for page in ["index"] + PAGES:
             f = ROOT / f"{prefix}{page}.html"
             text = f.read_text(encoding="utf-8")
             out = text

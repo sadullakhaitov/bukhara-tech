@@ -1,0 +1,52 @@
+{
+  "rasm": "",
+  "ism": {
+    "uz": "Sa'dulla Khaitov",
+    "ru": "Саъдулла Хаитов",
+    "en": "Sa'dulla Khaitov"
+  },
+  "bosh_harflar": "SK",
+  "staj": 5,
+  "lavozim": {
+    "uz": "Dasturchi va IT mutaxassis",
+    "ru": "Разработчик и IT-специалист",
+    "en": "Developer and IT specialist"
+  },
+  "tavsif": {
+    "uz": "Salom! Men Sa'dulla Khaitov, Buxorodanman. Saytlar va Telegram botlar yarataman, internet, Wi-Fi va kompyuterlarni sozlayman, video montaj qilaman va bizneslarga AI yordamchilarni ulab beraman. Har bir ishni oʻzim qilaman va oʻzim javob beraman: kim bilan gaplashsangiz, ishni ham oʻsha odam bajaradi.",
+    "ru": "Здравствуйте! Меня зовут Саъдулла Хаитов, я из Бухары. Делаю сайты и Telegram-ботов, настраиваю интернет, Wi-Fi и компьютеры, монтирую видео и подключаю бизнесу AI-помощников. Всю работу делаю сам и сам за неё отвечаю: с кем вы договариваетесь, тот и выполняет работу.",
+    "en": "Hi! I'm Sa'dulla Khaitov from Bukhara. I build websites and Telegram bots, set up internet, Wi-Fi and computers, edit videos and connect AI assistants for businesses. I do every job myself and take responsibility for it: the person you talk to is the person who does the work."
+  },
+  "teglar": [
+    {
+      "uz": "Saytlar",
+      "ru": "Сайты",
+      "en": "Websites"
+    },
+    {
+      "uz": "Telegram botlar",
+      "ru": "Telegram-боты",
+      "en": "Telegram bots"
+    },
+    {
+      "uz": "AI va avtomatlashtirish",
+      "ru": "AI и автоматизация",
+      "en": "AI & automation"
+    },
+    {
+      "uz": "Wi-Fi va MikroTik",
+      "ru": "Wi-Fi и MikroTik",
+      "en": "Wi-Fi & MikroTik"
+    },
+    {
+      "uz": "Video montaj",
+      "ru": "Видеомонтаж",
+      "en": "Video editing"
+    },
+    {
+      "uz": "Prezentatsiyalar",
+      "ru": "Презентации",
+      "en": "Presentations"
+    }
+  ]
+}

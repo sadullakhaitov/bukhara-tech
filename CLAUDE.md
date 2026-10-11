@@ -4,30 +4,24 @@ Bu fayl Claude Code uchun: oldingi suhbatlarda qabul qilingan qarorlar va to'pla
 
 ## Loyiha nima
 
-Buxorodagi 5 kishilik jamoaning xizmatlar sayti. Har bir usta o'z yo'nalishida ishlaydi, bosh sahifada hammasi, har biriga alohida sahifa.
+**2026-10-11 dan: bitta odam — Sa'dulla Khaitov — sayti, "men" tilida** (brend Bukhara Tech qoladi). Boshqa 4 usta olib tashlandi; yangi odam qo'shilsa yoki ma'lumot kelsa foydalanuvchi o'zi aytadi. 4 xizmat: Sayt va botlar (`sayt.html`, p-web), Sunʼiy intellekt (`ai.html`, p-ai), Internet va IT (`internet.html`, p-net), Video montaj (`video.html`, p-media). **Kamera xizmati olib tashlangan** (foydalanuvchi qaroriga ko'ra). Eski manzillar (`sadulla/umid/sherali/doston.html` → yangi sahifa, `maruf.html` → bosh sahifa) — noindex yo'naltirish sahifalari, o'chirmang (Google'da indekslangan).
 
 - **Sayt:** https://sadullakhaitov.github.io/bukhara-tech/ (GitHub Pages, `main` tarmog'i, ildiz papka)
 - **Repo:** https://github.com/sadullakhaitov/bukhara-tech (public)
 - **Brend:** Bukhara Tech. Domen `bukharatech.uz` — ahost.uz'dan olingan (2026-10-06). NS: rdns1–3.ahost.uz; DNS zonasi ahost hosting panelida (cPanel zona muharriri): `@` A 185.199.108–111.153 (GitHub), `www` CNAME sadullakhaitov.github.io; pochta yozuvlari (MX, `mail`, SPF/DKIM/DMARC, server 185.196.212.52) — o'chirmang. 2026-10-06 da DNS hali tarqalmagan edi. **Avtomatik ulash:** `.github/workflows/domen.yml` har 30 daqiqada DNS'ni tekshiradi; A yozuvi GitHub IP'lariga qaraganda `.github/domen-ulash.sh` ni ishga tushiradi (`CNAME` fayli + barcha canonical/og:url/hreflang/sitemap/robots `https://bukharatech.uz/` ga), push qiladi, Pages qurilishini so'raydi, HTTPS'ni yoqishga urinadi va yoqilgach o'zini o'chiradi. Domen ulangach Font Awesome kitiga `bukharatech.uz` domenini qo'shish kerak (cheklov bo'lsa).
-- **Til:** asosiy o'zbek (lotin, `oʻ gʻ` uchun U+02BB `ʻ`). RU versiyasi `ru/` papkada (2026-10-01), EN versiyasi `en/` papkada (2026-10-02) — har birida 6 ta sahifa, `../assets`, `../images` yo'llari. Matn o'zgarsa UZ, RU va EN uchalasini ham yangilang — jami 18 ta fayl. Til tanlagich: headerdagi globus tugmasi (`.lang-btn`) → ochiladigan ro'yxat (`.lang-menu`: Oʻzbekcha / Русский / English), JS `assets/main.js` da; `hreflang` uz/ru/en + x-default har sahifada; `main.js` da matnlar `tx(uz, ru, en)` bilan. EN'da pul birligi "UZS", ismlar: Sa'dulla Khaitov, Sherali Bozorov, Doston Mukhammadov, Maruf Usmonov, Umid Murodov.
+- **Til:** asosiy o'zbek (lotin, `oʻ gʻ` uchun U+02BB `ʻ`). RU versiyasi `ru/` papkada (2026-10-01), EN versiyasi `en/` papkada (2026-10-02) — har birida 5 ta sahifa (index + 4 xizmat), `../assets`, `../images` yo'llari. Matn o'zgarsa UZ, RU va EN uchalasini ham yangilang — jami 15 ta fayl. Til tanlagich: headerdagi globus tugmasi (`.lang-btn`) → ochiladigan ro'yxat (`.lang-menu`: Oʻzbekcha / Русский / English), JS `assets/main.js` da; `hreflang` uz/ru/en + x-default har sahifada; `main.js` da matnlar `tx(uz, ru, en)` bilan. EN'da pul birligi "UZS", ismlar: Sa'dulla Khaitov, Sherali Bozorov, Doston Mukhammadov, Maruf Usmonov, Umid Murodov.
 
-## Jamoa
+## Sayt egasi (2026-10-11)
 
-| Fayl | Usta | Yo'nalish | Staj | Rang (CSS klass) |
-|---|---|---|---|---|
-| `sadulla.html` | Sa'dulla Khaitov | Web saytlar, fullstack, Telegram botlar, PowerPoint prezentatsiyalar | 5 yil | ko'k `p-web` #3743D1 |
-| `sherali.html` | Sherali Bozorov | SysAdmin: tarmoqlar, internet, MikroTik | 15 yil | yashil `p-net` #0A7359 |
-| `doston.html` | Doston Muxammadov | DaVinci Resolve, Photoshop, Premiere Pro, After Effects (montaj, color grading) | 10 yil | pushti `p-media` #A8235F |
-| `maruf.html` | Maruf Usmonov | Kamera o'rnatish, sozlash, sbros, barcha kamera mahsulotlariga xizmat | 10 yil | jigarrang `p-cam` #8F530C |
-| `umid.html` | Umid Murodov (2026-10-02 qo'shilgan) | Full-Stack dasturchi, AI prompt muhandisi, aqlli texnologiyalar integratori | 3 yil | binafsha `p-ai` #6D28D9 |
+Sa'dulla Khaitov — `content/men.json` (rasm, ism, kasb, tavsif, staj 5 yil, teglar) → bosh sahifadagi `#men` "Men haqimda" bo'limi va hero'dagi "N yil ish tajribasi". Barcha matnlar 1-shaxs birlikda ("qilaman", "оʻzim javob beraman", ru "сделаю", en "I"). FAQ'dagi "birga sinab koʻramiz", "kelishamiz" — mijoz bilan birga, qoladi. Xizmat sahifalarida rasm/staj yo'q: badge + h1 + lead + chips + "Ishni oʻzim bajaraman — Sa'dulla Khaitov" havolasi; pastda "Boshqa xizmatlarim" (3 ta). Logotip 4 rangli kvadratligicha.
 
-Jami staj: 43 yil, 5 yo'nalish (saytda shu raqamlar). Logotip 4 rangli kvadratligicha qoldi.
+**Eski jamoa (tarix uchun):** Sherali Bozorov (tarmoq), Doston Muxammadov (video), Maruf Usmonov (kamera), Umid Murodov (AI) — 2026-10-11 da saytdan olib tashlangan. Ularni qaytarmang, foydalanuvchi aytmaguncha.
 
 ## Admin panel (2026-10-06)
 
 - **Manzil:** https://bukharatech.uz/admin — Sveltia CMS (`admin/index.html` + `admin/config.yml`, unpkg'dan yuklanadi). Kirish: "Sign In Using Access Token" — GitHub fine-grained token (faqat shu repo, Contents: Read and write). Rasm yuklash: `images/uploads/`.
-- **Ma'lumotlar `content/*.json` da** (har matn `{uz, ru, en}`, ru/en bo'sh bo'lsa uz ko'rinadi): `sharhlar`, `ishlar` (bosh + har usta), `xizmatlar` (bosh sahifa kartalari narxi), `kalkulyator`, `setlar`, `paketlar` (har usta: paketlar + "Alohida xizmatlar"), `jamoa` (rasm, staj — jami staj hero'da o'zi hisoblanadi, kartadagi jumla, teglar, usta sahifasidagi tavsif), `mijozlar` (logotiplar), `aloqa` (telefon, Telegram, Instagram, ish vaqti, manzil).
-- **Yig'ish:** `python3 tools/build.py` — 18 sahifadagi `<!-- cms:NOM -->…<!-- /cms:NOM -->` oraliqlarini qayta yozadi. **Bu oraliqlarni HTML'da qo'lda tahrirlamang** — `content/*.json` ni o'zgartirib, build'ni ishga tushiring (keyingi build qo'lda o'zgarishni o'chirib yuboradi). Aloqa qiymatlari butun saytda eski→yangi almashtirish bilan yangilanadi (oxirgi qiymatlar `tools/.aloqa-holat.json`).
+- **Ma'lumotlar `content/*.json` da** (har matn `{uz, ru, en}`, ru/en bo'sh bo'lsa uz ko'rinadi): `men` (o'zi haqida), `sharhlar` (**hozir bo'sh** — oldingilari sun'iy edi, foydalanuvchi aytdi; bo'sh bo'lsa bo'lim sarlavhasi bilan ko'rinmaydi; faqat foydalanuvchi bergan haqiqiy skrinshot/matndan qo'shiladi), `ishlar` (bosh + sayt/ai/internet/video), `xizmatlar` (4 karta), `kalkulyator`, `paketlar` (sayt/ai/internet/video: paketlar + "Alohida xizmatlar"), `mijozlar` (logotiplar, "Men ishlagan joylar"), `aloqa` (telefon, Telegram, Instagram, ish vaqti, manzil, `xarita` havolasi, `yuridik_nomi`, `stir` — bo'sh bo'lsa ko'rinmaydi; yuridik nom/STIR footer'dagi `cms:rekvizit` da). `setlar` va `jamoa` 2026-10-11 da o'chirilgan.
+- **Yig'ish:** `python3 tools/build.py` — 15 sahifadagi `<!-- cms:NOM -->…<!-- /cms:NOM -->` oraliqlarini qayta yozadi. **Bu oraliqlarni HTML'da qo'lda tahrirlamang** — `content/*.json` ni o'zgartirib, build'ni ishga tushiring (keyingi build qo'lda o'zgarishni o'chirib yuboradi). Aloqa qiymatlari butun saytda eski→yangi almashtirish bilan yangilanadi (oxirgi qiymatlar `tools/.aloqa-holat.json`).
 - **GitHub Action** `.github/workflows/cms.yml`: `content/**` yoki `tools/build.py` o'zgarsa build qiladi, commit "Sayt yangilandi (admin panel)" + Pages qurilishini so'raydi.
 - Panelda yo'q (kod orqali o'zgartiriladi): FAQ, sarlavhalar va boshqa matnlar, usta sahifasidagi xizmatlar ro'yxati, badge/chips, set/paket tugma yozuvlari (build.py `T` lug'atida).
 
@@ -38,8 +32,8 @@ Jami staj: 43 yil, 5 yo'nalish (saytda shu raqamlar). Logotip 4 rangli kvadratli
 - **Kunduzgi/tungi rejim:** headerdagi oy/quyosh tugmasi (`.theme-btn`). Ranglar `[data-theme="dark"]` da qayta belgilangan (`assets/style.css`), tanlov `localStorage` da saqlanadi, birinchi kirishda tizim sozlamasiga qaraladi (`<head>` dagi kichik skript). Rangli fon ustidagi matn uchun `#fff` emas, `var(--on-acc)` ishlating.
 - **Tez va silliq o'tish (2026-10-02):** `assets/style.css` boshida `@view-transition { navigation: auto; }` (header va `.mbar` joyida qoladi), har sahifa `<head>` ida `speculationrules` — havolaga sichqoncha borganda (telefonda bosilganda) keyingi sahifa oldindan yuklanadi. Turbo/React **ishlatilmaydi**: `main.js` qayta ishga tushib, `const` takrorlanishi xato beradi. Yangi sahifa qo'shilsa, `<head>` ga shu ikki skriptni (tema + speculationrules) qo'shing.
 - **Liquid glass (2026-10-02):** `style.css` oxiridagi blok. Fonda `body::before` — 5 yo'nalish rangidagi xira dog'lar; kartalar `var(--glass-sheen), var(--glass)` (yarim shaffof, blur'siz — telefonda tez ishlashi uchun); haqiqiy `backdrop-filter` faqat header, `.mbar`, hero yorliqlari, tema/burger va outline tugmalarda. Tokenlar `--glass*` kunduzgi va tungi rejimda alohida. `prefers-reduced-transparency` da oddiy yuzalarga qaytadi. Yangi karta turi qo'shilsa, shu blokdagi ro'yxatga qo'shing.
-- **Kesh:** barcha sahifalarda `assets/style.css?v=...` va `assets/main.js?v=...` — CSS/JS o'zgarganda 18 ta sahifadagi `v=` ni yangilang, aks holda brauzer eski CSS'ni ko'rsatadi (2026-10-02 da shu xato bo'lgan: menyu yozuvlari sinib ketgan).
-- **Hero:** o'ngda 2×2 rasm kollaji (`.hero-grid`, `images/works` dagi Unsplash namunalari: maruf-3, sherali-3, doston-6, sadulla-2), har birida yo'nalish nomi va "Namuna rasmlar" yorlig'i. Haqiqiy ish rasmlari kelsa almashtiriladi.
+- **Kesh:** barcha sahifalarda `assets/style.css?v=...` va `assets/main.js?v=...` — CSS/JS o'zgarganda 15 ta sahifadagi `v=` ni yangilang, aks holda brauzer eski CSS'ni ko'rsatadi (2026-10-02 da shu xato bo'lgan: menyu yozuvlari sinib ketgan).
+- **Hero:** o'ngda 2×2 rasm kollaji (`.hero-grid`, `images/works` dagi Unsplash namunalari: sadulla-2 sayt, sadulla-5 AI, sherali-3 internet, doston-6 video), har birida yo'nalish nomi va "Namuna rasmlar" yorlig'i. Haqiqiy ish rasmlari kelsa almashtiriladi.
 - Sayt oddiy HTML/CSS/JS, build yo'q. `assets/style.css` da 3 ta breakpoint: 1200, 900, 600 px. Telefon versiyasi 390 px da tekshirilgan.
 - Sahifalar dastlab Python skripti bilan yig'ilgan, lekin skript repoda **yo'q** — endi HTML fayllarni to'g'ridan-to'g'ri tahrirlang. Ko'p sahifali o'zgarishda (masalan header) 6 ta faylning (UZ+RU+EN — 18 ta) hammasini birdek o'zgartirishni unutmang.
 
@@ -56,6 +50,8 @@ Jami staj: 43 yil, 5 yo'nalish (saytda shu raqamlar). Logotip 4 rangli kvadratli
 - **Forma → Telegram (2026-10-02):** `worker/form-worker.js` (Cloudflare Worker, token `BOT_TOKEN` va `CHAT_ID` Cloudflare secret'larida) tayyor, yo'riqnoma `worker/README.md`. Foydalanuvchi Worker'ni o'rnatib manzilini bersa, `assets/main.js` dagi `FORM_ENDPOINT` ga yoziladi. Cloudflare Worker GitHub repoga ulangan (2026-10-03): ildizdagi `wrangler.jsonc` (`name: bukhara-tech-form`, `main: worker/form-worker.js`, `keep_vars: true`) — main'ga har push'da Worker o'zi qayta joylanadi. Worker manzili brauzerda ochilsa sozlash sahifasi (CHAT_ID topish / "Ishlayapti"). `FORM_ENDPOINT` = `https://bukhara-tech-form.sadulla-khaitov.workers.dev` (2026-10-03 ulandi). Bot: @bukharatechbot; so'rovlar Sa'dullaning shaxsiy chatiga keladi (CHAT_ID dashboard'da, BOT_TOKEN Secret). Muammo bo'lsa: Worker manzilini brauzerda ochish — bot va chatni tekshirib ko'rsatadi; Telegram xatolari Cloudflare → Observability → Logs da. **Bot tokenini HECH QACHON repoga/sayt kodiga yozmang** (repo public).
 
 **Rasm qo'yish:** ustalar rasmini internetdan OLMANG (begona odam rasmi — aldov). `images/` ga `sadulla.jpg` va h.k. qo'yilib, `.photo` ichiga `<img src="images/maruf.jpg" alt="Maruf Usmonov">` qo'shiladi (CSS uni joyga to'ldiradi). `images/works/` dagi 23 ta rasm Unsplash'dan vaqtinchalik namuna ("Namuna" belgisi bilan), manbalari `images/works/MANBALAR.txt` da — haqiqiy ishlar bilan almashtirilishi kerak.
+
+> **Diqqat:** quyidagi 2026-10-02…10-06 yozuvlari 5 ustali eski tuzilma (setlar, jamoa, kamera, usta sahifalari) haqida — tarix sifatida qoldirilgan. Hozirgi holat yuqoridagi "Sayt egasi" va pastdagi "Ishonch auditi va tinch dizayn (2026-10-11)" bo'limlarida.
 
 ## Bozor tadqiqoti (2026-09-30, OLX Buxoro viloyati)
 
@@ -85,3 +81,10 @@ E'lonlar soni (raqobat ko'rsatkichi): sayt/bot 57, Wi-Fi/internet 42, kamera 41,
 - O'zgarishdan keyin: `git add -A && git commit -m "..." && git push` — Pages 1–2 daqiqada yangilanadi.
 - Ishni boshlashdan oldin `git pull` (foydalanuvchi bir nechta kompyuterda ishlaydi).
 - Commit xabarlari o'zbekcha.
+
+## Ishonch auditi va tinch dizayn (2026-10-11)
+
+- "AI yasaganga o'xshaydi" degan audit bo'yicha A qismi bajarildi: `[N]` lar olib tashlandi, matnlar tabiiy "men" tiliga o'tdi, "Qanday ishlaymiz" (3 qadam) va "Tayyor setlar" bo'limlari olib tashlandi, sun'iy sharhlar yashirildi, ishlar bo'limida rasmlar namuna ekani ochiq yozilgan.
+- **Dizayn:** fondagi rangli dog'lar (`body::before`) olib tashlandi; sarlavha va raqamlar Manrope 800 (`--disp`), Unbounded faqat logotipda (`--logo`); xizmat kartalari tekis (ochiq rangli belgi plitasi, outline tugma, rangli yuqori chiziqsiz), kompyuterda 4 tadan, planshetda 2 tadan. Liquid glass header/kartalar qoldi.
+- Bosh sahifa tartibi: hero → `#xizmatlar` → `#kalkulyator` → `#ishlar` (ishlar + sharhlar (bo'sh bo'lsa yo'q) + logotiplar) → `#men` → `#savollar` → `#aloqa`. Menyu 4 band, "Tayyor setlar" yo'q. Forma: Sayt/AI/Internet/Video/Boshqa.
+- `250+ bajarilgan ish` va `5 yil` foydalanuvchi tasdiqlashi kerak (so'ralgan).
