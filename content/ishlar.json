@@ -109,36 +109,6 @@
         "ru": "Заявки водителей и пассажиров · поиск · напоминания",
         "en": "Driver and passenger requests · search · reminders"
       }
-    },
-    {
-      "rasm": "images/works/sadulla-1.jpg",
-      "namuna": true,
-      "oldin_keyin": false,
-      "nomi": {
-        "uz": "Internet-doʻkon",
-        "ru": "Интернет-магазин",
-        "en": "Online store"
-      },
-      "izoh": {
-        "uz": "Katalog · savat · toʻlov",
-        "ru": "Каталог · корзина · оплата",
-        "en": "Catalogue · cart · payment"
-      }
-    },
-    {
-      "rasm": "images/works/sadulla-4.jpg",
-      "namuna": true,
-      "oldin_keyin": false,
-      "nomi": {
-        "uz": "Landing sahifa",
-        "ru": "Лендинг",
-        "en": "Landing page"
-      },
-      "izoh": {
-        "uz": "Reklama uchun",
-        "ru": "Для рекламы",
-        "en": "For advertising"
-      }
     }
   ],
   "ai": [
@@ -155,36 +125,6 @@
         "uz": "Buyurtma va dillerlar · Excel hisobot oʻzi keladi",
         "ru": "Заказы и дилеры · Excel-отчёт приходит сам",
         "en": "Orders and dealers · Excel report sent automatically"
-      }
-    },
-    {
-      "rasm": "images/works/ai-hisobot.jpg",
-      "namuna": true,
-      "oldin_keyin": false,
-      "nomi": {
-        "uz": "Hisobotlarni avtomatlashtirish",
-        "ru": "Автоматизация отчётов",
-        "en": "Report automation"
-      },
-      "izoh": {
-        "uz": "Jadval · har kuni oʻzi",
-        "ru": "Таблица · каждый день сама",
-        "en": "Spreadsheet · updates itself daily"
-      }
-    },
-    {
-      "rasm": "images/works/ai-aqlli-ofis.jpg",
-      "namuna": true,
-      "oldin_keyin": false,
-      "nomi": {
-        "uz": "Aqlli ofis",
-        "ru": "Умный офис",
-        "en": "Smart office"
-      },
-      "izoh": {
-        "uz": "Sensorlar · telefondan boshqarish",
-        "ru": "Датчики · управление с телефона",
-        "en": "Sensors · phone control"
       }
     }
   ],
@@ -217,36 +157,6 @@
         "uz": "TP-Link router · Wi-Fi sozlash",
         "ru": "Роутер TP-Link · настройка Wi-Fi",
         "en": "TP-Link router · Wi-Fi setup"
-      }
-    },
-    {
-      "rasm": "images/works/sherali-2.jpg",
-      "namuna": true,
-      "oldin_keyin": false,
-      "nomi": {
-        "uz": "Mehmonxona Wi-Fi",
-        "ru": "Wi-Fi в гостинице",
-        "en": "Hotel Wi-Fi"
-      },
-      "izoh": {
-        "uz": "Barcha qavatlar · roaming",
-        "ru": "Все этажи · роуминг",
-        "en": "Every floor · roaming"
-      }
-    },
-    {
-      "rasm": "images/works/sherali-5.jpg",
-      "namuna": true,
-      "oldin_keyin": false,
-      "nomi": {
-        "uz": "Uy tarmogʻi",
-        "ru": "Домашняя сеть",
-        "en": "Home network"
-      },
-      "izoh": {
-        "uz": "Wi-Fi mesh",
-        "ru": "Wi-Fi mesh",
-        "en": "Wi-Fi mesh"
       }
     }
   ]
