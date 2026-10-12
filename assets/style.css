@@ -756,9 +756,5 @@ main { counter-reset: sec; }
   /* Bo'limlar ekranga kirganda paydo bo'ladi (main.js: .rv → .rv-in) */
   .rv { opacity: 0; transform: translateY(14px); }
   .rv.rv-in { opacity: 1; transform: none; transition: opacity .55s ease, transform .55s cubic-bezier(.2, .7, .2, 1); transition-delay: var(--rv-d, 0ms); }
-  /* Tungi/kunduzgi rejim almashganda ranglar silliq o'zgaradi */
-  html.theme-fade, html.theme-fade *, html.theme-fade *::before, html.theme-fade *::after {
-    transition: background-color .3s ease, color .3s ease, border-color .3s ease, fill .3s ease, box-shadow .3s ease !important;
-  }
 }
 @media print { .rv { opacity: 1 !important; transform: none !important; } }

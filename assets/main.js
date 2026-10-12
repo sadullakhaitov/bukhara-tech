@@ -14,12 +14,16 @@ if (themeBtn) {
   themeBtn.setAttribute("aria-label", themeLabel(root.dataset.theme === "dark"));
   themeBtn.addEventListener("click", () => {
     const dark = root.dataset.theme !== "dark";
-    root.classList.add("theme-fade");
-    root.dataset.theme = dark ? "dark" : "light";
-    clearTimeout(themeBtn._t);
-    themeBtn._t = setTimeout(() => root.classList.remove("theme-fade"), 350);
-    themeBtn.setAttribute("aria-label", themeLabel(dark));
-    try { localStorage.setItem("theme", root.dataset.theme); } catch (e) {}
+    const apply = () => {
+      root.dataset.theme = dark ? "dark" : "light";
+      themeBtn.setAttribute("aria-label", themeLabel(dark));
+      try { localStorage.setItem("theme", root.dataset.theme); } catch (e) {}
+    };
+    // Silliq almashinuv: brauzer butun sahifani bitta rasm sifatida almashtiradi
+    // (har bir elementga rang animatsiyasi bermaymiz — iPhone Safari matnni qayta chizmay qolardi)
+    if (document.startViewTransition && matchMedia("(prefers-reduced-motion: no-preference)").matches) {
+      document.startViewTransition(apply);
+    } else apply();
   });
 }
 
