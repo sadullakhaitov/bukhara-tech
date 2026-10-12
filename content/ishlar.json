@@ -81,6 +81,21 @@
       }
     },
     {
+      "rasm": "images/works/ilmiy-jurnal.jpg",
+      "namuna": false,
+      "oldin_keyin": false,
+      "nomi": {
+        "uz": "Ilmiy-amaliy jurnal sayti",
+        "ru": "Сайт научно-практического журнала",
+        "en": "Academic journal website"
+      },
+      "izoh": {
+        "uz": "Maqolalar va dissertatsiyalar · qidiruv · taqriz · DOI",
+        "ru": "Статьи и диссертации · поиск · рецензирование · DOI",
+        "en": "Articles and dissertations · search · peer review · DOI"
+      }
+    },
+    {
       "rasm": "images/works/sadulla-1.jpg",
       "namuna": true,
       "oldin_keyin": false,
@@ -93,21 +108,6 @@
         "uz": "Katalog · savat · toʻlov",
         "ru": "Каталог · корзина · оплата",
         "en": "Catalogue · cart · payment"
-      }
-    },
-    {
-      "rasm": "images/works/sadulla-2.jpg",
-      "namuna": true,
-      "oldin_keyin": false,
-      "nomi": {
-        "uz": "Korporativ sayt",
-        "ru": "Корпоративный сайт",
-        "en": "Company website"
-      },
-      "izoh": {
-        "uz": "UZ / RU",
-        "ru": "UZ / RU",
-        "en": "UZ / RU"
       }
     },
     {
