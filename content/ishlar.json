@@ -10,11 +10,12 @@
         "en": "Bukhara Regional Railway Junction"
       },
       "izoh": {
-        "uz": "Ofis tarmogʻi · MikroTik CCR va CRS",
-        "ru": "Сеть офиса · MikroTik CCR и CRS",
-        "en": "Office network · MikroTik CCR and CRS"
+        "uz": "150+ kompyuter · VLANʼlarga ajratildi · xavfsizlik va tezlik oshdi",
+        "ru": "150+ компьютеров · разделение на VLAN · выше безопасность и скорость",
+        "en": "150+ computers · split into VLANs · safer and faster network"
       },
-      "yonalish": "p-net"
+      "yonalish": "p-net",
+      "havola": ""
     },
     {
       "rasm": "images/works/emirfood-miniapp.jpg",
@@ -26,11 +27,12 @@
         "en": "EmirFood — Telegram Mini App"
       },
       "izoh": {
-        "uz": "Fastfood buyurtma boti · savat · yetkazib berish",
-        "ru": "Бот для заказа фастфуда · корзина · доставка",
-        "en": "Fast-food ordering bot · cart · delivery"
+        "uz": "Buyurtmalar telefondan Telegram botga oʻtdi — endi avtomatik",
+        "ru": "Заказы перешли с телефона в Telegram-бот — теперь автоматически",
+        "en": "Orders moved from phone calls to a Telegram bot — now automatic"
       },
-      "yonalish": "p-web"
+      "yonalish": "p-web",
+      "havola": "https://t.me/emirfoodbot"
     },
     {
       "rasm": "images/works/uyservice-app.jpg",
@@ -42,11 +44,12 @@
         "en": "UyService — on-demand handyman service"
       },
       "izoh": {
-        "uz": "Veb-ilova · xarita · buyurtmalar",
-        "ru": "Веб-приложение · карта · заказы",
-        "en": "Web app · map · orders"
+        "uz": "Usta chaqirish xizmati · tez orada hammaga ochiladi",
+        "ru": "Сервис вызова мастера · скоро откроется для всех",
+        "en": "Handyman booking service · launching to the public soon"
       },
-      "yonalish": "p-web"
+      "yonalish": "p-web",
+      "havola": "https://uyservice.uz"
     }
   ],
   "sayt": [
@@ -60,10 +63,11 @@
         "en": "EmirFood — Telegram Mini App"
       },
       "izoh": {
-        "uz": "Fastfood buyurtma boti · savat · yetkazib berish",
-        "ru": "Бот для заказа фастфуда · корзина · доставка",
-        "en": "Fast-food ordering bot · cart · delivery"
-      }
+        "uz": "Buyurtmalar telefondan Telegram botga oʻtdi — endi avtomatik",
+        "ru": "Заказы перешли с телефона в Telegram-бот — теперь автоматически",
+        "en": "Orders moved from phone calls to a Telegram bot — now automatic"
+      },
+      "havola": "https://t.me/emirfoodbot"
     },
     {
       "rasm": "images/works/uyservice-app.jpg",
@@ -75,10 +79,11 @@
         "en": "UyService — on-demand handyman service"
       },
       "izoh": {
-        "uz": "Veb-ilova · xarita · buyurtmalar",
-        "ru": "Веб-приложение · карта · заказы",
-        "en": "Web app · map · orders"
-      }
+        "uz": "Usta chaqirish xizmati · tez orada hammaga ochiladi",
+        "ru": "Сервис вызова мастера · скоро откроется для всех",
+        "en": "Handyman booking service · launching to the public soon"
+      },
+      "havola": "https://uyservice.uz"
     },
     {
       "rasm": "images/works/ilmiy-jurnal.jpg",
@@ -90,10 +95,11 @@
         "en": "Academic journal website"
       },
       "izoh": {
-        "uz": "Maqolalar va dissertatsiyalar · qidiruv · taqriz · DOI",
-        "ru": "Статьи и диссертации · поиск · рецензирование · DOI",
-        "en": "Articles and dissertations · search · peer review · DOI"
-      }
+        "uz": "Jurnal sayti topshirildi · maqolalar, qidiruv, taqriz, DOI",
+        "ru": "Сайт журнала сдан · статьи, поиск, рецензии, DOI",
+        "en": "Journal site delivered · articles, search, peer review, DOI"
+      },
+      "havola": ""
     },
     {
       "rasm": "images/works/ovoz-sayt.jpg",
@@ -105,10 +111,11 @@
         "en": "Ovoz — English course website"
       },
       "izoh": {
-        "uz": "6 modul, 18 video dars · progress belgilash",
-        "ru": "6 модулей, 18 видеоуроков · отметка прогресса",
-        "en": "6 modules, 18 video lessons · progress tracking"
-      }
+        "uz": "Darslik sayti topshirildi · 6 modul, 18 video dars",
+        "ru": "Сайт учебника сдан · 6 модулей, 18 видеоуроков",
+        "en": "Course site delivered · 6 modules, 18 video lessons"
+      },
+      "havola": ""
     },
     {
       "rasm": "images/works/etb-portal.jpg",
@@ -120,10 +127,11 @@
         "en": "E-TB — workplace safety portal"
       },
       "izoh": {
-        "uz": "Temir yoʻl xodimlari uchun · himoya vositalari · nizom · murojaatlar",
-        "ru": "Для работников железной дороги · СИЗ · положение · обращения",
-        "en": "For railway staff · PPE · regulations · requests"
-      }
+        "uz": "Temir yoʻlchilar uchun ichki tizim · himoya vositalari, nizom, murojaatlar",
+        "ru": "Внутренняя система для железнодорожников · СИЗ, положения, обращения",
+        "en": "Internal system for railway staff · PPE, regulations, requests"
+      },
+      "havola": ""
     },
     {
       "rasm": "images/works/fazum-sayt.jpg",
@@ -135,10 +143,11 @@
         "en": "Fazum — CCTV company website"
       },
       "izoh": {
-        "uz": "Landing · xizmatlar · bepul maslahat formasi",
-        "ru": "Лендинг · услуги · форма консультации",
-        "en": "Landing page · services · free consultation form"
-      }
+        "uz": "Kuzatuv kameralari kompaniyasi uchun landing · topshirilgan",
+        "ru": "Лендинг для компании видеонаблюдения · сдан",
+        "en": "Landing page for a CCTV company · delivered"
+      },
+      "havola": ""
     }
   ],
   "ai": [
@@ -152,10 +161,11 @@
         "en": "JalyuziAdmin — assistant bot"
       },
       "izoh": {
-        "uz": "Buyurtma va dillerlar · Excel hisobot oʻzi keladi",
-        "ru": "Заказы и дилеры · Excel-отчёт приходит сам",
-        "en": "Orders and dealers · Excel report sent automatically"
-      }
+        "uz": "Buyurtmalar real vaqtda toʻgʻridan-toʻgʻri sexga boradi · hisob-kitob avtomatik",
+        "ru": "Заказы в реальном времени уходят прямо в цех · расчёты автоматически",
+        "en": "Orders go straight to the workshop in real time · automatic accounting"
+      },
+      "havola": "https://t.me/JalyuziAdmin_bot"
     },
     {
       "rasm": "images/works/poputi-bot.jpg",
@@ -167,10 +177,11 @@
         "en": "PoPuti — ride-sharing bot"
       },
       "izoh": {
-        "uz": "Haydovchi va yoʻlovchi zayavkalari · qidiruv · eslatmalar",
-        "ru": "Заявки водителей и пассажиров · поиск · напоминания",
-        "en": "Driver and passenger requests · search · reminders"
-      }
+        "uz": "Yoʻldosh topish boti · ishlab chiqilmoqda",
+        "ru": "Бот для поиска попутчиков · в разработке",
+        "en": "Ride-sharing bot · in development"
+      },
+      "havola": "https://t.me/PoPutiGoBot"
     }
   ],
   "internet": [
@@ -184,25 +195,27 @@
         "en": "Bukhara Regional Railway Junction"
       },
       "izoh": {
-        "uz": "Ofis tarmogʻi · MikroTik CCR va CRS",
-        "ru": "Сеть офиса · MikroTik CCR и CRS",
-        "en": "Office network · MikroTik CCR and CRS"
-      }
+        "uz": "150+ kompyuter · VLANʼlarga ajratildi · xavfsizlik va tezlik oshdi",
+        "ru": "150+ компьютеров · разделение на VLAN · выше безопасность и скорость",
+        "en": "150+ computers · split into VLANs · safer and faster network"
+      },
+      "havola": ""
     },
     {
       "rasm": "images/works/ofis-router.jpg",
       "namuna": false,
       "oldin_keyin": false,
       "nomi": {
-        "uz": "Ofis tarmogʻi",
-        "ru": "Сеть офиса",
-        "en": "Office network"
+        "uz": "Xususiy klinika tarmogʻi",
+        "ru": "Сеть частной клиники",
+        "en": "Private clinic network"
       },
       "izoh": {
-        "uz": "TP-Link router · Wi-Fi sozlash",
-        "ru": "Роутер TP-Link · настройка Wi-Fi",
-        "en": "TP-Link router · Wi-Fi setup"
-      }
+        "uz": "Buxorodagi xususiy klinika · internet tarmogʻi va Wi-Fi",
+        "ru": "Частная клиника в Бухаре · сеть и Wi-Fi",
+        "en": "Private clinic in Bukhara · network and Wi-Fi"
+      },
+      "havola": ""
     }
   ]
 }

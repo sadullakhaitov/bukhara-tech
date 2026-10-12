@@ -11,7 +11,12 @@
         "ru": "IT-компания",
         "en": "IT company"
       },
-      "logotip": "images/clients/orzu-tech.png"
+      "logotip": "images/clients/orzu-tech.png",
+      "ish": {
+        "uz": "Fazum kameralari uchun landing sahifa",
+        "ru": "Лендинг для камер Fazum",
+        "en": "Landing page for Fazum cameras"
+      }
     },
     {
       "nomi": {
@@ -24,7 +29,12 @@
         "ru": "Транспорт",
         "en": "Transport"
       },
-      "logotip": "images/clients/temir-yollari.png"
+      "logotip": "images/clients/temir-yollari.png",
+      "ish": {
+        "uz": "Tarmoq xavfsizligi, VLANʼlar va manzillar boʻyicha qoidalar",
+        "ru": "Безопасность сети, VLAN и правила по адресам",
+        "en": "Network security, VLANs and per-address rules"
+      }
     },
     {
       "nomi": {
@@ -37,7 +47,12 @@
         "ru": "Университет",
         "en": "University"
       },
-      "logotip": "images/clients/oxu.png"
+      "logotip": "images/clients/oxu.png",
+      "ish": {
+        "uz": "Investorlar uchun toʻliq taqdimot",
+        "ru": "Полная презентация для инвесторов",
+        "en": "Full investor presentation"
+      }
     },
     {
       "nomi": {
@@ -50,7 +65,12 @@
         "ru": "Госучреждение",
         "en": "Government"
       },
-      "logotip": "images/clients/soliq.png"
+      "logotip": "images/clients/soliq.png",
+      "ish": {
+        "uz": "Viloyatlar miqyosidagi yillik hisobot",
+        "ru": "Годовой отчёт в масштабе областей",
+        "en": "Annual report at regional level"
+      }
     },
     {
       "nomi": {
@@ -63,7 +83,12 @@
         "ru": "Банк",
         "en": "Bank"
       },
-      "logotip": "images/clients/asia-alliance-bank.png"
+      "logotip": "images/clients/asia-alliance-bank.png",
+      "ish": {
+        "uz": "Mahsulotlar taqdimoti prezentatsiyalari",
+        "ru": "Презентации продуктов",
+        "en": "Product presentations"
+      }
     }
   ]
 }

@@ -19,15 +19,17 @@ ROOT = Path(__file__).resolve().parent.parent
 C = ROOT / "content"
 LANGS = {"": "uz", "ru/": "ru", "en/": "en"}
 PAGES = ["sayt", "ai", "internet"]
-DIR_PAGE = {"p-net": "internet", "p-web": "sayt", "p-ai": "ai"}
+DIR_PAGE = {"p-net": "internet", "p-web": "sayt", "p-ai": "ai", "p-pres": "sayt"}
 DIR_ICON = {"p-cam": "fa-video", "p-net": "fa-wifi", "p-web": "fa-laptop-code", "p-media": "fa-clapperboard",
-            "p-ai": "fa-wand-magic-sparkles", "p-pc": "fa-desktop"}
+            "p-ai": "fa-wand-magic-sparkles", "p-pc": "fa-desktop", "p-pres": "fa-person-chalkboard"}
 FA = '<i class="fa-solid {}" aria-hidden="true"></i>'
 
 T = {  # sahifadagi doimiy yozuvlar
     "cur": {"uz": "soʻm", "ru": "сум", "en": "UZS"},
     "from": {"uz": "{p} soʻmdan", "ru": "от {p} сум", "en": "from {p} UZS"},
     "per": {"uz": "1 {u} uchun", "ru": "за 1 {u}", "en": "per {u}"},
+    "term": {"uz": "Muddat", "ru": "Срок", "en": "Time"},
+    "open": {"uz": "Ochish", "ru": "Открыть", "en": "Open"},
     "less": {"uz": "Kamaytirish", "ru": "Меньше", "en": "Less"},
     "more": {"uz": "Koʻpaytirish", "ru": "Больше", "en": "More"},
     "sep": {"uz": "Alohida", "ru": "По отдельности", "en": "Separately"},
@@ -66,6 +68,7 @@ T = {  # sahifadagi doimiy yozuvlar
                   "en": "Landing page · company site · Telegram bot"},
         "p-ai": {"uz": "AI yordamchi · avtomatlashtirish", "ru": "AI-помощник · автоматизация", "en": "AI assistant · automation"},
         "p-net": {"uz": "Wi-Fi · MikroTik · kompyuterlar", "ru": "Wi-Fi · MikroTik · компьютеры", "en": "Wi-Fi · MikroTik · computers"},
+        "p-pres": {"uz": "PowerPoint · hisobot · investorlar", "ru": "PowerPoint · отчёты · инвесторы", "en": "PowerPoint · reports · investors"},
     },
 }
 def load(name):
@@ -122,16 +125,30 @@ def years_total(n, lang):
 
 # ---------------- Bloklar ----------------
 
+def card_href(s):
+    return s.get("havola") or f'{DIR_PAGE[s["yonalish"]]}.html'
+
+
+def svc_price(s, lang):
+    p = T["from"][lang].format(p=money(s["narx"]))
+    u = tr(s.get("birlik"), lang)
+    return f"{p} / {e(u)}" if u else p
+
+
 def r_svcs(lang, prefix):
     out = ['<div class="svcs">']
     for s in load("xizmatlar")["kartalar"]:
         d = s["yonalish"]
+        items = "".join(f"<li>{e(tr(b, lang))}</li>" for b in s.get("bandlar") or [])
+        items = f'\n          <ul class="svc-list">{items}</ul>' if items else ""
+        term = tr(s.get("muddat"), lang)
+        term = f'\n          <p class="svc-term">{FA.format("fa-clock")}<span>{T["term"][lang]}: {e(term)}</span></p>' if term else ""
         out.append(f'''        <article class="svc {d}">
           <span class="svc-icon">{FA.format(DIR_ICON[d])}</span>
           <h3>{e(tr(s["sarlavha"], lang))}</h3>
-          <p>{e(tr(s["matn"], lang))}</p>
-          <div class="svc-price">{T["from"][lang].format(p=money(s["narx"]))}</div>
-          <a class="btn btn-outline" href="{DIR_PAGE[d]}.html">{e(tr(s["tugma"], lang))} {FA.format("fa-arrow-right")}</a>
+          <p>{e(tr(s["matn"], lang))}</p>{items}{term}
+          <div class="svc-price">{svc_price(s, lang)}</div>
+          <a class="btn btn-outline" href="{card_href(s)}">{e(tr(s["tugma"], lang))} {FA.format("fa-arrow-right")}</a>
         </article>''')
     out.append("      </div>")
     return "\n".join(out)
@@ -142,7 +159,7 @@ def r_hero(lang, prefix):
     rows = []
     for s in load("xizmatlar")["kartalar"]:
         d = s["yonalish"]
-        rows.append(f'''<a class="hc-row {d}" href="{DIR_PAGE[d]}.html"><span class="hc-ico">{FA.format(DIR_ICON[d])}</span><span class="hc-text"><b>{e(tr(s["tugma"], lang))}</b><small>{e(T["hc_sub"][d][lang])}</small></span><span class="hc-price">{T["from"][lang].format(p=money(s["narx"]))}</span></a>''')
+        rows.append(f'''<a class="hc-row {d}" href="{card_href(s)}"><span class="hc-ico">{FA.format(DIR_ICON[d])}</span><span class="hc-text"><b>{e(tr(s["tugma"], lang))}</b><small>{e(T["hc_sub"][d][lang])}</small></span><span class="hc-price">{svc_price(s, lang)}</span></a>''')
     return f'''<div class="hero-card">
           <div class="hc-head"><span>{T["hc_title"][lang]}</span><span class="hc-live"><i></i>{e(tr(a["ish_vaqti"], lang))}</span></div>
           {"".join(rows)}
@@ -158,8 +175,11 @@ def r_calc(lang, prefix):
         for r in g["qatorlar"]:
             name, unit = e(tr(r["nomi"], lang)), e(tr(r["birlik"], lang))
             per = T["per"][lang].format(u=unit)
-            out.append(f'''            <div class="calc-row" data-price="{int(r["narx"])}" data-name="{name}" data-unit="{unit}">
-              <span class="calc-name"><b>{name}</b><small>{money(r["narx"])} {T["cur"][lang]} · {per}</small></span>
+            term = tr(r.get("muddat"), lang)
+            term = f" · {e(term)}" if term else ""
+            pre = " data-preset" if r.get("taklif") else ""
+            out.append(f'''            <div class="calc-row" data-price="{int(r["narx"])}" data-name="{name}" data-unit="{unit}"{pre}>
+              <span class="calc-name"><b>{name}</b><small>{money(r["narx"])} {T["cur"][lang]} · {per}{term}</small></span>
               <span class="stepper"><button type="button" class="step-btn" data-step="-1" aria-label="{T["less"][lang]}: {name}">−</button><input type="number" min="0" max="999" value="{int(r.get("boshlangich") or 0)}" inputmode="numeric" aria-label="{name}"><button type="button" class="step-btn" data-step="1" aria-label="{T["more"][lang]}: {name}">+</button></span>
             </div>''')
         out.append("          </details>")
@@ -228,7 +248,10 @@ def r_work(w, lang, prefix, home):
         photo = f'<div class="photo"><div class="split"><span>{T["before"][lang]}</span><span>{T["after"][lang]}</span></div></div>'
     else:
         photo = f'<div class="photo"><span class="work-ph">{T["no_photo"][lang]}</span></div>'
-    return f'<figure class="{cls}">{photo}<figcaption><b>{e(title)}</b><span>{e(tr(w.get("izoh"), lang))}</span></figcaption></figure>'
+    link = (w.get("havola") or "").strip()
+    link = (f'<a class="work-link" href="{e(link)}" target="_blank" rel="noopener">{e(link.split("//")[-1].replace("t.me/", "@"))} '
+            f'{FA.format("fa-arrow-up-right-from-square")}</a>') if link else ""
+    return f'<figure class="{cls}">{photo}<figcaption><b>{e(title)}</b><span>{e(tr(w.get("izoh"), lang))}</span>{link}</figcaption></figure>'
 
 
 WORK_DIRS = {"sayt": "p-web", "ai": "p-ai", "internet": "p-net"}
@@ -279,7 +302,9 @@ def r_clients(lang, prefix):
     for c in load("mijozlar")["mijozlar"]:
         logo = (c.get("logotip") or "").strip()
         img = f'<span class="client-logo"><img src="{e(img_src(logo, prefix))}" alt="" loading="lazy"></span>' if logo else ""
-        out.append(f'<li>{img}<b>{e(tr(c["nomi"], lang))}</b><small>{e(tr(c["turi"], lang))}</small></li>')
+        did = tr(c.get("ish"), lang)
+        did = f'<span class="client-did">{e(did)}</span>' if did else ""
+        out.append(f'<li>{img}<b>{e(tr(c["nomi"], lang))}</b><small>{e(tr(c["turi"], lang))}</small>{did}</li>')
     return '<ul class="clients">' + "".join(out) + "</ul>"
 
 

@@ -236,14 +236,23 @@ if (calc) {
     new IntersectionObserver(([e]) => { sumVisible = e.isIntersecting; syncBar(); }, { rootMargin: "0px 0px -170px 0px", threshold: 1 }).observe(total);
   }
 
+  // Tavsiya qilingan qator (Landing × 1): odam boshqa narsa tanlay boshlasa — o'zi yo'qoladi;
+  // tavsiya qatorining o'zini o'zgartirsa — u endi odamning tanlovi, tegilmaydi.
+  let preset = calc.querySelector(".calc-row[data-preset]");
+  const touched = (row) => {
+    if (!preset) return;
+    if (row !== preset) preset.querySelector("input").value = 0;
+    preset = null;
+  };
   calc.addEventListener("click", (e) => {
     const btn = e.target.closest(".step-btn");
     if (!btn) return;
+    touched(btn.closest(".calc-row"));
     const input = btn.parentElement.querySelector("input");
     input.value = Math.max(0, (parseInt(input.value, 10) || 0) + Number(btn.dataset.step));
     update();
   });
-  calc.addEventListener("input", update);
+  calc.addEventListener("input", (e) => { touched(e.target.closest(".calc-row")); update(); });
   update();
 }
 
@@ -416,9 +425,13 @@ document.querySelectorAll(".works-carousel").forEach((row) => {
     row.scrollLeft = drag.sl - dx;
     hold();
   });
+  let justDragged = false;
+  row.addEventListener("click", (e) => { if (justDragged) { e.preventDefault(); e.stopPropagation(); } }, true);
   const endDrag = () => {
     if (!drag) return;
     const { moved, sl } = drag;
+    justDragged = moved;
+    if (moved) setTimeout(() => (justDragged = false), 80);
     drag = null;
     if (!moved) return;
     // tortish to'xtagan joydan tortilgan tomondagi eng yaqin karta boshiga yopishadi

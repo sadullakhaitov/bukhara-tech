@@ -29,6 +29,7 @@
   --web: #2563EB; --web-lt: #EAF1FF;
   --ai: #7C3AED;  --ai-lt: #F2EBFE;
   --net: #047857; --net-lt: #E3F5EE;
+  --pres: #B45309; --pres-lt: #FDF1E3;
 
   --acc: var(--navy);
   --lt: var(--navy-lt);
@@ -73,6 +74,7 @@
   --web: #8AB0FF; --web-lt: #172647;
   --ai: #BFA0FF;  --ai-lt: #241B42;
   --net: #5EDCAE; --net-lt: #0F2E28;
+  --pres: #F5B86B; --pres-lt: #33240F;
   --on-acc: #0B1220;
 
   --shadow: 0 1px 2px rgba(0, 0, 0, .35), 0 4px 6px rgba(0, 0, 0, .2);
@@ -83,6 +85,7 @@
 .p-web { --acc: var(--web); --lt: var(--web-lt); }
 .p-ai  { --acc: var(--ai);  --lt: var(--ai-lt); }
 .p-net, .p-pc { --acc: var(--net); --lt: var(--net-lt); }
+.p-pres { --acc: var(--pres); --lt: var(--pres-lt); }
 
 /* ---------- Sahifalar orasida silliq o'tish ---------- */
 @media (prefers-reduced-motion: no-preference) {
@@ -251,6 +254,22 @@ main { counter-reset: sec; }
 .svcs > .svc:first-child .svc-price { border-color: var(--deep-line); color: var(--cta-glow); font-size: 28px; }
 .svcs > .svc:first-child .btn-outline { background: var(--cta); border-color: var(--cta); color: var(--on-cta); }
 .svcs > .svc:first-child .btn-outline:hover { background: var(--cta-hover); border-color: var(--cta-hover); }
+/* 4 ta karta: chapda katta to'q karta (2 qator), o'ngda tepada 2 ta kichik, pastda 1 ta keng */
+.svcs:has(> .svc:nth-child(4)) > .svc { grid-column: span 1; }
+.svcs:has(> .svc:nth-child(4)) > .svc:first-child, .svcs:has(> .svc:nth-child(4)) > .svc:nth-child(4) { grid-column: span 2; }
+.svcs > .svc:first-child p { flex-grow: 0; }
+.svcs > .svc:first-child .svc-term { margin-top: auto; padding-top: 12px; }
+.svc-list { display: flex; flex-wrap: wrap; gap: 8px; list-style: none; margin: 4px 0 0; padding: 0; }
+.svc-list li { padding: 7px 12px; border: 1px solid var(--deep-line); border-radius: 8px; font-size: 14px; color: var(--on-deep); background: rgba(255, 255, 255, .04); }
+@media (min-width: 1201px) {
+  .svc-list { display: grid; grid-template-columns: 1fr 1fr; gap: 10px; margin-top: 14px; }
+  .svc-list li { display: flex; align-items: center; gap: 10px; padding: 15px 16px; border-radius: 12px; font-size: 15.5px; font-weight: 500; }
+  .svc-list li::before { content: ""; width: 7px; height: 7px; border-radius: 2px; background: var(--cta-glow); flex-shrink: 0; }
+}
+.svc-term { display: flex; align-items: center; gap: 8px; margin: 0; font-size: 14px; color: var(--muted); flex-grow: 0 !important; }
+.svc-term i { color: var(--acc); font-size: 13px; }
+.svcs > .svc:first-child .svc-term { color: var(--on-deep-muted); }
+.svcs > .svc:first-child .svc-term i { color: var(--cta-glow); }
 .svc-icon { display: flex; align-items: center; justify-content: center; width: 52px; height: 52px; margin-bottom: 6px; border-radius: 14px; background: var(--lt); color: var(--acc); }
 .svc-icon i { font-size: 21px; }
 .svc h3 { font-family: var(--disp); font-weight: 700; font-size: 22px; line-height: 1.15; letter-spacing: -.03em; }
@@ -338,6 +357,9 @@ main { counter-reset: sec; }
 .work figcaption { display: flex; flex-direction: column; gap: 4px; padding: 16px 18px 18px; }
 .work figcaption b { font-family: var(--disp); font-weight: 600; font-size: 17px; letter-spacing: -.02em; }
 .work figcaption span { font-family: var(--mono); font-size: 12px; color: var(--muted); }
+.work-link { align-self: flex-start; display: inline-flex; align-items: center; gap: 6px; margin-top: 8px; font-size: 13.5px; font-weight: 600; color: var(--acc); text-decoration: none; }
+.work-link i { font-size: 11px; }
+.work-link:hover { text-decoration: underline; }
 .work-dir { align-self: flex-start; margin-bottom: 4px; padding: 3px 8px; border-radius: 6px; background: color-mix(in srgb, var(--acc) 10%, transparent); color: var(--acc); font: 500 10.5px/1.3 var(--mono); font-style: normal; letter-spacing: .06em; text-transform: uppercase; }
 /* Bosh sahifadagi loyihalar karuseli: native scroll + snap, JS o'zi bittadan suradi */
 .works-carousel { display: flex; flex-wrap: nowrap; gap: 16px; overflow-x: auto; overscroll-behavior-x: contain; scroll-snap-type: x mandatory; scrollbar-width: none; margin: -6px -10px; padding: 6px 10px 14px; scroll-padding-inline: 10px; }
@@ -376,7 +398,8 @@ main { counter-reset: sec; }
 .marquee > ul, .places .marquee > ul { width: max-content; overflow: visible; margin-inline: 0; will-change: transform; touch-action: pan-y; backface-visibility: hidden; }
 .places li { flex: 0 0 200px; display: flex; flex-direction: column; align-items: center; gap: 2px; padding: 12px 12px 14px; border: 1px solid var(--line); border-radius: var(--r-md); background: var(--surf); text-align: center; }
 .places li b { font-family: var(--disp); font-weight: 600; font-size: 13.5px; line-height: 1.3; letter-spacing: -.01em; text-wrap: balance; }
-.places li small { font-family: var(--mono); font-size: 10px; letter-spacing: .06em; text-transform: uppercase; color: var(--muted); }
+.client-did { margin-top: 6px; font-size: 12px; line-height: 1.35; color: var(--ink-2, var(--muted)); text-wrap: balance; }
+.places li small { font-family: var(--mono); font-size: 10.5px; letter-spacing: .06em; text-transform: uppercase; color: var(--muted); }
 .client-logo { display: flex; align-items: center; justify-content: center; width: 100%; height: 64px; margin-bottom: 8px; padding: 8px; border-radius: 10px; background: #fff; }
 .client-logo img { max-height: 100%; max-width: 100%; object-fit: contain; pointer-events: none; -webkit-user-drag: none; }
 [data-theme="dark"] .client-logo { box-shadow: inset 0 0 0 1px rgba(255, 255, 255, .08); }
@@ -556,6 +579,8 @@ main { counter-reset: sec; }
   .svcs { grid-template-columns: repeat(2, minmax(0, 1fr)); }
   .svc { grid-column: span 1; }
   .svcs > .svc:first-child { grid-column: 1 / -1; grid-row: auto; }
+  .svcs:has(> .svc:nth-child(4)) > .svc { grid-column: span 1; }
+  .svcs:has(> .svc:nth-child(4)) > .svc:first-child, .svcs:has(> .svc:nth-child(4)) > .svc:nth-child(4) { grid-column: 1 / -1; }
   .calc { grid-template-columns: minmax(0, 1fr) 320px; }
   .steps { grid-template-columns: repeat(2, minmax(0, 1fr)); }
   .step:nth-child(3) { padding-left: 0; border-left: 0; }
