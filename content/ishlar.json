@@ -33,20 +33,20 @@
       "yonalish": "p-web"
     },
     {
-      "yonalish": "p-web",
-      "rasm": "images/works/sadulla-1.jpg",
-      "namuna": true,
+      "rasm": "images/works/uyservice-app.jpg",
+      "namuna": false,
       "oldin_keyin": false,
       "nomi": {
-        "uz": "Internet-doʻkon",
-        "ru": "Интернет-магазин",
-        "en": "Online store"
+        "uz": "UyService — usta chaqirish xizmati",
+        "ru": "UyService — сервис вызова мастера",
+        "en": "UyService — on-demand handyman service"
       },
       "izoh": {
-        "uz": "Katalog · savat · toʻlov",
-        "ru": "Каталог · корзина · оплата",
-        "en": "Catalogue · cart · payment"
-      }
+        "uz": "Veb-ilova · xarita · buyurtmalar",
+        "ru": "Веб-приложение · карта · заказы",
+        "en": "Web app · map · orders"
+      },
+      "yonalish": "p-web"
     }
   ],
   "sayt": [
@@ -63,6 +63,21 @@
         "uz": "Fastfood buyurtma boti · savat · yetkazib berish",
         "ru": "Бот для заказа фастфуда · корзина · доставка",
         "en": "Fast-food ordering bot · cart · delivery"
+      }
+    },
+    {
+      "rasm": "images/works/uyservice-app.jpg",
+      "namuna": false,
+      "oldin_keyin": false,
+      "nomi": {
+        "uz": "UyService — usta chaqirish xizmati",
+        "ru": "UyService — сервис вызова мастера",
+        "en": "UyService — on-demand handyman service"
+      },
+      "izoh": {
+        "uz": "Veb-ilova · xarita · buyurtmalar",
+        "ru": "Веб-приложение · карта · заказы",
+        "en": "Web app · map · orders"
       }
     },
     {
