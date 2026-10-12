@@ -274,6 +274,7 @@ def r_men(lang, prefix):
         photo = f'<div class="photo"><span class="photo-ini" aria-hidden="true">{e(m.get("bosh_harflar") or name[:2].upper())}</span></div>'
     chips = "".join(f"<li>{e(tr(c, lang))}</li>" for c in m.get("teglar") or [])
     n = int(m["staj"])
+    bio = "\n          ".join(f"<p>{e(p.strip())}</p>" for p in tr(m["tavsif"], lang).split("\n\n") if p.strip())
     links = "".join(f' <a href="{e(k["havola"])}" target="_blank" rel="noopener">{e(k["nomi"])} <span>{e(k["havola"].split("//")[-1])}</span></a>'
                     for k in m.get("kompaniyalar") or [] if k.get("havola"))
     if links:
@@ -283,7 +284,7 @@ def r_men(lang, prefix):
         <div class="about-text">
           <div class="card-role">{e(tr(m["lavozim"], lang))}</div>
           <h3>{e(name)}</h3>
-          <p>{e(tr(m["tavsif"], lang))}</p>
+          {bio}
           <div class="card-years"><b>{n}</b><span>{card_years(n, lang)}</span></div>
           <ul class="chips">{chips}</ul>{links}
         </div>
