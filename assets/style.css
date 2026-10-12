@@ -391,6 +391,8 @@ main { counter-reset: sec; }
 .about-text h3 { font-family: var(--disp); font-weight: 700; font-size: 40px; line-height: 1.04; letter-spacing: -.04em; }
 .about-text p { font-size: 16.5px; line-height: 1.65; max-width: 660px; }
 .about-text p + p:not(.about-links) { margin-top: -6px; }
+.about-text p:not(.about-links) a { color: var(--navy); font-weight: 600; text-decoration: underline; text-decoration-thickness: 1.5px; text-underline-offset: 3px; }
+.about-text p:not(.about-links) a:hover { color: var(--cta); }
 .card-years { display: flex; align-items: baseline; gap: 10px; padding: 14px 18px; border: 1px solid var(--line); border-radius: var(--r-md); background: var(--surf); }
 .card-years b { font-family: var(--disp); font-weight: 700; font-size: 34px; line-height: 1; letter-spacing: -.04em; color: var(--navy); }
 .card-years span { font-size: 15px; color: var(--muted); }
