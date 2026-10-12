@@ -126,6 +126,21 @@
       }
     },
     {
+      "rasm": "images/works/fazum-sayt.jpg",
+      "namuna": false,
+      "oldin_keyin": false,
+      "nomi": {
+        "uz": "Fazum — kuzatuv kameralari kompaniyasi sayti",
+        "ru": "Fazum — сайт компании видеонаблюдения",
+        "en": "Fazum — CCTV company website"
+      },
+      "izoh": {
+        "uz": "Landing · xizmatlar · bepul maslahat formasi",
+        "ru": "Лендинг · услуги · форма консультации",
+        "en": "Landing page · services · free consultation form"
+      }
+    },
+    {
       "rasm": "images/works/poputi-bot.jpg",
       "namuna": false,
       "oldin_keyin": false,
