@@ -17,6 +17,22 @@
       "yonalish": "p-net"
     },
     {
+      "rasm": "images/works/emirfood-miniapp.jpg",
+      "namuna": false,
+      "oldin_keyin": false,
+      "nomi": {
+        "uz": "EmirFood — Telegram Mini App",
+        "ru": "EmirFood — Telegram Mini App",
+        "en": "EmirFood — Telegram Mini App"
+      },
+      "izoh": {
+        "uz": "Fastfood buyurtma boti · savat · yetkazib berish",
+        "ru": "Бот для заказа фастфуда · корзина · доставка",
+        "en": "Fast-food ordering bot · cart · delivery"
+      },
+      "yonalish": "p-web"
+    },
+    {
       "yonalish": "p-web",
       "rasm": "images/works/sadulla-1.jpg",
       "namuna": true,
@@ -31,25 +47,24 @@
         "ru": "Каталог · корзина · оплата",
         "en": "Catalogue · cart · payment"
       }
-    },
-    {
-      "yonalish": "p-web",
-      "rasm": "images/works/sadulla-3.jpg",
-      "namuna": true,
-      "oldin_keyin": false,
-      "nomi": {
-        "uz": "Buyurtma boti",
-        "ru": "Бот для заказов",
-        "en": "Order bot"
-      },
-      "izoh": {
-        "uz": "Telegram · admin panel",
-        "ru": "Telegram · админ-панель",
-        "en": "Telegram · admin panel"
-      }
     }
   ],
   "sayt": [
+    {
+      "rasm": "images/works/emirfood-miniapp.jpg",
+      "namuna": false,
+      "oldin_keyin": false,
+      "nomi": {
+        "uz": "EmirFood — Telegram Mini App",
+        "ru": "EmirFood — Telegram Mini App",
+        "en": "EmirFood — Telegram Mini App"
+      },
+      "izoh": {
+        "uz": "Fastfood buyurtma boti · savat · yetkazib berish",
+        "ru": "Бот для заказа фастфуда · корзина · доставка",
+        "en": "Fast-food ordering bot · cart · delivery"
+      }
+    },
     {
       "rasm": "images/works/sadulla-1.jpg",
       "namuna": true,
@@ -78,21 +93,6 @@
         "uz": "UZ / RU",
         "ru": "UZ / RU",
         "en": "UZ / RU"
-      }
-    },
-    {
-      "rasm": "images/works/sadulla-3.jpg",
-      "namuna": true,
-      "oldin_keyin": false,
-      "nomi": {
-        "uz": "Buyurtma boti",
-        "ru": "Бот для заказов",
-        "en": "Order bot"
-      },
-      "izoh": {
-        "uz": "Telegram · admin panel",
-        "ru": "Telegram · админ-панель",
-        "en": "Telegram · admin panel"
       }
     },
     {

@@ -35,7 +35,7 @@ Sa'dulla Khaitov — `content/men.json` (rasm `images/sadulla.jpg`, ism, kasb, t
 - **Bosh sahifa tartibi:** hero → `.proof` (hamkor tashkilotlar) → `#xizmatlar` → `#kalkulyator` → `#jarayon` (shartlar: 1 oy kafolat, 50/50 to'lov — **foydalanuvchi tasdiqlashi kerak**) → `#ishlar` "Loyihalar" → `#men` → `#savollar` → `#aloqa`.
 - Header bitta qatorda: 3 xizmat + "Narxlar / Ish tartibi / Savollar" (`.nav-plain`, 1201–1400 px da yashiriladi), ≤1200 burger.
 - **Rad etilgan:** Buxoro ravoqlari/girih, Bricolage Grotesque. Avvalgi dizaynlar (Unbounded+Manrope ko'k; Geologica+Onest o'rmon-yashil/laym) almashtirilgan.
-- **Haqiqiy ishlar (2026-10-12):** `images/works/temiryol-uzel.jpg` — Buxoro mintaqaviy temir yo'l uzeli ofis tarmog'i (MikroTik CCR/CRS shkafi, foydalanuvchi yuborgan, EXIF olib tashlangan), `ishlar.json` bosh + internet ro'yxatida birinchi, `namuna: false`. Yangi haqiqiy rasm kelsa — shu tartibda, namunani almashtirib.
+- **Haqiqiy ishlar (2026-10-12):** `images/works/temiryol-uzel.jpg` — Buxoro mintaqaviy temir yo'l uzeli ofis tarmog'i (MikroTik CCR/CRS shkafi, foydalanuvchi yuborgan, EXIF olib tashlangan), `ishlar.json` bosh + internet ro'yxatida birinchi, `namuna: false`. `images/works/emirfood-miniapp.jpg` — EmirFood fastfood buyurtma Telegram Mini App (foydalanuvchi skrinshoti, sariq fon ustida 1200×780 kompozitsiya), bosh + sayt ro'yxatida, "Buyurtma boti" namunasi o'rniga. Yangi haqiqiy rasm kelsa — shu tartibda, namunani almashtirib (tik skrinshotlarni yotiq kompozitsiyaga keltiring).
 - **Tez o'tish:** `@view-transition` + `speculationrules`. **Kesh:** CSS/JS o'zgarganda 12 sahifadagi `?v=` ni yangilang. Breakpoint: 1200/900/600; telefon 390 px.
 
 ## Hali to'ldirilishi kerak (foydalanuvchidan so'raladi)
