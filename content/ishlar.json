@@ -158,8 +158,8 @@
       }
     },
     {
-      "rasm": "",
-      "namuna": false,
+      "rasm": "images/works/ai-hisobot.jpg",
+      "namuna": true,
       "oldin_keyin": false,
       "nomi": {
         "uz": "Hisobotlarni avtomatlashtirish",
