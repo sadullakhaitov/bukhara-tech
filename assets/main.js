@@ -64,7 +64,7 @@ if (header && burger) {
 // Worker manzili. Bo'sh bo'lsa, forma xato ko'rsatadi (Telegram/qo'ng'iroq havolasi bilan).
 const FORM_ENDPOINT = "https://bukhara-tech-form.sadulla-khaitov.workers.dev";
 // Google Analytics 4: "G-..." o'lchov ID'sini shu yerga yozing — bo'sh bo'lsa hech narsa yuklanmaydi.
-const GA_ID = "";
+const GA_ID = "G-9GRC5TFJ4P";
 if (GA_ID && !/^(localhost|127\.|file:)/.test(location.hostname || "file:")) {
   const g = document.createElement("script");
   g.async = true;
