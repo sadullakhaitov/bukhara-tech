@@ -370,9 +370,9 @@ main { counter-reset: sec; }
 [data-theme="dark"] .client-logo { box-shadow: inset 0 0 0 1px rgba(255, 255, 255, .08); }
 
 /* ---------- Asoschi haqida ---------- */
-.about { display: grid; grid-template-columns: 360px minmax(0, 1fr); gap: 56px; align-items: start; padding: 24px; border: 1px solid var(--line); border-radius: 24px; background: var(--bg); }
-.about .photo { height: 440px; border-radius: var(--r-lg); background: var(--navy-lt); }
-.about .photo img { object-position: 50% 18%; }
+.about { display: grid; grid-template-columns: 440px minmax(0, 1fr); gap: 56px; align-items: stretch; padding: 24px; border: 1px solid var(--line); border-radius: 24px; background: var(--bg); }
+.about .photo { height: auto; min-height: 440px; border-radius: var(--r-lg); background: var(--navy-lt); }
+.about .photo img { object-position: 50% 30%; }
 .about .photo-ini { font-size: 110px; }
 .about-text { display: flex; flex-direction: column; align-items: flex-start; gap: 18px; padding: 16px 16px 16px 0; }
 .card-role { display: inline-flex; align-items: center; gap: 8px; font: 500 12px/1.3 var(--mono); letter-spacing: .08em; text-transform: uppercase; color: var(--navy); }
@@ -547,7 +547,7 @@ main { counter-reset: sec; }
   .step:nth-child(3) { padding-left: 0; border-left: 0; }
   .step:nth-child(n+3) { border-top: 1px solid var(--line); }
   .terms { grid-template-columns: repeat(2, minmax(0, 1fr)); }
-  .about { grid-template-columns: 300px minmax(0, 1fr); gap: 40px; }
+  .about { grid-template-columns: 340px minmax(0, 1fr); gap: 40px; }
   .sets { grid-template-columns: 1fr; max-width: 640px; gap: 24px; }
 }
 
@@ -563,7 +563,7 @@ main { counter-reset: sec; }
   .final, .cta-box { flex-direction: column; align-items: flex-start; padding: 40px; }
   .services, .works { grid-template-columns: repeat(2, minmax(0, 1fr)); }
   .about { grid-template-columns: 1fr; }
-  .about .photo { max-width: 360px; width: 100%; height: 400px; }
+  .about .photo { max-width: 420px; width: 100%; height: auto; min-height: 0; aspect-ratio: 5 / 6; }
   .about-text { padding: 0 8px 8px; }
   .others-list { grid-template-columns: 1fr; }
   .profile-text { padding: 44px; }
@@ -660,7 +660,7 @@ main { counter-reset: sec; }
   .places li small { display: none; }
 
   .about { padding: 12px; gap: 18px; border-radius: 20px; }
-  .about .photo { max-width: none; height: 320px; }
+  .about .photo { max-width: none; }
   .about-text { gap: 14px; padding: 4px 6px 8px; }
   .about-text h3 { font-size: 30px; }
   .about-text p { font-size: 16px; }
