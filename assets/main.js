@@ -519,4 +519,4 @@ function marquee(list, SPEED) {
   requestAnimationFrame(tick);
 }
 document.querySelectorAll(".clients").forEach((el) => marquee(el, 32)); // px / soniya
-document.querySelectorAll(".reviews").forEach((el) => marquee(el, 26));
+document.querySelectorAll(".reviews").forEach((el) => { if (el.children.length >= 3) marquee(el, 26); });

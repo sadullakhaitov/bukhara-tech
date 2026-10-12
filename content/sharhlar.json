@@ -1,3 +1,28 @@
 {
-  "sharhlar": []
+  "sharhlar": [
+    {
+      "yonalish": "p-web",
+      "belgi": "",
+      "mavzu": {
+        "uz": "Sayt va botlar",
+        "ru": "Сайты и боты",
+        "en": "Websites & bots"
+      },
+      "matn": {
+        "uz": "Rahmat katta! Yana qoʻshimcha nimadir qilinsa aytaman, keyin ham hisob-kitob qilib ketamiz.",
+        "ru": "Большое спасибо! Если понадобится что-то ещё — скажу, будем работать и дальше.",
+        "en": "Thank you very much! If we need anything else, I'll let you know — we'll keep working together."
+      },
+      "ism": {
+        "uz": "N. Muxammedov",
+        "ru": "Н. Мухаммедов",
+        "en": "N. Mukhammedov"
+      },
+      "joy": {
+        "uz": "Osiyo xalqaro universiteti",
+        "ru": "Международный университет Азии",
+        "en": "Asia International University"
+      }
+    }
+  ]
 }
