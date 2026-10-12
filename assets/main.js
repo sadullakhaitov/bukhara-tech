@@ -63,6 +63,18 @@ if (header && burger) {
 // Buyurtma formasi -> Cloudflare Worker -> Telegram (worker/README.md ga qarang).
 // Worker manzili. Bo'sh bo'lsa, forma xato ko'rsatadi (Telegram/qo'ng'iroq havolasi bilan).
 const FORM_ENDPOINT = "https://bukhara-tech-form.sadulla-khaitov.workers.dev";
+// Google Analytics 4: "G-..." o'lchov ID'sini shu yerga yozing — bo'sh bo'lsa hech narsa yuklanmaydi.
+const GA_ID = "";
+if (GA_ID && !/^(localhost|127\.|file:)/.test(location.hostname || "file:")) {
+  const g = document.createElement("script");
+  g.async = true;
+  g.src = "https://www.googletagmanager.com/gtag/js?id=" + GA_ID;
+  document.head.append(g);
+  window.dataLayer = window.dataLayer || [];
+  window.gtag = function () { dataLayer.push(arguments); };
+  gtag("js", new Date());
+  gtag("config", GA_ID);
+}
 const form = document.querySelector("#order-form");
 if (form) {
   const done = form.querySelector(".form-done");

@@ -213,6 +213,12 @@ main { counter-reset: sec; }
 .link-arrow:hover { color: var(--navy); }
 .link-arrow:hover i { transform: translateX(3px); }
 .promise { display: flex; align-items: center; gap: 10px; font-size: 14px; color: var(--muted); }
+.hero-me { display: inline-flex; align-items: center; gap: 12px; align-self: flex-start; padding: 6px 16px 6px 6px; border: 1px solid var(--line); border-radius: 999px; background: var(--surf); color: var(--ink); text-decoration: none; transition: border-color .18s; }
+.hero-me:hover { border-color: var(--line-strong); }
+.hero-me img { width: 44px; height: 44px; border-radius: 50%; object-fit: cover; object-position: 50% 22%; }
+.hero-me span { display: flex; flex-direction: column; line-height: 1.25; }
+.hero-me b { font-family: var(--disp); font-weight: 600; font-size: 15px; letter-spacing: -.01em; }
+.hero-me small { font-size: 13px; color: var(--muted); }
 .promise i { width: 8px; height: 8px; border-radius: 50%; background: var(--net); box-shadow: 0 0 0 4px var(--net-lt); flex-shrink: 0; }
 .stats { display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); border: 1px solid var(--line); border-radius: var(--r-md); background: var(--surf); }
 .stat { display: flex; flex-direction: column; gap: 6px; padding: 18px 20px; }
@@ -472,6 +478,8 @@ main { counter-reset: sec; }
 .form.flash { animation: form-flash 1.6s ease-out; border-radius: 12px; }
 @keyframes form-flash { 0%, 30% { box-shadow: 0 0 0 4px color-mix(in srgb, var(--cta) 55%, transparent); } 100% { box-shadow: 0 0 0 4px transparent; } }
 #order-form { scroll-margin-top: 130px; }
+#prezentatsiya { scroll-margin-top: 120px; }
+#prezentatsiya:target { border-color: var(--pres); box-shadow: 0 0 0 3px var(--pres-lt); }
 .form-done { padding: 14px; border-radius: var(--r-sm); background: var(--net-lt); color: var(--net); font-weight: 600; }
 .form-error { padding: 14px; border-radius: var(--r-sm); background: #FEECEC; color: #B42318; font-weight: 600; }
 [data-theme="dark"] .form-error { background: #3A1616; color: #FFB4AB; }
@@ -636,6 +644,7 @@ main { counter-reset: sec; }
   .hero-actions .btn { width: 100%; }
   .link-arrow { align-self: center; }
   .promise { justify-content: center; font-size: 13px; }
+  .hero-me { align-self: center; }
   .stat { padding: 14px 12px; gap: 4px; }
   .stat b { font-size: 23px; }
   .stat span { font-size: 12px; }
