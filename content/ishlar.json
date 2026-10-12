@@ -139,21 +139,6 @@
         "ru": "Лендинг · услуги · форма консультации",
         "en": "Landing page · services · free consultation form"
       }
-    },
-    {
-      "rasm": "images/works/poputi-bot.jpg",
-      "namuna": false,
-      "oldin_keyin": false,
-      "nomi": {
-        "uz": "PoPuti — yoʻldosh topish boti",
-        "ru": "PoPuti — бот попутчиков",
-        "en": "PoPuti — ride-sharing bot"
-      },
-      "izoh": {
-        "uz": "Haydovchi va yoʻlovchi zayavkalari · qidiruv · eslatmalar",
-        "ru": "Заявки водителей и пассажиров · поиск · напоминания",
-        "en": "Driver and passenger requests · search · reminders"
-      }
     }
   ],
   "ai": [
@@ -170,6 +155,21 @@
         "uz": "Buyurtma va dillerlar · Excel hisobot oʻzi keladi",
         "ru": "Заказы и дилеры · Excel-отчёт приходит сам",
         "en": "Orders and dealers · Excel report sent automatically"
+      }
+    },
+    {
+      "rasm": "images/works/poputi-bot.jpg",
+      "namuna": false,
+      "oldin_keyin": false,
+      "nomi": {
+        "uz": "PoPuti — yoʻldosh topish boti",
+        "ru": "PoPuti — бот попутчиков",
+        "en": "PoPuti — ride-sharing bot"
+      },
+      "izoh": {
+        "uz": "Haydovchi va yoʻlovchi zayavkalari · qidiruv · eslatmalar",
+        "ru": "Заявки водителей и пассажиров · поиск · напоминания",
+        "en": "Driver and passenger requests · search · reminders"
       }
     }
   ],
