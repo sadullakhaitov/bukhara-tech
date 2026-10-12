@@ -1,38 +1,6 @@
 {
   "bosh": [
     {
-      "yonalish": "p-net",
-      "rasm": "images/works/sherali-2.jpg",
-      "namuna": true,
-      "oldin_keyin": false,
-      "nomi": {
-        "uz": "Mehmonxona Wi-Fi",
-        "ru": "Wi-Fi в гостинице",
-        "en": "Hotel Wi-Fi"
-      },
-      "izoh": {
-        "uz": "Barcha qavatlar · uzilmaydi",
-        "ru": "Все этажи · без обрывов",
-        "en": "Every floor · no dropouts"
-      }
-    },
-    {
-      "yonalish": "p-net",
-      "rasm": "images/works/sherali-5.jpg",
-      "namuna": true,
-      "oldin_keyin": false,
-      "nomi": {
-        "uz": "Uy tarmogʻi",
-        "ru": "Домашняя сеть",
-        "en": "Home network"
-      },
-      "izoh": {
-        "uz": "Butun uyga Wi-Fi",
-        "ru": "Wi-Fi по всему дому",
-        "en": "Wi-Fi throughout the house"
-      }
-    },
-    {
       "yonalish": "p-web",
       "rasm": "images/works/sadulla-1.jpg",
       "namuna": true,
@@ -46,22 +14,6 @@
         "uz": "Katalog · savat · toʻlov",
         "ru": "Каталог · корзина · оплата",
         "en": "Catalogue · cart · payment"
-      }
-    },
-    {
-      "yonalish": "p-net",
-      "rasm": "images/works/sherali-1.jpg",
-      "namuna": true,
-      "oldin_keyin": false,
-      "nomi": {
-        "uz": "Ofis tarmogʻi",
-        "ru": "Сеть офиса",
-        "en": "Office network"
-      },
-      "izoh": {
-        "uz": "Ish oʻrinlari · MikroTik",
-        "ru": "Рабочие места · MikroTik",
-        "en": "Workstations · MikroTik"
       }
     },
     {
@@ -82,18 +34,18 @@
     },
     {
       "yonalish": "p-net",
-      "rasm": "images/works/sherali-3.jpg",
+      "rasm": "images/works/sherali-1.jpg",
       "namuna": true,
       "oldin_keyin": false,
       "nomi": {
-        "uz": "Filiallar orasida VPN",
-        "ru": "VPN между филиалами",
-        "en": "VPN between branches"
+        "uz": "Ofis tarmogʻi",
+        "ru": "Сеть офиса",
+        "en": "Office network"
       },
       "izoh": {
-        "uz": "IPsec · MikroTik",
-        "ru": "IPsec · MikroTik",
-        "en": "IPsec · MikroTik"
+        "uz": "Ish oʻrinlari · MikroTik",
+        "ru": "Рабочие места · MikroTik",
+        "en": "Workstations · MikroTik"
       }
     }
   ],

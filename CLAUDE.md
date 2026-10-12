@@ -25,17 +25,19 @@ Sa'dulla Khaitov — `content/men.json` (rasm `images/sadulla.jpg`, ism, kasb, t
 - **GitHub Action** `.github/workflows/cms.yml`: `content/**` yoki `tools/build.py` o'zgarsa build qiladi, commit "Sayt yangilandi (admin panel)" + Pages qurilishini so'raydi.
 - Panelda yo'q (kod orqali o'zgartiriladi): FAQ, sarlavhalar va boshqa matnlar, usta sahifasidagi xizmatlar ro'yxati, badge/chips, set/paket tugma yozuvlari (build.py `T` lug'atida).
 
-## Dizayn qarorlari
+## Dizayn qarorlari (2026-10-12 dan — 3-avlod, "tanib bo'lmas" yangilanish)
 
-- **Hozirgi uslub foydalanuvchiga yoqqan, saqlansin:** och fon #F4F6F9, Unbounded (sarlavha) + Manrope (matn) + JetBrains Mono (kichik yorliqlar), har ustaga o'z rangi, logotip 4 rangli 2×2 kvadrat.
-- **Rad etilgan:** Buxoro ravoqlari va girih naqshli, Bricolage Grotesque shriftli uslub — foydalanuvchiga "umuman yoqmadi". Qaytarmang.
-- **Kunduzgi/tungi rejim:** headerdagi oy/quyosh tugmasi (`.theme-btn`). Ranglar `[data-theme="dark"]` da qayta belgilangan (`assets/style.css`), tanlov `localStorage` da saqlanadi, birinchi kirishda tizim sozlamasiga qaraladi (`<head>` dagi kichik skript). Rangli fon ustidagi matn uchun `#fff` emas, `var(--on-acc)` ishlating.
-- **Tez va silliq o'tish (2026-10-02):** `assets/style.css` boshida `@view-transition { navigation: auto; }` (header va `.mbar` joyida qoladi), har sahifa `<head>` ida `speculationrules` — havolaga sichqoncha borganda (telefonda bosilganda) keyingi sahifa oldindan yuklanadi. Turbo/React **ishlatilmaydi**: `main.js` qayta ishga tushib, `const` takrorlanishi xato beradi. Yangi sahifa qo'shilsa, `<head>` ga shu ikki skriptni (tema + speculationrules) qo'shing.
-- **Liquid glass (2026-10-02):** `style.css` oxiridagi blok. Fonda `body::before` — 5 yo'nalish rangidagi xira dog'lar; kartalar `var(--glass-sheen), var(--glass)` (yarim shaffof, blur'siz — telefonda tez ishlashi uchun); haqiqiy `backdrop-filter` faqat header, `.mbar`, hero yorliqlari, tema/burger va outline tugmalarda. Tokenlar `--glass*` kunduzgi va tungi rejimda alohida. `prefers-reduced-transparency` da oddiy yuzalarga qaytadi. Yangi karta turi qo'shilsa, shu blokdagi ro'yxatga qo'shing.
-- **Kesh:** barcha sahifalarda `assets/style.css?v=...` va `assets/main.js?v=...` — CSS/JS o'zgarganda 12 ta sahifadagi `v=` ni yangilang, aks holda brauzer eski CSS'ni ko'rsatadi (2026-10-02 da shu xato bo'lgan: menyu yozuvlari sinib ketgan).
-- **Hero:** o'ngda 2×2 rasm kollaji (`.hero-grid`, `images/works` dagi Unsplash namunalari: sadulla-2 sayt, sadulla-5 AI, sherali-3 internet, doston-6 video), har birida yo'nalish nomi va "Namuna rasmlar" yorlig'i. Haqiqiy ish rasmlari kelsa almashtiriladi.
-- Sayt oddiy HTML/CSS/JS, build yo'q. `assets/style.css` da 3 ta breakpoint: 1200, 900, 600 px. Telefon versiyasi 390 px da tekshirilgan.
-- Sahifalar dastlab Python skripti bilan yig'ilgan, lekin skript repoda **yo'q** — endi HTML fayllarni to'g'ridan-to'g'ri tahrirlang. Ko'p sahifali o'zgarishda (masalan header) 6 ta faylning (UZ+RU+EN — 18 ta) hammasini birdek o'zgartirishni unutmang.
+- **Ko'rinish: "kompaniya + asoschi"** (portfolio emas). Hero, xizmatlar, ish tartibi, formalar — kompaniya/mijoz ovozida (passiv: "aytiladi", "javob olasiz"; RU "называют", EN "you get"); "men" faqat `#men` "Asoschi haqida" bo'limidagi bio'da (asoschining o'z so'zlari). Xizmat sahifalarida: "Ishni asoschi Sa'dulla Khaitov shaxsan bajaradi va javob beradi".
+- **Ranglar:** iliq tosh fon `--bg #F4F2EC`, o'rmon-yashil `--forest #0B3B2E` (hero, kalkulyator jami, mashhur paket, footer), laym `--lime #C6F16D` (asosiy tugmalar, raqamlar, yakuniy CTA bloki; ustidagi matn har doim `--lime-ink` to'q). Yo'nalishlar: web #2F5BEA, ai #7C3AED, net #0B7A5C (`.p-*` → `--acc/--lt`). Tungi rejim `[data-theme="dark"]` da alohida.
+- **Shriftlar:** Geologica (sarlavha, `--disp`), Onest (matn, `--body`), IBM Plex Mono (yorliqlar, `--mono`) — uchalasida kirill bor. Unbounded/Manrope/JetBrains Mono endi ishlatilmaydi.
+- **Komponentlar:** tugmalar "pill" (999px), bo'lim sarlavhasi ustida CSS counter raqam (`01`, `02` …), hero — dumaloq burchakli to'q panel + to'r naqsh + o'ngda `cms:hero-xizmatlar` kartasi (xizmatlar va "…dan" narxlar `xizmatlar.json` dan, ish vaqti `aloqa.json` dan). Logotip: 2×2 barg shaklli kvadratlar (laym/o'rmon), `assets/favicon.svg`, `logo.png`, `og.png` 2026-10-12 da qayta chizilgan.
+- Header bitta qatorda: 3 xizmat + "Narxlar / Ish tartibi / Savollar" (`.nav-plain`, 1201–1400 px da yashiriladi), ≤1200 burger.
+- **Bosh sahifa tartibi:** hero → `#xizmatlar` → `#kalkulyator` → `#jarayon` (4 qadam + shartlar: 1 oy kafolat, 50/50 to'lov, muddat yoziladi, ko'rik bepul — **foydalanuvchi tasdiqlashi kerak**) → `#ishlar` "Loyihalar" (3 ta) + "Hamkorlik qilgan tashkilotlar" → `#men` "Asoschi haqida" → `#savollar` → `#aloqa` (laym CTA + forma). `section-white` navbatma-navbat.
+- **Rad etilgan:** Buxoro ravoqlari/girih naqshi, Bricolage Grotesque — qaytarmang.
+- **Kunduzgi/tungi rejim:** `.theme-btn`, tanlov `localStorage`, `<head>` dagi kichik skript. Rangli fon ustidagi matn uchun `var(--on-acc)` yoki laym ustida `var(--lime-ink)`.
+- **Tez o'tish:** `@view-transition` + har sahifada `speculationrules`. Turbo/React ishlatilmaydi.
+- **Kesh:** CSS/JS o'zgarganda 12 sahifadagi `?v=` ni yangilang.
+- 3 breakpoint: 1200, 900, 600 px; telefon 390 px da tekshiriladi. Telefonda `.svcs/.works/.sets` — cheksiz surish qatorlari (`loopRow`, native scroll), `.mbar` pastda.
 
 ## Hali to'ldirilishi kerak (foydalanuvchidan so'raladi)
 

@@ -58,6 +58,15 @@ T = {  # sahifadagi doimiy yozuvlar
     "c_ig": {"uz": "Instagram", "ru": "Instagram", "en": "Instagram"},
     "c_hours": {"uz": "Ish vaqti", "ru": "Время работы", "en": "Working hours"},
     "c_addr": {"uz": "Manzil", "ru": "Адрес", "en": "Address"},
+    # Hero'dagi "Xizmatlar va narxlar" kartasi
+    "hc_title": {"uz": "Xizmatlar va narxlar", "ru": "Услуги и цены", "en": "Services and prices"},
+    "hc_calc": {"uz": "Aniq narxni hisoblash", "ru": "Рассчитать точную цену", "en": "Calculate the exact price"},
+    "hc_sub": {
+        "p-web": {"uz": "Landing · korporativ sayt · Telegram bot", "ru": "Лендинг · корпоративный сайт · Telegram-бот",
+                  "en": "Landing page · company site · Telegram bot"},
+        "p-ai": {"uz": "AI yordamchi · avtomatlashtirish", "ru": "AI-помощник · автоматизация", "en": "AI assistant · automation"},
+        "p-net": {"uz": "Wi-Fi · MikroTik · kompyuterlar", "ru": "Wi-Fi · MikroTik · компьютеры", "en": "Wi-Fi · MikroTik · computers"},
+    },
 }
 def load(name):
     return json.loads((C / f"{name}.json").read_text(encoding="utf-8"))
@@ -126,6 +135,19 @@ def r_svcs(lang, prefix):
         </article>''')
     out.append("      </div>")
     return "\n".join(out)
+
+
+def r_hero(lang, prefix):
+    a = load("aloqa")
+    rows = []
+    for s in load("xizmatlar")["kartalar"]:
+        d = s["yonalish"]
+        rows.append(f'''<a class="hc-row {d}" href="{DIR_PAGE[d]}.html"><span class="hc-ico">{FA.format(DIR_ICON[d])}</span><span class="hc-text"><b>{e(tr(s["tugma"], lang))}</b><small>{e(T["hc_sub"][d][lang])}</small></span><span class="hc-price">{T["from"][lang].format(p=money(s["narx"]))}</span></a>''')
+    return f'''<div class="hero-card">
+          <div class="hc-head"><span>{T["hc_title"][lang]}</span><span class="hc-live"><i></i>{e(tr(a["ish_vaqti"], lang))}</span></div>
+          {"".join(rows)}
+          <a class="hc-foot" href="#kalkulyator">{T["hc_calc"][lang]} {FA.format("fa-arrow-right")}</a>
+        </div>'''
 
 
 def r_calc(lang, prefix):
@@ -298,7 +320,7 @@ def phone_digits(p):
     return "+" + d
 
 
-HOME = {"stat-tajriba": r_total, "xizmatlar": r_svcs, "kalkulyator": r_calc, "ishlar": lambda l, p: r_works(l, p, "bosh"),
+HOME = {"hero-xizmatlar": r_hero, "stat-tajriba": r_total, "xizmatlar": r_svcs, "kalkulyator": r_calc, "ishlar": lambda l, p: r_works(l, p, "bosh"),
         "sharhlar": r_reviews, "mijozlar": r_clients, "men": r_men, "aloqa": r_contacts, "rekvizit": r_rekvizit}
 MASTER = {"ishlar": lambda l, p, m: r_works(l, p, m), "paketlar": r_packages, "alohida": r_note,
           "rekvizit": lambda l, p, m: r_rekvizit(l, p)}

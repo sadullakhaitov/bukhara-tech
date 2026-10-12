@@ -5,12 +5,12 @@
       "sarlavha": {
         "uz": "Biznesimga sayt yoki bot kerak",
         "ru": "Нужен сайт или бот для бизнеса",
-        "en": "I need a website or bot"
+        "en": "Need a website or a bot"
       },
       "matn": {
-        "uz": "Buyurtma qabul qiladigan sayt yoki Telegram bot qilib beraman.",
-        "ru": "Сделаю сайт или Telegram-бота, который принимает заказы.",
-        "en": "I'll build a website or Telegram bot that takes orders."
+        "uz": "Buyurtma qabul qiladigan sayt yoki Telegram bot — telefonda tez ochiladi, soʻrovlar Telegramga keladi.",
+        "ru": "Сайт или Telegram-бот, который принимает заказы: быстро открывается на телефоне, заявки приходят в Telegram.",
+        "en": "A website or Telegram bot that takes orders: fast on phones, with requests sent to Telegram."
       },
       "narx": 1500000,
       "tugma": {
@@ -27,9 +27,9 @@
         "en": "Routine work eats your time"
       },
       "matn": {
-        "uz": "AI yordamchi mijozlarga oʻzi javob beradi, hisobotlar oʻzi tayyorlanadi.",
-        "ru": "AI-помощник сам отвечает клиентам, отчёты готовятся сами.",
-        "en": "An AI assistant answers customers and reports build themselves."
+        "uz": "AI yordamchi mijozlarga kechayu kunduz javob beradi, hisobot va jadvallar oʻzi tayyorlanadi.",
+        "ru": "AI-помощник отвечает клиентам круглосуточно, отчёты и таблицы готовятся сами.",
+        "en": "An AI assistant answers customers 24/7; reports and spreadsheets fill themselves in."
       },
       "narx": 700000,
       "tugma": {
@@ -46,9 +46,9 @@
         "en": "Slow internet, weak Wi-Fi"
       },
       "matn": {
-        "uz": "Wi-Fi'ni butun uy yoki ofisga yetkazaman, router va kompyuterlarni sozlab beraman.",
-        "ru": "Сделаю Wi-Fi на весь дом или офис, настрою роутер и компьютеры.",
-        "en": "I'll get Wi-Fi to every room and set up your router and computers."
+        "uz": "Wi-Fi butun uy yoki ofisga yetadi, router, MikroTik va kompyuterlar toʻgʻri sozlanadi.",
+        "ru": "Wi-Fi на весь дом или офис, правильная настройка роутера, MikroTik и компьютеров.",
+        "en": "Wi-Fi in every room, with your router, MikroTik and computers set up properly."
       },
       "narx": 150000,
       "tugma": {
