@@ -205,6 +205,21 @@
       }
     },
     {
+      "rasm": "images/works/ofis-router.jpg",
+      "namuna": false,
+      "oldin_keyin": false,
+      "nomi": {
+        "uz": "Ofis tarmogʻi",
+        "ru": "Сеть офиса",
+        "en": "Office network"
+      },
+      "izoh": {
+        "uz": "TP-Link router · Wi-Fi sozlash",
+        "ru": "Роутер TP-Link · настройка Wi-Fi",
+        "en": "TP-Link router · Wi-Fi setup"
+      }
+    },
+    {
       "rasm": "images/works/sherali-2.jpg",
       "namuna": true,
       "oldin_keyin": false,
