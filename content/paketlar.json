@@ -191,19 +191,6 @@
           "ru": "в месяц",
           "en": "per month"
         }
-      },
-      {
-        "nomi": {
-          "uz": "PowerPoint prezentatsiya",
-          "ru": "Презентация PowerPoint",
-          "en": "PowerPoint presentation"
-        },
-        "narx": 25000,
-        "izoh": {
-          "uz": "1 slayd uchun",
-          "ru": "за 1 слайд",
-          "en": "per slide"
-        }
       }
     ]
   },
@@ -606,6 +593,201 @@
           "uz": "1 kompyuter uchun",
           "ru": "за 1 ПК",
           "en": "per PC"
+        }
+      }
+    ]
+  },
+  "prezentatsiya": {
+    "paketlar": [
+      {
+        "nomi": {
+          "uz": "Qisqa taqdimot",
+          "ru": "Короткая презентация",
+          "en": "Short deck"
+        },
+        "tavsif": {
+          "uz": "Mahsulot, xizmat yoki gʻoyani tanishtirish uchun",
+          "ru": "Чтобы представить продукт, услугу или идею",
+          "en": "To introduce a product, service or idea"
+        },
+        "mashhur": false,
+        "tarkibi": [
+          {
+            "matn": {
+              "uz": "10 slaydgacha",
+              "ru": "До 10 слайдов",
+              "en": "Up to 10 slides"
+            }
+          },
+          {
+            "matn": {
+              "uz": "Korporativ uslub va ranglaringiz",
+              "ru": "Ваш фирменный стиль и цвета",
+              "en": "Your brand style and colours"
+            }
+          },
+          {
+            "matn": {
+              "uz": "Tayyor: 1–2 kun",
+              "ru": "Готово за 1–2 дня",
+              "en": "Ready in 1–2 days"
+            }
+          },
+          {
+            "matn": {
+              "uz": "PPTX va PDF fayl",
+              "ru": "Файлы PPTX и PDF",
+              "en": "PPTX and PDF files"
+            }
+          }
+        ],
+        "alohida_narx": 0,
+        "narx": 250000,
+        "uskuna": {
+          "uz": "tayyor fayl bilan",
+          "ru": "с готовыми файлами",
+          "en": "with ready files"
+        }
+      },
+      {
+        "nomi": {
+          "uz": "Hisobot yoki investorlar uchun",
+          "ru": "Отчёт или для инвесторов",
+          "en": "Report or investor deck"
+        },
+        "tavsif": {
+          "uz": "Yillik hisobot, natijalar, investorlar taqdimoti",
+          "ru": "Годовой отчёт, результаты, презентация для инвесторов",
+          "en": "Annual report, results, investor pitch"
+        },
+        "mashhur": true,
+        "tarkibi": [
+          {
+            "matn": {
+              "uz": "20 slaydgacha",
+              "ru": "До 20 слайдов",
+              "en": "Up to 20 slides"
+            }
+          },
+          {
+            "matn": {
+              "uz": "Grafik va infografikalar",
+              "ru": "Графики и инфографика",
+              "en": "Charts and infographics"
+            }
+          },
+          {
+            "matn": {
+              "uz": "Maʼlumotni tushunarli tuzib beraman",
+              "ru": "Структурирую информацию понятно",
+              "en": "Clear structure for your data"
+            }
+          },
+          {
+            "matn": {
+              "uz": "2 marta tuzatish",
+              "ru": "2 раунда правок",
+              "en": "2 rounds of revisions"
+            }
+          }
+        ],
+        "alohida_narx": 500000,
+        "narx": 450000,
+        "uskuna": {
+          "uz": "tayyor fayl bilan",
+          "ru": "с готовыми файлами",
+          "en": "with ready files"
+        }
+      },
+      {
+        "nomi": {
+          "uz": "Katta taqdimot",
+          "ru": "Большая презентация",
+          "en": "Large deck"
+        },
+        "tavsif": {
+          "uz": "Konferensiya, himoya yoki katta loyiha uchun",
+          "ru": "Для конференции, защиты или крупного проекта",
+          "en": "For a conference, defence or large project"
+        },
+        "mashhur": false,
+        "tarkibi": [
+          {
+            "matn": {
+              "uz": "40 slaydgacha",
+              "ru": "До 40 слайдов",
+              "en": "Up to 40 slides"
+            }
+          },
+          {
+            "matn": {
+              "uz": "Animatsiya va oʻtishlar",
+              "ru": "Анимация и переходы",
+              "en": "Animations and transitions"
+            }
+          },
+          {
+            "matn": {
+              "uz": "Maʼruza uchun qisqa matn",
+              "ru": "Короткий текст для выступления",
+              "en": "Short speaker notes"
+            }
+          },
+          {
+            "matn": {
+              "uz": "3 marta tuzatish",
+              "ru": "3 раунда правок",
+              "en": "3 rounds of revisions"
+            }
+          }
+        ],
+        "alohida_narx": 1000000,
+        "narx": 850000,
+        "uskuna": {
+          "uz": "tayyor fayl bilan",
+          "ru": "с готовыми файлами",
+          "en": "with ready files"
+        }
+      }
+    ],
+    "alohida": [
+      {
+        "nomi": {
+          "uz": "Bitta slayd",
+          "ru": "Один слайд",
+          "en": "Single slide"
+        },
+        "narx": 25000,
+        "izoh": {
+          "uz": "1 slayd uchun",
+          "ru": "за 1 слайд",
+          "en": "per slide"
+        }
+      },
+      {
+        "nomi": {
+          "uz": "Mavjud prezentatsiyani qayta dizayn",
+          "ru": "Редизайн готовой презентации",
+          "en": "Redesign of an existing deck"
+        },
+        "narx": 15000,
+        "izoh": {
+          "uz": "1 slayd uchun",
+          "ru": "за 1 слайд",
+          "en": "per slide"
+        }
+      },
+      {
+        "nomi": {
+          "uz": "Diagramma yoki infografika",
+          "ru": "Диаграмма или инфографика",
+          "en": "Chart or infographic"
+        },
+        "narx": 30000,
+        "izoh": {
+          "uz": "1 dona",
+          "ru": "за 1 шт.",
+          "en": "each"
         }
       }
     ]

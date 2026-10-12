@@ -110,3 +110,5 @@ E'lonlar soni (raqobat ko'rsatkichi): sayt/bot 57, Wi-Fi/internet 42, kamera 41,
 - **Sharh:** N. Muxammedov (OXU), foydalanuvchi rozilikni tasdiqladi.
 - **Google Analytics:** `assets/main.js` `GA_ID = "G-9GRC5TFJ4P"` (2026-10-13, oqim "BukharaTech"; localhost/file da yuklanmaydi).
 - Prezentatsiya rasmlari — foydalanuvchi keyin yuboradi.
+- **2026-10-13: Prezentatsiya — alohida sahifa** `prezentatsiya.html` (uz/ru/en, foydalanuvchi soʻrovi: menyuga chiqarish). Menyuda 4-band (`.p-pres`, `fa-person-chalkboard`), hero-dirs, "Boshqa xizmatlar" roʻyxatlarida, footer'da, sitemap'da. build.py `PAGES` ga qoʻshilgan (`DIR_PAGE p-pres → prezentatsiya`); `paketlar.json` `prezentatsiya`: Qisqa (10 slayd) 250 000, Hisobot/investorlar (20) 450 000 (mashhur), Katta (40) 850 000; alohida: 1 slayd 25 000, qayta dizayn 15 000/slayd, diagramma 30 000 — **narxlar foydalanuvchi tasdiqlashi kerak**. `ishlar.json` `prezentatsiya: []` — boʻsh boʻlsa "Slayd namunalari tez orada" (`.works-soon`); slayd rasmlari kelsa shu roʻyxatga qoʻshiladi (bosh sahifa karuseliga ham oʻzi tushadi). sayt.html'dan prezentatsiya xizmati, chip va alohida narxi olib tashlandi.
+

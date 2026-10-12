@@ -646,6 +646,141 @@ collections:
             widget: string
             required: false
           required: false
+    - name: prezentatsiya
+      label: Prezentatsiyalar sahifasi
+      widget: object
+      fields:
+      - name: paketlar
+        label: Paketlar
+        label_singular: Paket
+        widget: list
+        summary: '{{fields.nomi.uz}} — {{fields.narx}}'
+        fields:
+        - name: nomi
+          label: Nomi
+          widget: object
+          fields:
+          - name: uz
+            label: O'zbekcha
+            widget: string
+          - name: ru
+            label: Ruscha (bo'sh qolsa o'zbekchasi)
+            widget: string
+            required: false
+          - name: en
+            label: Inglizcha (bo'sh qolsa o'zbekchasi)
+            widget: string
+            required: false
+        - name: tavsif
+          label: Kim uchun
+          widget: object
+          fields:
+          - name: uz
+            label: O'zbekcha
+            widget: string
+          - name: ru
+            label: Ruscha (bo'sh qolsa o'zbekchasi)
+            widget: string
+            required: false
+          - name: en
+            label: Inglizcha (bo'sh qolsa o'zbekchasi)
+            widget: string
+            required: false
+        - name: mashhur
+          label: '"Eng ko''p tanlanadi" (ajratilgan)'
+          widget: boolean
+          default: false
+          required: false
+        - name: tarkibi
+          label: Tarkibi
+          label_singular: Band
+          widget: list
+          summary: '{{fields.matn.uz}}'
+          fields:
+          - name: matn
+            label: Matn
+            widget: object
+            fields:
+            - name: uz
+              label: O'zbekcha
+              widget: string
+            - name: ru
+              label: Ruscha (bo'sh qolsa o'zbekchasi)
+              widget: string
+              required: false
+            - name: en
+              label: Inglizcha (bo'sh qolsa o'zbekchasi)
+              widget: string
+              required: false
+        - name: alohida_narx
+          label: Alohida olinsa (so'm; tejash o'zi hisoblanadi)
+          widget: number
+          value_type: int
+          min: 0
+          required: false
+        - name: narx
+          label: Set narxi (so'm)
+          widget: number
+          value_type: int
+          min: 0
+        - name: uskuna
+          label: 'Uskunalar haqida (masalan: + uskunalar taxminan 4–5 mln so''m)'
+          widget: object
+          fields:
+          - name: uz
+            label: O'zbekcha
+            widget: string
+          - name: ru
+            label: Ruscha (bo'sh qolsa o'zbekchasi)
+            widget: string
+            required: false
+          - name: en
+            label: Inglizcha (bo'sh qolsa o'zbekchasi)
+            widget: string
+            required: false
+          required: false
+      - name: alohida
+        label: Alohida xizmatlar (paketlar ostidagi qator)
+        label_singular: Xizmat
+        widget: list
+        summary: '{{fields.nomi.uz}} — {{fields.narx}}'
+        fields:
+        - name: nomi
+          label: Nomi
+          widget: object
+          fields:
+          - name: uz
+            label: O'zbekcha
+            widget: string
+          - name: ru
+            label: Ruscha (bo'sh qolsa o'zbekchasi)
+            widget: string
+            required: false
+          - name: en
+            label: Inglizcha (bo'sh qolsa o'zbekchasi)
+            widget: string
+            required: false
+        - name: narx
+          label: Narx (so'm; 0 = bepul)
+          widget: number
+          value_type: int
+          min: 0
+        - name: izoh
+          label: 'Izoh (masalan: 1 dona uchun)'
+          widget: object
+          fields:
+          - name: uz
+            label: O'zbekcha
+            widget: string
+          - name: ru
+            label: Ruscha (bo'sh qolsa o'zbekchasi)
+            widget: string
+            required: false
+          - name: en
+            label: Inglizcha (bo'sh qolsa o'zbekchasi)
+            widget: string
+            required: false
+          required: false
   - name: kalkulyator
     label: 'Narxlar: kalkulyator'
     file: content/kalkulyator.json
@@ -934,6 +1069,59 @@ collections:
         required: false
     - name: internet
       label: Internet va IT sahifasi
+      label_singular: Ish
+      widget: list
+      summary: '{{fields.nomi.uz}}'
+      fields:
+      - name: rasm
+        label: Rasm
+        widget: image
+        required: false
+      - name: namuna
+        label: '"Namuna" yorlig''i (haqiqiy ish rasmi bo''lsa o''chiring)'
+        widget: boolean
+        default: false
+      - name: oldin_keyin
+        label: Rasm yo'q bo'lsa "Oldin / Keyin" bezagi
+        widget: boolean
+        default: false
+        required: false
+      - name: nomi
+        label: Nomi
+        widget: object
+        fields:
+        - name: uz
+          label: O'zbekcha
+          widget: string
+        - name: ru
+          label: Ruscha (bo'sh qolsa o'zbekchasi)
+          widget: string
+          required: false
+        - name: en
+          label: Inglizcha (bo'sh qolsa o'zbekchasi)
+          widget: string
+          required: false
+      - name: izoh
+        label: Qisqa izoh
+        widget: object
+        fields:
+        - name: uz
+          label: O'zbekcha
+          widget: string
+        - name: ru
+          label: Ruscha (bo'sh qolsa o'zbekchasi)
+          widget: string
+          required: false
+        - name: en
+          label: Inglizcha (bo'sh qolsa o'zbekchasi)
+          widget: string
+          required: false
+      - name: havola
+        label: Havola (sayt yoki @bot manzili, ixtiyoriy)
+        widget: string
+        required: false
+    - name: prezentatsiya
+      label: Prezentatsiyalar sahifasi (slayd namunalari)
       label_singular: Ish
       widget: list
       summary: '{{fields.nomi.uz}}'

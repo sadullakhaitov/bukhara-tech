@@ -18,8 +18,8 @@ from pathlib import Path
 ROOT = Path(__file__).resolve().parent.parent
 C = ROOT / "content"
 LANGS = {"": "uz", "ru/": "ru", "en/": "en"}
-PAGES = ["sayt", "ai", "internet"]
-DIR_PAGE = {"p-net": "internet", "p-web": "sayt", "p-ai": "ai", "p-pres": "sayt"}
+PAGES = ["sayt", "ai", "internet", "prezentatsiya"]
+DIR_PAGE = {"p-net": "internet", "p-web": "sayt", "p-ai": "ai", "p-pres": "prezentatsiya"}
 DIR_ICON = {"p-cam": "fa-video", "p-net": "fa-wifi", "p-web": "fa-laptop-code", "p-media": "fa-clapperboard",
             "p-ai": "fa-wand-magic-sparkles", "p-pc": "fa-desktop", "p-pres": "fa-person-chalkboard"}
 FA = '<i class="fa-solid {}" aria-hidden="true"></i>'
@@ -29,6 +29,9 @@ T = {  # sahifadagi doimiy yozuvlar
     "from": {"uz": "{p} soʻmdan", "ru": "от {p} сум", "en": "from {p} UZS"},
     "per": {"uz": "1 {u} uchun", "ru": "за 1 {u}", "en": "per {u}"},
     "term": {"uz": "Muddat", "ru": "Срок", "en": "Time"},
+    "soon": {"uz": "Slayd namunalari tez orada shu yerda boʻladi. Hozircha Telegramda soʻrasangiz, koʻrsataman.",
+             "ru": "Примеры слайдов скоро появятся здесь. А пока напишите в Telegram — покажу.",
+             "en": "Slide samples will appear here soon. Meanwhile, message me on Telegram and I'll show you."},
     "open": {"uz": "Ochish", "ru": "Открыть", "en": "Open"},
     "less": {"uz": "Kamaytirish", "ru": "Меньше", "en": "Less"},
     "more": {"uz": "Koʻpaytirish", "ru": "Больше", "en": "More"},
@@ -254,15 +257,18 @@ def r_work(w, lang, prefix, home):
     return f'<figure class="{cls}">{photo}<figcaption><b>{e(title)}</b><span>{e(tr(w.get("izoh"), lang))}</span>{link}</figcaption></figure>'
 
 
-WORK_DIRS = {"sayt": "p-web", "ai": "p-ai", "internet": "p-net"}
+WORK_DIRS = {"sayt": "p-web", "ai": "p-ai", "internet": "p-net", "prezentatsiya": "p-pres"}
 DIR_NAME = {"p-web": {"uz": "Sayt va botlar", "ru": "Сайты и боты", "en": "Websites & bots"},
             "p-ai": {"uz": "Sunʼiy intellekt", "ru": "ИИ-решения", "en": "AI solutions"},
-            "p-net": {"uz": "Internet va IT", "ru": "Интернет и IT", "en": "Internet & IT"}}
+            "p-net": {"uz": "Internet va IT", "ru": "Интернет и IT", "en": "Internet & IT"},
+            "p-pres": {"uz": "Prezentatsiyalar", "ru": "Презентации", "en": "Presentations"}}
 
 
 def r_works(lang, prefix, key):
     data = load("ishlar")
     if key != "bosh":
+        if not data.get(key):
+            return f'<p class="works-soon">{T["soon"][lang]}</p>'
         return '<div class="works">' + "".join(r_work(w, lang, prefix, False) for w in data[key]) + "</div>"
     # Bosh sahifa: avval "bosh" ro'yxati, keyin barcha bo'limlardagi qolgan ishlar — aylanadigan karusel
     seen, items = set(), []
