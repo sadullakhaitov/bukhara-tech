@@ -25,19 +25,17 @@ Sa'dulla Khaitov — `content/men.json` (rasm `images/sadulla.jpg`, ism, kasb, t
 - **GitHub Action** `.github/workflows/cms.yml`: `content/**` yoki `tools/build.py` o'zgarsa build qiladi, commit "Sayt yangilandi (admin panel)" + Pages qurilishini so'raydi.
 - Panelda yo'q (kod orqali o'zgartiriladi): FAQ, sarlavhalar va boshqa matnlar, usta sahifasidagi xizmatlar ro'yxati, badge/chips, set/paket tugma yozuvlari (build.py `T` lug'atida).
 
-## Dizayn qarorlari (2026-10-12 dan — 3-avlod, "tanib bo'lmas" yangilanish)
+## Dizayn qarorlari (2026-10-12 dan — 4-avlod: Swiss + Bento, ui-ux-pro-max skill asosida)
 
-- **Ko'rinish: "kompaniya + asoschi"** (portfolio emas). Hero, xizmatlar, ish tartibi, formalar — kompaniya/mijoz ovozida (passiv: "aytiladi", "javob olasiz"; RU "называют", EN "you get"); "men" faqat `#men` "Asoschi haqida" bo'limidagi bio'da (asoschining o'z so'zlari). Xizmat sahifalarida: "Ishni asoschi Sa'dulla Khaitov shaxsan bajaradi va javob beradi".
-- **Ranglar:** iliq tosh fon `--bg #F4F2EC`, o'rmon-yashil `--forest #0B3B2E` (hero, kalkulyator jami, mashhur paket, footer), laym `--lime #C6F16D` (asosiy tugmalar, raqamlar, yakuniy CTA bloki; ustidagi matn har doim `--lime-ink` to'q). Yo'nalishlar: web #2F5BEA, ai #7C3AED, net #0B7A5C (`.p-*` → `--acc/--lt`). Tungi rejim `[data-theme="dark"]` da alohida.
-- **Shriftlar:** Geologica (sarlavha, `--disp`), Onest (matn, `--body`), IBM Plex Mono (yorliqlar, `--mono`) — uchalasida kirill bor. Unbounded/Manrope/JetBrains Mono endi ishlatilmaydi.
-- **Komponentlar:** tugmalar "pill" (999px), bo'lim sarlavhasi ustida CSS counter raqam (`01`, `02` …), hero — dumaloq burchakli to'q panel + to'r naqsh + o'ngda `cms:hero-xizmatlar` kartasi (xizmatlar va "…dan" narxlar `xizmatlar.json` dan, ish vaqti `aloqa.json` dan). Logotip: 2×2 barg shaklli kvadratlar (laym/o'rmon), `assets/favicon.svg`, `logo.png`, `og.png` 2026-10-12 da qayta chizilgan.
+- **Manba:** foydalanuvchi bergan https://github.com/nextlevelbuilder/ui-ux-pro-max-skill — `search.py --design-system` natijasi: "Trust & Authority + Conversion" shabloni (Hero → ishonch dalili (logotiplar) → xizmatlar → aniq CTA), uslub "Minimalism & Swiss Style" + "Bento Box Grid", rang strategiyasi "Navy — ishonch, accent faqat CTA uchun". Skill taklif qilgan shriftlar (Poppins, Outfit, Space Grotesk) **kirillsiz** — shuning uchun Inter Tight / Inter / Geist Mono olingan. Skill "AVOID: No map + Hidden reviews" deydi — haqiqiy sharhlar va xarita havolasi kelsa, albatta qo'shilsin.
+- **Ko'rinish: "kompaniya + asoschi"** (portfolio emas). Hero, xizmatlar, ish tartibi, formalar — kompaniya/mijoz ovozida (passiv: "aytiladi", "javob olasiz"); "men" faqat `#men` "Asoschi haqida" bio'sida. Xizmat sahifalarida: "Ishni asoschi Sa'dulla Khaitov shaxsan bajaradi va javob beradi".
+- **Ranglar:** fon #F8FAFC, oq kartalar, chiziqlar #E2E8F0; asosiy `--navy #1E3A8A`; CTA `--cta #C2410C` (oq matn, kontrast ≥4.5) — **faqat harakatga undovchi tugmalar** (Telegram, Buyurtma, kalkulyator, forma); to'q panellar `--deep #0B1533` (birinchi xizmat kartasi, kalkulyator jami, mashhur paket, yakuniy blok, footer). Yo'nalishlar: web #2563EB, ai #7C3AED, net #047857. Tungi rejim `[data-theme="dark"]` (CTA #FB923C + to'q matn).
+- **Shriftlar:** Inter Tight 600/700 (sarlavha, `--disp`), Inter (matn, `--body`), Geist Mono (yorliqlar, `--mono`).
+- **Komponentlar:** tugmalar 10px radius; bo'lim sarlavhasi Swiss — tepada ingichka qora chiziq + `01` raqam, chapda sarlavha, o'ngda izoh; hero oq, to'r chiziqli fon, statistikalar 3 katakli bento; xizmatlar bento (birinchisi katta to'q karta); "Ish tartibi" — ustunli qadamlar + 4 shart kartasi (birinchisi ko'k); logotiplar lentasi hero ostida `section.proof`. Logotip 2×2: 3 ta ko'k + 1 ta to'q sariq kvadrat; favicon/logo.png/og.png shu ranglarda.
+- **Bosh sahifa tartibi:** hero → `.proof` (hamkor tashkilotlar) → `#xizmatlar` → `#kalkulyator` → `#jarayon` (shartlar: 1 oy kafolat, 50/50 to'lov — **foydalanuvchi tasdiqlashi kerak**) → `#ishlar` "Loyihalar" → `#men` → `#savollar` → `#aloqa`.
 - Header bitta qatorda: 3 xizmat + "Narxlar / Ish tartibi / Savollar" (`.nav-plain`, 1201–1400 px da yashiriladi), ≤1200 burger.
-- **Bosh sahifa tartibi:** hero → `#xizmatlar` → `#kalkulyator` → `#jarayon` (4 qadam + shartlar: 1 oy kafolat, 50/50 to'lov, muddat yoziladi, ko'rik bepul — **foydalanuvchi tasdiqlashi kerak**) → `#ishlar` "Loyihalar" (3 ta) + "Hamkorlik qilgan tashkilotlar" → `#men` "Asoschi haqida" → `#savollar` → `#aloqa` (laym CTA + forma). `section-white` navbatma-navbat.
-- **Rad etilgan:** Buxoro ravoqlari/girih naqshi, Bricolage Grotesque — qaytarmang.
-- **Kunduzgi/tungi rejim:** `.theme-btn`, tanlov `localStorage`, `<head>` dagi kichik skript. Rangli fon ustidagi matn uchun `var(--on-acc)` yoki laym ustida `var(--lime-ink)`.
-- **Tez o'tish:** `@view-transition` + har sahifada `speculationrules`. Turbo/React ishlatilmaydi.
-- **Kesh:** CSS/JS o'zgarganda 12 sahifadagi `?v=` ni yangilang.
-- 3 breakpoint: 1200, 900, 600 px; telefon 390 px da tekshiriladi. Telefonda `.svcs/.works/.sets` — cheksiz surish qatorlari (`loopRow`, native scroll), `.mbar` pastda.
+- **Rad etilgan:** Buxoro ravoqlari/girih, Bricolage Grotesque. Avvalgi dizaynlar (Unbounded+Manrope ko'k; Geologica+Onest o'rmon-yashil/laym) almashtirilgan.
+- **Tez o'tish:** `@view-transition` + `speculationrules`. **Kesh:** CSS/JS o'zgarganda 12 sahifadagi `?v=` ni yangilang. Breakpoint: 1200/900/600; telefon 390 px.
 
 ## Hali to'ldirilishi kerak (foydalanuvchidan so'raladi)
 
