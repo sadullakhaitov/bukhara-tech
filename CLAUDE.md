@@ -4,7 +4,7 @@ Bu fayl Claude Code uchun: oldingi suhbatlarda qabul qilingan qarorlar va to'pla
 
 ## Loyiha nima
 
-**2026-10-11 dan: bitta odam — Sa'dulla Khaitov — sayti, "men" tilida** (brend Bukhara Tech qoladi). Boshqa 4 usta olib tashlandi; yangi odam qo'shilsa yoki ma'lumot kelsa foydalanuvchi o'zi aytadi. **3 xizmat (2026-10-12 dan):** Sayt va botlar (`sayt.html`, p-web), Sunʼiy intellekt (`ai.html`, p-ai), Internet va IT (`internet.html`, p-net). **Kamera (10-11), video montaj va prezentatsiya (10-12) olib tashlangan** (foydalanuvchi qarori). Eski manzillar (`sadulla/umid/sherali.html` → yangi sahifa, `maruf/doston/video.html` → bosh sahifa) — noindex yo'naltirish sahifalari, o'chirmang (Google'da indekslangan).
+**2026-10-11 dan: bitta odam — Sa'dulla Khaitov — sayti, "men" tilida** (brend Bukhara Tech qoladi). Boshqa 4 usta olib tashlandi; yangi odam qo'shilsa yoki ma'lumot kelsa foydalanuvchi o'zi aytadi. **3 xizmat (2026-10-12 dan):** Sayt, botlar va PowerPoint prezentatsiyalar (`sayt.html`, p-web; prezentatsiya 2026-10-12 da qaytarildi: xizmat, chip, kalkulyator va "Alohida xizmatlar"da 25 000 soʻm/slayd), Sunʼiy intellekt (`ai.html`, p-ai), Internet va IT (`internet.html`, p-net). **Kamera (10-11) va video montaj (10-12) olib tashlangan** (foydalanuvchi qarori). Eski manzillar (`sadulla/umid/sherali.html` → yangi sahifa, `maruf/doston/video.html` → bosh sahifa) — noindex yo'naltirish sahifalari, o'chirmang (Google'da indekslangan).
 
 - **Sayt:** https://sadullakhaitov.github.io/bukhara-tech/ (GitHub Pages, `main` tarmog'i, ildiz papka)
 - **Repo:** https://github.com/sadullakhaitov/bukhara-tech (public)

@@ -92,6 +92,20 @@
             "en": "month"
           },
           "boshlangich": 0
+        },
+        {
+          "nomi": {
+            "uz": "Prezentatsiya",
+            "ru": "Презентация",
+            "en": "Presentation"
+          },
+          "narx": 25000,
+          "birlik": {
+            "uz": "slayd",
+            "ru": "слайд",
+            "en": "slide"
+          },
+          "boshlangich": 0
         }
       ]
     },

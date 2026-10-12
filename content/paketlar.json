@@ -191,6 +191,19 @@
           "ru": "в месяц",
           "en": "per month"
         }
+      },
+      {
+        "nomi": {
+          "uz": "PowerPoint prezentatsiya",
+          "ru": "Презентация PowerPoint",
+          "en": "PowerPoint presentation"
+        },
+        "narx": 25000,
+        "izoh": {
+          "uz": "1 slayd uchun",
+          "ru": "за 1 слайд",
+          "en": "per slide"
+        }
       }
     ]
   },
