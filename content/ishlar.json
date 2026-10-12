@@ -143,18 +143,18 @@
   ],
   "ai": [
     {
-      "rasm": "",
+      "rasm": "images/works/jalyuzi-bot.jpg",
       "namuna": false,
       "oldin_keyin": false,
       "nomi": {
-        "uz": "AI yordamchi bot",
-        "ru": "AI-помощник",
-        "en": "AI assistant"
+        "uz": "JalyuziAdmin — yordamchi bot",
+        "ru": "JalyuziAdmin — бот-помощник",
+        "en": "JalyuziAdmin — assistant bot"
       },
       "izoh": {
-        "uz": "Telegram · 24/7 javob",
-        "ru": "Telegram · ответы 24/7",
-        "en": "Telegram · 24/7 replies"
+        "uz": "Buyurtma va dillerlar · Excel hisobot oʻzi keladi",
+        "ru": "Заказы и дилеры · Excel-отчёт приходит сам",
+        "en": "Orders and dealers · Excel report sent automatically"
       }
     },
     {
