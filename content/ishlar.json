@@ -1,6 +1,22 @@
 {
   "bosh": [
     {
+      "rasm": "images/works/temiryol-uzel.jpg",
+      "namuna": false,
+      "oldin_keyin": false,
+      "nomi": {
+        "uz": "Buxoro mintaqaviy temir yoʻl uzeli",
+        "ru": "Бухарский региональный железнодорожный узел",
+        "en": "Bukhara Regional Railway Junction"
+      },
+      "izoh": {
+        "uz": "Ofis tarmogʻi · MikroTik CCR va CRS",
+        "ru": "Сеть офиса · MikroTik CCR и CRS",
+        "en": "Office network · MikroTik CCR and CRS"
+      },
+      "yonalish": "p-net"
+    },
+    {
       "yonalish": "p-web",
       "rasm": "images/works/sadulla-1.jpg",
       "namuna": true,
@@ -30,22 +46,6 @@
         "uz": "Telegram · admin panel",
         "ru": "Telegram · админ-панель",
         "en": "Telegram · admin panel"
-      }
-    },
-    {
-      "yonalish": "p-net",
-      "rasm": "images/works/sherali-1.jpg",
-      "namuna": true,
-      "oldin_keyin": false,
-      "nomi": {
-        "uz": "Ofis tarmogʻi",
-        "ru": "Сеть офиса",
-        "en": "Office network"
-      },
-      "izoh": {
-        "uz": "Ish oʻrinlari · MikroTik",
-        "ru": "Рабочие места · MikroTik",
-        "en": "Workstations · MikroTik"
       }
     }
   ],
@@ -175,18 +175,18 @@
   ],
   "internet": [
     {
-      "rasm": "images/works/sherali-1.jpg",
-      "namuna": true,
+      "rasm": "images/works/temiryol-uzel.jpg",
+      "namuna": false,
       "oldin_keyin": false,
       "nomi": {
-        "uz": "Ofis tarmogʻi",
-        "ru": "Сеть офиса",
-        "en": "Office network"
+        "uz": "Buxoro mintaqaviy temir yoʻl uzeli",
+        "ru": "Бухарский региональный железнодорожный узел",
+        "en": "Bukhara Regional Railway Junction"
       },
       "izoh": {
-        "uz": "Ish oʻrinlari · MikroTik",
-        "ru": "Рабочие места · MikroTik",
-        "en": "Workstations · MikroTik"
+        "uz": "Ofis tarmogʻi · MikroTik CCR va CRS",
+        "ru": "Сеть офиса · MikroTik CCR и CRS",
+        "en": "Office network · MikroTik CCR and CRS"
       }
     },
     {
