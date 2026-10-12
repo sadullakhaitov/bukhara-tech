@@ -173,8 +173,8 @@
       }
     },
     {
-      "rasm": "",
-      "namuna": false,
+      "rasm": "images/works/ai-aqlli-ofis.jpg",
+      "namuna": true,
       "oldin_keyin": false,
       "nomi": {
         "uz": "Aqlli ofis",
