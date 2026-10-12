@@ -400,6 +400,39 @@ document.querySelectorAll(".works-carousel").forEach((row) => {
   row.addEventListener("pointerleave", () => (hover = false));
   ["pointerdown", "touchstart", "wheel", "focusin"].forEach((ev) => row.addEventListener(ev, () => hold(), { passive: true }));
   new IntersectionObserver(([en]) => (visible = en.isIntersecting), { threshold: 0.3 }).observe(row);
+  // Kompyuterda sichqoncha bilan tortib surish (telefon/trackpad'da surish o'zi ishlaydi)
+  let drag = null;
+  row.addEventListener("dragstart", (e) => e.preventDefault());
+  row.addEventListener("pointerdown", (e) => {
+    if (e.pointerType !== "mouse" || e.button !== 0) return;
+    drag = { x: e.clientX, sl: row.scrollLeft, moved: false };
+    row.setPointerCapture(e.pointerId);
+  });
+  row.addEventListener("pointermove", (e) => {
+    if (!drag) return;
+    const dx = e.clientX - drag.x;
+    if (!drag.moved && Math.abs(dx) < 4) return;
+    if (!drag.moved) { drag.moved = true; row.classList.add("is-drag"); }
+    row.scrollLeft = drag.sl - dx;
+    hold();
+  });
+  const endDrag = () => {
+    if (!drag) return;
+    const { moved, sl } = drag;
+    drag = null;
+    if (!moved) return;
+    // tortish to'xtagan joydan tortilgan tomondagi eng yaqin karta boshiga yopishadi
+    const pad = parseFloat(getComputedStyle(row).scrollPaddingLeft) || 0, rl = row.getBoundingClientRect().left + pad;
+    const dir = Math.sign(row.scrollLeft - sl);
+    const offs = [...row.children].map((c) => c.getBoundingClientRect().left - rl);
+    const pick = offs.filter((o) => (dir > 0 ? o > -8 : o < 8));
+    const to = pick.length ? pick.reduce((a, b) => (Math.abs(b) < Math.abs(a) ? b : a)) : 0;
+    row.scrollBy({ left: to, behavior: "smooth" });
+    setTimeout(() => row.classList.remove("is-drag"), 450);
+    hold();
+  };
+  row.addEventListener("pointerup", endDrag);
+  row.addEventListener("pointercancel", endDrag);
   if (matchMedia("(prefers-reduced-motion: reduce)").matches) return;
   setInterval(() => {
     if (visible && !hover && !document.hidden && Date.now() > holdUntil) go(1);

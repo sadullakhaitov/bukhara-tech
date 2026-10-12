@@ -342,6 +342,7 @@ main { counter-reset: sec; }
 /* Bosh sahifadagi loyihalar karuseli: native scroll + snap, JS o'zi bittadan suradi */
 .works-carousel { display: flex; flex-wrap: nowrap; gap: 16px; overflow-x: auto; overscroll-behavior-x: contain; scroll-snap-type: x mandatory; scrollbar-width: none; margin: -6px -10px; padding: 6px 10px 14px; scroll-padding-inline: 10px; }
 .works-carousel::-webkit-scrollbar { display: none; }
+@media (pointer: fine) { .works-carousel { cursor: grab; } .works-carousel.is-drag { cursor: grabbing; scroll-snap-type: none; user-select: none; } }
 .works-carousel > .work { flex: 0 0 calc((100% - 32px) / 3); scroll-snap-align: start; }
 .works-nav { display: flex; justify-content: flex-end; gap: 8px; margin-top: 14px; }
 .works-nav button { width: 42px; height: 42px; display: inline-flex; align-items: center; justify-content: center; border: 1px solid var(--line-strong); border-radius: var(--r-sm); background: var(--surf); color: var(--ink); cursor: pointer; transition: border-color .18s; }
