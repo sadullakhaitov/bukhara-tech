@@ -96,6 +96,21 @@
       }
     },
     {
+      "rasm": "images/works/poputi-bot.jpg",
+      "namuna": false,
+      "oldin_keyin": false,
+      "nomi": {
+        "uz": "PoPuti — yoʻldosh topish boti",
+        "ru": "PoPuti — бот попутчиков",
+        "en": "PoPuti — ride-sharing bot"
+      },
+      "izoh": {
+        "uz": "Haydovchi va yoʻlovchi zayavkalari · qidiruv · eslatmalar",
+        "ru": "Заявки водителей и пассажиров · поиск · напоминания",
+        "en": "Driver and passenger requests · search · reminders"
+      }
+    },
+    {
       "rasm": "images/works/sadulla-1.jpg",
       "namuna": true,
       "oldin_keyin": false,
@@ -123,21 +138,6 @@
         "uz": "Reklama uchun",
         "ru": "Для рекламы",
         "en": "For advertising"
-      }
-    },
-    {
-      "rasm": "images/works/sadulla-5.jpg",
-      "namuna": true,
-      "oldin_keyin": false,
-      "nomi": {
-        "uz": "Admin panel",
-        "ru": "Админ-панель",
-        "en": "Admin panel"
-      },
-      "izoh": {
-        "uz": "Hisobotlar · CRM",
-        "ru": "Отчёты · CRM",
-        "en": "Reports · CRM"
       }
     }
   ],
