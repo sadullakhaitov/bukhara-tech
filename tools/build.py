@@ -20,8 +20,8 @@ C = ROOT / "content"
 LANGS = {"": "uz", "ru/": "ru", "en/": "en"}
 PAGES = ["sayt", "ai", "internet", "prezentatsiya"]
 DIR_PAGE = {"p-net": "internet", "p-web": "sayt", "p-ai": "ai", "p-pres": "prezentatsiya"}
-DIR_ICON = {"p-cam": "fa-video", "p-net": "fa-wifi", "p-web": "fa-laptop-code", "p-media": "fa-clapperboard",
-            "p-ai": "fa-wand-magic-sparkles", "p-pc": "fa-desktop", "p-pres": "fa-person-chalkboard"}
+DIR_ICON = {"p-net": "fa-wifi", "p-web": "fa-laptop-code", "p-ai": "fa-wand-magic-sparkles", "p-pres": "fa-person-chalkboard",
+            "p-pc": "fa-desktop"}  # p-pc — sharhlarda "Kompyuter" belgisi
 FA = '<i class="fa-solid {}" aria-hidden="true"></i>'
 
 T = {  # sahifadagi doimiy yozuvlar
@@ -32,16 +32,12 @@ T = {  # sahifadagi doimiy yozuvlar
     "soon": {"uz": "Slayd namunalari tez orada shu yerda boʻladi. Hozircha Telegramda soʻrasangiz, koʻrsataman.",
              "ru": "Примеры слайдов скоро появятся здесь. А пока напишите в Telegram — покажу.",
              "en": "Slide samples will appear here soon. Meanwhile, message me on Telegram and I'll show you."},
-    "open": {"uz": "Ochish", "ru": "Открыть", "en": "Open"},
     "less": {"uz": "Kamaytirish", "ru": "Меньше", "en": "Less"},
     "more": {"uz": "Koʻpaytirish", "ru": "Больше", "en": "More"},
     "sep": {"uz": "Alohida", "ru": "По отдельности", "en": "Separately"},
     "save": {"uz": "Tejaysiz", "ru": "Экономия", "en": "Save"},
-    "hot_home": {"uz": "Eng koʻp tanlanadi", "ru": "Выбирают чаще всего", "en": "Most popular"},
     "hot_master": {"uz": "Koʻp tanlanadi", "ru": "Выбирают чаще", "en": "Most popular"},
-    "pick_home": {"uz": "Setni tanlash", "ru": "Выбрать сет", "en": "Choose bundle"},
     "pick_master": {"uz": "Tanlash", "ru": "Выбрать", "en": "Choose"},
-    "order_home": {"uz": "«{t}» buyurtma qilmoqchiman.", "ru": "Хочу заказать {t}.", "en": "I'd like to order the {t}."},
     "order_master": {"uz": "Salom! «{t}» paketi qiziqtiradi.", "ru": "Здравствуйте! Интересует пакет «{t}».",
                      "en": "Hello! I'm interested in the “{t}” package."},
     "single": {"uz": "Alohida xizmatlar:", "ru": "Отдельные услуги:", "en": "Individual services:"},
@@ -50,10 +46,6 @@ T = {  # sahifadagi doimiy yozuvlar
     "before": {"uz": "OLDIN", "ru": "ДО", "en": "BEFORE"},
     "no_photo": {"uz": "Rasm qoʻyiladi", "ru": "Здесь будет фото", "en": "Photo coming soon"},
     "after": {"uz": "KEYIN", "ru": "ПОСЛЕ", "en": "AFTER"},
-    "card_years": {"uz": "yillik tajriba", "ru": "лет опыта", "en": "years of experience"},
-    "more_link": {"uz": "Batafsil", "ru": "Подробнее", "en": "Learn more"},
-    "years_a": {"uz": "yillik", "ru": "лет", "en": "years"},
-    "years_b": {"uz": "ish staji", "ru": "опыта", "en": "of experience"},
     "total": {"uz": "ish tajribasi", "ru": "опыта работы", "en": "of experience"},
     "reviews": {"uz": "Mijozlar fikri", "ru": "Отзывы клиентов", "en": "What clients say"},
     "c_map": {"uz": "Xaritada ochish", "ru": "Открыть на карте", "en": "Open in maps"},
@@ -116,10 +108,6 @@ def ru_word(n, one, few, many):
     if 2 <= n % 10 <= 4 and not 12 <= n % 100 <= 14:
         return few
     return many
-
-
-def card_years(n, lang):
-    return ru_word(n, "год опыта", "года опыта", "лет опыта") if lang == "ru" else T["card_years"][lang]
 
 
 def years_total(n, lang):
@@ -190,15 +178,12 @@ def r_calc(lang, prefix):
     return "\n".join(out)
 
 
-def r_set(s, lang, home, master=None):
+def r_set(s, lang):
     title = tr(s["nomi"], lang)
     hot = bool(s.get("mashhur"))
-    cls = "set" + ("" if home else " set-acc") + (" set-hot" if hot else "")
-    label = f'<span class="set-hot-label">{T["hot_home" if home else "hot_master"][lang]}</span>' if hot else ""
-    items = ""
-    for i in s["tarkibi"]:
-        li_cls = ' class="%s"' % i["yonalish"] if home and i.get("yonalish") else ""
-        items += f"<li{li_cls}><i></i>{e(tr(i['matn'], lang))}</li>"
+    cls = "set set-acc" + (" set-hot" if hot else "")
+    label = f'<span class="set-hot-label">{T["hot_master"][lang]}</span>' if hot else ""
+    items = "".join(f"<li><i></i>{e(tr(i['matn'], lang))}</li>" for i in s["tarkibi"])
     lines = [f'        <article class="{cls}">', f"          {label}", f"          <h3>{e(title)}</h3>",
              f'          <p class="set-desc">{e(tr(s["tavsif"], lang))}</p>', f'          <ul class="set-items">{items}</ul>']
     if tr(s.get("kafolat"), lang):
@@ -212,22 +197,17 @@ def r_set(s, lang, home, master=None):
     if tr(s.get("uskuna"), lang):
         lines.append(f'            <span class="set-equip">{e(tr(s["uskuna"], lang))}</span>')
     lines.append("          </div>")
-    if home:
-        btn = "btn btn-acc p-web" if hot else "btn btn-outline"
-        order = T["order_home"][lang].format(t=title)
-        lines.append(f'          <a class="{btn}" href="#aloqa" data-order="{e(order)}">{T["pick_home"][lang]}</a>')
-    else:
-        btn = "btn btn-acc" if hot else "btn btn-outline"
-        order = T["order_master"][lang].format(t=title)
-        tg = load("aloqa")["telegram"].lstrip("@")
-        lines.append(f'          <a class="{btn}" href="https://t.me/{e(tg)}" data-order="{e(order)}">{T["pick_master"][lang]}</a>')
+    btn = "btn btn-acc" if hot else "btn btn-outline"
+    order = T["order_master"][lang].format(t=title)
+    tg = load("aloqa")["telegram"].lstrip("@")
+    lines.append(f'          <a class="{btn}" href="https://t.me/{e(tg)}" data-order="{e(order)}">{T["pick_master"][lang]}</a>')
     lines.append("        </article>")
     return "\n".join(lines)
 
 
 def r_packages(lang, prefix, master):
     return '<div class="sets">\n' + "\n".join(
-        r_set(s, lang, False, master) for s in load("paketlar")[master]["paketlar"]) + "\n      </div>"
+        r_set(s, lang) for s in load("paketlar")[master]["paketlar"]) + "\n      </div>"
 
 
 def r_note(lang, prefix, master):
@@ -245,7 +225,7 @@ def r_work(w, lang, prefix, home):
     title = tr(w["nomi"], lang)
     if (w.get("rasm") or "").strip():
         tag = f'<span class="work-tag">{T["sample"][lang]}</span>' if w.get("namuna") else ""
-        photo = (f'<div class="photo"><img src="{e(img_src(w["rasm"], prefix))}" alt="{e(title)}" loading="lazy" '
+        photo = (f'<div class="photo"><img src="{e(img_src(w["rasm"], prefix))}" alt="{e(title)}" loading="lazy" decoding="async" '
                  f'width="900" height="675">{tag}</div>')
     elif w.get("oldin_keyin"):
         photo = f'<div class="photo"><div class="split"><span>{T["before"][lang]}</span><span>{T["after"][lang]}</span></div></div>'

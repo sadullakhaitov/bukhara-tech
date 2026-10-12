@@ -1,4 +1,4 @@
-# Admin panel (bukharatech.uz/admin) content/*.json ni o'zgartirganda 18 ta sahifani qayta yig'adi.
+# Admin panel (bukharatech.uz/admin) content/*.json ni o'zgartirganda 15 ta asosiy sahifani qayta yig'adi.
 name: Saytni yangilash (admin panel)
 on:
   push:

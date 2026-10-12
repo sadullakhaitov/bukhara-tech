@@ -1211,7 +1211,7 @@ collections:
         - label: Prezentatsiya
           value: p-pres
       - name: mavzu
-        label: 'Mavzu (masalan: Kamera o''rnatish)'
+        label: 'Mavzu (masalan: Sayt yaratish)'
         widget: object
         fields:
         - name: uz

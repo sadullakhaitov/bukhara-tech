@@ -1,31 +1,25 @@
 # Bukhara Tech
 
-Buxorodagi IT va media xizmatlari jamoasining sayti: kamera o'rnatish, tarmoq va MikroTik, video montaj, sayt va Telegram botlar, AI va avtomatlashtirish.
+Sa'dulla Khaitov sayti (https://bukharatech.uz): sayt va Telegram botlar, sunʼiy intellekt va avtomatlashtirish, internet va IT, PowerPoint prezentatsiyalar — Buxoro.
 
 ## Sahifalar
 
 | Fayl | Sahifa |
 |---|---|
-| `index.html` | Bosh sahifa: xizmatlar, ishlar va izohlar, setlar, ish jarayoni, jamoa, narx kalkulyatori, savol-javoblar, aloqa |
-| `sadulla.html` | Sa'dulla Khaitov — sayt, Telegram bot, prezentatsiya |
-| `sherali.html` | Sherali Bozorov — tarmoq, internet, MikroTik |
-| `doston.html` | Doston Muxammadov — video montaj, color grading |
-| `maruf.html` | Maruf Usmonov — kuzatuv kameralari |
-| `umid.html` | Umid Murodov — AI botlar, avtomatlashtirish, aqlli texnologiyalar |
-| `ru/*.html` | Yuqoridagi 6 sahifaning ruscha versiyasi |
-| `en/*.html` | Yuqoridagi 6 sahifaning inglizcha versiyasi |
+| `index.html` | Bosh sahifa: xizmatlar, loyihalar va sharhlar, ish tartibi, narx kalkulyatori, men haqimda, savollar, aloqa |
+| `sayt.html` | Sayt va Telegram botlar |
+| `ai.html` | Sunʼiy intellekt va avtomatlashtirish |
+| `internet.html` | Internet, Wi-Fi va IT |
+| `prezentatsiya.html` | PowerPoint prezentatsiyalar |
+| `ru/*.html`, `en/*.html` | Shu 5 sahifaning ruscha va inglizcha versiyasi |
+| `sadulla/sherali/umid/maruf/doston/video.html` | Eski manzillar — yangi sahifaga yoʻnaltiradi (oʻchirmang) |
 
 ## Tuzilishi
 
-- `assets/style.css` — barcha uslublar (kompyuter, planshet va telefon uchun)
-- `assets/main.js` — kunduzgi/tungi rejim, telefondagi menyu, narx kalkulyatori va buyurtma formasi
-- `images/works/` — "Bajarilgan ishlar" rasmlari (hozircha Unsplash'dan namuna, manbalari `MANBALAR.txt` da)
+- `content/*.json` — matnlar, narxlar, ishlar, sharhlar (admin panel: `/admin`, Sveltia CMS)
+- `tools/build.py` — `content/` dan sahifalardagi `<!-- cms:… -->` oraliqlarini qayta yozadi (`python3 tools/build.py`); GitHub Action (`.github/workflows/cms.yml`) buni avtomatik qiladi
+- `assets/style.css` — barcha uslublar; `assets/main.js` — tungi rejim, menyu, karusellar, kalkulyator, forma, Google Analytics
+- `worker/form-worker.js` — formani Telegram'ga yuboruvchi Cloudflare Worker (token faqat Cloudflare secret'larida)
+- `images/works/` — haqiqiy bajarilgan ishlar rasmlari, `images/clients/` — mijozlar logotiplari
 
-Sayt oddiy HTML/CSS/JS, hech qanday yig'ish (build) talab qilmaydi: `index.html` ni brauzerda ochish kifoya.
-
-## Hali to'ldirilishi kerak
-
-- Ustalarning rasmlari
-- Manzil, ish vaqti (`[...]` bilan belgilangan joylar)
-- Haqiqiy bajarilgan ishlar rasmlari
-- Buyurtma formasini Telegram botga ulash
+CSS/JS oʻzgarganda sahifalardagi `?v=` raqamini yangilang (kesh).

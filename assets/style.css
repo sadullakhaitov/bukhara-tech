@@ -84,7 +84,7 @@
 
 .p-web { --acc: var(--web); --lt: var(--web-lt); }
 .p-ai  { --acc: var(--ai);  --lt: var(--ai-lt); }
-.p-net, .p-pc { --acc: var(--net); --lt: var(--net-lt); }
+.p-net { --acc: var(--net); --lt: var(--net-lt); }
 .p-pres { --acc: var(--pres); --lt: var(--pres-lt); }
 
 /* ---------- Sahifalar orasida silliq o'tish ---------- */
@@ -420,19 +420,12 @@ main { counter-reset: sec; }
 .card-role::before { content: ""; width: 8px; height: 8px; background: var(--cta); }
 .about-text h3 { font-family: var(--disp); font-weight: 700; font-size: 40px; line-height: 1.04; letter-spacing: -.04em; }
 .about-text p { font-size: 16.5px; line-height: 1.65; max-width: 660px; }
-.about-text p + p:not(.about-links) { margin-top: -6px; }
-.about-text p:not(.about-links) a { color: var(--navy); font-weight: 600; text-decoration: underline; text-decoration-thickness: 1.5px; text-underline-offset: 3px; }
-.about-text p:not(.about-links) a:hover { color: var(--cta); }
-.card-years { display: flex; align-items: baseline; gap: 10px; padding: 14px 18px; border: 1px solid var(--line); border-radius: var(--r-md); background: var(--surf); }
-.card-years b { font-family: var(--disp); font-weight: 700; font-size: 34px; line-height: 1; letter-spacing: -.04em; color: var(--navy); }
-.card-years span { font-size: 15px; color: var(--muted); }
+.about-text p + p { margin-top: -6px; }
+.about-text p a { color: var(--navy); font-weight: 600; text-decoration: underline; text-decoration-thickness: 1.5px; text-underline-offset: 3px; }
+.about-text p a:hover { color: var(--cta); }
 .chips { display: flex; flex-wrap: wrap; gap: 8px; list-style: none; margin: 0; padding: 0; }
 .chips li { padding: 6px 12px; border: 1px solid var(--line); border-radius: 8px; background: var(--surf); font-size: 13.5px; font-weight: 500; }
 .chips-acc li { border-color: transparent; background: var(--lt); color: var(--acc); font-weight: 600; }
-.about-links { display: flex; flex-wrap: wrap; gap: 10px; }
-.about-links a { display: inline-flex; align-items: baseline; gap: 8px; padding: 11px 16px; border: 1px solid var(--line-strong); border-radius: var(--r-sm); background: var(--surf); color: var(--ink); font-weight: 600; text-decoration: none; transition: border-color .18s; }
-.about-links a span { font-family: var(--mono); font-size: 12px; font-weight: 400; color: var(--muted); }
-.about-links a:hover { border-color: var(--ink); color: var(--ink); }
 
 /* ---------- Savollar ---------- */
 .faq { columns: 2; column-gap: 56px; }
@@ -712,7 +705,6 @@ main { counter-reset: sec; }
   .about-text { gap: 14px; padding: 4px 6px 8px; }
   .about-text h3 { font-size: 30px; }
   .about-text p { font-size: 16px; }
-  .card-years b { font-size: 28px; }
 
   .faq:not(.faq-one):not(.faq-all) .faq-item:nth-of-type(n+3) { display: none; }
   .faq-group { padding-bottom: 22px; }

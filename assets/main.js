@@ -110,13 +110,13 @@ if (form) {
   });
 }
 
-// Setlar va kalkulyator: tugma bosilganda tanlov forma xabariga yoziladi,
+// Kalkulyator: "Buyurtma" bosilganda tanlov forma xabariga yoziladi,
 // sahifa formaga tushadi va "Ismingiz" maydoni faollashadi (so'rovni forma yuboradi).
 const msgField = document.querySelector("#f-msg");
 const nameField = document.querySelector("#f-name");
 let orderHint = null;
 const needSel = document.querySelector("#f-need");
-// dirs: ["p-cam"] — bitta yo'nalish; bir nechta bo'lsa "Bir nechta: ..." varianti yaratiladi
+// dirs: ["p-web"] — bitta yo'nalish; bir nechta bo'lsa "Bir nechta: ..." varianti yaratiladi
 function setNeed(dirs) {
   if (!needSel) return;
   needSel.querySelector('option[data-dir="multi"]')?.remove();
@@ -130,45 +130,33 @@ function setNeed(dirs) {
   multi.selected = true;
 }
 document.addEventListener("click", (e) => {
-    const a = e.target.closest("[data-order]");
-    if (!a || !form || !msgField || !a.dataset.order) return; // usta sahifalarida — oddiy havola (Telegram)
-    e.preventDefault();
-    let text = a.dataset.order;
-    const set = a.closest(".set");
-    if (set) {
-      // Setning tarkibi va narxi kartadan olinadi (UZ/RU/EN uchun bir xil ishlaydi)
-      const items = [...set.querySelectorAll(".set-items li")].map((li) => "• " + li.textContent.trim());
-      const price = set.querySelector(".set-price strong")?.textContent.trim();
-      const equip = set.querySelector(".set-equip")?.textContent.trim();
-      text = text.replace(/[.!]$/, ":") + "\n" + items.join("\n");
-      if (price) text += "\n" + tx("Narxi", "Цена", "Price") + ": " + price.replace(/\s+/g, " ");
-      if (equip) text += "\n" + equip.replace(/\s+/g, " ");
-    }
-    msgField.value = text;
-    // "Nima kerak?" maydonini tanlovga qarab avtomatik belgilaymiz
-    if (set) setNeed(["set"]);
-    else if (a.classList.contains("calc-order")) {
-      const dirs = [...document.querySelectorAll(".calc-group")]
-        .filter((g) => [...g.querySelectorAll(".calc-row input")].some((i) => (parseInt(i.value, 10) || 0) > 0))
-        .map((g) => [...g.classList].find((c) => c.startsWith("p-")));
-      if (dirs.length) setNeed(dirs);
-    }
-    if (!orderHint) {
-      orderHint = document.createElement("p");
-      orderHint.className = "form-hint";
-      orderHint.setAttribute("role", "status");
-      form.prepend(orderHint);
-    }
-    orderHint.textContent = tx(
-      "✓ Tanlovingiz xabarga qoʻshildi. Endi ism va telefonni yozib, «Soʻrov yuborish»ni bosing.",
-      "✓ Ваш выбор добавлен в сообщение. Укажите имя и телефон и нажмите «Отправить заявку».",
-      "✓ Your selection has been added to the message. Enter your name and phone, then press “Send request”."
-    );
-    form.scrollIntoView({ behavior: "smooth", block: "start" });
-    setTimeout(() => nameField && nameField.focus({ preventScroll: true }), 500);
-    form.classList.remove("flash");
-    void form.offsetWidth;
-    form.classList.add("flash");
+  const a = e.target.closest("[data-order]");
+  if (!a || !form || !msgField || !a.dataset.order) return; // xizmat sahifalarida — oddiy havola (Telegram)
+  e.preventDefault();
+  msgField.value = a.dataset.order;
+  // "Nima kerak?" maydonini kalkulyatordagi tanlovga qarab belgilaymiz
+  if (a.classList.contains("calc-order")) {
+    const dirs = [...document.querySelectorAll(".calc-group")]
+      .filter((g) => [...g.querySelectorAll(".calc-row input")].some((i) => (parseInt(i.value, 10) || 0) > 0))
+      .map((g) => [...g.classList].find((c) => c.startsWith("p-")));
+    if (dirs.length) setNeed(dirs);
+  }
+  if (!orderHint) {
+    orderHint = document.createElement("p");
+    orderHint.className = "form-hint";
+    orderHint.setAttribute("role", "status");
+    form.prepend(orderHint);
+  }
+  orderHint.textContent = tx(
+    "✓ Tanlovingiz xabarga qoʻshildi. Endi ism va telefonni yozib, «Soʻrov yuborish»ni bosing.",
+    "✓ Ваш выбор добавлен в сообщение. Укажите имя и телефон и нажмите «Отправить заявку».",
+    "✓ Your selection has been added to the message. Enter your name and phone, then press “Send request”."
+  );
+  form.scrollIntoView({ behavior: "smooth", block: "start" });
+  setTimeout(() => nameField && nameField.focus({ preventScroll: true }), 500);
+  form.classList.remove("flash");
+  void form.offsetWidth;
+  form.classList.add("flash");
 });
 
 // Narx kalkulyatori
@@ -354,11 +342,11 @@ function cloneOf(el) {
   c.querySelectorAll("a, button").forEach((x) => (x.tabIndex = -1));
   return c;
 }
-function loopRow(row) {
+function loopRow(row, minEach = 36) {
   const items = [...row.children];
   const n = items.length;
   if (n < 2) return () => {};
-  const reps = Math.max(4, Math.ceil(36 / n)); // har tomonda nechta to'liq nusxa
+  const reps = Math.max(2, Math.ceil(minEach / n)); // har tomonda nechta to'liq nusxa (≥ minEach karta)
   for (let r = 0; r < reps; r++) {
     row.prepend(...items.map(cloneOf));
     row.append(...items.map(cloneOf));
@@ -401,7 +389,7 @@ applyRows();
 document.querySelectorAll(".works-carousel").forEach((row) => {
   const items = [...row.children];
   if (items.length < 2) return;
-  loopRow(row);
+  loopRow(row, 20); // o'zi bittadan suriladi — kamroq nusxa yetadi, sahifa yengilroq
   const step = () => {
     const a = items[0].getBoundingClientRect();
     return a.width + parseFloat(getComputedStyle(row).columnGap || 16);
