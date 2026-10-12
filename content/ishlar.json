@@ -220,36 +220,6 @@
       }
     },
     {
-      "rasm": "images/works/sherali-3.jpg",
-      "namuna": true,
-      "oldin_keyin": false,
-      "nomi": {
-        "uz": "Filiallar orasida VPN",
-        "ru": "VPN между филиалами",
-        "en": "VPN between branches"
-      },
-      "izoh": {
-        "uz": "IPsec · MikroTik",
-        "ru": "IPsec · MikroTik",
-        "en": "IPsec · MikroTik"
-      }
-    },
-    {
-      "rasm": "images/works/sherali-4.jpg",
-      "namuna": true,
-      "oldin_keyin": false,
-      "nomi": {
-        "uz": "Server xona",
-        "ru": "Серверная",
-        "en": "Server room"
-      },
-      "izoh": {
-        "uz": "Stoyka · kabel tartibi",
-        "ru": "Стойка · укладка кабеля",
-        "en": "Rack · cable management"
-      }
-    },
-    {
       "rasm": "images/works/sherali-5.jpg",
       "namuna": true,
       "oldin_keyin": false,
@@ -262,21 +232,6 @@
         "uz": "Wi-Fi mesh",
         "ru": "Wi-Fi mesh",
         "en": "Wi-Fi mesh"
-      }
-    },
-    {
-      "rasm": "images/works/sherali-6.jpg",
-      "namuna": true,
-      "oldin_keyin": false,
-      "nomi": {
-        "uz": "Ikki provayder",
-        "ru": "Два провайдера",
-        "en": "Two providers"
-      },
-      "izoh": {
-        "uz": "Zaxira kanal",
-        "ru": "Резервный канал",
-        "en": "Backup line"
       }
     }
   ]
