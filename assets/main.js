@@ -14,7 +14,10 @@ if (themeBtn) {
   themeBtn.setAttribute("aria-label", themeLabel(root.dataset.theme === "dark"));
   themeBtn.addEventListener("click", () => {
     const dark = root.dataset.theme !== "dark";
+    root.classList.add("theme-fade");
     root.dataset.theme = dark ? "dark" : "light";
+    clearTimeout(themeBtn._t);
+    themeBtn._t = setTimeout(() => root.classList.remove("theme-fade"), 350);
     themeBtn.setAttribute("aria-label", themeLabel(dark));
     try { localStorage.setItem("theme", root.dataset.theme); } catch (e) {}
   });
@@ -533,3 +536,57 @@ function marquee(list, SPEED) {
 }
 document.querySelectorAll(".clients").forEach((el) => marquee(el, 32)); // px / soniya
 document.querySelectorAll(".reviews").forEach((el) => { if (el.children.length >= 3) marquee(el, 26); });
+
+// ---------- Silliq o'tishlar ----------
+const motionOK = matchMedia("(prefers-reduced-motion: no-preference)").matches;
+
+// Bo'limlar ekranga kirganda yengil ko'tarilib paydo bo'ladi (bir marta).
+// Ekranda turgan narsalar yashirilmaydi; JS ishlamasa — hammasi darhol ko'rinadi.
+if (motionOK && "IntersectionObserver" in window) {
+  const io = new IntersectionObserver((entries) => {
+    entries.forEach((en) => {
+      if (!en.isIntersecting) return;
+      en.target.classList.add("rv-in");
+      io.unobserve(en.target);
+    });
+  }, { rootMargin: "0px 0px -8% 0px" });
+  const groups = [".sec-head", ".svcs", ".works", ".reviews", ".places", ".calc", ".about", ".sets", ".note",
+    ".final", ".contact-box", ".cta-box", ".works-soon", ".steps > *", ".terms > *", ".services > *", ".faq-group", ".faq-one > *", ".others-list > *"];
+  document.querySelectorAll(groups.join(",")).forEach((el) => {
+    if (el.closest(".hero, .profile, .rv") || el.getBoundingClientRect().top < innerHeight) return;
+    const sibs = [...el.parentElement.children].filter((c) => c.matches(groups.join(",")));
+    el.style.setProperty("--rv-d", Math.min(sibs.indexOf(el), 5) * 60 + "ms");
+    el.classList.add("rv");
+    io.observe(el);
+  });
+}
+
+// Savollar: javob silliq ochilib-yopiladi
+if (motionOK) {
+  document.querySelectorAll(".faq-item").forEach((d) => {
+    const sum = d.querySelector("summary");
+    const body = d.querySelector("summary + *");
+    if (!sum || !body) return;
+    sum.addEventListener("click", (e) => {
+      e.preventDefault();
+      // animatsiya o'rtasida bosilsa — teskari tomonga
+      const busy = !!d._anim;
+      const opening = busy ? d._closing : !d.open;
+      const from = busy || !opening ? body.offsetHeight : 0;
+      if (busy) d._anim.cancel();
+      d.open = true;
+      const to = opening ? body.scrollHeight : 0;
+      d._closing = !opening;
+      body.style.overflow = "hidden";
+      const a = (d._anim = body.animate(
+        [{ height: from + "px", opacity: opening ? 0 : 1 }, { height: to + "px", opacity: opening ? 1 : 0 }],
+        { duration: 260, easing: "cubic-bezier(.2,.7,.2,1)" }
+      ));
+      a.onfinish = () => {
+        if (!opening) d.open = false;
+        body.style.overflow = "";
+        d._anim = null;
+      };
+    });
+  });
+}
