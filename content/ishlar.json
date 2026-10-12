@@ -96,6 +96,36 @@
       }
     },
     {
+      "rasm": "images/works/ovoz-sayt.jpg",
+      "namuna": false,
+      "oldin_keyin": false,
+      "nomi": {
+        "uz": "Ovoz — ingliz tili darsligi sayti",
+        "ru": "Ovoz — сайт курса английского",
+        "en": "Ovoz — English course website"
+      },
+      "izoh": {
+        "uz": "6 modul, 18 video dars · progress belgilash",
+        "ru": "6 модулей, 18 видеоуроков · отметка прогресса",
+        "en": "6 modules, 18 video lessons · progress tracking"
+      }
+    },
+    {
+      "rasm": "images/works/etb-portal.jpg",
+      "namuna": false,
+      "oldin_keyin": false,
+      "nomi": {
+        "uz": "E-TB — mehnat xavfsizligi portali",
+        "ru": "E-TB — портал охраны труда",
+        "en": "E-TB — workplace safety portal"
+      },
+      "izoh": {
+        "uz": "Temir yoʻl xodimlari uchun · himoya vositalari · nizom · murojaatlar",
+        "ru": "Для работников железной дороги · СИЗ · положение · обращения",
+        "en": "For railway staff · PPE · regulations · requests"
+      }
+    },
+    {
       "rasm": "images/works/poputi-bot.jpg",
       "namuna": false,
       "oldin_keyin": false,
