@@ -371,10 +371,40 @@ function loopRow(row) {
 let rowTeardowns = [];
 const applyRows = () => {
   rowTeardowns.forEach((f) => f());
-  rowTeardowns = mqPhone.matches ? [...document.querySelectorAll(".svcs, .works, .sets")].map(loopRow) : [];
+  rowTeardowns = mqPhone.matches ? [...document.querySelectorAll(".svcs, .works:not(.works-carousel), .sets")].map(loopRow) : [];
 };
 mqPhone.addEventListener("change", applyRows);
 applyRows();
+
+// Bosh sahifadagi "Loyihalar": barcha bo'limlardagi ishlar, har 3,5 s da bitta karta kiradi, bittasi chiqadi.
+document.querySelectorAll(".works-carousel").forEach((row) => {
+  const items = [...row.children];
+  if (items.length < 2) return;
+  loopRow(row);
+  const step = () => {
+    const a = items[0].getBoundingClientRect();
+    return a.width + parseFloat(getComputedStyle(row).columnGap || 16);
+  };
+  const go = (dir) => row.scrollBy({ left: dir * step(), behavior: "smooth" });
+  const nav = document.createElement("div");
+  nav.className = "works-nav";
+  nav.innerHTML = `<button type="button" aria-label="${tx("Oldingi", "Назад", "Previous")}"><i class="fa-solid fa-arrow-left" aria-hidden="true"></i></button>` +
+    `<button type="button" aria-label="${tx("Keyingi", "Вперёд", "Next")}"><i class="fa-solid fa-arrow-right" aria-hidden="true"></i></button>`;
+  const [prev, next] = nav.querySelectorAll("button");
+  row.after(nav);
+  let holdUntil = 0, hover = false, visible = false;
+  const hold = (ms = 6000) => (holdUntil = Date.now() + ms);
+  prev.addEventListener("click", () => { hold(); go(-1); });
+  next.addEventListener("click", () => { hold(); go(1); });
+  row.addEventListener("pointerenter", (e) => { if (e.pointerType === "mouse") hover = true; });
+  row.addEventListener("pointerleave", () => (hover = false));
+  ["pointerdown", "touchstart", "wheel", "focusin"].forEach((ev) => row.addEventListener(ev, () => hold(), { passive: true }));
+  new IntersectionObserver(([en]) => (visible = en.isIntersecting), { threshold: 0.3 }).observe(row);
+  if (matchMedia("(prefers-reduced-motion: reduce)").matches) return;
+  setInterval(() => {
+    if (visible && !hover && !document.hidden && Date.now() > holdUntil) go(1);
+  }, 3500);
+});
 
 // "Biz ishlagan joylar" va sharhlar: o'zi sekin aylanadigan, qo'lda ham suriladigan cheksiz lenta.
 // scrollLeft emas, transform bilan suriladi — iPhone'da tez surilganda ham yo'qolib qolmaydi.

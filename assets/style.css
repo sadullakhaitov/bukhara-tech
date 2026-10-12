@@ -338,6 +338,16 @@ main { counter-reset: sec; }
 .work figcaption { display: flex; flex-direction: column; gap: 4px; padding: 16px 18px 18px; }
 .work figcaption b { font-family: var(--disp); font-weight: 600; font-size: 17px; letter-spacing: -.02em; }
 .work figcaption span { font-family: var(--mono); font-size: 12px; color: var(--muted); }
+.work-dir { align-self: flex-start; margin-bottom: 4px; padding: 3px 8px; border-radius: 6px; background: color-mix(in srgb, var(--acc) 10%, transparent); color: var(--acc); font: 500 10.5px/1.3 var(--mono); font-style: normal; letter-spacing: .06em; text-transform: uppercase; }
+/* Bosh sahifadagi loyihalar karuseli: native scroll + snap, JS o'zi bittadan suradi */
+.works-carousel { display: flex; flex-wrap: nowrap; gap: 16px; overflow-x: auto; overscroll-behavior-x: contain; scroll-snap-type: x mandatory; scrollbar-width: none; margin: -6px -10px; padding: 6px 10px 14px; scroll-padding-inline: 10px; }
+.works-carousel::-webkit-scrollbar { display: none; }
+.works-carousel > .work { flex: 0 0 calc((100% - 32px) / 3); scroll-snap-align: start; }
+.works-nav { display: flex; justify-content: flex-end; gap: 8px; margin-top: 14px; }
+.works-nav button { width: 42px; height: 42px; display: inline-flex; align-items: center; justify-content: center; border: 1px solid var(--line-strong); border-radius: var(--r-sm); background: var(--surf); color: var(--ink); cursor: pointer; transition: border-color .18s; }
+.works-nav button:hover { border-color: var(--ink); }
+@media (max-width: 900px) { .works-carousel > .work { flex-basis: calc((100% - 16px) / 2); } }
+@media (max-width: 600px) { .works-carousel { margin-inline: calc(-1 * var(--gutter)); padding-inline: var(--gutter); scroll-padding-inline: var(--gutter); gap: 12px; } .works-carousel > .work { flex-basis: 84%; } .works-nav { display: none; } }
 .split { display: flex; width: 100%; height: 100%; }
 .split span { flex: 1; display: flex; align-items: flex-end; padding: 14px; font-family: var(--mono); font-size: 12px; color: #0F172A; }
 .split span:first-child { background: #CBD5E1; border-right: 3px solid var(--surf); }

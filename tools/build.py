@@ -231,9 +231,32 @@ def r_work(w, lang, prefix, home):
     return f'<figure class="{cls}">{photo}<figcaption><b>{e(title)}</b><span>{e(tr(w.get("izoh"), lang))}</span></figcaption></figure>'
 
 
+WORK_DIRS = {"sayt": "p-web", "ai": "p-ai", "internet": "p-net"}
+DIR_NAME = {"p-web": {"uz": "Sayt va botlar", "ru": "Сайты и боты", "en": "Websites & bots"},
+            "p-ai": {"uz": "Sunʼiy intellekt", "ru": "ИИ-решения", "en": "AI solutions"},
+            "p-net": {"uz": "Internet va IT", "ru": "Интернет и IT", "en": "Internet & IT"}}
+
+
 def r_works(lang, prefix, key):
-    home = key == "bosh"
-    return '<div class="works">' + "".join(r_work(w, lang, prefix, home) for w in load("ishlar")[key]) + "</div>"
+    data = load("ishlar")
+    if key != "bosh":
+        return '<div class="works">' + "".join(r_work(w, lang, prefix, False) for w in data[key]) + "</div>"
+    # Bosh sahifa: avval "bosh" ro'yxati, keyin barcha bo'limlardagi qolgan ishlar — aylanadigan karusel
+    seen, items = set(), []
+    for w in data["bosh"] + [dict(w, yonalish=d) for k, d in WORK_DIRS.items() for w in data.get(k) or []]:
+        r = (w.get("rasm") or "").strip()
+        if not r or r in seen:
+            continue
+        seen.add(r)
+        items.append(w)
+    out = []
+    for w in items:
+        h = r_work(w, lang, prefix, True)
+        d = w.get("yonalish")
+        if d in DIR_NAME:
+            h = h.replace('<figcaption>', f'<figcaption><i class="work-dir">{e(tr(DIR_NAME[d], lang))}</i>', 1)
+        out.append(h)
+    return '<div class="works works-carousel">' + "".join(out) + "</div>"
 
 
 def r_reviews(lang, prefix):
