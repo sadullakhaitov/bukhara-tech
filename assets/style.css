@@ -499,8 +499,6 @@ main { counter-reset: sec; }
 .profile-text .h1 { font-size: 56px; }
 .profile-text .btn-acc { background: var(--cta); color: var(--on-cta); }
 .profile-text .btn-acc:hover { filter: none; background: var(--cta-hover); }
-.svc-by { font-size: 15px; color: var(--muted); }
-.svc-by a { color: var(--navy); font-weight: 600; }
 
 .services { display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); gap: 16px; }
 .service { display: flex; flex-direction: column; gap: 8px; padding: 26px; border: 1px solid var(--line); border-radius: var(--r-lg); background: var(--bg); }
@@ -766,3 +764,10 @@ main { counter-reset: sec; }
   .hero-side { animation: intro-up .6s cubic-bezier(.2, .7, .2, 1) 120ms both; }
 }
 @media print { .rv { opacity: 1 !important; transform: none !important; } }
+/* Telefonda katta kartadagi xizmatlar roʻyxati — bitta ixcham satr (karta choʻzilib ketmasin) */
+@media (max-width: 600px) {
+  .svc-list { display: block; margin: 0; font-size: 14px; line-height: 1.6; color: var(--muted); }
+  .svc-list li { display: inline; padding: 0; border: 0; background: none; font-size: inherit; color: inherit; }
+  .svc-list li + li::before { content: " · "; }
+  .svcs > .svc:first-child .svc-term { margin-top: 0; }
+}
