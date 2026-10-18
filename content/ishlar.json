@@ -18,6 +18,23 @@
       "havola": ""
     },
     {
+      "rasm": "images/works/mosalah-bot.jpg",
+      "namuna": false,
+      "oldin_keyin": false,
+      "nomi": {
+        "uz": "Mo Salah Zigʻir Oshi — Telegram bot",
+        "ru": "Mo Salah Zig'ir Oshi — Telegram-бот",
+        "en": "Mo Salah Zig'ir Oshi — Telegram bot"
+      },
+      "izoh": {
+        "uz": "Osh markazi uchun · buyurtmalar avtomatik qabul qilinib, darhol xodimlarga koʻrsatiladi",
+        "ru": "Для плов-центра · заказы принимаются автоматически и сразу видны сотрудникам",
+        "en": "For a plov restaurant · orders are taken automatically and shown to staff instantly"
+      },
+      "havola": "https://t.me/mosalahoshbot",
+      "yonalish": "p-web"
+    },
+    {
       "rasm": "images/works/emirfood-miniapp.jpg",
       "namuna": false,
       "oldin_keyin": false,
@@ -53,6 +70,22 @@
     }
   ],
   "sayt": [
+    {
+      "rasm": "images/works/mosalah-bot.jpg",
+      "namuna": false,
+      "oldin_keyin": false,
+      "nomi": {
+        "uz": "Mo Salah Zigʻir Oshi — Telegram bot",
+        "ru": "Mo Salah Zig'ir Oshi — Telegram-бот",
+        "en": "Mo Salah Zig'ir Oshi — Telegram bot"
+      },
+      "izoh": {
+        "uz": "Osh markazi uchun · buyurtmalar avtomatik qabul qilinib, darhol xodimlarga koʻrsatiladi",
+        "ru": "Для плов-центра · заказы принимаются автоматически и сразу видны сотрудникам",
+        "en": "For a plov restaurant · orders are taken automatically and shown to staff instantly"
+      },
+      "havola": "https://t.me/mosalahoshbot"
+    },
     {
       "rasm": "images/works/emirfood-miniapp.jpg",
       "namuna": false,
