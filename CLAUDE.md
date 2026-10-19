@@ -25,7 +25,16 @@ Sa'dulla Khaitov — `content/men.json` (`tavsif` — foydalanuvchi yozgan 4 xat
 - **GitHub Action** `.github/workflows/cms.yml`: `content/**` yoki `tools/build.py` o'zgarsa build qiladi, commit "Sayt yangilandi (admin panel)" + Pages qurilishini so'raydi.
 - Panelda yo'q (kod orqali o'zgartiriladi): FAQ, sarlavhalar va boshqa matnlar, usta sahifasidagi xizmatlar ro'yxati, badge/chips, set/paket tugma yozuvlari (build.py `T` lug'atida).
 
-## Dizayn qarorlari (2026-10-12 dan — 4-avlod: Swiss + Bento, ui-ux-pro-max skill asosida)
+## Dizayn: 5-avlod (2026-10-19) — "iliq toʻq sariq + qora shisha"
+
+- Foydalanuvchi namuna rasm berdi (toʻq sariq aksent, qora kartalar, iliq yorugʻlik) va namunani koʻrib "qoʻy" dedi. **Tuzilma, tugmalar, matnlar oʻzgarmagan** — faqat koʻrinish. `style.css` oxirida "5-avlod" boʻlimi + `:root`/dark oʻzgaruvchilari yangilangan.
+- Ranglar: fon #FAF8F5 (iliq oq), matn #121212, `--cta`/`--navy` = #EA580C (hamma aksent toʻq sariq; yoʻnalish ranglari web/ai/net/pres ham shu rangga tenglashtirilgan), toʻq panellar `--deep #141210` + `--glow` (pastki oʻng burchakda toʻq sariq nur). Tungi rejim: #0F0D0B fon, aksent #FF7A1F/#FF8A3D.
+- Tugmalar toʻliq yumaloq (999px), CTA ostida toʻq sariq soya-nur; headerdagi "Buyurtma berish" — chiziqli. Hero: oʻngga qarab qorongʻilashadigan iliq gradient + nur, narxlar kartasi qora shisha (blur). h1 `<em>` — toʻq sariq gradient matn. Boʻlim raqami "— 01" toʻq sariq, ustidagi qora chiziq yoʻq.
+- Xizmatlar bento: 1-karta (sayt) va `.p-net` karta — qora + nur; ikonkalar toʻq sariq plitada.
+- Logotip: 2×2 — chap-yuqori va oʻng-past qora (#121212), qolgan 2 tasi toʻq sariq; favicon.svg/.ico, logo.png, icon-192, apple-touch-icon, og.png shu ranglarda qayta chizilgan. Logo matni katta harflarda.
+- Hero'dagi AI 3D noutbuk rasmi qoʻyilmadi (stok/AI rasm qoʻymaslik qarori) — haqiqiy rasm boʻlsa hero oʻng tomoniga qoʻyish mumkin.
+
+## Dizayn qarorlari (2026-10-12 dan — 4-avlod: Swiss + Bento, ui-ux-pro-max skill asosida; ranglari 5-avlod bilan almashtirilgan, tuzilmasi amalda)
 
 - **Manba:** foydalanuvchi bergan https://github.com/nextlevelbuilder/ui-ux-pro-max-skill — `search.py --design-system` natijasi: "Trust & Authority + Conversion" shabloni (Hero → ishonch dalili (logotiplar) → xizmatlar → aniq CTA), uslub "Minimalism & Swiss Style" + "Bento Box Grid", rang strategiyasi "Navy — ishonch, accent faqat CTA uchun". Skill taklif qilgan shriftlar (Poppins, Outfit, Space Grotesk) **kirillsiz** — shuning uchun Inter Tight / Inter / Geist Mono olingan. Skill "AVOID: No map + Hidden reviews" deydi — haqiqiy sharhlar va xarita havolasi kelsa, albatta qo'shilsin.
 - **Ko'rinish: (2026-10-13 dan "men" ovozi — pastdagi 2026-10-13 bo'limiga qarang) "kompaniya + asoschi"** (portfolio emas). Hero, xizmatlar, ish tartibi, formalar — kompaniya/mijoz ovozida (passiv: "aytiladi", "javob olasiz"); "men" faqat `#men` "Asoschi haqida" bio'sida. Xizmat sahifalarida: "Ishni asoschi Sa'dulla Khaitov shaxsan bajaradi va javob beradi".

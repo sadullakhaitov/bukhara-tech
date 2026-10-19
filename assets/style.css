@@ -5,31 +5,31 @@
 
 :root {
   color-scheme: light;
-  --bg: #F8FAFC;
+  --bg: #FAF8F5;
   --surf: #FFFFFF;
-  --soft: #F1F5F9;
-  --ink: #0F172A;
-  --muted: #475569;
-  --line: #E2E8F0;
-  --line-strong: #CBD5E1;
+  --soft: #F5F1EC;
+  --ink: #121212;
+  --muted: #57534E;
+  --line: #ECE6DF;
+  --line-strong: #D9D1C7;
 
-  --navy: #1E3A8A;         /* asosiy (ishonch) */
-  --navy-2: #172F70;
-  --navy-lt: #E8EEFB;
-  --deep: #0B1533;         /* to'q panellar: kalkulyator jami, yakuniy blok, footer */
-  --on-deep: #F8FAFC;
-  --on-deep-muted: #AEBBDA;
-  --deep-line: rgba(248, 250, 252, .14);
+  --navy: #E8590C;         /* asosiy (ishonch) */
+  --navy-2: #C2410C;
+  --navy-lt: #FFF1E6;
+  --deep: #141210;         /* to'q panellar: kalkulyator jami, yakuniy blok, footer */
+  --on-deep: #FAF7F2;
+  --on-deep-muted: #B9AFA4;
+  --deep-line: rgba(255, 170, 110, .18);
 
-  --cta: #C2410C;          /* faqat harakatga undovchi tugmalar */
-  --cta-hover: #9A3412;
+  --cta: #EA580C;          /* faqat harakatga undovchi tugmalar */
+  --cta-hover: #C2410C;
   --on-cta: #FFFFFF;
-  --cta-glow: #FB923C;     /* to'q fonda raqamlar */
+  --cta-glow: #FF8A3D;     /* to'q fonda raqamlar */
 
-  --web: #2563EB; --web-lt: #EAF1FF;
-  --ai: #7C3AED;  --ai-lt: #F2EBFE;
-  --net: #047857; --net-lt: #E3F5EE;
-  --pres: #B45309; --pres-lt: #FDF1E3;
+  --web: #EA580C; --web-lt: #FFF1E6;
+  --ai: #EA580C;  --ai-lt: #FFF1E6;
+  --net: #EA580C; --net-lt: #FFF1E6;
+  --pres: #EA580C; --pres-lt: #FFF1E6;
 
   --acc: var(--navy);
   --lt: var(--navy-lt);
@@ -39,42 +39,44 @@
   --body: "Inter", "Segoe UI", sans-serif;
   --mono: "Geist Mono", Consolas, monospace;
 
-  --r-lg: 20px;
-  --r-md: 16px;
-  --r-sm: 10px;
-  --shadow: 0 1px 2px rgba(15, 23, 42, .06), 0 4px 6px rgba(15, 23, 42, .04);
-  --shadow-hover: 0 1px 2px rgba(15, 23, 42, .06), 0 18px 32px -16px rgba(15, 23, 42, .22);
+  --r-lg: 22px;
+  --r-md: 18px;
+  --r-sm: 12px;
+  --shadow: 0 1px 2px rgba(60, 30, 10, .05), 0 8px 24px -12px rgba(60, 30, 10, .12);
+  --shadow-hover: 0 2px 4px rgba(60, 30, 10, .06), 0 24px 40px -18px rgba(234, 88, 12, .35);
   --shadow-lg: 0 24px 60px -24px rgba(15, 23, 42, .35);
 
   --wrap: 1200px;
   --gutter: 64px;
+  --glow: radial-gradient(120% 90% at 100% 100%, rgba(234, 88, 12, .38), transparent 55%), radial-gradient(80% 60% at 0% 0%, rgba(255, 138, 61, .10), transparent 60%);
+
 }
 
 [data-theme="dark"] {
   color-scheme: dark;
-  --bg: #0B1220;
-  --surf: #111B2E;
-  --soft: #18233A;
-  --ink: #E5EAF3;
-  --muted: #9AA7BD;
-  --line: #22304A;
-  --line-strong: #2F3F5E;
+  --bg: #0F0D0B;
+  --surf: #171411;
+  --soft: #1F1B17;
+  --ink: #F5EFE8;
+  --muted: #B0A69B;
+  --line: #2A241E;
+  --line-strong: #3A322A;
 
-  --navy: #93B4FF;
-  --navy-2: #B4CBFF;
-  --navy-lt: #1A2A4F;
-  --deep: #0E1A3A;
+  --navy: #FF8A3D;
+  --navy-2: #FFA866;
+  --navy-lt: #2A1A0F;
+  --deep: #1A1512;
   --on-deep-muted: #A5B3D3;
 
-  --cta: #FB923C;
-  --cta-hover: #FDBA74;
+  --cta: #FF7A1F;
+  --cta-hover: #FF9445;
   --on-cta: #1A0E05;
-  --cta-glow: #FDBA74;
+  --cta-glow: #FFA866;
 
-  --web: #8AB0FF; --web-lt: #172647;
-  --ai: #BFA0FF;  --ai-lt: #241B42;
-  --net: #5EDCAE; --net-lt: #0F2E28;
-  --pres: #F5B86B; --pres-lt: #33240F;
+  --web: #FF8A3D; --web-lt: #2A1A0F;
+  --ai: #FF8A3D;  --ai-lt: #2A1A0F;
+  --net: #FF8A3D; --net-lt: #2A1A0F;
+  --pres: #FF8A3D; --pres-lt: #2A1A0F;
   --on-acc: #0B1220;
 
   --shadow: 0 1px 2px rgba(0, 0, 0, .35), 0 4px 6px rgba(0, 0, 0, .2);
@@ -771,3 +773,85 @@ main { counter-reset: sec; }
   .svc-list li + li::before { content: " · "; }
   .svcs > .svc:first-child .svc-term { margin-top: 0; }
 }
+
+/* ==========================================================
+   5-avlod (2026-10-19): "Iliq to'q sariq + qora shisha" — yuqoridagi
+   Swiss/Bento qoidalari ustidan yoziladi (tuzilma o'zgarmagan)
+   ========================================================== */
+body { background: radial-gradient(900px 500px at 85% -10%, rgba(234, 88, 12, .07), transparent 70%) no-repeat, var(--bg); }
+/* Logo: to'q sariq + qora */
+.logo-grid span { background: var(--ink); } .logo-grid span:nth-child(2), .logo-grid span:nth-child(3) { background: var(--cta); }
+.logo-text { text-transform: uppercase; letter-spacing: .01em; }
+.header { background: color-mix(in srgb, var(--bg) 82%, transparent); }
+.header .btn { background: transparent; color: var(--ink); border: 1.5px solid var(--cta); }
+.header .btn:hover { background: var(--cta); color: #fff; }
+.nav a::after { background: var(--cta); height: 2.5px; border-radius: 2px; }
+.nav a .ico { color: var(--cta); }
+.lang-btn, .theme-btn, .burger { border-radius: 12px; }
+/* Hero */
+.hero { background: linear-gradient(100deg, var(--bg) 0%, var(--bg) 46%, #EFE7DE 62%, #2A1F18 82%, #120D0A 100%); }
+.hero::before { background: radial-gradient(500px 360px at 82% 55%, rgba(234, 88, 12, .45), transparent 70%), radial-gradient(300px 240px at 96% 10%, rgba(255, 138, 61, .25), transparent 70%); -webkit-mask-image: none; mask-image: none; }
+.hero .eyebrow { letter-spacing: .26em; font-weight: 600; } .hero .eyebrow::before { display: none; }
+.h1 { letter-spacing: -.035em; }
+.hero .h1 em { background: linear-gradient(90deg, #EA580C, #FF8A3D); -webkit-background-clip: text; background-clip: text; color: transparent; }
+.btn { height: 54px; padding: 0 30px; border-radius: 999px; }
+.header .btn, .calc-bar .btn, .stepper, .works-nav button { border-radius: 999px; }
+.hero .btn-dark, .btn-white, .form .btn-dark, .calc-sum .btn-dark, .set-hot .btn { box-shadow: 0 12px 28px -10px rgba(234, 88, 12, .65); }
+.link-arrow { color: var(--ink); } .link-arrow:hover { color: var(--cta); }
+.hero-me { background: rgba(255, 255, 255, .7); }
+.stats { background: rgba(255, 255, 255, .75); -webkit-backdrop-filter: blur(10px); backdrop-filter: blur(10px); border-radius: 20px; }
+.stat b { color: var(--ink); }
+.hero-card { background: rgba(28, 22, 18, .55); border: 1px solid rgba(255, 190, 140, .28); color: var(--on-deep); -webkit-backdrop-filter: blur(18px) saturate(140%); backdrop-filter: blur(18px) saturate(140%); box-shadow: 0 40px 80px -30px rgba(0, 0, 0, .7), inset 0 1px 0 rgba(255, 255, 255, .12); }
+.hc-head { background: rgba(255, 255, 255, .04); border-color: rgba(255, 190, 140, .16); color: var(--on-deep-muted); }
+.hc-row { border-color: rgba(255, 190, 140, .12); color: var(--on-deep); }
+.hc-row:hover { background: rgba(255, 138, 61, .08); color: var(--on-deep); }
+.hc-text small { color: var(--on-deep-muted); } .hc-price { color: var(--cta-glow); }
+.hc-ico { background: rgba(234, 88, 12, .16); color: var(--cta-glow); border: 1px solid rgba(255, 138, 61, .3); }
+.hc-foot { background: var(--cta); } .hc-foot:hover { background: var(--cta-hover); }
+.hc-live i, .promise i { background: #22C55E; box-shadow: 0 0 0 4px rgba(34, 197, 94, .18); }
+/* Bo'lim sarlavhasi */
+.sec-head { border-top: 0; padding-top: 0; }
+.sec-head::before { content: "— " counter(sec, decimal-leading-zero); color: var(--cta); letter-spacing: .2em; }
+
+/* Xizmatlar: 1 va 3-karta to'q, to'q sariq nur bilan */
+.svc { position: relative; overflow: hidden; }
+.svcs > .svc:first-child::after, .svcs > .svc.p-net::after { content: ""; position: absolute; right: -40px; top: -60px; width: 220px; height: 220px; border-radius: 50%; border: 1px solid rgba(234, 88, 12, .22); pointer-events: none; }
+.svcs > .svc:first-child, .svcs > .svc.p-net { background: var(--glow), var(--deep); border-color: #2a211b; color: var(--on-deep); }
+.svcs > .svc.p-net p, .svcs > .svc.p-net .svc-term { color: var(--on-deep-muted); }
+.svcs > .svc.p-net .svc-price { border-color: var(--deep-line); color: var(--cta-glow); }
+.svcs > .svc.p-net .btn-outline { background: transparent; border-color: rgba(255, 255, 255, .3); color: var(--on-deep); }
+.svc-icon { border-radius: 14px; background: linear-gradient(145deg, #FFE7D4, #FFD2B0); color: var(--cta); box-shadow: inset 0 1px 0 #fff; }
+.svcs > .svc:first-child .svc-icon, .svcs > .svc.p-net .svc-icon { background: linear-gradient(145deg, #2B211A, #1A1411); color: var(--cta-glow); border: 1px solid rgba(255, 138, 61, .35); box-shadow: 0 0 24px -6px rgba(234, 88, 12, .6); }
+.svcs > .svc:first-child .btn-outline { box-shadow: 0 12px 28px -10px rgba(234, 88, 12, .7); }
+.svc-list li { border-radius: 12px; }
+.btn-outline:hover { border-color: var(--cta); color: var(--cta); }
+/* Shartlar, qadamlar */
+.term:first-child { background: var(--glow), var(--deep) !important; border-color: var(--deep); }
+.term i { border-radius: 50%; background: var(--navy-lt); color: var(--cta); }
+.term:first-child i { background: rgba(234, 88, 12, .2); color: var(--cta-glow); }
+.step-n { font-size: 34px; font-family: var(--disp);  color: var(--cta); }
+/* Paneller */
+.calc-sum, .final, .cta-box, .set-hot, .calc-bar { background: var(--glow), var(--deep); }
+.footer { background: #0E0C0A; }
+.footer .logo-grid span { background: #fff; } .footer .logo-grid span:nth-child(2), .footer .logo-grid span:nth-child(3) { background: var(--cta); }
+.review-ava { background: var(--cta); }
+.calc-group summary::after, .faq-item summary::after { border-radius: 50%; }
+.calc-group[open] summary::after, .faq-item[open] summary::after { background: var(--cta); border-color: var(--cta); color: #fff; }
+.work .photo { background: var(--soft); }
+.works-nav button { border-radius: 50%; }
+.works-nav button:hover { background: var(--cta); border-color: var(--cta); color: #fff; }
+.about .photo { background: var(--soft); }
+.card-role { color: var(--cta); }
+.about-text p a, .contacts b a { color: var(--cta-hover); }
+.form-hint { color: var(--cta-hover); }
+.field input, .field select, .field textarea { border-radius: 14px; }
+.profile-text { background: radial-gradient(500px 300px at 100% 0%, rgba(234, 88, 12, .10), transparent 70%), var(--surf); }
+.profile-text::before { opacity: .5; }
+@media (max-width: 900px) {
+  .hero { background: linear-gradient(180deg, var(--bg) 0%, var(--bg) 60%, #F3E6D9 100%); }
+  .hero::before { background: radial-gradient(400px 300px at 100% 0%, rgba(234, 88, 12, .14), transparent 70%); }
+}
+/* Tungi rejim */
+[data-theme="dark"] .hero { background: var(--surf); }
+[data-theme="dark"] .svc-icon { background: #2A1A0F; }
+[data-theme="dark"] .hero-me, [data-theme="dark"] .stats { background: rgba(23, 20, 17, .7); }
