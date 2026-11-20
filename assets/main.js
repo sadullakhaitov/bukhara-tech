@@ -421,14 +421,14 @@ document.querySelectorAll(".works-carousel").forEach((row) => {
   row.addEventListener("dragstart", (e) => e.preventDefault());
   row.addEventListener("pointerdown", (e) => {
     if (e.pointerType !== "mouse" || e.button !== 0) return;
-    drag = { x: e.clientX, sl: row.scrollLeft, moved: false };
-    row.setPointerCapture(e.pointerId);
+    drag = { x: e.clientX, sl: row.scrollLeft, moved: false, id: e.pointerId };
   });
   row.addEventListener("pointermove", (e) => {
     if (!drag) return;
     const dx = e.clientX - drag.x;
     if (!drag.moved && Math.abs(dx) < 4) return;
-    if (!drag.moved) { drag.moved = true; row.classList.add("is-drag"); }
+    // capture faqat tortish boshlanganda — aks holda oddiy bosish havolaga yetmaydi (click qatorning o'ziga tushadi)
+    if (!drag.moved) { drag.moved = true; row.classList.add("is-drag"); row.setPointerCapture(drag.id); }
     row.scrollLeft = drag.sl - dx;
     hold();
   });
