@@ -99,11 +99,16 @@ if (form) {
       try {
         const data = Object.fromEntries(new FormData(form));
         data.lang = LANG;
+        // javob kelmasa tugma abadiy "band" boʻlib qolmasin — 15 s dan keyin xato koʻrsatiladi
+        const ctl = new AbortController();
+        const timer = setTimeout(() => ctl.abort(), 15000);
         const r = await fetch(FORM_ENDPOINT, {
           method: "POST",
           headers: { "Content-Type": "application/json" },
           body: JSON.stringify(data),
+          signal: ctl.signal,
         });
+        clearTimeout(timer);
         ok = r.ok;
       } catch (err) {
         ok = false;
@@ -113,9 +118,14 @@ if (form) {
     const msgEl = ok ? done : fail;
     msgEl.hidden = false;
     msgEl.focus();
-    if (ok) form.reset();
+    if (ok) { form.reset(); window.gtag?.("event", "generate_lead", { method: "form" }); }
   });
 }
+// Analytics: Telegram / qoʻngʻiroq tugmalari bosilishi (qaysi tugma mijoz keltirayotganini bilish uchun)
+document.addEventListener("click", (e) => {
+  const a = e.target.closest('a[href^="https://t.me/sadulla"], a[href^="tel:"]');
+  if (a && window.gtag) gtag("event", "contact", { method: a.href.startsWith("tel:") ? "phone" : "telegram" });
+});
 
 // Kalkulyator: "Buyurtma" bosilganda tanlov forma xabariga yoziladi,
 // sahifa formaga tushadi va "Ismingiz" maydoni faollashadi (so'rovni forma yuboradi).
@@ -353,6 +363,7 @@ function loopRow(row, minEach = 36) {
   const items = [...row.children];
   const n = items.length;
   if (n < 2) return () => {};
+  if (!row.querySelector("a, button")) row.tabIndex = 0; // klaviatura bilan ham surish mumkin bo'lsin
   const reps = Math.max(2, Math.ceil(minEach / n)); // har tomonda nechta to'liq nusxa (≥ minEach karta)
   for (let r = 0; r < reps; r++) {
     row.prepend(...items.map(cloneOf));

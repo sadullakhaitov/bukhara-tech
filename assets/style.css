@@ -13,23 +13,23 @@
   --line: #ECE6DF;
   --line-strong: #D9D1C7;
 
-  --navy: #E8590C;         /* asosiy (ishonch) */
-  --navy-2: #C2410C;
+  --navy: #C2410C;         /* asosiy (ishonch) */
+  --navy-2: #9A3412;
   --navy-lt: #FFF1E6;
   --deep: #141210;         /* to'q panellar: kalkulyator jami, yakuniy blok, footer */
   --on-deep: #FAF7F2;
   --on-deep-muted: #B9AFA4;
   --deep-line: rgba(255, 170, 110, .18);
 
-  --cta: #EA580C;          /* faqat harakatga undovchi tugmalar */
-  --cta-hover: #C2410C;
+  --cta: #CC4A0A;          /* faqat harakatga undovchi tugmalar */
+  --cta-hover: #A93B07;
   --on-cta: #FFFFFF;
   --cta-glow: #FF8A3D;     /* to'q fonda raqamlar */
 
-  --web: #EA580C; --web-lt: #FFF1E6;
-  --ai: #EA580C;  --ai-lt: #FFF1E6;
-  --net: #EA580C; --net-lt: #FFF1E6;
-  --pres: #EA580C; --pres-lt: #FFF1E6;
+  --web: #C2410C; --web-lt: #FFF1E6;
+  --ai: #C2410C;  --ai-lt: #FFF1E6;
+  --net: #C2410C; --net-lt: #FFF1E6;
+  --pres: #C2410C; --pres-lt: #FFF1E6;
 
   --acc: var(--navy);
   --lt: var(--navy-lt);
@@ -66,7 +66,7 @@
   --navy-2: #FFA866;
   --navy-lt: #2A1A0F;
   --deep: #1A1512;
-  --on-deep-muted: #A5B3D3;
+  --on-deep-muted: #B9AFA4;
 
   --cta: #FF7A1F;
   --cta-hover: #FF9445;
@@ -255,18 +255,18 @@ main { counter-reset: sec; }
 /* ---------- Xizmat kartalari (Bento) ---------- */
 .svcs { display: grid; grid-template-columns: repeat(4, minmax(0, 1fr)); gap: 16px; }
 .svc { grid-column: span 2; display: flex; flex-direction: column; gap: 12px; padding: 28px; border: 1px solid var(--line); border-radius: var(--r-lg); background: var(--surf); box-shadow: var(--shadow); transition: transform .22s ease, box-shadow .22s ease, border-color .22s; }
-.svcs > .svc:first-child { grid-row: span 2; padding: 36px; background: var(--deep); border-color: var(--deep); color: var(--on-deep); }
-.svcs > .svc:first-child p { color: var(--on-deep-muted); font-size: 17px; }
-.svcs > .svc:first-child h3 { font-size: 32px; }
-.svcs > .svc:first-child .svc-icon { background: var(--cta); color: var(--on-cta); width: 64px; height: 64px; }
-.svcs > .svc:first-child .svc-price { border-color: var(--deep-line); color: var(--cta-glow); font-size: 28px; }
-.svcs > .svc:first-child .btn-outline { background: var(--cta); border-color: var(--cta); color: var(--on-cta); }
-.svcs > .svc:first-child .btn-outline:hover { background: var(--cta-hover); border-color: var(--cta-hover); }
+.svcs > .svc.p-web { grid-row: span 2; padding: 36px; background: var(--deep); border-color: var(--deep); color: var(--on-deep); }
+.svcs > .svc.p-web p { color: var(--on-deep-muted); font-size: 17px; }
+.svcs > .svc.p-web h3 { font-size: 32px; }
+.svcs > .svc.p-web .svc-icon { background: var(--cta); color: var(--on-cta); width: 64px; height: 64px; }
+.svcs > .svc.p-web .svc-price { border-color: var(--deep-line); color: var(--cta-glow); font-size: 28px; }
+.svcs > .svc.p-web .btn-outline { background: var(--cta); border-color: var(--cta); color: var(--on-cta); }
+.svcs > .svc.p-web .btn-outline:hover { background: var(--cta-hover); border-color: var(--cta-hover); }
 /* 4 ta karta: chapda katta to'q karta (2 qator), o'ngda tepada 2 ta kichik, pastda 1 ta keng */
 .svcs:has(> .svc:nth-child(4)) > .svc { grid-column: span 1; }
 .svcs:has(> .svc:nth-child(4)) > .svc:first-child, .svcs:has(> .svc:nth-child(4)) > .svc:nth-child(4) { grid-column: span 2; }
-.svcs > .svc:first-child p { flex-grow: 0; }
-.svcs > .svc:first-child .svc-term { margin-top: auto; padding-top: 12px; }
+.svcs > .svc.p-web p { flex-grow: 0; }
+.svcs > .svc.p-web .svc-term { margin-top: auto; padding-top: 12px; }
 .svc-list { display: flex; flex-wrap: wrap; gap: 8px; list-style: none; margin: 4px 0 0; padding: 0; }
 .svc-list li { padding: 7px 12px; border: 1px solid var(--deep-line); border-radius: 8px; font-size: 14px; color: var(--on-deep); background: rgba(255, 255, 255, .04); }
 @media (min-width: 1201px) {
@@ -276,8 +276,8 @@ main { counter-reset: sec; }
 }
 .svc-term { display: flex; align-items: center; gap: 8px; margin: 0; font-size: 14px; color: var(--muted); flex-grow: 0 !important; }
 .svc-term i { color: var(--acc); font-size: 13px; }
-.svcs > .svc:first-child .svc-term { color: var(--on-deep-muted); }
-.svcs > .svc:first-child .svc-term i { color: var(--cta-glow); }
+.svcs > .svc.p-web .svc-term { color: var(--on-deep-muted); }
+.svcs > .svc.p-web .svc-term i { color: var(--cta-glow); }
 .svc-icon { display: flex; align-items: center; justify-content: center; width: 52px; height: 52px; margin-bottom: 6px; border-radius: 14px; background: var(--lt); color: var(--acc); }
 .svc-icon i { font-size: 21px; }
 .svc h3 { font-family: var(--disp); font-weight: 700; font-size: 22px; line-height: 1.15; letter-spacing: -.03em; }
@@ -346,9 +346,6 @@ main { counter-reset: sec; }
 .term:first-child { background: var(--navy) !important; border-color: var(--navy); color: #fff; }
 .term:first-child span { color: rgba(255, 255, 255, .78); }
 .term:first-child i { background: rgba(255, 255, 255, .14); color: #fff; }
-[data-theme="dark"] .term:first-child { color: #0B1220; }
-[data-theme="dark"] .term:first-child span { color: rgba(11, 18, 32, .75); }
-[data-theme="dark"] .term:first-child i { background: rgba(11, 18, 32, .12); color: #0B1220; }
 .term i { display: flex; align-items: center; justify-content: center; width: 42px; height: 42px; margin-bottom: 8px; border-radius: 12px; background: var(--navy-lt); color: var(--navy); font-size: 16px; }
 .term b { font-family: var(--disp); font-weight: 700; font-size: 19px; letter-spacing: -.025em; }
 .term span { color: var(--muted); font-size: 14.5px; }
@@ -579,7 +576,7 @@ main { counter-reset: sec; }
   .proof .wrap { grid-template-columns: 1fr; gap: 16px; }
   .svcs { grid-template-columns: repeat(2, minmax(0, 1fr)); }
   .svc { grid-column: span 1; }
-  .svcs > .svc:first-child { grid-column: 1 / -1; grid-row: auto; }
+  .svcs > .svc.p-web { grid-column: 1 / -1; grid-row: auto; }
   .svcs:has(> .svc:nth-child(4)) > .svc { grid-column: span 1; }
   .svcs:has(> .svc:nth-child(4)) > .svc:first-child, .svcs:has(> .svc:nth-child(4)) > .svc:nth-child(4) { grid-column: 1 / -1; }
   .calc { grid-template-columns: minmax(0, 1fr) 320px; }
@@ -652,10 +649,10 @@ main { counter-reset: sec; }
   .section { padding-block: 60px; }
   .sec-head { margin-bottom: 28px; gap: 10px; padding-top: 14px; }
 
-  .svc, .svcs > .svc:first-child { padding: 22px; gap: 10px; }
-  .svcs > .svc:first-child h3 { font-size: 24px; }
-  .svcs > .svc:first-child .svc-icon { width: 52px; height: 52px; }
-  .svcs > .svc:first-child .svc-price { font-size: 21px; }
+  .svc, .svcs > .svc.p-web { padding: 22px; gap: 10px; }
+  .svcs > .svc.p-web h3 { font-size: 24px; }
+  .svcs > .svc.p-web .svc-icon { width: 52px; height: 52px; }
+  .svcs > .svc.p-web .svc-price { font-size: 21px; }
   .svc-icon { width: 46px; height: 46px; border-radius: 12px; margin-bottom: 2px; }
   .svc h3 { font-size: 20px; }
   .svc-price { font-size: 19px; padding-top: 12px; }
@@ -771,7 +768,7 @@ main { counter-reset: sec; }
   .svc-list { display: block; margin: 0; font-size: 14px; line-height: 1.6; color: var(--muted); }
   .svc-list li { display: inline; padding: 0; border: 0; background: none; font-size: inherit; color: inherit; }
   .svc-list li + li::before { content: " · "; }
-  .svcs > .svc:first-child .svc-term { margin-top: 0; }
+  .svcs > .svc.p-web .svc-term { margin-top: 0; }
 }
 
 /* ==========================================================
@@ -811,18 +808,18 @@ body { background: radial-gradient(900px 500px at 85% -10%, rgba(234, 88, 12, .0
 .hc-live i, .promise i { background: #22C55E; box-shadow: 0 0 0 4px rgba(34, 197, 94, .18); }
 /* Bo'lim sarlavhasi */
 .sec-head { border-top: 0; padding-top: 0; }
-.sec-head::before { content: "— " counter(sec, decimal-leading-zero); color: var(--cta); letter-spacing: .2em; }
+.sec-head::before { content: "— " counter(sec, decimal-leading-zero); color: var(--navy); letter-spacing: .2em; }
 
 /* Xizmatlar: 1 va 3-karta to'q, to'q sariq nur bilan */
 .svc { position: relative; overflow: hidden; }
-.svcs > .svc:first-child::after, .svcs > .svc.p-net::after { content: ""; position: absolute; right: -40px; top: -60px; width: 220px; height: 220px; border-radius: 50%; border: 1px solid rgba(234, 88, 12, .22); pointer-events: none; }
-.svcs > .svc:first-child, .svcs > .svc.p-net { background: var(--glow), var(--deep); border-color: #2a211b; color: var(--on-deep); }
+.svcs > .svc.p-web::after, .svcs > .svc.p-net::after { content: ""; position: absolute; right: -40px; top: -60px; width: 220px; height: 220px; border-radius: 50%; border: 1px solid rgba(234, 88, 12, .22); pointer-events: none; }
+.svcs > .svc.p-web, .svcs > .svc.p-net { background: var(--glow), var(--deep); border-color: #2a211b; color: var(--on-deep); }
 .svcs > .svc.p-net p, .svcs > .svc.p-net .svc-term { color: var(--on-deep-muted); }
 .svcs > .svc.p-net .svc-price { border-color: var(--deep-line); color: var(--cta-glow); }
 .svcs > .svc.p-net .btn-outline { background: transparent; border-color: rgba(255, 255, 255, .3); color: var(--on-deep); }
 .svc-icon { border-radius: 14px; background: linear-gradient(145deg, #FFE7D4, #FFD2B0); color: var(--cta); box-shadow: inset 0 1px 0 #fff; }
-.svcs > .svc:first-child .svc-icon, .svcs > .svc.p-net .svc-icon { background: linear-gradient(145deg, #2B211A, #1A1411); color: var(--cta-glow); border: 1px solid rgba(255, 138, 61, .35); box-shadow: 0 0 24px -6px rgba(234, 88, 12, .6); }
-.svcs > .svc:first-child .btn-outline { box-shadow: 0 12px 28px -10px rgba(234, 88, 12, .7); }
+.svcs > .svc.p-web .svc-icon, .svcs > .svc.p-net .svc-icon { background: linear-gradient(145deg, #2B211A, #1A1411); color: var(--cta-glow); border: 1px solid rgba(255, 138, 61, .35); box-shadow: 0 0 24px -6px rgba(234, 88, 12, .6); }
+.svcs > .svc.p-web .btn-outline { box-shadow: 0 12px 28px -10px rgba(234, 88, 12, .7); }
 .svc-list li { border-radius: 12px; }
 .btn-outline:hover { border-color: var(--cta); color: var(--cta); }
 /* Shartlar, qadamlar */
@@ -841,7 +838,7 @@ body { background: radial-gradient(900px 500px at 85% -10%, rgba(234, 88, 12, .0
 .works-nav button { border-radius: 50%; }
 .works-nav button:hover { background: var(--cta); border-color: var(--cta); color: #fff; }
 .about .photo { background: var(--soft); }
-.card-role { color: var(--cta); }
+.card-role { color: var(--navy); }
 .about-text p a, .contacts b a { color: var(--cta-hover); }
 .form-hint { color: var(--cta-hover); }
 .field input, .field select, .field textarea { border-radius: 14px; }
@@ -855,3 +852,16 @@ body { background: radial-gradient(900px 500px at 85% -10%, rgba(234, 88, 12, .0
 [data-theme="dark"] .hero { background: var(--surf); }
 [data-theme="dark"] .svc-icon { background: #2A1A0F; }
 [data-theme="dark"] .hero-me, [data-theme="dark"] .stats { background: rgba(23, 20, 17, .7); }
+.work-dir { background: color-mix(in srgb, var(--acc) 7%, transparent); }
+/* Audit 2026-11-20 */
+@media (min-width: 1201px) {
+  /* katta kartada roʻyxat boʻsh joyni toʻldiradi (oʻrtada boʻshliq qolmasin) */
+  .svcs > .svc.p-web .svc-list { flex-grow: 1; grid-auto-rows: 1fr; align-content: stretch; }
+}
+@media (max-width: 900px) {
+  /* telefonda hero foni och — shisha karta kul rang boʻlib qolmasin */
+  .hero-card { background: var(--glow), var(--deep); -webkit-backdrop-filter: none; backdrop-filter: none; }
+}
+@media (max-width: 600px) {
+  .svcs > .svc.p-web .svc-list, .svcs > .svc.p-net .svc-list { color: var(--on-deep-muted); }
+}
