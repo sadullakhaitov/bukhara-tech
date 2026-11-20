@@ -965,6 +965,10 @@ collections:
         label: Havola yozuvi (bo'sh bo'lsa manzilning o'zi ko'rinadi)
         widget: string
         required: false
+      - name: sana
+        label: "Qo'shilgan sana (masalan: 2026-11-20) — eng yangisi birinchi chiqadi, bo'sh bo'lsa eng boshda"
+        widget: string
+        required: false
     - name: sayt
       label: Sayt va botlar sahifasi
       label_singular: Ish
@@ -1020,6 +1024,10 @@ collections:
         required: false
       - name: havola_nomi
         label: Havola yozuvi (bo'sh bo'lsa manzilning o'zi ko'rinadi)
+        widget: string
+        required: false
+      - name: sana
+        label: "Qo'shilgan sana (masalan: 2026-11-20) — eng yangisi birinchi chiqadi, bo'sh bo'lsa eng boshda"
         widget: string
         required: false
     - name: ai
@@ -1079,6 +1087,10 @@ collections:
         label: Havola yozuvi (bo'sh bo'lsa manzilning o'zi ko'rinadi)
         widget: string
         required: false
+      - name: sana
+        label: "Qo'shilgan sana (masalan: 2026-11-20) — eng yangisi birinchi chiqadi, bo'sh bo'lsa eng boshda"
+        widget: string
+        required: false
     - name: internet
       label: Internet va IT sahifasi
       label_singular: Ish
@@ -1136,6 +1148,10 @@ collections:
         label: Havola yozuvi (bo'sh bo'lsa manzilning o'zi ko'rinadi)
         widget: string
         required: false
+      - name: sana
+        label: "Qo'shilgan sana (masalan: 2026-11-20) — eng yangisi birinchi chiqadi, bo'sh bo'lsa eng boshda"
+        widget: string
+        required: false
     - name: prezentatsiya
       label: Prezentatsiyalar sahifasi (slayd namunalari)
       label_singular: Ish
@@ -1191,6 +1207,10 @@ collections:
         required: false
       - name: havola_nomi
         label: Havola yozuvi (bo'sh bo'lsa manzilning o'zi ko'rinadi)
+        widget: string
+        required: false
+      - name: sana
+        label: "Qo'shilgan sana (masalan: 2026-11-20) — eng yangisi birinchi chiqadi, bo'sh bo'lsa eng boshda"
         widget: string
         required: false
   - name: sharhlar

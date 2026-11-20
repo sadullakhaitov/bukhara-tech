@@ -245,12 +245,17 @@ DIR_NAME = {"p-web": {"uz": "Sayt va botlar", "ru": "Сайты и боты", "e
             "p-pres": {"uz": "Prezentatsiyalar", "ru": "Презентации", "en": "Presentations"}}
 
 
+def by_date(items):
+    # eng oxirgi qo'shilgan ish birinchi; sanasi yo'q (yangi qo'shilgan) ish eng boshda
+    return sorted(items, key=lambda w: (w.get("sana") or "9999").strip(), reverse=True)
+
+
 def r_works(lang, prefix, key):
     data = load("ishlar")
     if key != "bosh":
         if not data.get(key):
             return f'<p class="works-soon">{T["soon"][lang]}</p>'
-        return '<div class="works">' + "".join(r_work(w, lang, prefix, False) for w in data[key]) + "</div>"
+        return '<div class="works">' + "".join(r_work(w, lang, prefix, False) for w in by_date(data[key])) + "</div>"
     # Bosh sahifa: avval "bosh" ro'yxati, keyin barcha bo'limlardagi qolgan ishlar — aylanadigan karusel
     seen, items = set(), []
     for w in data["bosh"] + [dict(w, yonalish=d) for k, d in WORK_DIRS.items() for w in data.get(k) or []]:
@@ -260,7 +265,7 @@ def r_works(lang, prefix, key):
         seen.add(r)
         items.append(w)
     out = []
-    for w in items:
+    for w in by_date(items):
         h = r_work(w, lang, prefix, True)
         d = w.get("yonalish")
         if d in DIR_NAME:
