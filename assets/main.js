@@ -180,7 +180,9 @@ document.addEventListener("click", (e) => {
 const calc = document.querySelector(".calc");
 if (calc) {
   const money = (n) => String(n).replace(/\B(?=(\d{3})+(?!\d))/g, " ");
-  const { sum: cur, from, msg } = calc.dataset;
+  const { sum: cur, msg } = calc.dataset;
+  // hamma narxlar boshlang'ich: "… so'mdan" / "от … сум" / "from … UZS"
+  const fromP = (n) => tx(`${money(n)} soʻmdan`, `от ${money(n)} сум`, `from ${money(n)} UZS`);
   const rows = [...calc.querySelectorAll(".calc-row")];
   const total = calc.querySelector(".calc-total");
   const picked = calc.querySelector(".calc-picked");
@@ -203,7 +205,7 @@ if (calc) {
       const a = document.createElement("span");
       const b = document.createElement("span");
       a.textContent = `${r.dataset.name} × ${n}`;
-      b.textContent = `${money(cost)} ${cur}`;
+      b.textContent = fromP(cost);
       li.append(a, b);
       picked.append(li);
       lines.push(`— ${r.dataset.name}: ${n} ${r.dataset.unit}`);
@@ -219,9 +221,9 @@ if (calc) {
       g.querySelectorAll(".calc-row").forEach((r) => {
         gs += (parseInt(r.querySelector("input").value, 10) || 0) * Number(r.dataset.price);
       });
-      g.querySelector(".calc-gsum").textContent = gs ? `${money(gs)} ${cur}` : "";
+      g.querySelector(".calc-gsum").textContent = gs ? fromP(gs) : "";
     });
-    total.textContent = s ? `${money(s)} ${cur}${from || ""}` : `0 ${cur}`;
+    total.textContent = s ? fromP(s) : `0 ${cur}`;
     order.setAttribute("aria-disabled", String(!s));
     order.dataset.order = s ? `${msg}\n${lines.join("\n")}\n≈ ${money(s)} ${cur}` : "";
     barTotal.textContent = total.textContent;

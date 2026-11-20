@@ -170,7 +170,7 @@ def r_calc(lang, prefix):
             term = f" · {e(term)}" if term else ""
             pre = " data-preset" if r.get("taklif") else ""
             out.append(f'''            <div class="calc-row" data-price="{int(r["narx"])}" data-name="{name}" data-unit="{unit}"{pre}>
-              <span class="calc-name"><b>{name}</b><small>{money(r["narx"])} {T["cur"][lang]} · {per}{term}</small></span>
+              <span class="calc-name"><b>{name}</b><small>{T["from"][lang].format(p=money(r["narx"]))} · {per}{term}</small></span>
               <span class="stepper"><button type="button" class="step-btn" data-step="-1" aria-label="{T["less"][lang]}: {name}">−</button><input type="number" min="0" max="999" value="{int(r.get("boshlangich") or 0)}" inputmode="numeric" aria-label="{name}"><button type="button" class="step-btn" data-step="1" aria-label="{T["more"][lang]}: {name}">+</button></span>
             </div>''')
         out.append("          </details>")
@@ -193,7 +193,7 @@ def r_set(s, lang):
     if old > price:
         lines.append(f'            <span class="set-old">{T["sep"][lang]}: <s>{money(old)} {T["cur"][lang]}</s> · '
                      f'<em>{T["save"][lang]} {money(old - price)}</em></span>')
-    lines.append(f'            <strong>{money(price)} {T["cur"][lang]}</strong>')
+    lines.append(f'            <strong>{T["from"][lang].format(p=money(price))}</strong>')
     if tr(s.get("uskuna"), lang):
         lines.append(f'            <span class="set-equip">{e(tr(s["uskuna"], lang))}</span>')
     lines.append("          </div>")
@@ -214,7 +214,7 @@ def r_note(lang, prefix, master):
     parts = []
     for x in load("paketlar")[master].get("alohida") or []:
         price = int(x.get("narx") or 0)
-        val = f"<b>{money(price)} {T['cur'][lang]}</b>" if price else f"<b>{T['free'][lang]}</b>"
+        val = f"<b>{T['from'][lang].format(p=money(price))}</b>" if price else f"<b>{T['free'][lang]}</b>"
         per = tr(x.get("izoh"), lang)
         parts.append(f"{e(tr(x['nomi'], lang))} — {val}" + (f" ({e(per)})" if per else ""))
     return f'<p class="note"><b>{T["single"][lang]}</b> ' + " · ".join(parts) + "</p>"
