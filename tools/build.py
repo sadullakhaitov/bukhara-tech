@@ -232,7 +232,8 @@ def r_work(w, lang, prefix, home):
     else:
         photo = f'<div class="photo"><span class="work-ph">{T["no_photo"][lang]}</span></div>'
     link = (w.get("havola") or "").strip()
-    link = (f'<a class="work-link" href="{e(link)}" target="_blank" rel="noopener">{e(link.split("//")[-1].replace("t.me/", "@"))} '
+    label = (w.get("havola_nomi") or "").strip() or link.split("//")[-1].replace("t.me/", "@")
+    link = (f'<a class="work-link" href="{e(link)}" target="_blank" rel="noopener">{e(label)} '
             f'{FA.format("fa-arrow-up-right-from-square")}</a>') if link else ""
     return f'<figure class="{cls}">{photo}<figcaption><b>{e(title)}</b><span>{e(tr(w.get("izoh"), lang))}</span>{link}</figcaption></figure>'
 

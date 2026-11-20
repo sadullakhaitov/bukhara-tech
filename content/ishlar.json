@@ -35,6 +35,24 @@
       "yonalish": "p-web"
     },
     {
+      "rasm": "images/works/multimedia-shop.jpg",
+      "namuna": false,
+      "oldin_keyin": false,
+      "nomi": {
+        "uz": "Multimedia — maishiy texnika internet-doʻkoni",
+        "ru": "Multimedia — интернет-магазин бытовой техники",
+        "en": "Multimedia — home appliance online store"
+      },
+      "izoh": {
+        "uz": "Katalog, filtrlar, savat va sevimlilar · telefonda ilovadek ishlaydi",
+        "ru": "Каталог, фильтры, корзина и избранное · на телефоне работает как приложение",
+        "en": "Catalogue, filters, cart and favourites · works like an app on phones"
+      },
+      "havola": "https://online-shop-omega-ruby.vercel.app/uz",
+      "havola_nomi": "multimedia",
+      "yonalish": "p-web"
+    },
+    {
       "rasm": "images/works/emirfood-miniapp.jpg",
       "namuna": false,
       "oldin_keyin": false,
@@ -85,6 +103,23 @@
         "en": "For a plov restaurant · orders are taken automatically and shown to staff instantly"
       },
       "havola": "https://t.me/mosalahoshbot"
+    },
+    {
+      "rasm": "images/works/multimedia-shop.jpg",
+      "namuna": false,
+      "oldin_keyin": false,
+      "nomi": {
+        "uz": "Multimedia — maishiy texnika internet-doʻkoni",
+        "ru": "Multimedia — интернет-магазин бытовой техники",
+        "en": "Multimedia — home appliance online store"
+      },
+      "izoh": {
+        "uz": "Katalog, filtrlar, savat va sevimlilar · telefonda ilovadek ishlaydi",
+        "ru": "Каталог, фильтры, корзина и избранное · на телефоне работает как приложение",
+        "en": "Catalogue, filters, cart and favourites · works like an app on phones"
+      },
+      "havola": "https://online-shop-omega-ruby.vercel.app/uz",
+      "havola_nomi": "multimedia"
     },
     {
       "rasm": "images/works/emirfood-miniapp.jpg",
